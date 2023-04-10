@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Office Hours
 
 We will be holding both in-person and virtual office hours this semester. All in-person TA and UCA office hours are held in LGRT 220 (the tower). Virtual office hours are on zoom, see the table below for the link.
