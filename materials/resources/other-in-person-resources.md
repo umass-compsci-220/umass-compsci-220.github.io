@@ -12,7 +12,7 @@ There is individual tutoring available through the CICS tutoring system and the 
 
 [The LRC Tutoring program](https://www.umass.edu/lrc/) offers drop in tutoring sessions for CS220! You can go there to get help from a qualified student to help you with anything and everything.
 
-### Supplemental Instruction
+## Supplemental Instruction
 
 These are review sessions run by our supplemental instructor, where you will be able to review material as the course continues. If you are enrolled in CS220, you should see a CS220-SI course on Moodle. Locations, times, recordings, and worksheets should all be posted there.
 
