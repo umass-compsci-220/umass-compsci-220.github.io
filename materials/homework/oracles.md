@@ -39,8 +39,7 @@ Students will be graded on their ability to:
 
 ### Resources
 
-- Please use the [resources document](resources/README.md) if you are stuck
-- Additionally, there is an [examples](#examples) section that goes through input and output
+There is an [examples](#examples) section that goes through input and output
 
 ## Getting Started
 

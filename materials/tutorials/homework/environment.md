@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Development Environment
 
-Before taking this course, you will need to download various pieces of software. This document will guide you through that process in a beginner-friendly manner. If you have any issues configuring your system, please seek help as soon as possible. You have the internet, office hours, and Campuswire at your disposal.
+Before taking this course, you will need to download various pieces of software. This page will guide you through that process in a beginner-friendly manner. If you have any issues configuring your system, please seek help as soon as possible. You have the internet, office hours, and Campuswire at your disposal.
 
 ## Getting Started
 
@@ -30,11 +30,11 @@ Before taking this course, you will need to download various pieces of software.
 - Read [Installing VSCode](#installing-vscode) for instructions
 - Watch [this video (7m16s)](https://www.youtube.com/watch?v=B-s71n0dHUk) to familiarize yourself with VSCode
 - Alternatively, you use any text editor or IDE. [LunarVim](https://www.lunarvim.org/), [GNU Emacs](https://www.gnu.org/software/emacs/), and [Webstorm](https://www.jetbrains.com/webstorm/) are good options
-  - However, we cannot guarantee configuration support 
+  - However, we cannot guarantee configuration support
 
 **4. Open the First Homework in VSCode**
 
-- Read [Editing: Opening An Assignment in VSCode](./EDITING.md#opening-an-assignment-in-vscode)
+- Read [Editing: Opening An Assignment in VSCode](/materials/tutorials/homework/editing#opening-an-assignment-in-vscode)
 
 ## About Node.js and NPM
 
@@ -54,7 +54,7 @@ External Tutorials:
 
 - [How to Install NodeJS/NPM on Windows (1m53s)](https://www.youtube.com/watch?v=6EwGA0StTeM)
 - [How To Install NPM and NodeJs On Mac OS (1m22s)](https://www.youtube.com/watch?v=Ue6g4udgbdI)
-- [Follow the documentation on the npm website for Linux](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- [Follow the pageation on the npm website for Linux](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
 Text Tutorial (Windows and macOS):
 
@@ -140,7 +140,7 @@ You are allowed to use any editor that you prefer. This class recommends that yo
 
 If you are unfamiliar with VSCode, it is recommended that you watch [this video (7m16s)](https://www.youtube.com/watch?v=B-s71n0dHUk) or read [this page](https://code.visualstudio.com/docs/editor/codebasics), particularly the sections on keyboard shortcuts, save/auto-save, and finding and replacing. There are a lot of features aimed to facilitate your productiveness - use them to your advantage.
 
-The document on [editing homework](./EDITING.md) covers how to extract, open, and modify projects.
+The page on [editing homework](/materials/tutorials/homework/editing) covers how to extract, open, and modify projects.
 
 ## Installing VSCode
 

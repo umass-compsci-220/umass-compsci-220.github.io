@@ -35,7 +35,7 @@ Students will be graded on their ability to:
 
 ### Resources
 
-Please use the [resources document](resources/README.md) if you are stuck.
+Please use the [resources category](/materials/resources/) or [homework tutorials category](/materials/tutorials/homework/) if you are stuck.
 
 ## Getting Started
 

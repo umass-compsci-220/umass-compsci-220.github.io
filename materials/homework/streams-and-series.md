@@ -34,7 +34,7 @@ Students will be graded on their ability to:
 
 You must write tests for all your functions, following the principles used so far.
 
-- [Project testing document](/materials/tutorials/homework/testing)
+- [Project testing page](/materials/tutorials/homework/testing)
 - [Testing guidelines](/materials/guidelines/testing)
 
 It may not be obvious how to implement some of the functions. Try writing some tests first.

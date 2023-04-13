@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Bad Practices
 
-This document lists common programming patterns that should be avoided. Failing to avoid this practices may result in point deductions on exams or homework assignments. 
+This page lists common programming patterns that should be avoided. Failing to avoid this practices may result in point deductions on exams or homework assignments.
 
 These guidelines are here to make you a better programmer. Avoiding these devices will help you write more clean, readable, and correct code. It is okay to ignore cleanliness and use these anti-patterns to get a working solution. But afterwords, you should go back and clean-up your code.
 

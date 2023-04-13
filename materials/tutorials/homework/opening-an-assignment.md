@@ -46,7 +46,7 @@ How to download and open an assignment in VSCode.
 **10. Run the assignment**
 
 - Run the command `npm run start` to run the `src/main.ts` file
-- See more instruction is the [running and debugging document](./RUNNING_AND_DEBUGGING.md#running-an-assignment-in-vscode).
+- See more instruction is the [running and debugging page](/materials//tutorials/homework/running-and-debugging#running-an-assignment-in-vscode).
 
 ## Linting and Formatting Assignments
 

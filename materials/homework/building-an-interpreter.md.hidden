@@ -17,7 +17,7 @@ Throughout this assignment, students will learn:
 
 Students may be graded on:
 
-- Their ability to complete the [programming tasks](#programming-tasks) documented below
+- Their ability to complete the [programming tasks](#programming-tasks) pageed below
 - How they design unit-tests for all relevant functions and methods
 
 ## Getting Started
@@ -60,7 +60,7 @@ Programs            p ::= s1 ... sn
 
 ### Parser
 
-We have provided two parsing functions the function `parseExpression` parses an expression and the function `parseProgram` parses a program. Their type signatures are documented below:
+We have provided two parsing functions the function `parseExpression` parses an expression and the function `parseProgram` parses a program. Their type signatures are pageed below:
 
 ```ts
 type BinOp = "+" | "-" | "*" | "/" | "&&" | "||" | ">" | "<" | "===";
@@ -212,7 +212,7 @@ test("sqrt fails on invalid input", () => {
 
 Notice that we passed a function that calls `sqrt` with invalid input. If we just passed the function call with invalid input, our test would fail (because `sqrt(-1)` would throw) before the testing framework could capture that error and verify we were actually expecting it to error (`.toThrow()`).
 
-You can read more on the [Jest documentation on `.toThrow()`](https://jestjs.io/docs/expect#tothrowerror).
+You can read more on the [Jest pageation on `.toThrow()`](https://jestjs.io/docs/expect#tothrowerror).
 
 ## Submitting
 

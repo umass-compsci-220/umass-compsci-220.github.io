@@ -8,9 +8,9 @@
 
 ## Method 2: Using a Local Environment
 
-1. Install the prerequisite software. See the ["Setting Up Your Development Environment"](./homework/ENVIRONMENT.md)
+1. Install the prerequisite software. See the ["Setting Up Your Development Environment"](./homewor/materials/tutorials/homework/environment)
 2. Download the [empty practice assignment](practice-assignments/01-empty-assignment/01-empty-assignment.zip)
-3. Unzip and open the folder in VSCode. See [editing document](./homework/EDITING.md) if you are unsure how to do so.
+3. Unzip and open the folder in VSCode. See [editing page](./homewor/materials/tutorials/homework/editing) if you are unsure how to do so.
 4. Open a VSCode terminal (`Terminal -> New Terminal`)
 5. `npm install`
 6. Make edits to `main.ts`

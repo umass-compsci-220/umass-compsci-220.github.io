@@ -21,7 +21,7 @@ sidebar_position: 3
   - What methods to Maps have and what do they do?
   - What is a promise and how does it work?
   - What methods does the `Math` object have
-- [TypeScript's Documentation](https://www.typescriptlang.org/docs/) great to bridge the gap between TypeScript and JavaScript
+- [TypeScript's pageation](https://www.typescriptlang.org/docs/) great to bridge the gap between TypeScript and JavaScript
   - How to a define a function type?
   - How should I think about types?
   - How do I disable type checking?
