@@ -74,16 +74,6 @@ const config = {
             label: "Materials",
           },
           {
-            to: "materials/logistics/syllabus",
-            label: "Syllabus",
-            position: "left",
-          },
-          {
-            to: "materials/logistics/schedule",
-            label: "Schedule",
-            position: "left",
-          },
-          {
             to: "materials/resources/office-hours",
             label: "Office Hours",
             position: "left",
