@@ -322,7 +322,7 @@ It takes a string, `category`, and produces a new `FluentBusinesses` object that
 
 Use the `categories` field.
 
-### `isOpenOnDays`
+### `hasHoursOnDays`
 
 Implement the following method:
 
