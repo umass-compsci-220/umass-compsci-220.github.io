@@ -61,7 +61,9 @@ import {
 } from "./imageProcessingHOF.js";
 ```
 
-**1. Write a function called `imageMapCoord`:**
+### `imageMapCoord`
+
+Write a function called `imageMapCoord`:
 
 ```ts
 export function imageMapCoord(img: Image, func: (img: Image, x: number, y: number) => Color): Image {
@@ -71,7 +73,9 @@ export function imageMapCoord(img: Image, func: (img: Image, x: number, y: numbe
 
 **The result must be a new image** with the same dimensions as `img`. For each pixel in the new image, its color should be the result of applying `func` to the corresponding pixel's color of `img`. This function is more general than `imageMap`; the new pixel's color may also depend on the original image and its coordinates. An example is given to you in `main.ts`.
 
-**2. Write a function called `imageMapIf`:**
+### `imageMapIf`
+
+Write a function called `imageMapIf`
 
 ```ts
 export function imageMapIf(
@@ -90,7 +94,9 @@ export function imageMapIf(
 
 **You may not use loops in this function. Instead, use `imageMapCoord` defined above.**
 
-**3. Write a function called `mapWindow`:**
+### `mapWindow`
+
+Write a function called `mapWindow`
 
 ```ts
 export function mapWindow(
@@ -114,7 +120,9 @@ export function mapWindow(
 
 **For the following functions (4-7), you may not use loops. Instead, use one of the higher-order functions defined above or in Homework 1 (`imageMap`, `mapLine`).** Carefully selecting which function to use will allow you to write your code more concisely and promote reuse, which are important points of the assignment.
 
-**4. Write a function called `makeBorder`:**
+### `makeBorder`
+
+Write a function called `makeBorder`
 
 ```ts
 export function makeBorder(img: Image, thickness: number, func: (p: Color) => Color): Image {
@@ -126,7 +134,9 @@ export function makeBorder(img: Image, thickness: number, func: (p: Color) => Co
 
 More plainly, `makeBorder` produces an image with a rectangular border of given thickness.
 
-**5. Write a function called `dimCenter`:**
+### `dimCenter`
+
+Write a function called `dimCenter`
 
 ```ts
 export function dimCenter(img: Image, thickness: number): Image {
@@ -136,7 +146,9 @@ export function dimCenter(img: Image, thickness: number): Image {
 
 **The result is a new image**, where a border of pixels along the image edges are unchanged from the input. A pixel is in the border if it has distance less than `thickness` to some edge pixel. The remaining pixels have each color channel (intensity) reduced by 20%. Use [`Math.floor`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor) to truncate any decimal remainder.
 
-**6. Write a function called `isGrayish`:**
+### `isGrayish`
+
+Write a function called `isGrayish`
 
 ```ts
 export function isGrayish(p: Color): boolean {
@@ -146,7 +158,9 @@ export function isGrayish(p: Color): boolean {
 
 The result should be true if and only if the difference between the maximum and minimum color channel value is at most 85 (one third of 255). You may assume that `p` is a valid color according to the `Image` library.
 
-**7. Write a function called `makeGrayish`:**
+### `makeGrayish`
+
+Write a function called `makeGrayish`
 
 ```ts
 export function makeGrayish(img: Image): Image {
