@@ -21,9 +21,9 @@ Students will be graded on their ability to:
 
 - Correctly implement the functions [specified below](#programming-tasks)
 - Resolve all linter warnings
-- Follow the [coding](../../guidelines/CODING.md), [bad practice](../../guidelines/BAD_PRACTICES.md) and [testing](../../guidelines/TESTING.md) guidelines
+- Follow the [coding](/materials/homework/image-processing), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
 - Design full-coverage [unit-tests](#testing) for the functions they implemented
-  - See the [testing guidelines](../../guidelines/TESTING.md#coverage) on coverage for mor details
+  - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage for mor details
 
 ### Resources
 
@@ -35,7 +35,7 @@ Students will be graded on their ability to:
 You must write tests for all your functions, following the principles used so far.
 
 - [Project testing document](../../resources/homework/TESTING.md)
-- [Testing guidelines](../../guidelines/TESTING.md)
+- [Testing guidelines](/materials/guidelines/testing)
 
 It may not be obvious how to implement some of the functions. Try writing some tests first.
 

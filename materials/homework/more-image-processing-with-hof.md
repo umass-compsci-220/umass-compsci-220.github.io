@@ -9,7 +9,7 @@ sidebar-position: 3
 
 ## Overview
 
-Following up on [Homework 1](../01-image-processing/README.md) and [Homework 2](../02-image-processing-with-hof/README.md), you will perform _even_ more image processing tasks with higher-order functions. These functions will have a set of similar conditions and operations, which might tempt you to repeat code. However, one of the requirements of this assignment is that your implementations are clean and do not duplicate code.
+Following up on [Homework 1](/materials/homework/image-processing) and [Homework 2](/materials/homework/image-processing-with-hof), you will perform _even_ more image processing tasks with higher-order functions. These functions will have a set of similar conditions and operations, which might tempt you to repeat code. However, one of the requirements of this assignment is that your implementations are clean and do not duplicate code.
 
 ### Learning Objectives
 
@@ -26,15 +26,15 @@ Students will be graded on their ability to:
 - Resolve all linter warnings
   - **There will be credited grading for this (2.5%)**
   - See the section on [linting and formatting assignments](../../resources/homework/EDITING.md#linting-and-formatting-assignments) for more details
-- Follow the [coding](../../guidelines/CODING.md), [bad practice](../../guidelines/BAD_PRACTICES.md) and [testing](../../guidelines/TESTING.md) guidelines
+- Follow the [coding](/materials/homework/image-processing), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
   - **There may be manual grading regarding this guidelines from this point forward**
   - Manual grading will be out of 10-15 points, resulting in a final HW score out of 110/115
-  - This assignment puts extra emphasis on **avoiding [code duplication](../../guidelines/CODING.md#code-duplication)**
+  - This assignment puts extra emphasis on **avoiding [code duplication](/materials/homework/image-processing#code-duplication)**
   - We are not out to get you, these guidelines are here to help you avoid problematic code
   - As long as you are making an attempt to follow the guidelines, you will be fine
 - Design full-coverage [unit-tests](#testing) for the functions they implemented
   - **There will be credited grading for this (12.5%)**
-  - See the [testing guidelines](../../guidelines/TESTING.md#coverage) on coverage for mor details
+  - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage for mor details
 
 ### Resources
 
@@ -90,7 +90,7 @@ You may need to use the function above when writing your own tests.
 
 ## Getting Started
 
-All interfaces are the same as the previous assignments. Please review the ["Getting Started" section](../01-image-processing/README.md#getting-started) from Homework 1 if necessary.
+All interfaces are the same as the previous assignments. Please review the ["Getting Started" section](/materials/homework/image-processing#getting-started) from Homework 1 if necessary.
 
 ## Programming Tasks
 
@@ -114,7 +114,7 @@ export function lineBlur3p(img: Image, lineNo: number): void {
 }
 ```
 
-**The function should modify the image**, only for any pixels having y-coordinate equal to `lineNo`. The new value of each color channel is computed as a weighted sum of the original color value in the pixel and in its neighbor(s) on that line. The weight for any neighbor is $1/3$, and the weight for the original pixel is $(1 - \text{sum of neighbor weights})$. Truncate the final sum to a whole number to get the final color channel. **Avoid [code duplication](../../guidelines/CODING.md#code-duplication).**
+**The function should modify the image**, only for any pixels having y-coordinate equal to `lineNo`. The new value of each color channel is computed as a weighted sum of the original color value in the pixel and in its neighbor(s) on that line. The weight for any neighbor is $1/3$, and the weight for the original pixel is $(1 - \text{sum of neighbor weights})$. Truncate the final sum to a whole number to get the final color channel. **Avoid [code duplication](/materials/homework/image-processing#code-duplication).**
 
 See ["Weighted average"](https://simple.wikipedia.org/wiki/Weighted_average) on Wikipedia for more details.
 
@@ -128,7 +128,7 @@ export function lineBlur5p(img: Image, lineNo: number): void {
 }
 ```
 
-**The function should modify the image**, only for any pixels having y-coordinate equal to `lineNo`. The new value of each color channel is computed as a weighted sum of the original color value in the pixel and in all other pixels on that line which are at distance up to 2. The weight for any such pixel is $1/5$, and the weight for the original pixel is $(1 - \text{sum of other pixel weights})$. **Avoid [code duplication](../../guidelines/CODING.md#code-duplication) (think about the commonalities between this and `lineBlur3p`). Use the same truncating process as `lineBlur3p`.**
+**The function should modify the image**, only for any pixels having y-coordinate equal to `lineNo`. The new value of each color channel is computed as a weighted sum of the original color value in the pixel and in all other pixels on that line which are at distance up to 2. The weight for any such pixel is $1/5$, and the weight for the original pixel is $(1 - \text{sum of other pixel weights})$. **Avoid [code duplication](/materials/homework/image-processing#code-duplication) (think about the commonalities between this and `lineBlur3p`). Use the same truncating process as `lineBlur3p`.**
 
 ### `blurLines`
 
@@ -152,7 +152,7 @@ export function pixelBlur(img: Image, x: number, y: number): Color {
 }
 ```
 
-The result is the blurred value of the pixel at coordinates $(x, y)$, assumed to be valid for the image. Each color channel of the resulting pixel should be the truncated mean of the same channels of the $(x, y)$ pixel itself and its neighbors in `img`. Two distinct pixels are neighbors if both their x-coordinates and y-coordinates differ by at most 1 in absolute value. **Avoid [code duplication](../../guidelines/CODING.md#code-duplication).**
+The result is the blurred value of the pixel at coordinates $(x, y)$, assumed to be valid for the image. Each color channel of the resulting pixel should be the truncated mean of the same channels of the $(x, y)$ pixel itself and its neighbors in `img`. Two distinct pixels are neighbors if both their x-coordinates and y-coordinates differ by at most 1 in absolute value. **Avoid [code duplication](/materials/homework/image-processing#code-duplication).**
 
 ### `imageBlur`
 

@@ -27,13 +27,13 @@ Students will be graded on their ability to:
 
 - Correctly implement the functions [specified below](#programming-tasks)
   - Using private auto-grader tests
-- Follow the [coding](../../guidelines/CODING.md), [bad practice](../../guidelines/BAD_PRACTICES.md), and [testing](../../guidelines/TESTING.md) guidelines
+- Follow the [coding](/materials/homework/image-processing), [bad practice](/materials/guidelines/bad-practices), and [testing](/materials/guidelines/testing) guidelines
   - There will be no grading regarding these rules on this assignment
   - Starting with Homework 3, there may be crediting manual grading
 - Design full-coverage [unit-tests](#testing) for the functions they implemented
   - For the first homework, this will not be checked
   - Starting with Homework 2, the autograder will calculate and score you based off how well you write your tests
-  - See the [testing guidelines](../../guidelines/TESTING.md#coverage) on coverage
+  - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage
 
 ### Resources
 
@@ -70,28 +70,28 @@ In this project, you will use a very simple image manipulation library that enab
 We have provided you the `Image` class and related members to interact and manipulate images `./include/image.ts`. At the top of `imageProcessing.ts` you should see the following line:
 
 ```ts
-import type { Image, Color } from '../include/image.js'
+import type { Image, Color } from "../include/image.js";
 ```
 
 This imports the `Image` class and `Color` type into the file. An `Image` represents a digital picture that has been loaded into memory. Its public interface (what is exposed) is as follows:
 
 ```ts
 class Image {
-  static loadImageFromGallery(name?: ImageName): Image
-  static loadImageFromFile(filePath: string): Image
-  static create(width: number, height: number, fillColor: Color): Image
+  static loadImageFromGallery(name?: ImageName): Image;
+  static loadImageFromFile(filePath: string): Image;
+  static create(width: number, height: number, fillColor: Color): Image;
 
-  readonly width: number
-  readonly height: number
+  readonly width: number;
+  readonly height: number;
 
-  constructor(width: number, height: number, data: Uint8ClampedArray)
+  constructor(width: number, height: number, data: Uint8ClampedArray);
 
-  getPixel(x: number, y: number): Color
-  setPixel(x: number, y: number, color: Color): void
-  copy(): Image
-  save(fileName: string): void
-  show(): void
-  assertCoordinatesInBounds(x: number, y: number): void
+  getPixel(x: number, y: number): Color;
+  setPixel(x: number, y: number, color: Color): void;
+  copy(): Image;
+  save(fileName: string): void;
+  show(): void;
+  assertCoordinatesInBounds(x: number, y: number): void;
 }
 ```
 
@@ -99,36 +99,36 @@ The `Image` class itself has three static methods used to create images (**DO NO
 
 ```ts
 // Load an image from the provided gallery (see ./images folder)
-const art = Image.loadImageFromGallery('art')
+const art = Image.loadImageFromGallery("art");
 // Load a random image from the provided gallery
-const random = Image.loadImageFromGallery()
+const random = Image.loadImageFromGallery();
 // Load a .png image from a file on your computer
-const mySpecialImage = Image.loadImageFromFile('/path/to/my/image.png')
+const mySpecialImage = Image.loadImageFromFile("/path/to/my/image.png");
 // Create an image by defining a width height and fill color
 // A 50 pixel by 25 pixel white image
-const redImage = Image.create(50, 25, [255, 0, 0])
+const redImage = Image.create(50, 25, [255, 0, 0]);
 ```
 
 Instances of the image class have two fields: `width` and `height`. They also have two methods to read and modify the pixels inside of the image.
 
 ```ts
-console.log(redImage.width) // -> 50
-console.log(redImage.height) // -> 25
+console.log(redImage.width); // -> 50
+console.log(redImage.height); // -> 25
 
 // Sets the top left pixel to black
-redImage.setPixel(0, 0, [0, 0, 0])
-console.log(redImage.getPixel(0, 0)) // -> [0, 0, 0]
+redImage.setPixel(0, 0, [0, 0, 0]);
+console.log(redImage.getPixel(0, 0)); // -> [0, 0, 0]
 ```
 
 There is also the `Image.copy()` method, which will create a duplicate of the current image (same `width`, `height`, and set of pixels);
 
 ```ts
-const copyOfRed = redImage.copy()
-console.log(copyOfRed.getPixel(0, 0)) // -> [0, 0, 0]
-console.log(copyOfRed.getPixel(5, 5)) // -> [255, 0, 0]
+const copyOfRed = redImage.copy();
+console.log(copyOfRed.getPixel(0, 0)); // -> [0, 0, 0]
+console.log(copyOfRed.getPixel(5, 5)); // -> [255, 0, 0]
 
-redImage.setPixel(0, 0, [255, 0, 0]) // Does not change any of the copies
-console.log(copyOfRed.getPixel(0, 0)) // -> [0, 0, 0]
+redImage.setPixel(0, 0, [255, 0, 0]); // Does not change any of the copies
+console.log(copyOfRed.getPixel(0, 0)); // -> [0, 0, 0]
 ```
 
 `Image.show()` and `Image.save()` can be used to inspect the resulting images.
@@ -136,9 +136,9 @@ console.log(copyOfRed.getPixel(0, 0)) // -> [0, 0, 0]
 ```ts
 // Supply a name to give the saved image,
 // and this method will create a file in the images_out folder called <name>.png
-redImage.save('redOutput')
+redImage.save("redOutput");
 // Opens the image in a VSCode preview.
-redImage.show()
+redImage.show();
 ```
 
 There is also the `Image.assertCoordinatesInBounds` method, which will throw an error the supplied coordinates do not fit within the image.
@@ -146,9 +146,9 @@ There is also the `Image.assertCoordinatesInBounds` method, which will throw an 
 In addition to `Image`, `image.ts` exports the `Color` type. Inspecting the source code reveals that this is an alias for `number[]` (an array of numbers). Our variables will still hold values that are array's of numbers - this type solely exits to make the `Image` interface more descriptive.
 
 ```ts
-const arr = [0, 0, 0]
+const arr = [0, 0, 0];
 // Works fine, the type of arr (number[]) is compatible with Color
-renImage.setPixel(0, 0, arr)
+renImage.setPixel(0, 0, arr);
 ```
 
 There is also an object (similar to a hash table) called `COLORS`, which is used to get the digital representation of a color from its name. This could be helpful inside of `main.ts` or `imageProcessing.test.ts`.
@@ -164,13 +164,13 @@ export const COLORS = {
   AQUA: [0, 255, 255],
   YELLOW: [255, 255, 0],
   MAGENTA: [255, 0, 255],
-}
+};
 
 // src/main.ts
-import { Image, COLORS } from '../include/image.js'
+import { Image, COLORS } from "../include/image.js";
 
-const blueImage = Image.create(25, 25, COLORS.BLUE)
-const blackImage = Image.create(25, 25, COLORS.BLACK)
+const blueImage = Image.create(25, 25, COLORS.BLUE);
+const blackImage = Image.create(25, 25, COLORS.BLACK);
 ```
 
 Inside of the project's `main.ts` is some example usages of the `Image` interface. You can read the full documentation and source for everything inside of `image.ts`.
@@ -181,7 +181,7 @@ Inside of the project's `main.ts` is some example usages of the `Image` interfac
 
 To help you get started, we have provided a few test cases inside of `imageProcessing.test.ts`. It is up to you to define additional tests to check your solution for correctness. Please follow the same general syntax of the tests defined for you.
 
-Checkout the [project testing document](../../resources/homework/TESTING.md) for information about testing methodology and syntax. The [testing guidelines](../../guidelines/TESTING.md) documents requirements your tests should follow.
+Checkout the [project testing document](../../resources/homework/TESTING.md) for information about testing methodology and syntax. The [testing guidelines](/materials/guidelines/testing) documents requirements your tests should follow.
 
 ## Programming Tasks
 
@@ -190,7 +190,7 @@ If you are having trouble reading the specification, please go to office hours o
 All functions should be written in `imageProcessing.ts`. Other files (`main.ts` and `imageProcessing.test.ts`) should import them like so:
 
 ```ts
-import { removeRed, flipColors, mapLine, imageMap, mapToGB, mapFlipColors } from './imageProcessing.js'
+import { removeRed, flipColors, mapLine, imageMap, mapToGB, mapFlipColors } from "./imageProcessing.js";
 ```
 
 ### `removeRed`
@@ -199,7 +199,7 @@ Write a function called `removeRed`
 
 ```ts
 export function removeRed(img: Image): Image {
-    // TODO
+  // TODO
 }
 ```
 
