@@ -1,5 +1,5 @@
 ---
-sidebar-position: 5
+sidebar_position: 5
 ---
 
 # Streams and Series
@@ -23,7 +23,7 @@ Students will be graded on their ability to:
 - Resolve all linter warnings
 - Follow the [coding](/materials/homework/image-processing), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
 - Design full-coverage [unit-tests](#testing) for the functions they implemented
-  - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage for mor details
+  - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage for more details
 
 ### Resources
 
