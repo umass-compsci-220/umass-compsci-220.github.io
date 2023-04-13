@@ -4,10 +4,10 @@ sidebar_position: 1
 
 # Image Processing
 
-- Please download the project [here](./01-image-processing.zip).
+- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/01-image-processing.zip).
 - If you need help installing [VSCode](https://code.visualstudio.com/) and [Node.js](https://nodejs.org/) (required for this course), read [this page](/).
   - **You will need at least Node.js v17**
-- If you need help opening the project, read [this document](../../resources/homework/EDITING.md).
+- If you need help opening the project, read [this document](/materials/tutorials/homework/opening-an-assignment).
 - **After opening, run `npm install` in a VSCode terminal**
 
 ## Overview
@@ -37,10 +37,10 @@ Students will be graded on their ability to:
 
 ### Resources
 
-Please use the [resources document](../../resources/README.md) if you are stuck. Particularly:
+Please use the [resources document](resources/README.md) if you are stuck. Particularly:
 
-- [Editing](../../resources/homework/EDITING.md), [running/debugging](../../resources/homework/RUNNING_AND_DEBUGGING.md), and [testing](../../resources/homework/TESTING.md) a project
-- [Functions and Arrow Functions](../../resources/FUNCTIONS_AND_ARROW_FUNCTIONS.md)
+- [Editing](/materials/tutorials/homework/editing), [running/debugging](/materials/tutorials/homework/running-and-debugging), and [testing](/materials/tutorials/homework/testing) a project
+- [Functions and Arrow Functions](resources/FUNCTIONS_AND_ARROW_FUNCTIONS.md)
 - [MDN Guide on Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
   - [MDN Docs Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 - [MDN Guide on Arrays](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays)
@@ -70,7 +70,7 @@ In this project, you will use a very simple image manipulation library that enab
 We have provided you the `Image` class and related members to interact and manipulate images `./include/image.ts`. At the top of `imageProcessing.ts` you should see the following line:
 
 ```ts
-import type { Image, Color } from "../include/image.js";
+import type { Image, Color } from "include/image.js";
 ```
 
 This imports the `Image` class and `Color` type into the file. An `Image` represents a digital picture that has been loaded into memory. Its public interface (what is exposed) is as follows:
@@ -167,7 +167,7 @@ export const COLORS = {
 };
 
 // src/main.ts
-import { Image, COLORS } from "../include/image.js";
+import { Image, COLORS } from "include/image.js";
 
 const blueImage = Image.create(25, 25, COLORS.BLUE);
 const blackImage = Image.create(25, 25, COLORS.BLACK);
@@ -181,7 +181,7 @@ Inside of the project's `main.ts` is some example usages of the `Image` interfac
 
 To help you get started, we have provided a few test cases inside of `imageProcessing.test.ts`. It is up to you to define additional tests to check your solution for correctness. Please follow the same general syntax of the tests defined for you.
 
-Checkout the [project testing document](../../resources/homework/TESTING.md) for information about testing methodology and syntax. The [testing guidelines](/materials/guidelines/testing) documents requirements your tests should follow.
+Checkout the [project testing document](/materials/tutorials/homework/testing) for information about testing methodology and syntax. The [testing guidelines](/materials/guidelines/testing) documents requirements your tests should follow.
 
 ## Programming Tasks
 

@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Oracles
 
-- Please download the project [here](../archives/04-oracles.zip)
+- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/04-oracles.zip)
 - This project is divided into two homeworks (HW4a, HW4b)
   - Both carry the weight of a full homework
 
@@ -31,7 +31,7 @@ Students will be graded on their ability to:
   - **There are no private autograder tests**
 - Resolve all linter warnings
   - **There will be credited grading for this (2.5%)**
-  - See the section on [linting and formatting assignments](../../resources/homework/EDITING.md#linting-and-formatting-assignments) for more details
+  - See the section on [linting and formatting assignments](/materials/tutorials/homework/editing#linting-and-formatting-assignments) for more details
 - Follow the [coding](/materials/homework/image-processing), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
   - **There may be manual grading regarding these guidelines**
 
@@ -39,7 +39,7 @@ Students will be graded on their ability to:
 
 ### Resources
 
-- Please use the [resources document](../../resources/README.md) if you are stuck
+- Please use the [resources document](resources/README.md) if you are stuck
 - Additionally, there is an [examples](#examples) section that goes through input and output
 
 ## Getting Started

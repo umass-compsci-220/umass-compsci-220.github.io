@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Image Processing with HOF
 
-- Please download the project [here](./02-image-processing-with-hof.zip).
+- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/02-image-processing-with-hof.zip).
 - Run `npm install` in the project directory.
 
 ## Overview
@@ -25,7 +25,7 @@ Students will be graded on their ability to:
 - Resolve all linter warnings
   - **There will be credited grading for this (2.5%)**
   - Use `npm run lint` to see if you have any warnings, `npm run lint:fix` may fix some automatically
-  - See the section on [linting and formatting assignments](../../resources/homework/EDITING.md#linting-and-formatting-assignments) for more details
+  - See the section on [linting and formatting assignments](/materials/tutorials/homework/editing#linting-and-formatting-assignments) for more details
 - Follow the [coding](/materials/homework/image-processing), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
   - There will be no grading regarding these rules on this assignment
   - Starting with Homework **3**, there may be crediting manual grading
@@ -35,7 +35,7 @@ Students will be graded on their ability to:
 
 ### Resources
 
-Please use the [resources document](../../resources/README.md) if you are stuck.
+Please use the [resources document](resources/README.md) if you are stuck.
 
 ## Getting Started
 

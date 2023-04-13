@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # More Image Processing with HOF
 
-- Please download the project [here](../archives/03-more-image-processing-with-hof.zip)
+- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/03-more-image-processing-with-hof.zip)
 - **This homework is a step up from HW1 and HW2, do not start on the final day**
 
 ## Overview
@@ -25,7 +25,7 @@ Students will be graded on their ability to:
   - Using private auto-grader tests
 - Resolve all linter warnings
   - **There will be credited grading for this (2.5%)**
-  - See the section on [linting and formatting assignments](../../resources/homework/EDITING.md#linting-and-formatting-assignments) for more details
+  - See the section on [linting and formatting assignments](/materials/tutorials/homework/editing#linting-and-formatting-assignments) for more details
 - Follow the [coding](/materials/homework/image-processing), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
   - **There may be manual grading regarding this guidelines from this point forward**
   - Manual grading will be out of 10-15 points, resulting in a final HW score out of 110/115
@@ -38,7 +38,7 @@ Students will be graded on their ability to:
 
 ### Resources
 
-Please use the [resources document](../../resources/README.md) if you are stuck.
+Please use the [resources document](resources/README.md) if you are stuck.
 
 ## Testing
 

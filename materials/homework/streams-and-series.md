@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Streams and Series
 
-- Please download the project [here](../archives/05-streams-and-series.zip).
+- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/05-streams-and-series.zip).
 
 ## Overview
 
@@ -34,7 +34,7 @@ Students will be graded on their ability to:
 
 You must write tests for all your functions, following the principles used so far.
 
-- [Project testing document](../../resources/homework/TESTING.md)
+- [Project testing document](/materials/tutorials/homework/testing)
 - [Testing guidelines](/materials/guidelines/testing)
 
 It may not be obvious how to implement some of the functions. Try writing some tests first.
