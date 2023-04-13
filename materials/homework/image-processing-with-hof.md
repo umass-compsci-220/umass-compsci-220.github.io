@@ -43,11 +43,11 @@ All interfaces are the same as the previous assignment. Please review the ["Gett
 
 ## Testing
 
-As with Homework 1, you are expected to write your own tests. To help you get started, we have provided a few test cases inside of [`imageProcessingHOF.test.ts`](./src/imageProcessingHOF.test.ts). It is up to you to define additional tests to check your solution for correctness. As always, try writing some tests before you start coding.
+As with Homework 1, you are expected to write your own tests. To help you get started, we have provided a few test cases inside of `imageProcessingHOF.test.ts`. It is up to you to define additional tests to check your solution for correctness. As always, try writing some tests before you start coding.
 
 ## Programming Tasks
 
-All functions should be written in [`imageProcessingHOF.ts`](./src/imageProcessingHOF.ts.ts). Other files ([`main.ts`](./src/main.ts) and [`imageProcessingHOF.test.ts`](./src/imageProcessingHOF.test.ts)) should import them like so:
+All functions should be written in `imageProcessingHOF.ts`. Other files (`main.ts` and `imageProcessingHOF.test.ts`) should import them like so:
 
 ```ts
 import {
@@ -69,7 +69,7 @@ export function imageMapCoord(img: Image, func: (img: Image, x: number, y: numbe
 }
 ```
 
-**The result must be a new image** with the same dimensions as `img`. For each pixel in the new image, its color should be the result of applying `func` to the corresponding pixel's color of `img`. This function is more general than `imageMap`; the new pixel's color may also depend on the original image and its coordinates. An example is given to you in [`main.ts`](./src/main.ts).
+**The result must be a new image** with the same dimensions as `img`. For each pixel in the new image, its color should be the result of applying `func` to the corresponding pixel's color of `img`. This function is more general than `imageMap`; the new pixel's color may also depend on the original image and its coordinates. An example is given to you in `main.ts`.
 
 **2. Write a function called `imageMapIf`:**
 
@@ -108,7 +108,7 @@ export function mapWindow(
 1. The value `func(c)` if the pixel coordinates are in the interval $[x_{min}, x_{max}]$ and $[y_{min}, y_{max}]$ respectively (inclusive)
 2. $c$ otherwise
 
-**Use `imageMapIf`.** You may assume that the second and third argument are always two-element number arrays. The behavior otherwise in not specificed. You could write an `assert` statement to ensure this is the case; however, this is not required. 
+**Use `imageMapIf`.** You may assume that the second and third argument are always two-element number arrays. The behavior otherwise in not specificed. You could write an `assert` statement to ensure this is the case; however, this is not required.
 
 ### Moving Forward
 

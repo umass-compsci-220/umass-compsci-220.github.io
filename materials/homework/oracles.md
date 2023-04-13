@@ -86,7 +86,7 @@ Companies and candidates are each assigned a number between 0 and $n - 1$. Thus,
 
 Each element of this 2D array is a preference list. Each element of a preference list is a candidate's number. Company 0's first preference is Candidate 0, then Candidate 1, then lastly Candidate 2. Candidate preference lists are structured the same way. However, each number corresponds to a company rather than a candidate.
 
-Inside of [`stableMatching.d.ts`](./include/stableMatching.d.ts), you will find the following type definitions:
+Inside of `stableMatching.d.ts`, you will find the following type definitions:
 
 ```ts
 interface Hire {
@@ -99,9 +99,9 @@ type StableMatcher = (companies: number[][], candidates: number[][]) => Hire[];
 
 A `Hire` is an object with two fields that represents a matching between a company and candidate. A `StableMatcher` is a function that takes in two 2D arrays of numbers, specifically the preferences of the companies and candidates, and returns an array of `Hire` objects (`Hire[]`).
 
-Along with these type definitions, there are two relevant exported members (functions), both of type `StableMatcher`. They are: `STABLE_MATCHING_SOLUTION_1` and `FLAWED_STABLE_MATCHING_SOLUTION_1`. They are used inside the provided tests ([`oracle.test.ts`](./src/oracle.test.ts)) to check against your solution.
+Along with these type definitions, there are two relevant exported members (functions), both of type `StableMatcher`. They are: `STABLE_MATCHING_SOLUTION_1` and `FLAWED_STABLE_MATCHING_SOLUTION_1`. They are used inside the provided tests (`oracle.test.ts`) to check against your solution.
 
-Their implementations are [obfuscated](https://en.wikipedia.org/wiki/Obfuscation) inside of [`stableMatching.js`](./include/stableMatching.js). Looking at their source code would be counter-productive to the assignment and not particularly useful. As the auto-grader will tests your oracle against numerous correct and incorrect solutions to the problem.
+Their implementations are [obfuscated](https://en.wikipedia.org/wiki/Obfuscation) inside of `stableMatching.js`. Looking at their source code would be counter-productive to the assignment and not particularly useful. As the auto-grader will tests your oracle against numerous correct and incorrect solutions to the problem.
 
 ## Programming Tasks
 
@@ -167,7 +167,7 @@ my2DBoolArray[0] = new Array<boolean>(5).fill(false);
 
 **Although you are not required to write tests, you should confirm your `generateInput` works correctly before attempting `stableMatchingOracle`.**
 
-2. Implement `stableMatchingOracle` inside of [`oracles.ts`](./src/oracles.ts).
+2. Implement `stableMatchingOracle` inside of `oracles.ts`.
 
 ```ts
 export function stableMatchingOracle(f: (companies: number[][], candidates: number[][]) => Hire[]): void {
@@ -179,7 +179,7 @@ This function is an oracle for the Stable Matching Problem. If `f` is a valid so
 
 As a reminder, the `assert` function will take in a logical expression and an optional message as arguments (`assert(x === 1, "X should be one.")`). If the logical expression is [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), then `assert` will throw an `AssertionError` containing the message. If the expression is truthy (not falsy) `assert` will do nothing.
 
-A template for the `stableMatchingOracle` function is given inside of [`oracles.ts`](./src/oracles.ts). To do well, you should carefully consider all the different ways in which the output could be invalid for the original problem statement. You may assume the output is of the right type, `Hire[]`, but nothing else.
+A template for the `stableMatchingOracle` function is given inside of `oracles.ts`. To do well, you should carefully consider all the different ways in which the output could be invalid for the original problem statement. You may assume the output is of the right type, `Hire[]`, but nothing else.
 
 As mentioned in the [student expectations](#student-expectations), you should be employing proper coding abstractions (avoid code duplication). When implementing this function, look at all the related data a company or candidate has. What are the common operations and queries that you might do on this data? Is there any way to group this together or pre-compute anything? **Using objects may be helpful.** Think before you code.
 
@@ -189,7 +189,7 @@ Now write an oracle that determines if a function follows the specified algorith
 
 **Algorithm**: We assume the following non-standard variant: At any step, any unmatched company or candidate may propose. Every party always proposes to the next potential partner on their preference list, starting with the top choice. Proposals are not repeated. Any unmatched party that receives a proposal accepts unconditionally. If the receiving party is already matched, but they receive a better offer (higher in their preference list), they accept, and their current partner becomes unmatched; otherwise, the offer is rejected. The algorithm ends when all parties are either matched or have made offers to the entire preference list. The algorithm is under-specified/nondeterministic: it doesn’t state whether a company or a candidate proposes at a given step, nor which one does, as long as the given rules are observed.
 
-You may have noticed the other members inside [`stableMatching.d.ts`](./include/stableMatching.d.ts):
+You may have noticed the other members inside `stableMatching.d.ts`:
 
 ```ts
 interface Offer {
@@ -208,7 +208,7 @@ type StableMatcherWithTrace = (companies: number[][], candidates: number[][]) =>
 
 An `Offer` is an object with three fields that represents a proposal from one party member to a member of another party (company -> candidate or candidate -> company). A `Run` is an object that represents the series of steps an algorithm took (`trace`) to produce a solution (`out`). A `StableMatcherWithTrace` is just like a `StableMatcher`, but it returns a `Run`.
 
-1. Implement `stableMatchingRunOracle` inside of [`oracles.ts`](./src/oracles.ts).
+1. Implement `stableMatchingRunOracle` inside of `oracles.ts`.
 
 ```ts
 export function stableMatchingRunOracle(f: (companies: number[][], candidates: number[][]) => Run): void {
@@ -224,7 +224,7 @@ This function should test the provided implementation of stable matching. It sho
 
 As with part A, do nothing if it is valid. Throw an `AssertionError` if it is invalid (use `assert(...)`). You may assume the output is of the right type, `Run`, but nothing else.
 
-Additionally, you should update [`oracle.test.ts`](./src/oracle.test.ts) to skip the tests from part A and not skip the part B tests.
+Additionally, you should update `oracle.test.ts` to skip the tests from part A and not skip the part B tests.
 
 ```ts
 // Before

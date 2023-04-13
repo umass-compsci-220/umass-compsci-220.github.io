@@ -67,7 +67,7 @@ In this project, you will use a very simple image manipulation library that enab
 
 ### The `Image` Class and Related Members
 
-We have provided you the `Image` class and related members to interact and manipulate images [`./include/image.ts`](./include/image.ts). At the top of [`imageProcessing.ts`](./src/imageProcessing.ts) you should see the following line:
+We have provided you the `Image` class and related members to interact and manipulate images `./include/image.ts`. At the top of `imageProcessing.ts` you should see the following line:
 
 ```ts
 import type { Image, Color } from '../include/image.js'
@@ -143,7 +143,7 @@ redImage.show()
 
 There is also the `Image.assertCoordinatesInBounds` method, which will throw an error the supplied coordinates do not fit within the image.
 
-In addition to `Image`, [`image.ts`](./include/image.ts) exports the `Color` type. Inspecting the source code reveals that this is an alias for `number[]` (an array of numbers). Our variables will still hold values that are array's of numbers - this type solely exits to make the `Image` interface more descriptive.
+In addition to `Image`, `image.ts` exports the `Color` type. Inspecting the source code reveals that this is an alias for `number[]` (an array of numbers). Our variables will still hold values that are array's of numbers - this type solely exits to make the `Image` interface more descriptive.
 
 ```ts
 const arr = [0, 0, 0]
@@ -151,7 +151,7 @@ const arr = [0, 0, 0]
 renImage.setPixel(0, 0, arr)
 ```
 
-There is also an object (similar to a hash table) called `COLORS`, which is used to get the digital representation of a color from its name. This could be helpful inside of [`main.ts`](./src/main.ts) or [`imageProcessing.test.ts`](./src/imageProcessing.test.ts).
+There is also an object (similar to a hash table) called `COLORS`, which is used to get the digital representation of a color from its name. This could be helpful inside of `main.ts` or `imageProcessing.test.ts`.
 
 ```ts
 // include/image.ts
@@ -173,13 +173,13 @@ const blueImage = Image.create(25, 25, COLORS.BLUE)
 const blackImage = Image.create(25, 25, COLORS.BLACK)
 ```
 
-Inside of the project's [`main.ts`](./src/main.ts) is some example usages of the `Image` interface. You can read the full documentation and source for everything inside of [`image.ts`](./include/image.ts).
+Inside of the project's `main.ts` is some example usages of the `Image` interface. You can read the full documentation and source for everything inside of `image.ts`.
 
 ## Testing
 
 **An important part of programming is testing your code thoroughly.** Without appropriate unit tests, you may not catch bugs in your code. There is an auto-grader, but **you will not be able to see complete results until after the deadline**. This is to encourage you to embrace [test driven development](https://en.wikipedia.org/wiki/Test-driven_development). You will be scored on how well you write your tests, so it is always a good idea to write a few tests before you start the programming tasks.
 
-To help you get started, we have provided a few test cases inside of [`imageProcessing.test.ts`](./src/imageProcessing.test.ts). It is up to you to define additional tests to check your solution for correctness. Please follow the same general syntax of the tests defined for you.
+To help you get started, we have provided a few test cases inside of `imageProcessing.test.ts`. It is up to you to define additional tests to check your solution for correctness. Please follow the same general syntax of the tests defined for you.
 
 Checkout the [project testing document](../../resources/homework/TESTING.md) for information about testing methodology and syntax. The [testing guidelines](../../guidelines/TESTING.md) documents requirements your tests should follow.
 
@@ -187,15 +187,17 @@ Checkout the [project testing document](../../resources/homework/TESTING.md) for
 
 If you are having trouble reading the specification, please go to office hours or ask a question on Campuswire (**search for a similar question first**).
 
-All functions should be written in [`imageProcessing.ts`](./src/imageProcessing.ts). Other files ([`main.ts`](./src/main.ts) and [`imageProcessing.test.ts`](./src/imageProcessing.test.ts)) should import them like so:
+All functions should be written in `imageProcessing.ts`. Other files (`main.ts` and `imageProcessing.test.ts`) should import them like so:
 
 ```ts
 import { removeRed, flipColors, mapLine, imageMap, mapToGB, mapFlipColors } from './imageProcessing.js'
 ```
 
-**1. Write a function called `removeRed`**
+### `removeRed`
 
-```TypeScript
+Write a function called `removeRed`
+
+```ts
 export function removeRed(img: Image): Image {
     // TODO
 }
@@ -203,9 +205,11 @@ export function removeRed(img: Image): Image {
 
 `removeRed` takes an image as an argument and returns a new image, where each pixel has the red color channel removed. If the `Color` of a pixel is $(r, g, b)$ in the input image, its `Color` in the output must be $(0, g, b)$.
 
-**2. Write a function called `flipColors`**
+### `flipColors`
 
-```TypeScript
+Write a function called `flipColors`
+
+```ts
 export funciton flipColors(img: Image): Image {
   // TODO
 }
@@ -217,7 +221,9 @@ export funciton flipColors(img: Image): Image {
 
 If you have solved these two tasks, you might notice that the structure of the two functions is very similar, the difference is only in the actual processing applied. We can avoid duplication by defining functions, similar to [Array.prototype.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), that apply the same transformation to several or all pixels of an image.
 
-**3. Write a function called `mapLine`**
+### `flipColors`
+
+Write a function called `mapLine`
 
 ```ts
 export function mapLine(img: Image, lineNo: number, func: (c: Color) => Color): void {
@@ -227,7 +233,9 @@ export function mapLine(img: Image, lineNo: number, func: (c: Color) => Color): 
 
 The function _should modify_ the given image in place, so that the value of each pixel in the given horizontal line is the result of applying `func` to the corresponding pixel of `img`. It does not return any value. If `lineNo` is not a valid line number, then `img` should not be modified.
 
-**4. Write a function called `imageMap`**
+### `imageMap`
+
+Write a function called `imageMap`
 
 ```ts
 export function imageMap(img: Image, func: (c: Color) => Color): Image {
@@ -237,7 +245,9 @@ export function imageMap(img: Image, func: (c: Color) => Color): Image {
 
 The result must be a new image with the same dimensions as `img`. The value of each pixel in the new image should be the result of applying `func` to the corresponding pixel of `img`. <u>**Use `mapLine`**</u>.
 
-**5. Write two functions called `mapToGB` and `mapFlipColors`**
+### `mapToGB` and `mapFlipColors`
+
+Write two functions called `mapToGB` and `mapFlipColors`
 
 These are equivalent to (i.e., have the same type signature and behave exactly like) `removeRed` and `flipColors` <u>**but use must use `imageMap`**</u>.
 
