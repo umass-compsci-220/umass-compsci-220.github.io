@@ -83,3 +83,21 @@ You can run the provided test script by opening a VSCode terminal (`Terminal -> 
 Above, is an example output of the `npm run test:coverage` command. There was only one test written (removeRed removes red), so the homework coverage requirements were not met.
 
 ## Coverage
+
+See [coverage guidelines](/materials/guidelines/testing#coverage) for a more detailed explanation on what coverage means.
+
+As shown above, you can calculate your test coverage using the `npm run test:coverage` command. When running this command, two reports are generated. One of them is a text-generated table that displays coverage percentages and uncovered lines. The other is a visual description of the source file.
+
+**Sometimes the text report does not tell the full story. Which is where the second report comes in handy.** The report file is located at `./coverage/lcov-report/index.html`. You may open that file in any browser. You may need to open up your file explorer and navigate to that directory, then double-click `index.html` to open it in a browser.
+
+<p align="center">
+  <img src="/img/lcov-1.png" />
+</p>
+
+Clicking on the file will reveal a visual description of covered and uncovered lines.
+
+<p align="center">
+  <img src="/img/lcov-2.png" />
+</p>
+
+As you can see, the functions and lines highlighted in red are uncovered. And I will need to write tests that go to those places in the code.
