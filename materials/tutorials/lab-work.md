@@ -10,7 +10,7 @@
 
 1. Install the prerequisite software. See the ["Setting Up Your Development Environment"](/materials/tutorials/assignments/environment)
 2. Download the empty practice assignment
-3. Unzip and open the folder in VSCode. See [editing page](/materials/tutorials/assignments/editing) if you are unsure how to do so.
+3. Unzip and open the folder in VSCode. See [opening assignment page](/materials/tutorials/assignments/opening-an-assignment) if you are unsure how to do so.
 4. Open a VSCode terminal (`Terminal -> New Terminal`)
 5. `npm install`
 6. Make edits to `main.ts`

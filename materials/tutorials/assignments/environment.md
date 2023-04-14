@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 0
 ---
 
 # Development Environment
@@ -34,7 +34,7 @@ Before taking this course, you will need to download various pieces of software.
 
 **4. Open the First Homework in VSCode**
 
-- Read [Editing: Opening An Assignment in VSCode](/materials/tutorials/assignments/editing#opening-an-assignment-in-vscode)
+- Read [Opening An Assignment in VSCode](/materials/tutorials/assignments/opening-an-assignment)
 
 ## About Node.js and NPM
 
@@ -54,7 +54,7 @@ External Tutorials:
 
 - [How to Install NodeJS/NPM on Windows (1m53s)](https://www.youtube.com/watch?v=6EwGA0StTeM)
 - [How To Install NPM and NodeJs On Mac OS (1m22s)](https://www.youtube.com/watch?v=Ue6g4udgbdI)
-- [Follow the pageation on the npm website for Linux](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- [Follow the documentation on the npm website for Linux](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
 Text Tutorial (Windows and macOS):
 
@@ -68,12 +68,14 @@ Text Tutorial (Windows and macOS):
 To verify Node.js and `npm` installed:
 
 - Open a Terminal
-  - Windows: Press the Windows key and search for a program called "Powershell"
+  - Windows: Press the Windows key and search for a program called "Command Prompt" or "Terminal"
   - macOS: Use the spotlight search and search for "Terminal"
 - Type in the command `node --version` and press enter
   - You should see something like `v18.10.0` printed
+  - As long as your number is greater than or equal to above, you are OK
 - Type in the command `npm --version` and press enter
   - You should see something like `8.19.2`
+  - As long as your number is greater than or equal to above, you are OK
 
 If you do not see both version numbers, you did not install them correctly. You may need to restart.
 
@@ -140,7 +142,7 @@ You are allowed to use any editor that you prefer. This class recommends that yo
 
 If you are unfamiliar with VSCode, it is recommended that you watch [this video (7m16s)](https://www.youtube.com/watch?v=B-s71n0dHUk) or read [this page](https://code.visualstudio.com/docs/editor/codebasics), particularly the sections on keyboard shortcuts, save/auto-save, and finding and replacing. There are a lot of features aimed to facilitate your productiveness - use them to your advantage.
 
-The page on [editing homework](/materials/tutorials/assignments/editing) covers how to extract, open, and modify projects.
+The page on [linting and formatting](/materials/tutorials/assignments/linting-and-formatting) covers how to extract, open, and modify assignments.
 
 ## Installing VSCode
 

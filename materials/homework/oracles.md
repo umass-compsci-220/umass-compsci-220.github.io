@@ -31,7 +31,7 @@ Students will be graded on their ability to:
   - **There are no private autograder tests**
 - Resolve all linter warnings
   - **There will be credited grading for this (2.5%)**
-  - See the section on [linting and formatting assignments](/materials/tutorials/assignments/editing#linting-and-formatting-assignments) for more details
+  - See the section on [linting and formatting assignments](/materials/tutorials/assignments/linting-and-formatting) for more details
 - Follow the [coding](/materials/homework/image-processing), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
   - **There may be manual grading regarding these guidelines**
 

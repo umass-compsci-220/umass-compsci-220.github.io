@@ -31,4 +31,4 @@ Provided with each assignment is a VSCode launch configuration to debug your cod
 If you are not familiar with how to use a debugger, then watching some of these videos may help:
 
 - [How to use a Debugger (17m00s)](https://www.youtube.com/watch?v=7qZBwhSlfOo)
-- [How to use the Debugger in VSCode to debug Node.js Applications (11m40s)](https://www.youtube.com/watch?v=7qZBwhSlfOo)
+- [How to use the Debugger in VSCode to debug Node.js Applications (11m40s)](https://www.youtube.com/watch?v=qz68RsESlp8)

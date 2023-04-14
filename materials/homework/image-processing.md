@@ -37,7 +37,7 @@ Students will be graded on their ability to:
 
 ### Resources
 
-- [Editing](/materials/tutorials/assignments/editing), [running/debugging](/materials/tutorials/assignments/running-and-debugging), and [testing](/materials/tutorials/assignments/testing) a project
+- [Linting/formatting](/materials/tutorials/assignments/linting-and-formatting), [running/debugging](/materials/tutorials/assignments/running-and-debugging), and [testing](/materials/tutorials/assignments/testing) a project
 - [MDN Guide on Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
   - [MDN Docs Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 - [MDN Guide on Arrays](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays)
