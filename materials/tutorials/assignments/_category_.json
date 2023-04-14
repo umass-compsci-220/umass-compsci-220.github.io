@@ -1,0 +1,8 @@
+{
+  "label": "Assignments",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Assignment tutorials: Editing, opening, running, debugging, testing, etc."
+  }
+}

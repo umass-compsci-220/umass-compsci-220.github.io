@@ -34,7 +34,7 @@ Before taking this course, you will need to download various pieces of software.
 
 **4. Open the First Homework in VSCode**
 
-- Read [Editing: Opening An Assignment in VSCode](/materials/tutorials/homework/editing#opening-an-assignment-in-vscode)
+- Read [Editing: Opening An Assignment in VSCode](/materials/tutorials/assignments/editing#opening-an-assignment-in-vscode)
 
 ## About Node.js and NPM
 
@@ -140,7 +140,7 @@ You are allowed to use any editor that you prefer. This class recommends that yo
 
 If you are unfamiliar with VSCode, it is recommended that you watch [this video (7m16s)](https://www.youtube.com/watch?v=B-s71n0dHUk) or read [this page](https://code.visualstudio.com/docs/editor/codebasics), particularly the sections on keyboard shortcuts, save/auto-save, and finding and replacing. There are a lot of features aimed to facilitate your productiveness - use them to your advantage.
 
-The page on [editing homework](/materials/tutorials/homework/editing) covers how to extract, open, and modify projects.
+The page on [editing homework](/materials/tutorials/assignments/editing) covers how to extract, open, and modify projects.
 
 ## Installing VSCode
 

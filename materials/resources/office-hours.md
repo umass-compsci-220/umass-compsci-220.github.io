@@ -38,7 +38,7 @@ Please do come to office hours for:
 
 | Time              | Course Staff       | Location/Zoom Link                                                |
 | ----------------- | ------------------ | ----------------------------------------------------------------- |
-| 2:30pm - 3:30pm   | John Wordell       | T220                                                              |
+| 1:30pm - 2:30pm   | John Wordell       | T220                                                              |
 | 2:30pm - 3:30pm   | Daniel Melanson    | T220                                                              |
 | 3:30pm - 4:30pm   | Maximilian Kuechen | T220                                                              |
 | 4:30pm - 5:30pm   | Emeka Ifejiagwa    | [Zoom](https://umass-amherst.zoom.us/j/3476472584)                |

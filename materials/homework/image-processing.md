@@ -7,7 +7,7 @@ sidebar_position: 1
 - Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/01-image-processing.zip).
 - If you need help installing [VSCode](https://code.visualstudio.com/) and [Node.js](https://nodejs.org/) (required for this course), read [this page](/).
   - **You will need at least Node.js v17**
-- If you need help opening the project, read [this page](/materials/tutorials/homework/opening-an-assignment).
+- If you need help opening the project, read [this page](/materials/tutorials/assignments/opening-an-assignment).
 - **After opening, run `npm install` in a VSCode terminal**
 
 ## Overview
@@ -37,7 +37,7 @@ Students will be graded on their ability to:
 
 ### Resources
 
-- [Editing](/materials/tutorials/homework/editing), [running/debugging](/materials/tutorials/homework/running-and-debugging), and [testing](/materials/tutorials/homework/testing) a project
+- [Editing](/materials/tutorials/assignments/editing), [running/debugging](/materials/tutorials/assignments/running-and-debugging), and [testing](/materials/tutorials/assignments/testing) a project
 - [MDN Guide on Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
   - [MDN Docs Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 - [MDN Guide on Arrays](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays)
@@ -178,7 +178,7 @@ Inside of the project's `main.ts` is some example usages of the `Image` interfac
 
 To help you get started, we have provided a few test cases inside of `imageProcessing.test.ts`. It is up to you to define additional tests to check your solution for correctness. Please follow the same general syntax of the tests defined for you.
 
-Checkout the [project testing page](/materials/tutorials/homework/testing) for information about testing methodology and syntax. The [testing guidelines](/materials/guidelines/testing) pages requirements your tests should follow.
+Checkout the [project testing page](/materials/tutorials/assignments/testing) for information about testing methodology and syntax. The [testing guidelines](/materials/guidelines/testing) pages requirements your tests should follow.
 
 ## Programming Tasks
 

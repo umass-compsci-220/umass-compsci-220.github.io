@@ -24,7 +24,7 @@ For relevant homeworks, the auto-grader will calculate how many source lines of 
 
 Achieving these thresholds should not be too difficult. However, partial credit will be awarded in a linear fashion. These thresholds are subject to change as we test this new system.
 
-To calculate your coverage see the [homework testing page](/materials/tutorials/homework/testing) (`npm run test:coverage`). Please use this as a general guide for where your tests stand; achieving these thresholds should not be too difficult. Focus on writing quality tests, and greater coverage will naturally follow.
+To calculate your coverage see the [homework testing page](/materials/tutorials/assignments/testing) (`npm run test:coverage`). Please use this as a general guide for where your tests stand; achieving these thresholds should not be too difficult. Focus on writing quality tests, and greater coverage will naturally follow.
 
 ## Design
 
