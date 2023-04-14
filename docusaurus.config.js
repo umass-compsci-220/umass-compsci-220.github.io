@@ -82,12 +82,7 @@ const config = {
       },
       footer: {
         style: "dark",
-        links: [
-          {
-            title: "Docs",
-            items: [],
-          },
-        ],
+        links: [],
       },
       prism: {
         theme: lightCodeTheme,
