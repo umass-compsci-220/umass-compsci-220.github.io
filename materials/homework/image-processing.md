@@ -37,8 +37,6 @@ Students will be graded on their ability to:
 
 ### Resources
 
-Please use the [resources category](/materials/resources) or [homework tutorials category](/materials/tutorials/homework/) if you are stuck. Particularly:
-
 - [Editing](/materials/tutorials/homework/editing), [running/debugging](/materials/tutorials/homework/running-and-debugging), and [testing](/materials/tutorials/homework/testing) a project
 - [MDN Guide on Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
   - [MDN Docs Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)

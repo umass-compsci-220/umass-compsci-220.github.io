@@ -33,10 +33,6 @@ Students will be graded on their ability to:
   - **There will be credited grading for this (12.5%)**
   - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage
 
-### Resources
-
-Please use the [resources category](/materials/resources/) or [homework tutorials category](/materials/tutorials/homework/) if you are stuck.
-
 ## Getting Started
 
 All interfaces are the same as the previous assignment. Please review the ["Getting Started" section](/materials/homework/image-processing#getting-started) from Homework 1 if necessary.

@@ -36,10 +36,6 @@ Students will be graded on their ability to:
   - **There will be credited grading for this (12.5%)**
   - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage for mor details
 
-### Resources
-
-Please use the [resources category](/materials/resources) or [homework tutorials category](/materials/tutorials/homework/) if you are stuck.
-
 ## Testing
 
 You must write tests for all your functions, following the principles used so far.
