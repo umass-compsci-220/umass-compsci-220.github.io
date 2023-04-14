@@ -9,7 +9,7 @@
 ## Method 2: Using a Local Environment
 
 1. Install the prerequisite software. See the ["Setting Up Your Development Environment"](/materials/tutorials/homework/environment)
-2. Download the [empty practice assignment]()
+2. Download the empty practice assignment
 3. Unzip and open the folder in VSCode. See [editing page](/materials/tutorials/homework/editing) if you are unsure how to do so.
 4. Open a VSCode terminal (`Terminal -> New Terminal`)
 5. `npm install`
