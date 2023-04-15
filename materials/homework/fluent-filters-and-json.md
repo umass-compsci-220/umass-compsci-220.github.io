@@ -394,7 +394,7 @@ bestPlace(): Business | undefined {
 }
 ```
 
-It returns the “best” business. The “best” business has the highest star rating. If there is a tie, pick the one with the most reviews. If there’s a tie with the most reviews, pick the first business. **If there is no matching result, it should return an empty `undefined`.**
+It returns the “best” business. The “best” business has the highest star rating. If there is a tie, pick the one with the most reviews. If there’s a tie with the most reviews, pick the first business. **If there is no matching result, it should return an `undefined`.**
 
 Use the `stars` and `review_count` fields.
 
