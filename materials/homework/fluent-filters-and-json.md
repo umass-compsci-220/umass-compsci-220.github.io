@@ -20,7 +20,7 @@ During this project, you will implement a _fluent filter_ for a list of business
 Students will be graded on their ability to:
 
 - Correctly implement the functions [specified below](#programming-tasks)
-- Resolve all linter warnings
+- **Linter warnings are disabled for this project**
 - Follow the [coding](/materials/homework/image-processing), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
 - Design full-coverage [unit-tests](#testing) for the functions they implemented
   - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage for more details
@@ -131,11 +131,14 @@ To aid the compiler and enable type safety, we need to construct a type that dic
 
 ```ts
 interface BusinessAttributes {
-  Ambience?: Record<string, boolean>;
+  // We do not know all the mappings for Ambience, nor do we need to know, so they remain unknown
+  Ambience?: Record<string, unknown>;
+  // Attributes has fields other than Ambience, but we do not need to type them specifically
+  [key: string]: unknown;
 }
 
 export interface Business {
-  business_id: string;
+  business_id?: string;
   name?: string;
   city?: string;
   state?: string;
@@ -182,26 +185,59 @@ if (b.stars) {
 
 Careful! `0` is a [falsy value](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) in JavaScript. Which means that the above if-statement protects us from undefined, but does not allow the value `0` to pass through.
 
-### Avoiding Code Duplication
-
-You may need to write helper functions/methods that take in a key of a `Business` as a parameter. That type is `keyof Business`. You can construct a function that takes in a `Business`, a key of a `Business`, and an operation that works on that field. Example:
+You may find yourself in a scenario where the compiler is unable to correctly type a value.
 
 ```ts
-// keyof Business is the type `business_id | name | city | ... | hours`
-// K is generic for this function, but must be one of `keyof Business`
-// Business[K] is the type of the value at the key K
-function doWorkOnField<K extends keyof Business>(b: Business, key: K, f: (x: Business[K]) => void): void {
-  f(b[key]);
-}
+const key = "stars";
+const b: Business = {
+  /* ... */
+};
 
-// Works, compiler will assume that x is `string | undefined`
-doWork(b, "city", x => console.log(`The city is ${x}!`));
+if (b[key] === undefined) return;
 
-// Complier error, "dog" is not a field on a Business
-doWork(b, "dog", x => console.log(`I love dogs!`));
+// s: number | undefined
+const s = b[key];
 ```
 
-This syntax may be useful in constructing your own helper functions/methods.
+Clearly, the value of `s` is not undefined. There are ways of cleanly resoling this using more advanced TypeScript features, but for our purposes, you can use a [non-null assertion](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#non-null-assertion-operator-postfix-).
+
+> TypeScript also has a special syntax for removing `null` and `undefined` from a type without doing any explicit checking. Writing `!` after any expression is effectively a type assertion that the value isn’t `null` or `undefined`
+
+```ts
+// s: number
+const s = b[key]!;
+```
+
+This will cause a liter warning - however linting is disabled for this project.
+
+### Avoiding Code Duplication
+
+You may notice that the first first five methods do a similar operation. They are filtering by if a value at a key is present and meets a specific condition. To avoid duplication, you may need to write a general function to filter out objects that are missing a field, other wise filtering by some condition. The type `keyof Business` is a union of all they keys of `Business`.
+
+```ts
+function hasProperty(business: Business, key: keyof Business) {
+  return business[key] !== undefined;
+}
+
+hasProperty(b, "name"); // OK
+hasProperty(b, "stars"); // OK
+hasProperty(b, "owner"); // Complier error
+```
+
+To handle the latter case (the specific filtering condition). **You may need to use the `any` type.** There are clean ways around this, but they are more complicated and distract from the goal of the project. This will cause a linter warning; however, linting is ignored for this project.
+
+Other methods may require working with specific keys. We can create a type that unions those keys, and specify the parameters to only accept that type.
+
+```ts
+type SortKey = "review_count" | "stars";
+
+function sortBy(businesses: Business[], keys: SortKey) {
+  // Sort `businesses` by the key specified by `key`.
+}
+
+sortBy([], "stars"); // OK
+sortBy([], "name"); // Compiler error
+```
 
 ### The Yelp Dataset
 
