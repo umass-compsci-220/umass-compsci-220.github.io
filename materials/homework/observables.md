@@ -1,3 +1,7 @@
+---
+sidebar_position: 7
+---
+
 # Observables
 
 Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/ec-observables.zip).
@@ -15,8 +19,8 @@ In this assignment, you will work with observables.
 Students will be graded on their ability to:
 
 - Correctly implement the functions [specified below](#programming-tasks)
-- Follow the [coding](../../guidelines/CODING.md), [bad practice](../../guidelines/BAD_PRACTICES.md), and [testing](../../guidelines/TESTING.md) guidelines
-- Design full-coverage [unit-tests](#testing) for the functions they implemented
+- Follow the [coding](../guidelines/syntax-and-code.md), [bad practice](../guidelines/bad-practices.md), and [testing](../tutorials/assignments/testing.md) guidelines
+- Design full-coverage [unit tests](../guidelines/testing.md) for the functions they implemented
 
 
 ## Programming Tasks
