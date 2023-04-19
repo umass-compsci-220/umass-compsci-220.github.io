@@ -10,7 +10,6 @@ const katex = require("rehype-katex");
 const config = {
   title: "CS 220",
   tagline: "Programming Methodology",
-  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
   url: "https://umass-compsci-220.github.io/",
@@ -59,13 +58,8 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "img/docusaurus-social-card.jpg",
       navbar: {
         title: "COMPSCI 220",
-        logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
-        },
         items: [
           {
             type: "docSidebar",
