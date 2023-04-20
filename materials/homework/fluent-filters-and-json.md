@@ -114,131 +114,6 @@ console.log(other); // { orders: [Object] }
 // `other` is an entirely different object than `obj`
 ```
 
-### Type Safety with JSON
-
-The return type of `JSON.parse` is `any`. The `any` type is a special type that allows _any_ operation to occur on it - without a compiler error.
-
-```ts
-const obj = JSON.parse("{}");
-
-// No error
-const y = obj.x + 1;
-```
-
-As you can see, behavior is dangerous. `obj.x` clearly is not a value and we are attempting to do arithmetic with it. If you run this code you will get `NaN`, which is a special number value short for Not-A-Number. Yet the compiler does not warn us that `obj.x` is possibly `undefined`.
-
-To aid the compiler and enable type safety, we need to construct a type that dictates what the result of `JSON.parse` may be. In this project, you will interacting with `Business` objects, typed as so:
-
-```ts
-interface BusinessAttributes {
-  // We do not know all the mappings for Ambience, nor do we need to know, so they remain unknown
-  Ambience?: Record<string, unknown>;
-  // Attributes has fields other than Ambience, but we do not need to type them specifically
-  [key: string]: unknown;
-}
-
-export interface Business {
-  business_id?: string;
-  name?: string;
-  city?: string;
-  state?: string;
-  postal_code?: string;
-  latitude?: number;
-  longitude?: number;
-  stars?: number;
-  review_count?: number;
-  attributes?: BusinessAttributes;
-  categories?: string[];
-  hours?: Record<string, string>;
-}
-```
-
-Notice how each field ends with a `?`. This means that the field _may or may not_ be present inside the object. It is similar to writing the field as `business_id: string | undefined`. However, make note that we are assuming that as long as the fields are present the types are as expected.
-
-The `Record<T, U>` type, see documentation [here](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type), is an object type that has keys of type `T`, which map to values of type `U`. A `Record` is just an object, so we can do normal object operations on it, such as checking if a `string` value exists inside the record:
-
-```ts
-const b: Business = {
-  /* ... */
-};
-const hasMondaySchedule = b.hours !== undefined && "Monday" in b.hours;
-
-const dayOfTheWeek = "Wednesday";
-const hasWednesdaySchedule = b.hours !== undefined && dayOfTheWeek in b.hours;
-```
-
-To ensure that a field is safe to work with, we should check to make sure it is not undefined:
-
-```ts
-if (b.stars !== undefined) {
-  // OK
-}
-```
-
-Why wouldn't we just use something shorter? Like:
-
-```ts
-if (b.stars) {
-  // OK... but missing something
-}
-```
-
-Careful! `0` is a [falsy value](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) in JavaScript. Which means that the above if-statement protects us from undefined, but does not allow the value `0` to pass through.
-
-You may find yourself in a scenario where the compiler is unable to correctly type a value.
-
-```ts
-const key = "stars";
-const b: Business = {
-  /* ... */
-};
-
-if (b[key] === undefined) return;
-
-// s: number | undefined
-const s = b[key];
-```
-
-Clearly, the value of `s` is not undefined. There are ways of cleanly resoling this using more advanced TypeScript features, but for our purposes, you can use a [non-null assertion](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#non-null-assertion-operator-postfix-).
-
-> TypeScript also has a special syntax for removing `null` and `undefined` from a type without doing any explicit checking. Writing `!` after any expression is effectively a type assertion that the value isn’t `null` or `undefined`
-
-```ts
-// s: number
-const s = b[key]!;
-```
-
-This will cause a liter warning - however linting is disabled for this project.
-
-### Avoiding Code Duplication
-
-You may notice that the first first five methods do a similar operation. They are filtering by if a value at a key is present and meets a specific condition. To avoid duplication, you may need to write a general function to filter out objects that are missing a field, other wise filtering by some condition. The type `keyof Business` is a union of all they keys of `Business`.
-
-```ts
-function hasProperty(business: Business, key: keyof Business) {
-  return business[key] !== undefined;
-}
-
-hasProperty(b, "name"); // OK
-hasProperty(b, "stars"); // OK
-hasProperty(b, "owner"); // Complier error
-```
-
-To handle the latter case (the specific filtering condition). **You may need to use the `any` type.** There are clean ways around this, but they are more complicated and distract from the goal of the project. This will cause a linter warning; however, linting is ignored for this project.
-
-Other methods may require working with specific keys. We can create a type that unions those keys, and specify the parameters to only accept that type.
-
-```ts
-type SortKey = "review_count" | "stars";
-
-function sortBy(businesses: Business[], keys: SortKey) {
-  // Sort `businesses` by the key specified by `key`.
-}
-
-sortBy([], "stars"); // OK
-sortBy([], "name"); // Compiler error
-```
-
 ### The Yelp Dataset
 
 The business review site Yelp releases a large dataset of businesses in a JSON format. In this assignment, you will use this dataset to answer vital questions such as _“What is the most popular business in California?"_
@@ -305,6 +180,121 @@ With thousands of other data entries, it is not hard to imagine there are dozens
 Provided to you is a version of the Yelp dataset, you may load it memory by using the `loadYelpData(part?: number)` function (see the examples in `./src/main.ts`). There are other functions implemented inside of `./include/data.ts` that could be useful. Such as creating randomized Businesses with `createRandomData(n: number)`, or creating a dataset with a name, but reusing results from previous runs (`loadOrCreate(datasetName: string, createDataset: () => Business[])`).
 
 Examine the results of these two functions - look at the fields on each entry and the types they typically hold. Additionally, inside of the `./include/data/` folder, there is a series of JSON files that you can use to inspect the dataset.
+
+### Type Safety with JSON
+
+The return type of `JSON.parse` is `any`. The `any` type is a special type that allows _any_ operation to occur on it - without a compiler error.
+
+```ts
+const obj = JSON.parse("{}");
+
+// No error
+const y = obj.x + 1;
+```
+
+As you can see, behavior is dangerous. `obj.x` clearly is not a value and we are attempting to do arithmetic with it. If you run this code you will get `NaN`, which is a special number value short for Not-A-Number. Yet the compiler does not warn us that `obj.x` is possibly `undefined`.
+
+To aid the compiler and enable type safety, we need to construct a type that dictates what the result of `JSON.parse` may be. In this project, you will interacting with `Business` objects, typed as so:
+
+```ts
+interface BusinessAttributes {
+  // We do not know all the mappings for Ambience, nor do we need to know, so they remain unknown
+  Ambience?: Record<string, unknown>;
+  // Attributes has fields other than Ambience, but we do not need to type them specifically
+  [key: string]: unknown;
+}
+
+export interface Business {
+  business_id: string;
+  name?: string;
+  city?: string;
+  state?: string;
+  postal_code?: string;
+  latitude?: number;
+  longitude?: number;
+  stars?: number;
+  review_count?: number;
+  attributes?: BusinessAttributes;
+  categories?: string[];
+  hours?: Record<string, string>;
+}
+```
+
+Notice how each field ends with a `?`. This means that the field _may or may not_ be present inside the object. It is similar to writing the field as `business_id: string | undefined`. However, make note that we are assuming that as long as the fields are present the types are as expected.
+
+The `Record<T, U>` type, see documentation [here](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type), is an object type that has keys of type `T`, which map to values of type `U`. A `Record` is just an object, so we can do normal object operations on it, such as checking if a `string` value exists inside the record:
+
+```ts
+const b: Business = {
+  /* ... */
+};
+const hasMondaySchedule = b.hours !== undefined && "Monday" in b.hours;
+
+const dayOfTheWeek = "Wednesday";
+const hasWednesdaySchedule = b.hours !== undefined && dayOfTheWeek in b.hours;
+```
+
+To ensure that a field is safe to work with, we should check to make sure it is not undefined:
+
+```ts
+if (b.stars !== undefined) {
+  // OK
+}
+```
+
+You may find yourself in a scenario where the compiler is unable to correctly type a value.
+
+```ts
+const key = "stars";
+const b: Business = {
+  /* ... */
+};
+
+if (b[key] === undefined) return;
+
+// s: number | undefined
+const s = b[key];
+```
+
+Clearly, the value of `s` is not undefined. There are ways of cleanly resoling this using more advanced TypeScript features, but for our purposes, you can use a [non-null assertion](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#non-null-assertion-operator-postfix-).
+
+> TypeScript also has a special syntax for removing `null` and `undefined` from a type without doing any explicit checking. Writing `!` after any expression is effectively a type assertion that the value isn’t `null` or `undefined`
+
+```ts
+// s: number
+const s = b[key]!;
+```
+
+This will cause a liter warning - however linting is disabled for this project.
+
+### Avoiding Code Duplication
+
+You may notice that the first first five methods do a similar operation. They are filtering by if a value at a key is present and meets a specific condition. To avoid duplication, you may need to write a general function to filter out objects that are missing a field, other wise filtering by some condition. The type `keyof Business` is a union of all they keys of `Business`.
+
+```ts
+function hasProperty(business: Business, key: keyof Business) {
+  return business[key] !== undefined;
+}
+
+hasProperty(b, "name"); // OK
+hasProperty(b, "stars"); // OK
+hasProperty(b, "owner"); // Complier error
+```
+
+To handle the latter case (the specific filtering condition). **You may need to use the `any` type.** There are clean ways around this, but they are more complicated and distract from the goal of the project. This will cause a linter warning; however, linting is ignored for this project.
+
+Other methods may require working with specific keys. We can create a type that unions those keys, and specify the parameters to only accept that type.
+
+```ts
+type SortKey = "review_count" | "stars";
+
+function sortBy(businesses: Business[], keys: SortKey) {
+  // Sort `businesses` by the key specified by `key`.
+}
+
+sortBy([], "stars"); // OK
+sortBy([], "name"); // Compiler error
+```
 
 ## Programming Tasks
 
