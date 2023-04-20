@@ -6,6 +6,7 @@ sidebar_position: 2
 
 - Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/02-image-processing-with-hof.zip).
 - Run `npm install` in the project directory.
+- You may edit any file inside of `./src/`, **DO NOT make any edits to any file inside of `./include/`**
 
 ## Overview
 
