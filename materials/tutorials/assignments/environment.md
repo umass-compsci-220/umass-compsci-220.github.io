@@ -142,8 +142,6 @@ You are allowed to use any editor that you prefer. This class recommends that yo
 
 If you are unfamiliar with VSCode, it is recommended that you watch [this video (7m16s)](https://www.youtube.com/watch?v=B-s71n0dHUk) or read [this page](https://code.visualstudio.com/docs/editor/codebasics), particularly the sections on keyboard shortcuts, save/auto-save, and finding and replacing. There are a lot of features aimed to facilitate your productiveness - use them to your advantage.
 
-The page on [linting and formatting](/materials/tutorials/assignments/linting-and-formatting) covers how to extract, open, and modify assignments.
-
 ## Installing VSCode
 
 1. Open the [VSCode download page](https://code.visualstudio.com/Download)
