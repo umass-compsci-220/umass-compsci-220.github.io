@@ -1,8 +1,8 @@
 ---
-sidebar_position: 7
+sidebar_position: 1
 ---
 
-# Observables
+# Extra Credit - Observables
 
 Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/ec-observables.zip).
 
@@ -22,12 +22,11 @@ Students will be graded on their ability to:
 - Follow the [coding](../guidelines/syntax-and-code.md), [bad practice](../guidelines/bad-practices.md), and [testing](../tutorials/assignments/testing.md) guidelines
 - Design full-coverage [unit tests](../guidelines/testing.md) for the functions they implemented
 
-
 ## Programming Tasks
 
 For all functions below, use the provided Observable class.
 
-1. Write a function `classifyObservers` that takes in an array `obsArr` of Observables where each Observable updates with a type `string`, `number`, or  `boolean`. Return an object with three observables, one for each named type.  Each of the three observables updates anytime an Observable of that type in the input array updates.
+1. Write a function `classifyObservers` that takes in an array `obsArr` of Observables where each Observable updates with a type `string`, `number`, or `boolean`. Return an object with three observables, one for each named type. Each of the three observables updates anytime an Observable of that type in the input array updates.
 
 2. Write a function `obsStrCond` that takes a nonempty array `funcArr` of functions with type `string => string`, a function f with type `string => boolean`, and an Observable `o` with type `Observable<string>`. It returns an `Observable<string>` that updates when `o` updates, in the following way. If `f` returns true for the string obtained by applying the composition of the functions in `funcArr` (with the function at index 0 being applied first) to the update value of `o`, then the returned observable should update with that string. If `f` returns false, update the returned observable with the unchanged update value of `o`.
 
@@ -43,6 +42,6 @@ The following questions were taken directly from past exams and do not count for
 
 3. [SPRING 2022 MIDTERM 2] Consider the Observable class from lecture, receiving updates with positive values. Implement a method `greaterAvg` returning a new `Observable<number>` that is updated with every number that is at least 50% larger than the average of the previous two number. Hint: use `this`.
 
-4.  Consider the Observable class provided in observable.ts, receiving updates with numeric values. In observables.ts implement a method `signChange()` that returns a new `Observable<number>` which will be updated with every nonzero value v that is not preceded by a nonzero value of the same sign. Hint: use `this`.
+4. Consider the Observable class provided in observable.ts, receiving updates with numeric values. In observables.ts implement a method `signChange()` that returns a new `Observable<number>` which will be updated with every nonzero value v that is not preceded by a nonzero value of the same sign. Hint: use `this`.
 
-    - Write a function `usingSignChange` that takes an array of numbers `numArr` and an observer function `f`. You should subscribe `f` to the observer returned by the `signChange` method and then update the observer returned by `SignChangeObservable` with every number in `numArr` starting at index 0. The function should return nothing.
+   - Write a function `usingSignChange` that takes an array of numbers `numArr` and an observer function `f`. You should subscribe `f` to the observer returned by the `signChange` method and then update the observer returned by `SignChangeObservable` with every number in `numArr` starting at index 0. The function should return nothing.
