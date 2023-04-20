@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Fetching and Web APIs
 
-- Please download the homework from [here](https://github.com/umass-compsci-220/hw7-fall-22/raw/main/hw7-fall-22.zip)
+- Please download the homework from [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/07-fetching-and-web-apis.zip)
 - You may edit any file inside of `./src/`, **DO NOT make any edits to any file inside of `./include/`**
 
 ## Overview
