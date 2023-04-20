@@ -221,7 +221,7 @@ export interface Business {
 }
 ```
 
-Notice how each field ends with a `?`. This means that the field _may or may not_ be present inside the object. It is similar to writing the field as `business_id: string | undefined`. However, make note that we are assuming that as long as the fields are present the types are as expected.
+Notice how each field ends with a `?`. This means that the field _may or may not_ be present inside the object. It is similar to writing the field as `name: string | undefined`. However, make note that we are assuming that as long as the fields are present the types are as expected.
 
 The `Record<T, U>` type, see documentation [here](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type), is an object type that has keys of type `T`, which map to values of type `U`. A `Record` is just an object, so we can do normal object operations on it, such as checking if a `string` value exists inside the record:
 
@@ -243,13 +243,10 @@ if (b.stars !== undefined) {
 }
 ```
 
-You may find yourself in a scenario where the compiler is unable to correctly type a value.
+You may find yourself in a scenario where the compiler is unable to correctly type a value:
 
 ```ts
 const key = "stars";
-const b: Business = {
-  /* ... */
-};
 
 if (b[key] === undefined) return;
 
