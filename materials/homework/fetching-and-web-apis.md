@@ -4,7 +4,6 @@ sidebar_position: 7
 
 # Fetching and Web APIs
 
-- **Note: The link below is dead (the HW is not fully published) - it will work by 4/21**
 - Please download the homework from [here](https://github.com/umass-compsci-220/hw7-fall-22/raw/main/hw7-fall-22.zip)
 - You may edit any file inside of `./src/`, **DO NOT make any edits to any file inside of `./include/`**
 
