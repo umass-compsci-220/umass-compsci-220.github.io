@@ -73,9 +73,9 @@ Looking more closely, at the URLs above:
 - `https://www.google.com/maps` is a URL requesting the resource `/maps` at `www.google.com`
 - `https://www.google.com/search?q=how+to+exit+vim` is a URL requesting the resource `/search` at `www.google.com` providing a parameter `q` (short for query) with a value `how+to+exit+vim`
 
-If you notice, the value of the `q` parameter looks a little weird. There are some characters that cannot be part of a URL (for example, a space) and some that are reserved for a specific purpose (like `&` separating parameters). To support passing these characters to parameters, strings first need to be put into a format that can be recognized as a URL. This is called [percent encoding](https://en.wikipedia.org/wiki/Percent-encoding). Luckily, there is a class in the Node.ts standard library to handle all of that for you.
+If you notice, the value of the `q` parameter looks a little weird. There are some characters that cannot be part of a URL (for example, a space) and some that are reserved for a specific purpose (like `&` separating parameters). To support passing these characters to parameters, strings first need to be put into a format that can be recognized as a URL. This is called [percent encoding](https://en.wikipedia.org/wiki/Percent-encoding). Luckily, there is a class in the Node.js standard library to handle all of that for you.
 
-During this homework, you will construct URLs with specific parameters using the `URL` class in the Node.ts standard library. As an example, if I wanted to make a function that constructs a Google search URL from a given query, I would write:
+During this homework, you will construct URLs with specific parameters using the `URL` class in the Node.js standard library. As an example, if I wanted to make a function that constructs a Google search URL from a given query, I would write:
 
 ```ts
 import { URL } from "url"; // Import the URL class from the url library
@@ -100,7 +100,7 @@ makeSearchURL("你好");
 // -> https://www.google.com/search?q=%E4%BD%A0%E5%A5%BD
 ```
 
-More documentation, and examples, for the `URL` and `URLSearchParams` class can be found in the [Node.ts standard library documentation](https://nodejs.org/dist/latest-v18.x/docs/api/url.html).
+More documentation, and examples, for the `URL` and `URLSearchParams` class can be found in the [Node.js standard library documentation](https://nodejs.org/dist/latest-v18.x/docs/api/url.html).
 
 ### Third-party APIs
 
@@ -129,8 +129,8 @@ As you might imagine, this process is done asynchronously. Your browser does not
 Here is an example of `fetch`:
 
 ```js
-import fetch from "node-fetch"; // Third-party fetching library, fetch fully supported in Node.ts 18+
-import path from "path"; // Node.ts standard library for resolving arbitrary paths (like those in a url)
+import fetch from "node-fetch"; // Third-party fetching library, fetch fully supported in Node.js 18+
+import path from "path"; // Node.js standard library for resolving arbitrary paths (like those in a url)
 // Only needed in this case to join a url given by the API to another resource
 
 fetch("https://spire-api.melanson.dev/instructors/?search=marius+minea") // fetch the /instructions resource with a "search" parameter
