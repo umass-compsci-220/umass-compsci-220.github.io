@@ -356,7 +356,7 @@ As an example, one of the given tests returns a `Promise` that has a handler tha
 
 ```js
 describe("fetchLongitudeAndLatitude", () => {
-  it("fetchLongitudeAndLatitude follows type specification", () => {
+  it("follows type specification", () => {
     const promise = fetchLongitudeAndLatitude("University of Massachusetts Amherst");
 
     return promise.then(result => {
@@ -373,7 +373,7 @@ Your tests should follow this similar pattern (`return foo().then(result => {/* 
 
 ```js
 describe("fetchLongitudeAndLatitude", () => {
-  it("fetchLongitudeAndLatitude follows type specification", async () => {
+  it("follows type specification", async () => {
     const promise = fetchLongitudeAndLatitude("University of Massachusetts Amherst");
 
     const result = await promise;
