@@ -304,7 +304,7 @@ With thousands of other data entries, it is not hard to imagine there are dozens
 
 Provided to you is a version of the Yelp dataset, you may load it memory by using the `loadYelpData(part?: number)` function (see the examples in `./src/main.ts`). There are other functions implemented inside of `./include/data.ts` that could be useful. Such as creating randomized Businesses with `createRandomData(n: number)`, or creating a dataset with a name, but reusing results from previous runs (`loadOrCreate(datasetName: string, createDataset: () => Business[])`).
 
-Examine the results of these two functions - look at the fields on each entry and the types they typically hold.
+Examine the results of these two functions - look at the fields on each entry and the types they typically hold. Additionally, inside of the `./include/data/` folder, there is a series of JSON files that you can use to inspect the dataset.
 
 ## Programming Tasks
 
