@@ -223,13 +223,13 @@ Use the following API, <https://geocode.maps.co/search?q=query+goes+here>, to re
 
 See the [getting started section on queries](#urls-and-parameters) if you are confused. Use the [`Number.parseFloat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseFloat) function to convert to a number if needed.
 
-### `fetchCurrentWeather`
+### `fetchCurrentTemperature`
 
 - Use the provided `fetchJSON` function
 - This function should be done individually by a single group member
   - A different group member than `fetchGeoCoord`'s author
 
-Write a function, inside of `./src/fetchCurrentWeather.ts`, with the following type signature:
+Write a function, inside of `./src/fetchCurrentTemperature.ts`, with the following type signature:
 
 ```ts
 interface TemperatureReading {
