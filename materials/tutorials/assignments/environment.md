@@ -18,7 +18,7 @@ Before taking this course, you will need to download various pieces of software.
 
 - Read [Installing Node.js and NPM](#installing-nodejs-and-npm) for instructions
 - Optionally read [About Node.js and NPM](#about-nodejs-and-npm) for details
-- **Note: Please make sure you have at least `node` version 17**
+- **Note: Please make sure you have at least `node` version greater than or equal to v16 and less than 20**
 
 **2. Install Git**
 
