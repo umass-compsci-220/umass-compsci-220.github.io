@@ -59,6 +59,8 @@ External Tutorials:
 Text Tutorial (Windows and macOS):
 
 - Go to the [Node.js download page](https://nodejs.org/en/download/) to download the installer for your system
+  - **Make sure to choose the LTS option (v18 as of writing)**
+  - **Homeworks need at least v16, and less than v20**
   - Windows: Choose the Windows Installer (.msi)
     - If you don't know if you are 64-bit or 32-bit, [use this Microsoft Support Page](https://support.microsoft.com/en-us/topic/determine-whether-your-computer-is-running-a-32-bit-version-or-64-bit-version-of-the-windows-operating-system-1b03ca69-ac5e-4b04-827b-c0c47145944b)
   - macOS: Choose the macOS Installer (.pkg)
