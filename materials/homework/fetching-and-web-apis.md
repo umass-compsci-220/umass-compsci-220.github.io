@@ -338,13 +338,23 @@ This function should find the average temperature of all universities in the "Un
 
 - This task should be completed as a group
 
-With the functions you have written above, write a small program (inside of `main.ts`) that computes an interesting statistic about the weather or universities. The requirements of the program are:
+Using the three APIs provided, or any free ones you can find (here is a [a long list](https://github.com/public-api-lists/public-api-lists)), write a short program inside of `main.ts` that calculates some interesting statistic.
 
-- It must use at least three functions from the the previous tasks
+**Requirements:**
+
+- Must use `fetchJSON`, either directly or indirectly
+- Must use at least two different types of data
+  - These data items can be from the same API (different endpoint) or different APIs
+    - University, and their names, would count as one
+    - Temperature readings would count as one
 - The result of the program must be output somehow (either in the console or into a file)
+  - You could use the [`fs` library](https://nodejs.org/api/fs.html) to read/write to JSON
+    - See `./include/fetchJSON.ts` or HW6 `./include/data.ts` for an examples
 - The program must be documented with what it calculates exactly
-  - A few comments are fine
+  - Write a multi-line comment at the top of the file
+  - A few sentences is fine
 - The program must produce a correct result according to its documentation
+- At least 25 lines of code (after running `npm run format` - ignoring the description comment)
 
 Pick something interesting and try to have fun with it. As long as you meet the requirements stated above, you should receive full credit.
 
