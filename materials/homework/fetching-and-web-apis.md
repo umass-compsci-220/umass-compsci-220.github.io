@@ -369,9 +369,9 @@ Testing asynchronous code is a little different from testing synchronous code. O
 As an example, one of the given tests returns a `Promise` that has a handler that does the assertions on the result.
 
 ```js
-describe("fetchLongitudeAndLatitude", () => {
+describe("fetchGeoCoord", () => {
   it("follows type specification", () => {
-    const promise = fetchLongitudeAndLatitude("University of Massachusetts Amherst");
+    const promise = fetchGeoCoord("University of Massachusetts Amherst");
 
     return promise.then(result => {
       assert(typeof result === "object"); //  Assert the result is an object
@@ -386,9 +386,9 @@ describe("fetchLongitudeAndLatitude", () => {
 Your tests should follow this similar pattern (`return foo().then(result => {/* assertions */ })`). Alternatively, you could use `async`/`await` syntax.
 
 ```js
-describe("fetchLongitudeAndLatitude", () => {
+describe("fetchGeoCoord", () => {
   it("follows type specification", async () => {
-    const promise = fetchLongitudeAndLatitude("University of Massachusetts Amherst");
+    const promise = fetchGeoCoord("University of Massachusetts Amherst");
 
     const result = await promise;
     assert(typeof result === "object"); // Assert the result is an object
