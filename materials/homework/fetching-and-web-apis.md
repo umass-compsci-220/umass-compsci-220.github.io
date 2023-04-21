@@ -360,6 +360,8 @@ Pick something interesting and try to have fun with it. As long as you meet the 
 
 You are not required to write tests for this code.
 
+If you are stuck on what you could do, a good place to start would be to [accept user input](https://nodejs.org/api/readline.html#readline) (not required).
+
 ## Testing
 
 Testing asynchronous code is a little different from testing synchronous code. One way or another, the testing framework needs to know that there is pending work to be done. **We tell the testing framework we are still "doing" work by returning a `Promise` in the test function rather than returning nothing**.
