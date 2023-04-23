@@ -1,24 +1,29 @@
+---
+sidebar_position: 8
+---
+
 # Building an Interpreter
 
-## Description
+## Overview
 
-For this project, you will write an [_interpreter_](<https://en.wikipedia.org/wiki/Interpreter_(computing)>) for a small programming language similar to JavaScript. To write an interpreter, you need a parser to turn the program's concrete syntax into an abstract syntax tree (AST; as explained in class). You don't need to write a parser yourself. We have provided one for you. You will then traverse the AST making necessary checks and executing corresponding statements and expressions.
+For this project, you will write an [_interpreter_](<https://en.wikipedia.org/wiki/Interpreter_(computing)>) for a small programming language similar to **JavaScript (not TypeScript)**. To write an interpreter, you need a parser to turn the program's concrete syntax (a string of characters) into an abstract syntax tree (an AST object; as explained in class). You don't need to write a parser yourself. _We have provided one for you._ You will then traverse the AST making necessary checks and executing corresponding statements and expressions.
 
-## Learning Objectives
+### Learning Objectives
 
-Throughout this assignment, students will learn:
-
-- The fundamentals of programming language implementation
+- Learn fundamentals of programming language implementation
 - How to read the grammar for a concrete syntax
 - How to work and read abstract syntax trees
-- Elementary principles of expression and statement evaluation
+- Master the principles of expression and statement evaluation
 
-## Student Expectations
+### Student Expectations
 
-Students may be graded on:
+Students will be graded on their ability to:
 
-- Their ability to complete the [programming tasks](#programming-tasks) pageed below
-- How they design unit-tests for all relevant functions and methods
+- Correctly implement the functions [specified below](#programming-tasks)
+- Resolve all linter warnings
+- Follow the [coding](/materials/homework/image-processing), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
+- Design full-coverage [unit-tests](#testing) for the functions they implemented
+  - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage for more details
 
 ## Getting Started
 
@@ -35,48 +40,50 @@ Expressions         e ::= n                   numeric constant
                       | true                  boolean value true
                       | false                 boolean value false
                       | x                     variable reference
-                      | e1 + e2               addition
-                      | e1 - e2               subtraction
-                      | e1 * e2               multiplication
-                      | e1 / e2               division
-                      | e1 && e2              logical and
-                      | e1 || e2              logical or
-                      | e1 < e2               less than
-                      | e1 > e2               greater than
-                      | e1 === e2             equal to
+                      | e_1 + e_2             addition
+                      | e_1 - e_2             subtraction
+                      | e_1 * e_2             multiplication
+                      | e_1 / e_2             division
+                      | e_1 && e_2            logical and
+                      | e_1 || e_2            logical or
+                      | e_1 < e_2             less than
+                      | e_1 > e_2             greater than
+                      | e_1 === e_2           equal to
 
 Statements          s ::= let x = e;          variable declaration
                       | x = e;                assignment
-                      | if (e) b1 else b2     conditional
+                      | if (e) b_1 else b_2   conditional
                       | while (e) b           loop
                       | print(e);             display to console
 
-Blocks               b ::= { s1 ... sn }
+Blocks               b ::= { s_1 ... s_n }
 
-Programs            p ::= s1 ... sn
+Programs            p ::= s_1 ... s_n
 ```
 
-`Numbers` and `Variables` have been omitted for simplicity. However, you may assume that they are structured the same as they are in JavaScript.
+`Numbers` and `Variables` have been omitted for simplicity. However, you may assume that they are structured similar to their structure in JavaScript.
 
 ### Parser
 
-We have provided two parsing functions the function `parseExpression` parses an expression and the function `parseProgram` parses a program. Their type signatures are pageed below:
+We have provided two parsing functions, defined in `./include/parser.d.ts`, the function `parseExpression` parses an expression and the function `parseProgram` parses a program. Their type signatures are outlined below:
 
 ```ts
-type BinOp = "+" | "-" | "*" | "/" | "&&" | "||" | ">" | "<" | "===";
-type Expr = { kind: "boolean"; value: boolean }
+export type BinOp = "+" | "-" | "*" | "/" | "&&" | "||" | ">" | "<" | "===";
+export type Expr =
+  | { kind: "boolean"; value: boolean }
   | { kind: "number"; value: number }
   | { kind: "variable"; name: string }
   | { kind: "operator"; op: BinOp; e1: Expr; e2: Expr };
 
-type Stmt = { kind: "let"; name: string; expression: Expr }
+export type Stmt =
+  | { kind: "let"; name: string; expression: Expr }
   | { kind: "assignment"; name: string; expression: Expr }
   | { kind: "if"; condition: Expr; truePart: Stmt[]; falsePart: Stmt[] }
   | { kind: "while"; condition: Expr; body: Stmt[] }
   | { kind: "print"; expression: Expr };
 
-parseExpression(expr: string): Expr
-parseProgram(stmt: string): Stmt[]
+export function parseExpression(expr: string): Expr;
+export function parseProgram(stmt: string): Stmt[];
 ```
 
 On success, these functions will return an object that contains the the corresponding AST for the given string. On failure, these functions throw an error with a reason the string cannot be parsed.
@@ -101,25 +108,24 @@ Exceptions:
 
 - _Arithmetic and greater/less-than comparison may only happen between numbers_
 - _Logical operations may only happen between booleans_
+- _Division by zero is forbidden_
 
 ### Error Handling
 
 An interpreter can generally not continue meaningfully after an error (as opposed to compilers). Thus, if you find an error, **you should throw an error, using an informative error message (i.e. "Arithmetic may only happen between numbers")**. You need to do a number of checks (e.g., correct typing, and missing or duplicate declarations). You may assume that an AST has the right fields and types. **Do can not assume other checks**, even if done by the parser, as your functions can be tested with ASTs that don’t come from the parser.
 
-## Resources
-
-- [Accessing Object Fields in Vanilla JavaScript](https://github.com/umass-compsci-220/hw6-fall-22#accessing-fields-in-vanilla-javascript)
-
 ## Programming Tasks
 
-Your task is to implement the following functions inside of `src/interpreter.js`. You may do them in any order. The inputs of these functions are abstract syntax trees (`object`), not concrete syntax (`string`). Therefore, you can run your code by using the parser, or by directly constructing ASTs by hand.
+Your task is to implement the following functions inside of `./src/interpreter.ts`. You may do them in any order. The inputs of these functions are abstract syntax trees (`object`), not concrete syntax (`string`). Therefore, you can run your code by using the parser, or by directly constructing ASTs by hand.
 
 ### `interpExpression`
 
 Given a state object and an AST of an expression as arguments, `interpExpression` returns the result of the expression (number or boolean). It should throw an error if the expression is invalid (see [Behavior](#behavior) and [Error Handling](#error-handling))
 
 ```ts
-interpExpression(state: State, e: Expr): number | boolean
+export function interpExpression(state: State, e: Expr): number | boolean {
+  // TODO
+}
 ```
 
 ### `interpStatement`
@@ -127,7 +133,9 @@ interpExpression(state: State, e: Expr): number | boolean
 Given a state object and an AST of a statement, `interpStatement` updates the `State` object and returns it. It should throw an error if the statement is invalid (see [Behavior](#behavior) and [Error Handling](#error-handling)).
 
 ```ts
-interpStatement(state: State, p: Stmt): State
+export function interpStatement(state: State, p: Stmt): State {
+  // TODO
+}
 ```
 
 ### `interpProgram`
@@ -135,14 +143,15 @@ interpStatement(state: State, p: Stmt): State
 Given the AST of a program, `interpProgram` returns the final state of the program. It should throw an error if any statement or expression is invalid (see [Behavior](#behavior) and [Error Handling](#error-handling)).
 
 ```ts
-interpProgram(p: Stmt[]): State
+export function interpProgram(p: Stmt[]): State {
+  // TODO
+}
 ```
 
 Example:
 
 ```js
-interpProgram(parseProgram("let x = 10; x = x * 2;").value);
-
+interpProgram(parseProgram("let x = 10; x = x * 2;"));
 // {
 //   x: 20;
 // }
@@ -171,30 +180,30 @@ interpProgram([
 Implement `interpExpression`, following the template shown in class. You can use an empty object (`{ }`) for the state if you do not have any variables, or you can set the values of variables by hand. For example:
 
 ```js
-const assert = require("assert");
+describe("interpExpression", () => {
+  it("evaluates multiplication with a variable", () => {
+    const r = interpExpression({ x: 10 }, parseExpression("x * 2"));
 
-test("multiplication with a variable", () => {
-  const r = interpExpression({ x: 10 }, parseExpression("x * 2").value);
-
-  assert(r === 20);
+    assert(r === 20);
+  });
 });
 ```
 
 Implement `interpStatement` and `interpProgram`, following the template shown in class. You should be able to test that assignment updates variables. For example:
 
 ```js
-const assert = require("assert");
+describe("interpProgram", () => {
+  it("handles declarations and reassignment", () => {
+    const st = interpProgram(parseProgram("let x = 10; x = 20;"));
 
-test("assignment", () => {
-  const st = interpProgram(parseProgram("let x = 10; x = 20;").value);
-
-  assert(st.x === 20);
+    assert(st.x === 20);
+  });
 });
 ```
 
 Finally, test your interpreter with some simple programs. For example, you should be able to interpret an iterative factorial or Fibonacci sequence computation.
 
-You may find yourself in a scenario where you need to write a test that verifies a program throws an error. To run your tests in Node.js, we are using the Jest testing framework. We have ignored its features the past few homeworks for simplicity, but here is an example of how you would write a test like that:
+You may find yourself in a scenario where you need to write a test that verifies a program throws an error. Here is an example of how you would write a test like that:
 
 ```js
 function sqrt(n) {
@@ -212,15 +221,4 @@ test("sqrt fails on invalid input", () => {
 
 Notice that we passed a function that calls `sqrt` with invalid input. If we just passed the function call with invalid input, our test would fail (because `sqrt(-1)` would throw) before the testing framework could capture that error and verify we were actually expecting it to error (`.toThrow()`).
 
-You can read more on the [Jest pageation on `.toThrow()`](https://jestjs.io/docs/expect#tothrowerror).
-
-## Submitting
-
-- Run `npm run build`
-- Login to Gradescope
-- Open the assignment submission popup
-  - Click the assignment
-- Open your file explorer and navigate to the folder of the project
-  - This is the folder that immediately contains: `hw8-submission.zip`, `node_modules`, `src/`, `package.json`, `package-lock.json`
-- Drag and drop the generated `hw8-submission.zip` into Gradescope
-- Click upload
+You can read more on the [Jest documentation on `.toThrow()`](https://jestjs.io/docs/expect#tothrowerror).
