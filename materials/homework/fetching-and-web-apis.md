@@ -441,3 +441,9 @@ We recognize that this may be the first time that you have had to work in a team
 
 - If you feel that there some team members are not contributing equally, or feel that there are any other problems, please make a private post on Campuswire.
 - It is expected that all students will abide by the Equity and Inclusion Statement and Academic Honesty policies posted on Moodle when interacting with other students.
+
+## Submitting
+
+Only one group member should submit the final draft to Gradescope. Please add the other group members to the submission using the "Group Members" feature.
+
+See [this help article](https://help.gradescope.com/article/m5qz2xsnjy-student-add-group-members) if you are unsure how to do so.
