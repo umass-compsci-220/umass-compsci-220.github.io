@@ -35,18 +35,51 @@ sidebar_position: 3
 
 ### Higher Order Functions:
 
-- 34m - https://www.youtube.com/watch?v=rRgD1yVwIvE
-- 10m - https://www.youtube.com/watch?v=0aKZvNNf8BA
-- 10m - https://www.youtube.com/watch?v=7BeT6lsudL4
-- 1m - https://www.youtube.com/watch?v=tVCYa_bnITg
+- [Traversy Media: JavaScript Higher Order Functions & Arrays (34m)](https://www.youtube.com/watch?v=rRgD1yVwIvE)
+- [ColorCode: Higher Order Functions - JavaScript Tutorial (10m)](https://www.youtube.com/watch?v=0aKZvNNf8BA)
+- [Dave Gray: Higher Order Functions JavaScript (10m)](https://www.youtube.com/watch?v=7BeT6lsudL4)
+- [Fireship: Array Reduce in 100 Seconds (1m)](https://www.youtube.com/watch?v=tVCYa_bnITg)
 
 ### Closures
 
-- 19m - https://www.youtube.com/watch?v=aHrvi2zTlaU
-- 7m - https://www.youtube.com/watch?v=3a0I8ICR1Vg
-- 5m - https://www.youtube.com/watch?v=vKJpN5FAeF4
+- [ColorCode: JavaScript Closures Tutorial (19m)](https://www.youtube.com/watch?v=aHrvi2zTlaU)
+- [Web Dev Simplified: Learn Closures In 7 Minutes (7m)](https://www.youtube.com/watch?v=3a0I8ICR1Vg)
+- [Closures Explained in 100 Seconds (5m)](https://www.youtube.com/watch?v=vKJpN5FAeF4)
+
+### Lists
+
+- TODO
 
 ### Mental Models
 
-- 21m - https://www.youtube.com/watch?v=r5rYoJFWfN0
-- 15m - https://www.youtube.com/watch?v=-hBJz2PPIVE
+- [ColorCode: JavaScript Value vs. Reference (21m)](https://www.youtube.com/watch?v=r5rYoJFWfN0)
+- [Web Dev Simplified: Reference Vs Value In JavaScript (15m)](https://www.youtube.com/watch?v=-hBJz2PPIVE)
+
+### Object-Oriented Programming
+
+- [Programming with Mosh: Object-oriented Programming in 7 minutes (7m)](https://www.youtube.com/watch?v=pTB0EiLXUC8)
+- [Object Oriented vs Functional Programming with TypeScript (12m)](https://www.youtube.com/watch?v=fsVL_xrYO0w)
+
+### Streams
+
+- TODO
+
+### Observers
+
+- TODO
+
+### SOLID Principles
+
+- TODO
+
+### Asynchronous Programming
+
+- [Fireship: The Async Await Episode I Promised (12m)](https://www.youtube.com/watch?v=vn3tm0quoqE)
+
+### Program Correctness
+
+- TODO
+
+### Interpreters
+
+- TODO
