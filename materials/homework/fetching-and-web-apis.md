@@ -142,7 +142,7 @@ fetchJSON("https://spire-api.melanson.dev/instructors/?search=marius+minea") // 
   )
   .then(data => fetchJSON(path.join(data.url, "/sections/"))) // Fetch the associated /sections resource for an instructor page
   .then(json => console.log(`Marius Minea has taught ${json.count} different sections at UMass!`)) // Do something with the final result
-  .catch(err => console.log("Unable to retrieve location data: " + err));
+  .catch(err => console.log("Unable to get section information: " + err));
 ```
 
 An important aspect of fetching is [rate-limiting](https://www.cloudflare.com/learning/bots/what-is-rate-limiting/) and self-throttling (preventing your code from sending too many requests). With each request, there is computational overhead on both ends of the network - your local machine sending a request and waiting for the response, _and_ a server listing for requests, querying internal services, and formulating a response. Consider a chat app (Discord), if you try sending a bunch of messages at once the then the client (the software on your computer) will stop you. This protects Discord's servers from getting too many (mostly invalid) requests. Which allows valid requests to get serviced more quickly.
@@ -188,7 +188,7 @@ Items in the cache will persist across executions, and will be invalid after an 
 
 ### Code Duplication with Multi-File Programs
 
-This is the first assignment where there is more than one source file. You should not have duplication between two source files _or_ within one source file. There is the `./src/utility.ts` file used to declare and export members accordingly. There are already some definitions provided for you.
+This is the first assignment where there is more than one source file. You should not have duplication between two source files _or_ within one source file. There is the `./src/utility.ts` file used to declare and export members accordingly.
 
 ## Resources
 
@@ -401,6 +401,15 @@ describe("fetchGeoCoord", () => {
 ```
 
 Use what works best for you and your group members.
+
+Additionally, some methods may take a while to complete - but this is OK as it is expected behavior with a large amount of requests. You may need to increase the jest test timeout from 5000ms (5 seconds) to something around 30 seconds. You can put this at the top level on your test file to change the timeout:
+
+```ts
+// 1000ms
+const SECOND = 1000;
+// 30 second timeout
+jest.setTimeout(30 * SECOND);
+```
 
 ## Collaborating
 
