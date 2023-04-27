@@ -210,6 +210,10 @@ fetchJSON<Course>("https://spire-api.melanson.dev/courses/COMPSCI%20220/").then(
 
 It is OK if `./include/fetchJSON` has linter warnings - it will not affect your score.
 
+### Error Handling
+
+For all the [programming tasks](#programming-tasks) below, if `fetchJSON` rejects then the rejection reason should propagate. Meaning the returned promises from these functions should reject with the same reason. You should not try to recover in any way.
+
 ## Resources
 
 - [MDN Web Docs: Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
