@@ -145,11 +145,31 @@ fetchJSON("https://spire-api.melanson.dev/instructors/?search=marius+minea") // 
   .catch(err => console.log("Unable to get section information: " + err));
 ```
 
+#### Rate Limiting
+
 An important aspect of fetching is [rate-limiting](https://www.cloudflare.com/learning/bots/what-is-rate-limiting/) and self-throttling (preventing your code from sending too many requests). With each request, there is computational overhead on both ends of the network - your local machine sending a request and waiting for the response, _and_ a server listing for requests, querying internal services, and formulating a response. Consider a chat app (Discord), if you try sending a bunch of messages at once the then the client (the software on your computer) will stop you. This protects Discord's servers from getting too many (mostly invalid) requests. Which allows valid requests to get serviced more quickly.
 
 When using publicly available APIs (the ones we are using in this homework), make sure you play by their rules and do not send more requests than needed. Otherwise you run the risk of being rate-limited (unable to send requests for a duration of time) or lose access to the service (banned).
 
-Provided to you is the function `fetchJSON` which will automatically [cache](<https://en.wikipedia.org/wiki/Cache_(computing)>) API results so you do not make repeated requests. Provided below is an example:
+Provided to you is the function `fetchJSON` which will automatically [cache](<https://en.wikipedia.org/wiki/Cache_(computing)>) API results so you do not make repeated requests. Items in the cache will persist across executions, and will be invalid after an hour. This has the added benefit decreasing your running time because a resource may already exit in the cache.
+
+### Code Duplication with Multi-File Programs
+
+This is the first assignment where there is more than one source file. You should not have duplication between two source files _or_ within one source file. There is the `./src/utility.ts` file used to declare and export members accordingly.
+
+### Typing JSON (Fixing `no-unsafe-call`/`no-unsafe-assignment`/`no-unsafe-???`)
+
+**Update 4/26/2023:** The .zip has been updated with a new header for `fetchJSON` to make resolving linter warnings easier
+
+Below is the header of `fetchJSON` inside of `./include/fetchJSON.ts`:
+
+```ts
+export function fetchJSON<T = any>(url: string): Promise<T> {
+  // ...
+}
+```
+
+This function is optionally generic, meaning if we do not provide a generic type it will default to the `any` type. Using the default will cause linter warnings when interacting with the result. To resolve this, construct a type that describes the JSON result the URL is expected to return. Provide that type as a generic type parameter to the function.
 
 ```ts
 import fetchJSON from "../include/fetchJSON.ts";
@@ -179,30 +199,14 @@ interface Course {
 }
 
 // Homeworks use ESModules, so we can have await at the top level
-// Tell the compiler what we expect back from fetchJSON (type annotation on json to be a `Course`)
+// Tell the compiler what we expect back from fetchJSON
 const json = await fetchJSON<Course>("https://spire-api.melanson.dev/courses/COMPSCI%20220/");
 console.log(`CS220: ${json.title} is a ${json.details.units.base} credit course`);
+// or
+fetchJSON<Course>("https://spire-api.melanson.dev/courses/COMPSCI%20220/").then(json =>
+  console.log(`CS220: ${json.title} is a ${json.details.units.base} credit course`)
+);
 ```
-
-Items in the cache will persist across executions, and will be invalid after an hour. This has the added benefit decreasing your running time because a resource may already exit in the cache.
-
-### Code Duplication with Multi-File Programs
-
-This is the first assignment where there is more than one source file. You should not have duplication between two source files _or_ within one source file. There is the `./src/utility.ts` file used to declare and export members accordingly.
-
-### Typing JSON (Fixing `no-unsafe-call`/`no-unsafe-assignment`/`no-unsafe-???`)
-
-**Update 4/26/2023:** The .zip has been updated with a new header for `fetchJSON` to make resolving linter warnings easier
-
-Below is the header of `fetchJSON` inside of `./include/fetchJSON.ts`:
-
-```ts
-export function fetchJSON<T = any>(url: string): Promise<T> {
-  // ...
-}
-```
-
-This function is optionally generic, meaning if we do not provide a generic type it will default to the `any` type. Using the default will cause linter warnings when interacting with the result. To resolve this, construct a type that describes the JSON result the URL is expected to return. See above code-snippet as an example. Provide that type as a generic type parameter to the function.
 
 It is OK if `./include/fetchJSON` has linter warnings - it will not affect your score.
 
