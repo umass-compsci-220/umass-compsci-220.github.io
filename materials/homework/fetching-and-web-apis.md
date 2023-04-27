@@ -180,7 +180,7 @@ interface Course {
 
 // Homeworks use ESModules, so we can have await at the top level
 // Tell the compiler what we expect back from fetchJSON (type annotation on json to be a `Course`)
-const json: Course = await fetchJSON("https://spire-api.melanson.dev/courses/COMPSCI%20220/");
+const json = await fetchJSON<Course>("https://spire-api.melanson.dev/courses/COMPSCI%20220/");
 console.log(`CS220: ${json.title} is a ${json.details.units.base} credit course`);
 ```
 
@@ -189,6 +189,22 @@ Items in the cache will persist across executions, and will be invalid after an 
 ### Code Duplication with Multi-File Programs
 
 This is the first assignment where there is more than one source file. You should not have duplication between two source files _or_ within one source file. There is the `./src/utility.ts` file used to declare and export members accordingly.
+
+### Typing JSON (Fixing `no-unsafe-call`/`no-unsafe-assignment`/`no-unsafe-???`)
+
+**Update 4/26/2023:** The .zip has been updated with a new header for `fetchJSON` to make resolving linter warnings easier
+
+Below is the header of `fetchJSON` inside of `./include/fetchJSON.ts`:
+
+```ts
+export function fetchJSON<T = any>(url: string): Promise<T> {
+  // ...
+}
+```
+
+This function is optionally generic, meaning if we do not provide a generic type it will default to the `any` type. Using the default will cause linter warnings when interacting with the result. To resolve this, construct a type that describes the JSON result the URL is expected to return. See above code-snippet as an example. Provide that type as a generic type parameter to the function.
+
+It is OK if `./include/fetchJSON` has linter warnings - it will not affect your score.
 
 ## Resources
 
@@ -362,6 +378,8 @@ If you are stuck on what you could do, a good place to start would be to [accept
 
 ## Testing
 
+See [jest documentation: "Testing Asynchronous Code"](https://jestjs.io/docs/asynchronous).
+
 Testing asynchronous code is a little different from testing synchronous code. One way or another, the testing framework needs to know that there is pending work to be done. **We tell the testing framework we are still "doing" work by returning a `Promise` in the test function rather than returning nothing**.
 
 As an example, one of the given tests returns a `Promise` that has a handler that does the assertions on the result.
@@ -397,6 +415,14 @@ describe("fetchGeoCoord", () => {
     assert(typeof result.lon === "number"); // Assert that the lon value is a number
     assert(typeof result.lat === "number"); // Assert that the lat value is a number
   });
+});
+```
+
+If you want to extract the resolve or rejection value, you can use the `.resolves` and `.rejects` matchers. These will error if the promise does not do as stated.
+
+```ts
+test("fetchUniversities returns empty results", () => {
+  return expect(fetchUniversities("place that does not exist")).resolves.toEqual([]);
 });
 ```
 
