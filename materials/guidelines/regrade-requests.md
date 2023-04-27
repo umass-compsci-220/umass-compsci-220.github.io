@@ -24,7 +24,7 @@ The course staff work hard to grade quickly and fairly; however, we still make m
 
 ## Examples of Good and Bad Regrade Requests
 
-### Yes
+### Well Written Regrade Requests
 
 > _I see I was marked as having X but I’m not sure where I made that mistake because of Y._
 
@@ -48,7 +48,7 @@ This is vague and will only result in us saying "No". Be more specific and give 
 
 or
 
-> _[[a multi-paragraph essay that make incorrect statements about the submission]]_
+> _[[a multi-paragraph essay that makes incorrect statements about the submission]]_
 
 Please keep your regrade requests concise, specific, and correct. It does help to have an idea of what your thought process and logic were - but keep that to a few sentences and have a clear request of what rubric item you want to be changed. Do not make incorrect or misleading statements about your submission - understand why it is wrong before attempting to submit a regrade request.
 
