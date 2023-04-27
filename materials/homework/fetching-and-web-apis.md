@@ -5,7 +5,6 @@ sidebar_position: 7
 # Fetching and Web APIs
 
 - Please download the homework from [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/07-fetching-and-web-apis.zip)
-- You may edit any file inside of `./src/`, **DO NOT make any edits to any file inside of `./include/`**
 
 ## Overview
 
@@ -367,11 +366,11 @@ Using the three APIs provided, or any free ones you can find (here is a [a long 
 - Must use `fetchJSON`, either directly or indirectly
 - Must use at least two different types of data
   - These data items can be from the same API (different endpoint) or different APIs
-    - University, and their names, would count as one
+    - Universities, and their names, would count as one
     - Temperature readings would count as one
 - The result of the program must be output somehow (either in the console or into a file)
   - You could use the [`fs` library](https://nodejs.org/api/fs.html) to read/write to JSON
-    - See `./include/fetchJSON.ts` or HW6 `./include/data.ts` for an examples
+    - See `./include/fetchJSON.ts` or HW6 `./include/data.ts` for examples
 - The program must be documented with what it calculates exactly
   - Write a multi-line comment at the top of the file
   - A few sentences is fine
@@ -380,9 +379,9 @@ Using the three APIs provided, or any free ones you can find (here is a [a long 
 
 Pick something interesting and try to have fun with it. As long as you meet the requirements stated above, you should receive full credit.
 
-You are not required to write tests for this code.
+If you are stuck on what you could do, then a good place to start would be to [accept user input](https://nodejs.org/api/readline.html#readline) (not required).
 
-If you are stuck on what you could do, a good place to start would be to [accept user input](https://nodejs.org/api/readline.html#readline) (not required).
+You are not required to write tests for this code.
 
 ## Testing
 

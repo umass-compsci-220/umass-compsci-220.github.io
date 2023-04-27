@@ -10,6 +10,7 @@ sidebar_position: 1
 - If you need help opening the project, read [this page](/materials/tutorials/assignments/opening-an-assignment).
 - **After opening, run `npm install` in a VSCode terminal**
 - You may edit any file inside of `./src/`, **DO NOT make any edits to any file inside of `./include/`**
+  - This rule applies to all homework
 
 ## Overview
 

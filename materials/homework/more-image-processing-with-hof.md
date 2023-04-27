@@ -7,6 +7,7 @@ sidebar_position: 3
 - Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/03-more-image-processing-with-hof.zip)
 - **This homework is a step up from HW1 and HW2, do not start on the final day**
 - You may edit any file inside of `./src/`, **DO NOT make any edits to any file inside of `./include/`**
+  - This rule applies to all homework
 
 ## Overview
 
