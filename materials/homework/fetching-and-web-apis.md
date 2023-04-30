@@ -171,7 +171,7 @@ export function fetchJSON<T = any>(url: string): Promise<T> {
 This function is optionally generic, meaning if we do not provide a generic type it will default to the `any` type. Using the default will cause linter warnings when interacting with the result. To resolve this, construct a type that describes the JSON result the URL is expected to return. Provide that type as a generic type parameter to the function.
 
 ```ts
-import fetchJSON from "../include/fetchJSON.ts";
+import { fetchJSON } from "../include/fetchJSON.js";
 
 interface Course {
   subject: {
