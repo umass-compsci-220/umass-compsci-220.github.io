@@ -31,33 +31,33 @@ Students will be graded on their ability to:
 The following (simplified) grammar describes the concrete syntax of the fragment of JavaScript that you will be working with:
 
 ```txt
-Numbers             n ::= ...                 base-10 numbers
+Numbers        n ::= ...                 base-10 numbers
 
-Variables           x ::= ...                 variable name, a sequence of alphabetic letters
+Variables      x ::= ...                 variable name, a sequence of alphabetic letters
 
-Expressions         e ::= n                   numeric constant
-                      | true                  boolean value true
-                      | false                 boolean value false
-                      | x                     variable reference
-                      | e_1 + e_2             addition
-                      | e_1 - e_2             subtraction
-                      | e_1 * e_2             multiplication
-                      | e_1 / e_2             division
-                      | e_1 && e_2            logical AND
-                      | e_1 || e_2            logical OR
-                      | e_1 < e_2             less than
-                      | e_1 > e_2             greater than
-                      | e_1 === e_2           equal to
+Expressions    e ::= n                   numeric constant
+                | true                  boolean value true
+                | false                 boolean value false
+                | x                     variable reference
+                | e_1 + e_2             addition
+                | e_1 - e_2             subtraction
+                | e_1 * e_2             multiplication
+                | e_1 / e_2             division
+                | e_1 && e_2            logical AND
+                | e_1 || e_2            logical OR
+                | e_1 < e_2             less than
+                | e_1 > e_2             greater than
+                | e_1 === e_2           equal to
 
-Statements          s ::= let x = e;          variable declaration
-                      | x = e;                assignment
-                      | if (e) b_1 else b_2   conditional
-                      | while (e) b           loop
-                      | print(e);             display to console
+Statements    s ::= let x = e;          variable declaration
+                  | x = e;                assignment
+                  | if (e) b_1 else b_2   conditional
+                  | while (e) b           loop
+                  | print(e);             display to console
 
-Blocks               b ::= { s_1 ... s_n }
+Blocks        b ::= { s_1 ... s_n }
 
-Programs            p ::= s_1 ... s_n
+Programs      p ::= s_1 ... s_n
 ```
 
 Some structures (like `Numbers` and `Variables`) have been omitted for simplicity. The actual grammar is defined inside of `./include/grammar.pegjs`. You may take a look at it if you are curious, but you should not need to.
@@ -65,11 +65,11 @@ Some structures (like `Numbers` and `Variables`) have been omitted for simplicit
 Each line of the grammar defines a rule. As an example, the rule
 
 ```txt
-Expressions         e ::= n                   numeric constant
-                      | true                  boolean value true
-                      | false                 boolean value false
-                      | e_1 + e_2             addition
-                      | e_1 && e_2            logical AND
+Expressions   e ::= n                   numeric constant
+                  | true                  boolean value true
+                  | false                 boolean value false
+                  | e_1 + e_2             addition
+                  | e_1 && e_2            logical AND
 ```
 
 would read as: An expression, labeled as `e`, may be one of:
@@ -138,15 +138,15 @@ An interpreter can generally not continue meaningfully after an error (as oppose
 As extra (uncredited) practice, you can implement first-class functions inside of your interpreter. We will extend the grammar to include function expressions, call expressions, return statements, and expression statements (`1 + 1;`- to support both `f();` and `f(g());`):
 
 ```txt
-e                     ::=
-                        ...
-                        | function (x1 ... xn ) b   Function expressions
-                        | ::= x(e1 ... en )         Call expression
+e ::=
+    ...
+    | function (x1 ... xn ) b   Function expressions
+    | ::= x(e1 ... en )         Call expression
 
-s                     ::=
-                        ...
-                        | e;                        Expression statements
-                        | return e;                 Return statements
+s ::=
+    ...
+    | e;                        Expression statements
+    | return e;                 Return statements
 ```
 
 The parser already supports these constructs. You may look at types inside `./include/parser.ts`. Here are some hints for what needs to be updated `./src/interpreter.ts`:
