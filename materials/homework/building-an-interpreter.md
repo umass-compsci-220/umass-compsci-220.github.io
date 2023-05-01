@@ -174,7 +174,7 @@ export function interpExpression(state: State, e: Expression): number | boolean 
 
 ### `interpStatement`
 
-Given a state object and an AST of a statement, `interpStatement` updates the `State` object and returns it. It should throw an error if the statement is invalid. See [Behavior](#behavior) and [Error Handling](#error-handling).
+Given a state object and an AST of a statement, `interpStatement` updates the `State` object. It should throw an error if the statement is invalid. See [Behavior](#behavior) and [Error Handling](#error-handling).
 
 ```ts
 export function interpStatement(state: State, p: Statement): void {
