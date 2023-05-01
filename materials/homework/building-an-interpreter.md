@@ -67,20 +67,22 @@ Each line of the grammar defines a rule. As an example, the rule
 ```txt
 Expressions         e ::= n                   numeric constant
                       | true                  boolean value true
+                      | false                 boolean value false
                       | e_1 + e_2             addition
                       | e_1 && e_2            logical AND
 ```
 
 would read as: An expression, labeled as `e`, may be one of:
 
-- `n`, labeled as a numeric constant
-- `true`, labeled as a true constant
-- An expression $e_0$, a plus symbol, followed by another expression $e_1$, labeled as addition
-- An expression $e_0$, two ampersands (`&&`), followed by another expression $e_1$, labeled as logical AND
+- `n`, a number (as defined above)
+- `true`, the boolean value true
+- `false`, the boolean value false
+- An expression, $e_1$, a plus symbol, followed by another expression $e_2$, for addition addition
+- An expression, $e_1$, two ampersands (`&&`), followed by another expression $e_2$, for logical AND
 
 ### Parser
 
-We have provided two parsing functions, defined in `./include/parser.ts`, the function `parseExpression` parses an expression and the function `parseProgram` parses a program. Their type signatures are outlined below:
+We have provided two parsing functions, defined in `./include/parser.ts`, the function `parseExpression` parses an expression and the function `parseProgram` parses a program (a series of statements). Their type signatures are outlined below:
 
 ```ts
 type BinaryOperator = "+" | "-" | "*" | "/" | "&&" | "||" | ">" | "<" | "===";
@@ -98,8 +100,8 @@ type Statement =
   | { kind: "while"; test: Expression; body: Statement[] }
   | { kind: "print"; expression: Expression };
 
-function parseExpression(expression: string): Expr;
-function parseProgram(statements: string): Stmt[];
+function parseExpression(expression: string): Expression;
+function parseProgram(statements: string): Statement[];
 ```
 
 On success, these functions will return an object that contains the the corresponding abstract syntax tree (AST) for the given string. On failure, these functions throw an error with a reason the string cannot be parsed.
@@ -115,7 +117,7 @@ type State = { [key: string]: State | RuntimeValue };
 
 This notation indicates that a `State` object has a variable number of properties with values of type `number`, `boolean` (representing values of variables that are in scope), or of type `State` (link to the parent scope).
 
-A block starts a new inner scope. A variable declared in a block will shadow an outer declaration (any variable use will refer to the inner declaration). On exiting a scope, variables declared there are no longer accessible (since we don't have closures). Thus, they should not be in the global state at the end. The nesting of block scopes corresponds to a stack, which you can implement as a linked list, by adding to your `State` object a link to an outer scope. Since the link is just another property, this allows all functions to keep their signatures. To ensure the link name does not clash with a program variable, use a property name that is not an identifier (see `PARENT_STATE_KEY`). The global state cannot have extra properties, and does not need a link, as the last state on the list.
+A block starts a new inner scope. A variable declared in a block will shadow an outer declaration (any variable use will refer to the inner declaration). On exiting a scope, variables declared there are no longer accessible (since we don't have closures). Thus, they should not be in the global state at the end. The nesting of block scopes corresponds to a stack, which you can implement as a linked list, by adding to your `State` object a link to an outer scope. Since the link is just another property, this allows all functions to keep their signatures. To ensure the link name does not clash with a program variable, use a property name that is not an identifier (see given: `PARENT_STATE_KEY`). The global state cannot have extra properties, and does not need a link, as the last state on the list.
 
 ### Behavior
 
@@ -136,12 +138,12 @@ An interpreter can generally not continue meaningfully after an error (as oppose
 As extra (uncredited) practice, you can implement first-class functions inside of your interpreter. We will extend the grammar to include function expressions, call expressions, return statements, and expression statements (`1 + 1;`- to support both `f();` and `f(g());`):
 
 ```txt
-e                     ::= 
+e                     ::=
                         ...
                         | function (x1 ... xn ) b   Function expressions
                         | ::= x(e1 ... en )         Call expression
 
-s                     ::= 
+s                     ::=
                         ...
                         | e;                        Expression statements
                         | return e;                 Return statements
@@ -154,11 +156,12 @@ The parser already supports these constructs. You may look at types inside `./in
 - Give `interpStatement` a return type other than `void`
 
 Rules:
-  - _A function's body is only evaluated when called_
-  - _Functions capture the environment they were created in_
-  - _Providing more, or less, arguments than there are parameters is considered a runtime error_
-  - _All functions must explicitly return a value (number, boolean, or another function)_
-    - If a function has not explicitly returned after executing its body it is a runtime error
+
+- _A function's body is only evaluated when called_
+- _Functions capture the environment they were created in_
+- _Providing more, or less, arguments than there are parameters is considered a runtime error_
+- _All functions must explicitly return a value (number, boolean, or another function)_
+  - If a function has not explicitly returned after executing its body it is a runtime error
 
 ## Programming Tasks
 
