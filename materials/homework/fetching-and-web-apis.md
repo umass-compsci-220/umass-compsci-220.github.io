@@ -283,7 +283,7 @@ export function fetchUniversities(query: string): Promise<string[]> {
 
 This function should take in a query string and return a `Promise` that fulfils with an array of university names.
 
-Use the following API, <http://universities.hipolabs.com/search?name=name+query+goes+here>, retrieve your result. It has a `"name"` parameter to search for universities that start with the given name. **If there are no results (the returned JSON is an empty array), resolve to an empty array.**
+Use the following API, <http://universities.hipolabs.com/search?name=name+query+goes+here>, retrieve your result. It has a `"name"` parameter to search for universities with a similar name. **If there are no results (the returned JSON is an empty array), resolve to an empty array.**
 
 ### `fetchUniversityWeather`
 
@@ -369,7 +369,7 @@ Using the three APIs provided, or any free ones you can find (here is a [a long 
     - Universities, and their names, would count as one
     - Temperature readings would count as one
 - The result of the program must be output somehow (either in the console or into a file)
-  - You could use the [`fs` library](https://nodejs.org/api/fs.html) to read/write to JSON
+  - You could use the [`fs` library](https://nodejs.org/api/fs.html) to read/write to a JSON file
     - See `./include/fetchJSON.ts` or HW6 `./include/data.ts` for examples
 - The program must be documented with what it calculates exactly
   - Write a multi-line comment at the top of the file
