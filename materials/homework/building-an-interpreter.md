@@ -123,7 +123,7 @@ A block starts a new inner scope. A variable declared in a block will shadow an 
 
 ### Behavior
 
-The behavior of our interpreter should be similar to the `node` interpreter in "[strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)" (with some exceptions). To test what your interpreter should do in a scenario, you may use the `node --use-strict` command in a terminal to open a Read Eval Print Loop (REPL). This interface will allow you to input statements and expressions and will display an error or an the evaluated result.
+The behavior of our interpreter should be similar to the `node` interpreter in "[strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)" (with some exceptions). To test what your interpreter should do in a scenario, you may use the `node --use-strict` command in a terminal to open a Read Eval Print Loop (REPL). This interface will allow you to input statements and expressions and will display an error or the evaluated result.
 
 Exceptions:
 
@@ -205,34 +205,7 @@ export function interpProgram(p: Statement[]): State {
 }
 ```
 
-Example:
-
-```js
-interpProgram(parseProgram("let x = 10; x = x * 2;"));
-// {
-//   x: 20;
-// }
-
-interpProgram([
-  { kind: "let", name: "x", expression: { kind: "number", value: 10 } },
-  {
-    kind: "assignment",
-    name: "x",
-    expression: {
-      kind: "operator",
-      operator: "*",
-      left: { kind: "variable", name: "x" },
-      right: { kind: "number", value: 2 },
-    },
-  },
-]);
-
-// {
-//   x: 20;
-// }
-```
-
-## Testing
+## Approach and Testing
 
 Implement `interpExpression`, following the template shown in class. You can use an empty object (`{ }`) for the state if you do not have any variables, or you can set the values of variables by hand. For example:
 
@@ -260,6 +233,8 @@ describe("interpProgram", () => {
 
 Finally, test your interpreter with some simple programs. For example, you should be able to interpret an iterative factorial or Fibonacci sequence computation.
 
+### Testing Error Handling
+
 You may find yourself in a scenario where you need to write a test that verifies a program throws an error. Here is an example of how you would write a test like that:
 
 ```js
@@ -270,6 +245,7 @@ function sqrt(n) {
 }
 
 test("sqrt fails on invalid input", () => {
+  // Must pass a function, otherwise the error will not be captured and the test will fail
   expect(() => {
     sqrt(-1);
   }).toThrow();

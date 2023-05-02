@@ -70,7 +70,7 @@ it("correctly calculates root 2", () => {
 });
 ```
 
-You are welcome to use either interface for writing your tests (we recommenced assertions). Here are jest's [pageation](https://jestjs.io/docs/getting-started) and [API](https://jestjs.io/docs/api) if you are interested.
+You are welcome to use either interface for writing your tests (we recommenced assertions). Here are jest's [documentation](https://jestjs.io/docs/getting-started) and [API](https://jestjs.io/docs/api) if you are interested.
 
 ## Running and Debugging Tests
 

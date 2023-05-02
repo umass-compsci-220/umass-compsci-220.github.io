@@ -172,7 +172,7 @@ const blueImage = Image.create(25, 25, COLORS.BLUE);
 const blackImage = Image.create(25, 25, COLORS.BLACK);
 ```
 
-Inside of the project's `main.ts` is some example usages of the `Image` interface. You can read the full pageation and source for everything inside of `image.ts`.
+Inside of the project's `main.ts` is some example usages of the `Image` interface. You can read the full documentation and source for everything inside of `image.ts`.
 
 ## Testing
 
