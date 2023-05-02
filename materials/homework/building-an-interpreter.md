@@ -137,7 +137,7 @@ An interpreter can generally not continue meaningfully after an error (as oppose
 
 ### Optional: Interpreting Functions
 
-As extra (uncredited) practice, you can implement first-class functions inside of your interpreter. We will extend the grammar to include function expressions, call expressions, return statements, and expression statements (`1 + 1;`) - to support both `f();` and `f(g());`):
+As extra (uncredited) practice, you can implement first-class functions inside of your interpreter. We will extend the grammar to include function expressions, call expressions, return statements, and expression statements (`1 + 1;`) - to support both `f();` and `f(g());`:
 
 ```txt
 e ::=
@@ -170,6 +170,8 @@ Rules:
 Your task is to implement the following functions inside of `./src/interpreter.ts`. You may do them in any order. Reviewing lecture slides might be helpful.
 
 ### `interpExpression`
+
+Given a state object and an AST of an expression, `interpExpression` evaluates the expression and returns its result. It should throw an error if the expression is invalid. See [Behavior](#behavior) and [Error Handling](#error-handling).
 
 ```ts
 export function interpExpression(state: State, e: Expression): number | boolean {
