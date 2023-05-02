@@ -169,6 +169,12 @@ Rules:
 
 Your task is to implement the following functions inside of `./src/interpreter.ts`. You may do them in any order. Reviewing lecture slides might be helpful.
 
+The most common approach to these functions is using a `switch` statement to match `Statement` or `Expression` variants with their desired behavior. This is an acceptable approach, but looks awkward syntactically. If you'd like, you can use the [ts-pattern](https://github.com/gvergnaud/ts-pattern) library to do structural pattern matching rather than a `switch` statement. You will need to add a new import statement at the top of `./src/interpreter.ts`:
+
+```ts
+import { match, P } from "ts-pattern";
+```
+
 ### `interpExpression`
 
 Given a state object and an AST of an expression, `interpExpression` evaluates the expression and returns its result. It should throw an error if the expression is invalid. See [Behavior](#behavior) and [Error Handling](#error-handling).
