@@ -4,6 +4,8 @@ sidebar_position: 8
 
 # Building an Interpreter
 
+- Please download the homework from [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/08-building-an-interpreter.zip)
+
 ## Overview
 
 For this project, you will write an [interpreter](<https://en.wikipedia.org/wiki/Interpreter_(computing)>) for a small programming language similar to **JavaScript (not TypeScript)**. To write an interpreter, you need a parser (provided to you inside of `./include/parser.ts`) to turn the program's concrete syntax (a string of characters) into an _abstract syntax tree_. You will need to traverse the AST making necessary checks and executing corresponding statements and expressions.
