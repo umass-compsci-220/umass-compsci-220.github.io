@@ -180,7 +180,7 @@ import { match, P } from "ts-pattern";
 Given a state object and an AST of an expression, `interpExpression` evaluates the expression and returns its result. It should throw an error if the expression is invalid. See [Behavior](#behavior) and [Error Handling](#error-handling).
 
 ```ts
-export function interpExpression(state: State, e: Expression): number | boolean {
+export function interpExpression(state: State, e: Expression): RuntimeValue {
   // TODO
 }
 ```
