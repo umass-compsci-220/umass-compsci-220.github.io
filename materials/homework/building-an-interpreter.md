@@ -12,7 +12,7 @@ For this project, you will write an [interpreter](<https://en.wikipedia.org/wiki
 
 - Learn fundamentals of programming language implementation
 - How to read the grammar for a concrete syntax
-- How to work and read abstract syntax trees
+- How to work with and read abstract syntax trees
 
 ### Student Expectations
 
@@ -77,7 +77,7 @@ would read as: An expression, labeled as `e`, may be one of:
 - `n`, a number (as defined above)
 - `true`, the boolean value true
 - `false`, the boolean value false
-- An expression, $e_1$, a plus symbol, followed by another expression $e_2$, for addition addition
+- An expression, $e_1$, a plus symbol, followed by another expression $e_2$, for addition
 - An expression, $e_1$, two ampersands (`&&`), followed by another expression $e_2$, for logical AND
 
 ### Parser
@@ -104,7 +104,7 @@ function parseExpression(expression: string): Expression;
 function parseProgram(statements: string): Statement[];
 ```
 
-On success, these functions will return an object that contains the the corresponding abstract syntax tree (AST) for the given string. On failure, these functions throw an error with a reason the string cannot be parsed.
+On success, these functions will return an object that contains the the corresponding abstract syntax tree (AST) for the given string. On failure, these functions throw an error with a reason: the string cannot be parsed.
 
 ### State
 
@@ -135,7 +135,7 @@ An interpreter can generally not continue meaningfully after an error (as oppose
 
 ### Optional: Interpreting Functions
 
-As extra (uncredited) practice, you can implement first-class functions inside of your interpreter. We will extend the grammar to include function expressions, call expressions, return statements, and expression statements (`1 + 1;`- to support both `f();` and `f(g());`):
+As extra (uncredited) practice, you can implement first-class functions inside of your interpreter. We will extend the grammar to include function expressions, call expressions, return statements, and expression statements (`1 + 1;`) - to support both `f();` and `f(g());`):
 
 ```txt
 e ::=
@@ -149,7 +149,7 @@ s ::=
     | return e;                 Return statements
 ```
 
-The parser already supports these constructs. You may look at types inside `./include/parser.ts`. Here are some hints for what needs to be updated `./src/interpreter.ts`:
+The parser already supports these constructs. You may look at types inside `./include/parser.ts`. Here are some hints for what needs to be updated in `./src/interpreter.ts`:
 
 - Add a new type of `RuntimeValue` to support functions/closures
   - Define an `interface` with the values you might think you'd need
@@ -159,7 +159,7 @@ Rules:
 
 - _A function's body is only evaluated when called_
 - _Functions capture the environment they were created in_
-- _Providing more, or less, arguments than there are parameters is considered a runtime error_
+- _Providing more, or fewer, arguments than there are parameters is considered a runtime error_
 - _All functions must explicitly return a value (number, boolean, or another function)_
   - If a function has not explicitly returned after executing its body it is a runtime error
 
