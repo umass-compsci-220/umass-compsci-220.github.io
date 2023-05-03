@@ -143,7 +143,7 @@ As extra (uncredited) practice, you can implement first-class functions inside o
 e ::=
     ...
     | function (x1 ... xn ) b   Function expressions
-    | ::= x(e1 ... en )         Call expression
+    | x(e1 ... en )             Call expression
 
 s ::=
     ...
@@ -168,6 +168,8 @@ Rules:
 ## Programming Tasks
 
 Your task is to implement the following functions inside of `./src/interpreter.ts`. You may do them in any order. Reviewing lecture slides might be helpful.
+
+**You may not use the `eval` function.**
 
 The most common approach to these functions is using a `switch` statement to match `Statement` or `Expression` variants with their desired behavior. This is an acceptable approach, but looks awkward syntactically. If you'd like, you can use the [ts-pattern](https://github.com/gvergnaud/ts-pattern) library to do structural pattern matching rather than a `switch` statement. You will need to add a new import statement at the top of `./src/interpreter.ts`:
 
