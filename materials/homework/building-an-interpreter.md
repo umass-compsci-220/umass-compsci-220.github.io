@@ -129,7 +129,12 @@ Exceptions:
 
 - _Arithmetic and greater/less-than comparison may only happen between numbers_
 - _Logical operations may only happen between booleans_
+  - Logical operations should [short-circuit](https://en.wikipedia.org/wiki/Short-circuit_evaluation)
+  - Evaluated operands must be boolean values
 - _Division by zero is forbidden_
+- _Additional checks to emulate `ReferenceError` behavior are unneeded_
+  - This would require an additional pass prior to interpreting to ensure variables are not used before declaration
+  - See [MDN on Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting) if you are curious
 
 ### Error Handling
 
