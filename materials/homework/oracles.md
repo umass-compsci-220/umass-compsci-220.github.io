@@ -32,7 +32,7 @@ Students will be graded on their ability to:
 - Resolve all linter warnings
   - **There will be credited grading for this (2.5%)**
   - See the section on [linting and formatting assignments](/materials/tutorials/assignments/linting-and-formatting) for more details
-- Follow the [coding](/materials/homework/image-processing), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
+- Follow the [coding](/materials/guidelines/syntax-and-code), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
   - **There may be manual grading regarding these guidelines**
 
 **You are not required to write anything inside of the `.test.ts` file.**

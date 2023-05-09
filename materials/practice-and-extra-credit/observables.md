@@ -19,7 +19,7 @@ In this assignment, you will work with observables.
 Students will be graded on their ability to:
 
 - Correctly implement the functions [specified below](#programming-tasks)
-- Follow the [coding](../guidelines/syntax-and-code.md), [bad practice](../guidelines/bad-practices.md), and [testing](../tutorials/assignments/testing.md) guidelines
+- Follow the [coding](/materials/guidelines/syntax-and-code), [bad practice](../guidelines/bad-practices.md), and [testing](../tutorials/assignments/testing.md) guidelines
 - Design full-coverage [unit tests](../guidelines/testing.md) for the functions they implemented
 
 ## Programming Tasks

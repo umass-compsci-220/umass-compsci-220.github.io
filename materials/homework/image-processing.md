@@ -29,7 +29,7 @@ Students will be graded on their ability to:
 
 - Correctly implement the functions [specified below](#programming-tasks)
   - Using private auto-grader tests
-- Follow the [coding](/materials/homework/image-processing), [bad practice](/materials/guidelines/bad-practices), and [testing](/materials/guidelines/testing) guidelines
+- Follow the [coding](/materials/guidelines/syntax-and-code), [bad practice](/materials/guidelines/bad-practices), and [testing](/materials/guidelines/testing) guidelines
   - There will be no grading regarding these rules on this assignment
   - Starting with Homework 3, there may be crediting manual grading
 - Design full-coverage [unit-tests](#testing) for the functions they implemented

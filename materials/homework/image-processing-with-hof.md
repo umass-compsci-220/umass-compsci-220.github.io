@@ -28,7 +28,7 @@ Students will be graded on their ability to:
   - **There will be credited grading for this (2.5%)**
   - Use `npm run lint` to see if you have any warnings, `npm run lint:fix` may fix some automatically
   - See the section on [linting and formatting assignments](/materials/tutorials/assignments/linting-and-formatting) for more details
-- Follow the [coding](/materials/homework/image-processing), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
+- Follow the [coding](/materials/guidelines/syntax-and-code), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
   - There will be no grading regarding these rules on this assignment
   - Starting with **Homework 3**, there may be crediting manual grading
 - Design full-coverage [unit-tests](#testing) for the functions they implemented

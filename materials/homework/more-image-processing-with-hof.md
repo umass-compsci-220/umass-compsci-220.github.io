@@ -28,7 +28,7 @@ Students will be graded on their ability to:
 - Resolve all linter warnings
   - **There will be credited grading for this (2.5%)**
   - See the section on [linting and formatting assignments](/materials/tutorials/assignments/linting-and-formatting) for more details
-- Follow the [coding](/materials/homework/image-processing), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
+- Follow the [coding](/materials/guidelines/syntax-and-code), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
   - **There may be manual grading regarding this guidelines from this point forward**
   - Manual grading will be out of 10-15 points, resulting in a final HW score out of 110/115
   - This assignment puts extra emphasis on **avoiding [code duplication](/materials/homework/image-processing#code-duplication)**
