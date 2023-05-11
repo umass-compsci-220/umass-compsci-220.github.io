@@ -123,7 +123,7 @@ This notation indicates that a `State` object has a variable number of propertie
 
 A block starts a new inner scope. A variable declared in a block will shadow an outer declaration (any variable use will refer to the inner declaration). On exiting a scope, variables declared there are no longer accessible (since we don't have closures). Thus, they should not be in the global state at the end. The nesting of block scopes corresponds to a stack, which you can implement as a linked list, by adding to your `State` object a link to an outer scope. Since the link is just another property, this allows all functions to keep their signatures. To ensure the link name does not clash with a program variable, use a property name that is not an identifier (see given: `PARENT_STATE_KEY`). The global state cannot have extra properties, and does not need a link, as the last state on the list.
 
-### Accessing Values from State
+#### Accessing Values from State
 
 The `State` type maps arbitrary strings to a `RuntimeValue` or another `State` type. Meaning field access on the state object will result in values of that type.
 
