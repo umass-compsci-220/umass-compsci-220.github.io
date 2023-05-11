@@ -78,7 +78,7 @@ function hasMembership(userId: string): boolean {}
 
 ## Comments
 
-Comments should be enough for an unfamiliar reader to understand the code. Reasonably complex statements should be pageed as necessary. Such as statements that use a formula or algorithm. Explicitly note any side effects or dependencies on functions.
+Comments should be enough for an unfamiliar reader to understand the code. Reasonably complex statements should be documented as necessary. Such as statements that use a formula or algorithm. Explicitly note any side effects or dependencies on functions.
 
 You do not need to comment every line. But you could use a [TSDoc](https://tsdoc.org/) comment on important functions to explain arguments, results, and purpose.
 
@@ -140,7 +140,7 @@ export function mode(data: number[]): number {
 
 ## Function Size
 
-Functions should be small and manageable. Anything with standalone functionality deserves to be a function, even if used once. If a block of code spans more than a dozen lines, then it should be either modularized (made into separate functions) or commented out until you think of an alternative approach. This is helpful visually as functions can be collapsed and [pageed](#comments).
+Functions should be small and manageable. Anything with standalone functionality deserves to be a function, even if used once. If a block of code spans more than a dozen lines, then it should be either modularized (made into separate functions) or commented out until you think of an alternative approach. This is helpful visually as functions can be collapsed and [documented](#comments).
 
 If you find yourself **copy-and-pasting a bit of code**, instead of pasting it to where you need to use it, paste it into its function. Then replace the original bit of code with a call to that new function.
 
@@ -156,7 +156,7 @@ Each assignment can be completed in a graceful way - if you ever think "Is this 
 
 ### Data Flow
 
-A typical function receives arguments and returns a result. Ideally, the function should only depend on its arguments. Other dependencies and side effects must be pageed. Read the specification carefully, and implement it exactly as stated. Make sure any outputs are computed exactly from the specified data and do not overwrite any of the original data. The function should not modify its arguments unless required by the specification.
+A typical function receives arguments and returns a result. Ideally, the function should only depend on its arguments. Other dependencies and side effects must be documented. Read the specification carefully, and implement it exactly as stated. Make sure any outputs are computed exactly from the specified data and do not overwrite any of the original data. The function should not modify its arguments unless required by the specification.
 
 ### Stick with the Function's Purpose
 
