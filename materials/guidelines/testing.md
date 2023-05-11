@@ -43,4 +43,3 @@ The design of your tests should follow the patterns demonstrated in the first ho
   - Tests should not depend on each other (they do not execute in any specific order)
 - Writing tests that cover a variety of cases
   - Weird (but valid) sized/shaped input, input close to a bound, input on a bound, input in the middle
-  - Writing some comments to describe what a tests is trying to accomplish
