@@ -33,29 +33,29 @@ Students will be graded on their ability to:
 The following (simplified) grammar describes the concrete syntax of the fragment of JavaScript that you will be working with:
 
 ```txt
-Numbers        n ::= ...                 base-10 numbers
+Numbers        n ::= ...                    base-10 numbers
 
-Variables      x ::= ...                 variable name, a sequence of alphabetic letters
+Variables      x ::= ...                    variable name, a sequence of alphabetic letters
 
-Expressions    e ::= n                   numeric constant
-                | true                  boolean value true
-                | false                 boolean value false
-                | x                     variable reference
-                | e_1 + e_2             addition
-                | e_1 - e_2             subtraction
-                | e_1 * e_2             multiplication
-                | e_1 / e_2             division
-                | e_1 && e_2            logical AND
-                | e_1 || e_2            logical OR
-                | e_1 < e_2             less than
-                | e_1 > e_2             greater than
-                | e_1 === e_2           equal to
+Expressions    e ::= n                      numeric constant
+                | true                      boolean value true
+                | false                     boolean value false
+                | x                         variable reference
+                | e_1 + e_2                 addition
+                | e_1 - e_2                 subtraction
+                | e_1 * e_2                 multiplication
+                | e_1 / e_2                 division
+                | e_1 && e_2                logical AND
+                | e_1 || e_2                logical OR
+                | e_1 < e_2                 less than
+                | e_1 > e_2                 greater than
+                | e_1 === e_2               equal to
 
-Statements    s ::= let x = e;          variable declaration
-                  | x = e;                assignment
-                  | if (e) b_1 else b_2   conditional
-                  | while (e) b           loop
-                  | print(e);             display to console
+Statements    s ::= let x = e;              variable declaration
+                  | x = e;                  assignment
+                  | if (e) b_1 else b_2     conditional
+                  | while (e) b             loop
+                  | print(e);               display to console
 
 Blocks        b ::= { s_1 ... s_n }
 
@@ -67,7 +67,7 @@ Some structures (like `Numbers` and `Variables`) have been omitted for simplicit
 Each line of the grammar defines a rule. As an example, the rule
 
 ```txt
-Expressions   e ::= n                   numeric constant
+Expressions   e ::= n                     numeric constant
                   | true                  boolean value true
                   | false                 boolean value false
                   | e_1 + e_2             addition
@@ -108,6 +108,8 @@ function parseProgram(statements: string): Statement[];
 
 On success, these functions will return an object that contains the the corresponding abstract syntax tree (AST) for the given string. On failure, these functions throw an error with a reason: the string cannot be parsed.
 
+Parsing and interpreting are separate stages of a programs execution. The interpreter depends on the parser to construct a valid AST. If the parser fails, then it is considered an unrecoverable failure and proceeding stages, such as interpreting (or linting/formatting if we were writing those tools), cannot not run. **You are not expected to cover input that the parser rejects.**
+
 ### State
 
 The State type is defined as follows:
@@ -120,6 +122,24 @@ type State = { [key: string]: State | RuntimeValue };
 This notation indicates that a `State` object has a variable number of properties with values of type `number`, `boolean` (representing values of variables that are in scope), or of type `State` (link to the parent scope).
 
 A block starts a new inner scope. A variable declared in a block will shadow an outer declaration (any variable use will refer to the inner declaration). On exiting a scope, variables declared there are no longer accessible (since we don't have closures). Thus, they should not be in the global state at the end. The nesting of block scopes corresponds to a stack, which you can implement as a linked list, by adding to your `State` object a link to an outer scope. Since the link is just another property, this allows all functions to keep their signatures. To ensure the link name does not clash with a program variable, use a property name that is not an identifier (see given: `PARENT_STATE_KEY`). The global state cannot have extra properties, and does not need a link, as the last state on the list.
+
+### Accessing Values from State
+
+The `State` type maps arbitrary strings to a `RuntimeValue` or another `State` type. Meaning field access on the state object will result in values of that type.
+
+```ts
+const variableName = "foo";
+const value = state[variableName]; // Compiler infers that `value` is RuntimeValue | State
+```
+
+However, you control the structure of your `state` object, and know that only the `PARENT_STATE_KEY` field holds a `State` type. To aid the compiler, you can override its inference using a [type assertion](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions).
+
+```ts
+const variableName = "foo";
+const value = state[variableName] as RuntimeValue; // Compiler accepts that `value` is a `RuntimeValue`
+```
+
+You may come across the complimentary situation where you know the value is defiantly a `State` type. A similar solution follows.
 
 ### Behavior
 
@@ -166,6 +186,7 @@ Rules:
 
 - _A function's body is only evaluated when called_
 - _Functions capture the environment they were created in_
+- _There may not be duplicate parameter names_
 - _Providing more, or fewer, arguments than there are parameters is considered a runtime error_
 - _All functions must explicitly return a value (number, boolean, or another function)_
   - If a function has not explicitly returned after executing its body it is a runtime error
@@ -212,11 +233,13 @@ export function interpProgram(p: Statement[]): State {
 }
 ```
 
-## Approach and Testing
+## Testing
+
+### Approach
 
 Implement `interpExpression`, following the template shown in class. You can use an empty object (`{ }`) for the state if you do not have any variables, or you can set the values of variables by hand. For example:
 
-```js
+```ts
 describe("interpExpression", () => {
   it("evaluates multiplication with a variable", () => {
     const r = interpExpression({ x: 10 }, parseExpression("x * 2"));
@@ -228,7 +251,7 @@ describe("interpExpression", () => {
 
 Implement `interpStatement` and `interpProgram`, following the template shown in class. You should be able to test that assignment updates variables. For example:
 
-```js
+```ts
 describe("interpProgram", () => {
   it("handles declarations and reassignment", () => {
     const st = interpProgram(parseProgram("let x = 10; x = 20;"));
@@ -240,7 +263,7 @@ describe("interpProgram", () => {
 
 Finally, test your interpreter with some simple programs. For example, you should be able to interpret an iterative factorial or Fibonacci sequence computation.
 
-### Testing Error Handling
+### Capturing Errors
 
 You may find yourself in a scenario where you need to write a test that verifies a program throws an error. Here is an example of how you would write a test like that:
 
