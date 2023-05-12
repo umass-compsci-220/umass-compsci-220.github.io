@@ -267,8 +267,8 @@ Finally, test your interpreter with some simple programs. For example, you shoul
 
 You may find yourself in a scenario where you need to write a test that verifies a program throws an error. Here is an example of how you would write a test like that:
 
-```js
-function sqrt(n) {
+```ts
+function sqrt(n: number): number {
   if (n < 0) throw new Error("Input must be positive or zero.");
 
   // Do some iterations of Newton's method
