@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Streams and Series
 
-- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/05-streams-and-series.zip)
+- Please download the homework [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/05-streams-and-series.zip)
 
 ## Overview
 

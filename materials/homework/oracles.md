@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Oracles
 
-- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/04-oracles.zip)
+- Please download the homework [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/04-oracles.zip)
 - This project is divided into two homeworks (HW4a, HW4b)
   - Both carry the weight of a full homework
 
