@@ -5,7 +5,7 @@ sidebar_position: 1
 # Image Processing
 
 - Please download the homework [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/01-image-processing.zip).
-- If you need help installing [VSCode](https://code.visualstudio.com/) and [Node.js](https://nodejs.org/) (required for this course), read [this page](/).
+- If you need help installing [VSCode](https://code.visualstudio.com/) and [Node.js](https://nodejs.org/) (required for this course), read [this page](/materials/tutorials/assignments/environment).
   - **You will need a Node.js version starting from v16 and less than v20**
 - If you need help opening the project, read [this page](/materials/tutorials/assignments/opening-an-assignment).
 - **After opening, run `npm install` in a VSCode terminal**
@@ -209,7 +209,7 @@ export function removeRed(img: Image): Image {
 Write a function called `flipColors`
 
 ```ts
-export funciton flipColors(img: Image): Image {
+export function flipColors(img: Image): Image {
   // TODO
 }
 ```
