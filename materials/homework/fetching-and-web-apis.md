@@ -364,10 +364,15 @@ Using the three APIs provided, or any free ones you can find (here is a [a long 
 **Requirements:**
 
 - Must use `fetchJSON`, either directly or indirectly
+- At least one new type of API call
+  - The program cannot solely consist of functions defined in [Programming Tasks](#programming-tasks)
+  - You must use a new API or use a given API in a new way
 - Must use at least two different types of data
   - These data items can be from the same API (different endpoint) or different APIs
     - Universities, and their names, would count as one
     - Temperature readings would count as one
+- The program must take input from the user
+  - Read the [Node.js documentation](https://nodejs.org/api/readline.html#readline)
 - The result of the program must be output somehow (either in the console or into a file)
   - You could use the [`fs` library](https://nodejs.org/api/fs.html) to read/write to a JSON file
     - See `./include/fetchJSON.ts` or HW6 `./include/data.ts` for examples
@@ -378,8 +383,6 @@ Using the three APIs provided, or any free ones you can find (here is a [a long 
 - At least 25 lines of code (after running `npm run format` - ignoring the description comment)
 
 Pick something interesting and try to have fun with it. As long as you meet the requirements stated above, you should receive full credit.
-
-If you are stuck on what you could do, then a good place to start would be to [accept user input](https://nodejs.org/api/readline.html#readline) (not required).
 
 You are not required to write tests for this code.
 
