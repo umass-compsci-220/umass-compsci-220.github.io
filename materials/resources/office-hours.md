@@ -14,54 +14,7 @@ Please do come to office hours for:
 - Reviewing past exams, quizzes, or homework
 - Anything else you might need assistance with!
 
-## Monday
-
-| Time              | Course Staff       | Location/Zoom Link                                                |
-| ----------------- | ------------------ | ----------------------------------------------------------------- |
-| 10:00am - 11:00am | Marius Minea       | LGRC A261 and [Zoom](https://umass-amherst.zoom.us/j/92493044446)
-| 11:30am - 12:30pm | Saurabh Bajaj      | [Zoom](https://umass-amherst.zoom.us/j/99759006093)               |
-| 1:00pm - 2:00pm   | John Wordell       | T220                                                              |
-| 2:00pm - 3:00pm   | Shrushti Soni      | [Zoom](https://umass-amherst.zoom.us/j/93890755969)               |
-| 3:30pm - 4:30pm   | Daisy LaBonte      | [Zoom](https://umass-amherst.zoom.us/j/6286340706)                |
-| 5:30pm - 6:30pm   | Vi Doan            | T220                                                              |
-
-## Tuesday
-
-| Time              | Course Staff       | Location/Zoom Link                                                |
-| ----------------- | ------------------ | ----------------------------------------------------------------- |
-| 9:00am - 10:00am  | Angela Upreti      | [Zoom](https://umass-amherst.zoom.us/j/98762553166)               |
-| 1:00pm - 2:00pm   | Anna Allen         | T220                                                              |
-| 1:45pm - 2:45pm   | Kyler Schulz       | T220                                                              |
-| 5:30pm - 6:30pm   | Marius Minea       | LGRC A261 and [Zoom](https://umass-amherst.zoom.us/j/92493044446) |
-
-## Wednesday
-
-| Time              | Course Staff       | Location/Zoom Link                                                |
-| ----------------- | ------------------ | ----------------------------------------------------------------- |
-| 1:30pm - 2:30pm   | John Wordell       | T220                                                              |
-| 2:30pm - 3:30pm   | Daniel Melanson    | T220                                                              |
-| 3:30pm - 4:30pm   | Maximilian Kuechen | T220                                                              |
-| 4:30pm - 5:30pm   | Emeka Ifejiagwa    | [Zoom](https://umass-amherst.zoom.us/j/3476472584)                |
-| 5:45pm - 6:45pm   | Shreyan Mallik     | [Zoom](https://umass-amherst.zoom.us/j/4786826178)                |
-| 8:00pm - 9:00pm   | Daisy LaBonte      | [Zoom](https://umass-amherst.zoom.us/j/6286340706)                |
-
-## Thursday
-
-| Time              | Course Staff       | Location/Zoom Link                                                |
-| ----------------- | ------------------ | ----------------------------------------------------------------- |
-| 10:00am - 11:00am | Ishita Kumar       | [Zoom](https://umass-amherst.zoom.us/j/94063306225)               |
-| 11:30am - 12:30pm | Saurabh Bajaj      | T220                                                              |
-| 12:30pm - 1:30pm  | Paul Davis         | T220                                                              |
-| 2:00pm - 3:00pm   | Dzung Pham         | T220                                                              |
-
-## Friday
-
-| Time              | Course Staff       | Location/Zoom Link                                                |
-| ----------------- | ------------------ | ----------------------------------------------------------------- |
-| 8:00am - 9:00am   | Rosaline Zhu       | T220                                                              |
-| 12:00pm - 1:00pm  | Catherine Qi       | T220                                                              |
-| 1:15pm - 2:15pm   | Marius Minea       | LGRC A261 and [Zoom](https://umass-amherst.zoom.us/j/92493044446) |
-| 2:00pm - 3:00pm   | Kyler Schulz       | T220                                                              |
+### The Office hour schedule will be released prior to the first day of classes.
 
 ## Holidays and Schedule Changes
 
