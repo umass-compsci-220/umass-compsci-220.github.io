@@ -216,7 +216,7 @@ export function flipColors(img: Image): Image {
 
 If you have solved these two tasks, you might notice that the structure of the two functions is very similar, the difference is only in the actual processing applied. We can avoid duplication by defining functions, similar to [Array.prototype.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), that apply the same transformation to several or all pixels of an image.
 
-### `flipColors`
+### `mapLine`
 
 Write a function called `mapLine`
 
