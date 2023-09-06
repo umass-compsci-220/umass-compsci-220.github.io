@@ -30,11 +30,7 @@ Students will be graded on their ability to:
 - Correctly implement the functions [specified below](#programming-tasks)
   - Using private auto-grader tests
 - Follow the [coding](/materials/guidelines/syntax-and-code), [bad practice](/materials/guidelines/bad-practices), and [testing](/materials/guidelines/testing) guidelines
-  - There will be no grading regarding these rules on this assignment
-  - Starting with Homework 3, there may be crediting manual grading
 - Design full-coverage [unit-tests](#testing) for the functions they implemented
-  - For the first homework, this will not be checked
-  - Starting with Homework 2, the autograder will calculate and score you based off how well you write your tests
   - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage
 
 ### Resources
