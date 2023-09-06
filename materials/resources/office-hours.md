@@ -20,7 +20,7 @@ Please do come to office hours for:
 
 -   11:00 AM-12:00 PM: Saurabh Bajaj (Zoom; link TBD)
 
--   12:00-1:00 PM: Sonali Palit (Zoom; link TBD)
+-   12:00-1:00 PM: Sonali Palit (https://umass-amherst.zoom.us/j/3326597420)
 
 -   1:30-2:30 PM: Marius Minea (LGRC A261)
 
