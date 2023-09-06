@@ -4,17 +4,73 @@ sidebar_position: 1
 
 # Office Hours
 
-We will be holding both in-person and virtual office hours this semester. All in-person TA and UCA office hours are held in LGRT 220 (the tower). Virtual office hours are on zoom, see the table below for the link.
+We will be holding both in-person and virtual office hours this semester. All in-person TA and UCA office hours are held in **LGRT 222** (the tower). Prof. Minea's office hour is held in his office (LGRC A261). Virtual office hours are on zoom, see the table below for the link.
 
 Please do come to office hours for:
 
-- Help with material or homework
-- Exam review
-- Logistical questions
-- Reviewing past exams, quizzes, or homework
-- Anything else you might need assistance with!
+-   Help with material or homework
+-   Exam review
+-   Logistical questions
+-   Reviewing past exams, quizzes, or homework
+-   Anything else you might need assistance with!
 
-### The Office hour schedule will be released prior to the first day of classes.
+## Weekly Schedule
+
+**Monday**
+
+-   11:00 AM-12:00 PM: Saurabh Bajaj (Zoom; link TBD)
+
+-   12:00-1:00 PM: Sonali Palit (Zoom; link TBD)
+
+-   1:30-2:30 PM: Marius Minea (LGRC A261)
+
+-   2:30-3:30 PM: Saadhvi Raghav (LGRT 222)
+
+-   4:00-5:00 PM: Md Ashraful Islam (LGRT 222)
+
+**Tuesday**
+
+-   10:00-11:00 AM: Angela Upreti (Zoom; link TBD)
+
+-   12:00-1:00 PM: Carey Pope (LGRT 222)
+
+-   1:30-2:30 PM: Lucky Kovvuri (LGRT 222)
+
+-   2:30-3:30 PM: Md Ashraful Islam (LGRT 222)
+
+-   5:30-6:30 PM: Marius Minea (LGRC A261)
+
+**Wednesday**
+
+-   10:00-11:00 AM: Marius Minea (LGRC A261)
+
+-   3:00-4:00 PM: Yuni Jeong (LGRT 222)
+
+-   4:00-5:00 PM: Dzung Pham (LGRT 222)
+
+-   5:00-6:00 PM: Maggie Li (LGRT 222)
+
+-   6:00-7:00 PM: Max Kuechen (LGRT 222)
+
+**Thursday**
+
+-   1:00-2:00 PM: Kyler Schulz (LGRT 222)
+
+-   2:00-3:00 PM: Shrushti Soni (Zoom; link TBD)
+
+-   4:00-5:00 PM: Vi Doan (LGRT 222)
+
+-   6:00-7:00 PM: Saurabh Bajaj (Zoom; link TBD)
+
+**Friday**
+
+-   9:00-10:00 AM: Angela Upreti (Zoom; link TBD)
+
+-   10:00-11:00 AM: Noah Ford (LGRT 222)
+
+-   12:30-1:30 PM: Jeffrey Gomez (LGRT 222)
+
+-   1:30-2:30 PM: Simran Lekhwani (LGRT 222)
 
 ## Holidays and Schedule Changes
 
