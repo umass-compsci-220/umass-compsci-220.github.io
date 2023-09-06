@@ -43,6 +43,7 @@ Please do come to office hours for:
 **Wednesday**
 
 -   10:00-11:00 AM: Marius Minea (LGRC A261)
+-   11:00 AM - 12:00 PM: Minh Vu (LGRT 222)
 
 -   3:00-4:00 PM: Yuni Jeong (LGRT 222)
 
@@ -56,11 +57,11 @@ Please do come to office hours for:
 
 -   1:00-2:00 PM: Kyler Schulz (LGRT 222)
 
--   2:00-3:00 PM: Shrushti Soni (Zoom; link TBD)
-
--   4:00-5:00 PM: Vi Doan (LGRT 222)
+-   2:00-3:00 PM: Shrushti Soni (https://umass-amherst.zoom.us/j/93890755969)
 
 -   6:00-7:00 PM: Saurabh Bajaj (https://umass-amherst.zoom.us/j/96699600307)
+
+-   7:00-8:00 PM: Vi Doan (LGRT 222)
 
 **Friday**
 
