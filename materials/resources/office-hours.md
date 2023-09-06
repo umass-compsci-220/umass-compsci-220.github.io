@@ -18,7 +18,7 @@ Please do come to office hours for:
 
 **Monday**
 
--   11:00 AM-12:00 PM: Saurabh Bajaj (Zoom; link TBD)
+-   11:00 AM-12:00 PM: Saurabh Bajaj (https://umass-amherst.zoom.us/j/96699600307)
 
 -   12:00-1:00 PM: Sonali Palit (https://umass-amherst.zoom.us/j/3326597420)
 
@@ -60,7 +60,7 @@ Please do come to office hours for:
 
 -   4:00-5:00 PM: Vi Doan (LGRT 222)
 
--   6:00-7:00 PM: Saurabh Bajaj (Zoom; link TBD)
+-   6:00-7:00 PM: Saurabh Bajaj (https://umass-amherst.zoom.us/j/96699600307)
 
 **Friday**
 
