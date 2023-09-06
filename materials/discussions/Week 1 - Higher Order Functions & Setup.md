@@ -4,15 +4,15 @@ Welcome to the first discussion! We hope these will be helpful and engaging for 
 
 ## Materials
 
-Download the lab slides: [Here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%201%20-%20No%20Solutions.pptx.pdf).
+Download the lab slides [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%201%20-%20No%20Solutions.pptx.pdf).
 
-The slides with solutions will be posted [here](#) after the last discussion fo the day.
+The slides with solutions will be posted [here](#) after the last discussion of the day.
 
 Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/01-HOF.zip). Make sure to submit this to gradescope, ask your lab leaders to help you if you are unsure of how. We'll also show the process in the first lab.
 
 The solution file will be posted [here](#) after lab.
 
-## Tutorials
+## Opening and working with the starter code
 
 - If you need help installing [VSCode](https://code.visualstudio.com/) and [Node.js](https://nodejs.org/) (required for this course), read [this page](/materials/tutorials/assignments/environment).
   - **You will need a Node.js version starting from v16 and less than v20**
