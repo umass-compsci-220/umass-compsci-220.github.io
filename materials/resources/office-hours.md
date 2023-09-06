@@ -30,7 +30,7 @@ Please do come to office hours for:
 
 **Tuesday**
 
--   10:00-11:00 AM: Angela Upreti (Zoom; link TBD)
+-   10:00-11:00 AM: Angela Upreti (https://umass-amherst.zoom.us/j/98362686688)
 
 -   12:00-1:00 PM: Carey Pope (LGRT 222)
 
@@ -42,10 +42,9 @@ Please do come to office hours for:
 
 **Wednesday**
 
+-   9:00-10:00 AM: Yuni Jeong (LGRT 222)
 -   10:00-11:00 AM: Marius Minea (LGRC A261)
 -   11:00 AM - 12:00 PM: Minh Vu (LGRT 222)
-
--   3:00-4:00 PM: Yuni Jeong (LGRT 222)
 
 -   4:00-5:00 PM: Dzung Pham (LGRT 222)
 
@@ -65,7 +64,7 @@ Please do come to office hours for:
 
 **Friday**
 
--   9:00-10:00 AM: Angela Upreti (Zoom; link TBD)
+-   9:00-10:00 AM: Angela Upreti (https://umass-amherst.zoom.us/j/98362686688)
 
 -   10:00-11:00 AM: Noah Ford (LGRT 222)
 

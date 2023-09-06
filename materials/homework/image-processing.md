@@ -4,13 +4,13 @@ sidebar_position: 1
 
 # Image Processing
 
-- Please download the homework [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/01-image-processing.zip).
-- If you need help installing [VSCode](https://code.visualstudio.com/) and [Node.js](https://nodejs.org/) (required for this course), read [this page](/materials/tutorials/assignments/environment).
-  - **You will need a Node.js version starting from v16 and less than v20**
-- If you need help opening the project, read [this page](/materials/tutorials/assignments/opening-an-assignment).
-- **After opening, run `npm install` in a VSCode terminal**
-- You may edit any file inside of `./src/`, **DO NOT make any edits to any file inside of `./include/`**
-  - This rule applies to all homework
+-   Please download the homework [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/01-image-processing.zip).
+-   If you need help installing [VSCode](https://code.visualstudio.com/) and [Node.js](https://nodejs.org/) (required for this course), read [this page](/materials/tutorials/assignments/environment).
+    -   **You will need a Node.js version starting from v16 and less than v20**
+-   If you need help opening the project, read [this page](/materials/tutorials/assignments/opening-an-assignment).
+-   **After opening, run `npm install` in a VSCode terminal**
+-   You may edit any file inside of `./src/`, **DO NOT make any edits to any file inside of `./include/`**
+    -   This rule applies to all homework
 
 ## Overview
 
@@ -18,27 +18,27 @@ sidebar_position: 1
 
 ### Learning Objectives
 
-- Become familiar with the TypeScript syntax, and JavaScript runtime behavior, of functions, loops, and arrays
-- Understand why higher order functions are so useful
-- Know how to pass a function to a function and how to receive a function in a function
-- Learn basic testing methodology and syntax
+-   Become familiar with the TypeScript syntax, and JavaScript runtime behavior, of functions, loops, and arrays
+-   Understand why higher order functions are so useful
+-   Know how to pass a function to a function and how to receive a function in a function
+-   Learn basic testing methodology and syntax
 
 ### Student Expectations
 
 Students will be graded on their ability to:
 
-- Correctly implement the functions [specified below](#programming-tasks)
-  - Using private auto-grader tests
-- Follow the [coding](/materials/guidelines/syntax-and-code), [bad practice](/materials/guidelines/bad-practices), and [testing](/materials/guidelines/testing) guidelines
-- Design full-coverage [unit-tests](#testing) for the functions they implemented
-  - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage
+-   Correctly implement the functions [specified below](#programming-tasks)
+    -   Using private auto-grader tests
+-   Follow the [coding](/materials/guidelines/syntax-and-code), [bad practice](/materials/guidelines/bad-practices), and [testing](/materials/guidelines/testing) guidelines
+-   Design full-coverage [unit-tests](#testing) for the functions they implemented
+    -   See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage
 
 ### Resources
 
-- [Linting/formatting](/materials/tutorials/assignments/linting-and-formatting), [running/debugging](/materials/tutorials/assignments/running-and-debugging), and [testing](/materials/tutorials/assignments/testing) a project
-- [MDN Guide on Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
-  - [MDN Docs Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-- [MDN Guide on Arrays](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays)
+-   [Linting/formatting](/materials/tutorials/assignments/linting-and-formatting), [running/debugging](/materials/tutorials/assignments/running-and-debugging), and [testing](/materials/tutorials/assignments/testing) a project
+-   [MDN Guide on Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+    -   [MDN Docs Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+-   [MDN Guide on Arrays](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays)
 
 ## Getting Started
 
@@ -72,21 +72,21 @@ This imports the `Image` class and `Color` type into the file. An `Image` repres
 
 ```ts
 class Image {
-  static loadImageFromGallery(name?: ImageName): Image;
-  static loadImageFromFile(filePath: string): Image;
-  static create(width: number, height: number, fillColor: Color): Image;
+	static loadImageFromGallery(name?: ImageName): Image;
+	static loadImageFromFile(filePath: string): Image;
+	static create(width: number, height: number, fillColor: Color): Image;
 
-  readonly width: number;
-  readonly height: number;
+	readonly width: number;
+	readonly height: number;
 
-  constructor(width: number, height: number, data: Uint8ClampedArray);
+	constructor(width: number, height: number, data: Uint8ClampedArray);
 
-  getPixel(x: number, y: number): Color;
-  setPixel(x: number, y: number, color: Color): void;
-  copy(): Image;
-  save(fileName: string): void;
-  show(): void;
-  assertCoordinatesInBounds(x: number, y: number): void;
+	getPixel(x: number, y: number): Color;
+	setPixel(x: number, y: number, color: Color): void;
+	copy(): Image;
+	save(fileName: string): void;
+	show(): void;
+	assertCoordinatesInBounds(x: number, y: number): void;
 }
 ```
 
@@ -151,14 +151,14 @@ There is also an object (similar to a hash table) called `COLORS`, which is used
 ```ts
 // include/image.ts
 export const COLORS = {
-  WHITE: [255, 255, 255],
-  BLACK: [0, 0, 0],
-  RED: [255, 0, 0],
-  GREEN: [0, 255, 0],
-  BLUE: [0, 0, 255],
-  AQUA: [0, 255, 255],
-  YELLOW: [255, 255, 0],
-  MAGENTA: [255, 0, 255],
+	WHITE: [255, 255, 255],
+	BLACK: [0, 0, 0],
+	RED: [255, 0, 0],
+	GREEN: [0, 255, 0],
+	BLUE: [0, 0, 255],
+	AQUA: [0, 255, 255],
+	YELLOW: [255, 255, 0],
+	MAGENTA: [255, 0, 255],
 };
 
 // src/main.ts
@@ -185,7 +185,14 @@ If you are having trouble reading the specification, please go to office hours o
 All functions should be written in `imageProcessing.ts`. Other files (`main.ts` and `imageProcessing.test.ts`) should import them like so:
 
 ```ts
-import { removeRed, flipColors, mapLine, imageMap, mapToGB, mapFlipColors } from "./imageProcessing.js";
+import {
+	removeRed,
+	flipColors,
+	mapLine,
+	imageMap,
+	mapToGB,
+	mapFlipColors,
+} from "./imageProcessing.js";
 ```
 
 ### `removeRed`
@@ -194,7 +201,7 @@ Write a function called `removeRed`
 
 ```ts
 export function removeRed(img: Image): Image {
-  // TODO
+	// TODO
 }
 ```
 
@@ -206,7 +213,7 @@ Write a function called `flipColors`
 
 ```ts
 export function flipColors(img: Image): Image {
-  // TODO
+	// TODO
 }
 ```
 
@@ -221,8 +228,12 @@ If you have solved these two tasks, you might notice that the structure of the t
 Write a function called `mapLine`
 
 ```ts
-export function mapLine(img: Image, lineNo: number, func: (c: Color) => Color): void {
-  // TODO
+export function mapLine(
+	img: Image,
+	lineNo: number,
+	func: (c: Color) => Color
+): void {
+	// TODO
 }
 ```
 
@@ -234,7 +245,7 @@ Write a function called `imageMap`
 
 ```ts
 export function imageMap(img: Image, func: (c: Color) => Color): Image {
-  // TODO
+	// TODO
 }
 ```
 
