@@ -32,7 +32,7 @@ Please do come to office hours for:
 
 -   10:00-11:00 AM: Angela Upreti (https://umass-amherst.zoom.us/j/98362686688)
 
--   12:00-1:00 PM: Carey Pope (LGRT 222)
+-   12:30-1:30 PM: Carey Pope (LGRT 222)
 
 -   1:30-2:30 PM: Lucky Kovvuri (LGRT 222)
 
