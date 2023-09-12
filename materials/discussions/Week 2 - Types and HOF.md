@@ -1,4 +1,8 @@
-# Discussion 1: Higher Order Functions and Setup
+---
+sidebar_position: 2
+---
+
+# Discussion 2: Types and HOFs
 
 Welcome to the first discussion! We hope these will be helpful and engaging for you.
 
