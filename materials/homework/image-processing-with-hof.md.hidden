@@ -11,12 +11,13 @@ sidebar_position: 2
 
 ## Overview
 
-Following up on [Homework 1](/materials/homework/image-processing), in Homework 2 you will perform more image processing tasks with higher order functions.
+Following up on [Homework 1](/materials/homework/image-processing), in Homework 2 you will perform more image processing tasks with higher order functions. One of the requirements of this assignment is that your implementations are clean and do not duplicate code.
 
 ### Learning Objectives
 
 - Become more familiar with first-class functions
 - Practice writing and using higher-order functions
+- Practice avoiding code duplication
 
 ### Student Expectations
 
@@ -29,11 +30,17 @@ Students will be graded on their ability to:
   - Use `npm run lint` to see if you have any warnings, `npm run lint:fix` may fix some automatically
   - See the section on [linting and formatting assignments](/materials/tutorials/assignments/linting-and-formatting) for more details
 - Follow the [coding](/materials/guidelines/syntax-and-code), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
-  - There will be no grading regarding these rules on this assignment
-  - Starting with **Homework 3**, there may be crediting manual grading
 - Design full-coverage [unit-tests](#testing) for the functions they implemented
   - **There will be credited grading for this (12.5%)**
   - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage
+- Avoid unnecessary code duplication wherever possible
+  - **This will be manually graded**
+
+This assignment puts extra emphasis on avoiding code duplication. Many of the functions have similar operations and conditions. For example, `pixelBlur`, it uses pixels whose coordinates differ by at most 1 in absolute value. Imagine if you were to write a function that used pixels whose coordinates differ by at most 50 in absolute value. Would your code be able to support that without much effort?
+
+**Submissions that do not attempt to avoid code duplication may receive manual grading point deductions (~12%).** If you have a series of if-statements with similar conditions or similar bodies, or separate functions with near-identical bodies, consider an alternative approach. If-statements are allowed, but do not abuse them.
+
+Try to avoid repetition from the get-go, don't delay it to "after my code works". **Read the descriptions of all the tasks before you start coding.**
 
 ## Getting Started
 
@@ -42,6 +49,50 @@ All interfaces are the same as the previous assignment. Please review the ["Gett
 ## Testing
 
 As with Homework 1, you are expected to write your own tests. To help you get started, we have provided a few test cases inside of `imageProcessingHOF.test.ts`. It is up to you to define additional tests to check your solution for correctness. As always, try writing some tests before you start coding.
+
+### Changing How We Compare Colors
+
+Arithmetic with the `number` type produces some non-obvious results:
+
+```ts
+console.log(0.1 + 0.2); // .30000000000000004 🤨
+```
+
+This is a common issue in programming languages that use [floating point numbers](https://en.wikipedia.org/wiki/Floating-point_arithmetic). [This website](https://floating-point-gui.de/) gives a great overview of how floating point numbers work and why this behavior exists.
+
+Throughout this homework, you will be doing arithmetic with fractional values (finding the (weighted) mean). Depending on the order of the operations, you may get a different result:
+
+```t
+console.log((254 + 254 + 254) / 3); // 254
+console.log(((1 / 3) * 254) + ((1 / 3) * 254) + ((1 / 3) * 254)); // 253.99999999999997
+```
+
+Hopefully it is clear to see that this can become a problem because we truncate any decimal remainder in our calculations. To reconcile this issue we need to change how we define "equality" between two `Color` values. Instead of strictly checking that each channel is exactly what it should be:
+
+```ts
+const actual = img.getPixel(0, 0);
+assert(actual[0] === 0);
+assert(actual[1] === 0);
+assert(actual[2] === 0);
+
+// or
+
+expect(img.getPixel(0, 0)).toEqual([0, 0, 0]);
+```
+
+We should accept a precision of error (in this case default to less than or equal to 1) between two values:
+
+```ts
+function expectColorToBeCloseTo(actual: Color, expected: Color, error = 1) {
+  [0, 1, 2].forEach(i => expect(Math.abs(actual[i] - expected[i])).toBeLessThanOrEqual(error));
+}
+
+expectColorToBeCloseTo([0, 0, 0], [1, 1, 1]); // Will not error
+expectColorToBeCloseTo([0, 0, 0], [0, 0, 0]); // Will not error
+expectColorToBeCloseTo([0, 0, 0], [0, 0, 2]); // Will error
+```
+
+You may need to use the function above when writing your own tests.
 
 ## Programming Tasks
 
@@ -52,10 +103,10 @@ import {
   imageMapCoord,
   imageMapIf,
   mapWindow,
-  makeBorder,
-  dimCenter,
-  isGrayish
-  makeGrayish
+  isGrayish,
+  makeGrayish,
+  pixelBlur,
+  imageBlur
 } from "./imageProcessingHOF.js";
 ```
 
@@ -118,32 +169,6 @@ export function mapWindow(
 
 **For the following functions (4-7), you may not use loops. Instead, use one of the higher-order functions defined above or in Homework 1 (`imageMap`, `mapLine`).** Carefully selecting which function to use will allow you to write your code more concisely and promote reuse, which are important points of the assignment.
 
-### `makeBorder`
-
-Write a function called `makeBorder`
-
-```ts
-export function makeBorder(img: Image, thickness: number, func: (p: Color) => Color): Image {
-  // TODO
-}
-```
-
-**The result is a new image**, where each pixel whose distance to some edge pixel of the image is less than `thickness` has the value `func(c)`, where `c` is the original pixel's color. Other pixels' colors are unchanged. The distance between two pixels at $(x_1, y_1)$ and $(x_2, y_2)$ is defined as $|x_1-x_2|+|y_1-y_2|$.
-
-More plainly, `makeBorder` produces an image with a rectangular border of given thickness.
-
-### `dimCenter`
-
-Write a function called `dimCenter`
-
-```ts
-export function dimCenter(img: Image, thickness: number): Image {
-  // TOOD
-}
-```
-
-**The result is a new image**, where a border of pixels along the image edges are unchanged from the input. A pixel is in the border if it has distance less than `thickness` to some edge pixel. The remaining pixels have each color channel (intensity) reduced by 20%. Use [`Math.floor`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor) to truncate any decimal remainder.
-
 ### `isGrayish`
 
 Write a function called `isGrayish`
@@ -167,6 +192,30 @@ export function makeGrayish(img: Image): Image {
 ```
 
 **The result is a new image**, where each grayish pixel, as determined by the `isGrayish` function, is left unchanged. All other pixels should be replaced with a gray-scale pixel, computed by averaging the three channels. If the input pixel's color is $(r, g, b)$, its gray-scale version is $(m, m, m)$ where $m$ is the truncated average of $r$, $g$, and $b$. Other pixel colors are unchanged. **Use a suitable function defined above.**
+
+### `pixelBlur`
+
+Write a function called `pixelBlur`:
+
+```ts
+export function pixelBlur(img: Image, x: number, y: number): Color {
+  // TODO
+}
+```
+
+The result is the blurred value of the pixel at coordinates $(x, y)$, assumed to be valid for the image. Each color channel of the resulting pixel should be the truncated mean of the same channels of the $(x, y)$ pixel itself and its neighbors in `img`. Two distinct pixels are neighbors if both their x-coordinates and y-coordinates differ by at most 1 in absolute value. **Avoid [code duplication](/materials/homework/image-processing#code-duplication).**
+
+### `imageBlur`
+
+Write a function called `imageBlur`:
+
+```ts
+export function imageBlur(img: Image): Image {
+  // TODO
+}
+```
+
+**The result is a new image** that is the blurred version of the argument, with pixels obtained by applying `pixelBlur` to each pixel of the input image. You may not use loops within this function. Instead, use `imageMapCoord`.
 
 ## Submitting
 
