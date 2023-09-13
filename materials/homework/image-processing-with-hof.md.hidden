@@ -36,7 +36,7 @@ Students will be graded on their ability to:
 - Avoid unnecessary code duplication wherever possible
   - **This will be manually graded**
 
-This assignment puts extra emphasis on avoiding code duplication. Many of the functions have similar operations and conditions. For example, `pixelBlur`, it uses pixels whose coordinates differ by at most 1 in absolute value. Imagine if you were to write a function that used pixels whose coordinates differ by at most 50 in absolute value. Would your code be able to support that without much effort?
+This assignment puts extra emphasis on avoiding code duplication. Many of the functions have similar operations and conditions. For example, in `pixelBlur`, neighboring pixels need to be handled in similar but not identical ways. Can you avoid having many cases of repeated code?
 
 **Submissions that do not attempt to avoid code duplication may receive manual grading point deductions.** If you have a series of if-statements with similar conditions or similar bodies, or separate functions with near-identical bodies, consider an alternative approach. If-statements are allowed, but do not abuse them.
 
@@ -60,9 +60,9 @@ console.log(0.1 + 0.2); // .30000000000000004 🤨
 
 This is a common issue in programming languages that use [floating point numbers](https://en.wikipedia.org/wiki/Floating-point_arithmetic). [This website](https://floating-point-gui.de/) gives a great overview of how floating point numbers work and why this behavior exists.
 
-Throughout this homework, you will be doing arithmetic with fractional values (finding the (weighted) mean). Depending on the order of the operations, you may get a different result:
+Throughout this homework, you will be doing arithmetic with fractional values (e.g., finding the mean). Depending on the order of the operations, you may get a different result:
 
-```t
+```ts
 console.log((254 + 254 + 254) / 3); // 254
 console.log(((1 / 3) * 254) + ((1 / 3) * 254) + ((1 / 3) * 254)); // 253.99999999999997
 ```
@@ -80,16 +80,16 @@ assert(actual[2] === 0);
 expect(img.getPixel(0, 0)).toEqual([0, 0, 0]);
 ```
 
-We should accept a precision of error (in this case default to less than or equal to 1) between two values:
+We should accept a degree of error (in this case default to less than or equal to 1) between two values:
 
 ```ts
 function expectColorToBeCloseTo(actual: Color, expected: Color, error = 1) {
   [0, 1, 2].forEach(i => expect(Math.abs(actual[i] - expected[i])).toBeLessThanOrEqual(error));
 }
 
-expectColorToBeCloseTo([0, 0, 0], [1, 1, 1]); // Will not error
-expectColorToBeCloseTo([0, 0, 0], [0, 0, 0]); // Will not error
-expectColorToBeCloseTo([0, 0, 0], [0, 0, 2]); // Will error
+expectColorToBeCloseTo([0, 0, 0], [1, 1, 1]); // Will pass
+expectColorToBeCloseTo([0, 0, 0], [0, 0, 0]); // Will pass
+expectColorToBeCloseTo([0, 0, 0], [0, 0, 2]); // Will fail
 ```
 
 You may need to use the function above when writing your own tests.
@@ -163,7 +163,7 @@ export function mapWindow(
 1. The value `func(c)` if the pixel coordinates are in the interval $[x_{min}, x_{max}]$ and $[y_{min}, y_{max}]$ respectively (inclusive)
 2. $c$ otherwise
 
-**Use `imageMapIf`.** You may assume that the second and third argument are always two-element number arrays. The behavior otherwise in not specificed. You could write an `assert` statement to ensure this is the case; however, this is not required.
+**Use `imageMapIf`.** You may assume that the second and third argument are always two-element number arrays. The behavior otherwise is not specificed. You could write an `assert` statement to ensure this is the case; however, this is not required.
 
 ### Moving Forward
 
