@@ -38,7 +38,7 @@ Students will be graded on their ability to:
 
 This assignment puts extra emphasis on avoiding code duplication. Many of the functions have similar operations and conditions. For example, `pixelBlur`, it uses pixels whose coordinates differ by at most 1 in absolute value. Imagine if you were to write a function that used pixels whose coordinates differ by at most 50 in absolute value. Would your code be able to support that without much effort?
 
-**Submissions that do not attempt to avoid code duplication may receive manual grading point deductions (~12%).** If you have a series of if-statements with similar conditions or similar bodies, or separate functions with near-identical bodies, consider an alternative approach. If-statements are allowed, but do not abuse them.
+**Submissions that do not attempt to avoid code duplication may receive manual grading point deductions.** If you have a series of if-statements with similar conditions or similar bodies, or separate functions with near-identical bodies, consider an alternative approach. If-statements are allowed, but do not abuse them.
 
 Try to avoid repetition from the get-go, don't delay it to "after my code works". **Read the descriptions of all the tasks before you start coding.**
 
@@ -219,4 +219,10 @@ export function imageBlur(img: Image): Image {
 
 ## Submitting
 
-See the [Homework 1 submission guide](/materials/homework/image-processing#submitting).
+Use the following command to build a `.zip` file:
+
+```sh
+npm run build:submission
+```
+
+This command will automatically format your submissions source code so it is easier to read then bundle your `./src/*` files into a `.zip`. Please upload this file to the respective assignment on Gradescope.
