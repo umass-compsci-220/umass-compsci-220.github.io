@@ -36,6 +36,8 @@ Students will be graded on their ability to:
 - Avoid unnecessary code duplication wherever possible
   - **This will be manually graded**
 
+Some of the functions require you not to use loops, but instead use higher-order functions on images. Carefully selecting which function to use will allow you to write your code more concisely and promote reuse, which are important points of the assignment.
+
 This assignment puts extra emphasis on avoiding code duplication. Many of the functions have similar operations and conditions. For example, in `pixelBlur`, neighboring pixels need to be handled in similar but not identical ways. Can you avoid having many cases of repeated code?
 
 **Submissions that do not attempt to avoid code duplication may receive manual grading point deductions.** If you have a series of if-statements with similar conditions or similar bodies, or separate functions with near-identical bodies, consider an alternative approach. If-statements are allowed, but do not abuse them.
@@ -165,10 +167,6 @@ export function mapWindow(
 
 **Use `imageMapIf`.** You may assume that the second and third argument are always two-element number arrays. The behavior otherwise is not specificed. You could write an `assert` statement to ensure this is the case; however, this is not required.
 
-### Moving Forward
-
-**For the following functions (4-7), you may not use loops. Instead, use one of the higher-order functions defined above or in Homework 1 (`imageMap`, `mapLine`).** Carefully selecting which function to use will allow you to write your code more concisely and promote reuse, which are important points of the assignment.
-
 ### `isGrayish`
 
 Write a function called `isGrayish`
@@ -191,7 +189,7 @@ export function makeGrayish(img: Image): Image {
 }
 ```
 
-**The result is a new image**, where each grayish pixel, as determined by the `isGrayish` function, is left unchanged. All other pixels should be replaced with a gray-scale pixel, computed by averaging the three channels. If the input pixel's color is $(r, g, b)$, its gray-scale version is $(m, m, m)$ where $m$ is the truncated average of $r$, $g$, and $b$. Other pixel colors are unchanged. **Use a suitable function defined above.**
+**The result is a new image**, where each grayish pixel, as determined by the `isGrayish` function, is left unchanged. All other pixels should be replaced with a gray-scale pixel, computed by averaging the three channels. If the input pixel's color is $(r, g, b)$, its gray-scale version is $(m, m, m)$ where $m$ is the truncated average of $r$, $g$, and $b$. Other pixel colors are unchanged. You may not use loops within this function. **Use a suitable function defined above.**
 
 ### `pixelBlur`
 
