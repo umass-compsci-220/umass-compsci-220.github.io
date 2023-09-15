@@ -122,7 +122,7 @@ export function imageMapCoord(img: Image, func: (img: Image, x: number, y: numbe
 }
 ```
 
-**The result must be a new image** with the same dimensions as `img`. For each pixel in the new image, its color should be the result of applying `func` to the corresponding pixel's color of `img`. This function is more general than `imageMap`; the new pixel's color may also depend on the original image and its coordinates. An example is given to you in `main.ts`.
+**The result must be a new image** with the same dimensions as `img`. For each pixel in the new image, its color should be the result of applying `func` to the image and the pixel's coordinates. This function is more general than `imageMap`; the new pixel's color may also depend on its coordinates, and any other elements of the image (perhaps other pixels). An example is given to you in `main.ts`.
 
 ### `imageMapIf`
 
