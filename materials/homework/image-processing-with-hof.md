@@ -165,7 +165,7 @@ export function mapWindow(
 1. The value `func(c)` if the pixel coordinates are in the interval $[x_{min}, x_{max}]$ and $[y_{min}, y_{max}]$ respectively (inclusive)
 2. $c$ otherwise
 
-**Use `imageMapIf`.** You may assume that the second and third argument are always two-element number arrays. The behavior otherwise is not specificed. You could write an `assert` statement to ensure this is the case; however, this is not required.
+**Use `imageMapIf`.** You may assume that the second and third argument are always two-element number arrays. The behavior otherwise is not specified. You could write an `assert` statement to ensure this is the case; however, this is not required.
 
 ### `isGrayish`
 
@@ -189,7 +189,7 @@ export function makeGrayish(img: Image): Image {
 }
 ```
 
-**The result is a new image**, where each grayish pixel, as determined by the `isGrayish` function, is left unchanged. All other pixels should be replaced with a gray-scale pixel, computed by averaging the three channels. If the input pixel's color is $(r, g, b)$, its gray-scale version is $(m, m, m)$ where $m$ is the truncated average of $r$, $g$, and $b$. Other pixel colors are unchanged. You may not use loops within this function. **Use a suitable function defined above.**
+**The result is a new image**, where each grayish pixel, as determined by the `isGrayish` function, is left unchanged. All other pixels should be replaced with a gray-scale pixel, computed by averaging the three channels. If the input pixel's color is $(r, g, b)$, its gray-scale version is $(m, m, m)$ where $m$ is the truncated average of $r$, $g$, and $b$. Other pixel colors are unchanged. You may not use loops within this function. **Use a suitable function defined above or from Homework 1.**
 
 ### `pixelBlur`
 
