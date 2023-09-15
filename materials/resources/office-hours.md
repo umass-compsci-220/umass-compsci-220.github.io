@@ -54,7 +54,7 @@ Please do come to office hours for:
 
 **Thursday**
 
--   11:30 AM - 12:30 PM: Kyler Schulz (LGRT 222)
+-   1:00 PM - 2:00 PM: Kyler Schulz (LGRT 222)
 
 -   2:00-3:00 PM: Shrushti Soni (https://umass-amherst.zoom.us/j/93890755969)
 
