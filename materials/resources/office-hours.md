@@ -18,14 +18,13 @@ Please do come to office hours for:
 
 **Monday**
 
--   11:00 AM-12:00 PM: Saurabh Bajaj (https://umass-amherst.zoom.us/j/96699600307)
-
 -   12:00-1:00 PM: Sonali Palit (https://umass-amherst.zoom.us/j/3326597420)
 
 -   1:30-2:30 PM: Marius Minea (LGRC A261)
 
 -   2:30-3:30 PM: Saadhvi Raghav (LGRT 222)
 
+-   3:30 PM - 4:30 PM: Saurabh Bajaj (https://umass-amherst.zoom.us/j/96699600307)
 -   4:00-5:00 PM: Md Ashraful Islam (LGRT 222)
 
 **Tuesday**
@@ -54,11 +53,10 @@ Please do come to office hours for:
 
 **Thursday**
 
+-   12:00 - 1:00 PM: Saurabh Bajaj (https://umass-amherst.zoom.us/j/96699600307)
 -   1:00 PM - 2:00 PM: Kyler Schulz (LGRT 222)
 
 -   2:00-3:00 PM: Shrushti Soni (https://umass-amherst.zoom.us/j/93890755969)
-
--   6:00-7:00 PM: Saurabh Bajaj (https://umass-amherst.zoom.us/j/96699600307)
 
 -   7:00-8:00 PM: Vi Doan (LGRT 222)
 
