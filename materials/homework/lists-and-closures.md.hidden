@@ -65,11 +65,11 @@ Write a function that takes a list of some type `T`, a number `n` (assumed to be
 
 ### nonNegativeProducts
 
-Write a function that takes as input a List of `number`s and returns a List of `number`s. For each nonnegative number `n` in the input list, the result list contains the product of the elements going back from n (inclusive) as long as the numbers are nonnegative.
+Write a function that takes as input a List of `number`s and returns a List of `number`s. For each nonnegative number `n` in the input list, the result list contains the product of the input list elements going back from n (inclusive) as long as they are nonnegative.
 
 ### negativeProducts
 
-Write a function that takes as input a List of `number`s and returns a List of `number`s. For each negative number `n` in the input list, the result list contains the product of the elements going back from n (inclusive) as long as the numbers are negative.
+Write a function that takes as input a List of `number`s and returns a List of `number`s. For each negative number `n` in the input list, the result list contains the product of the input list elements going back from n (inclusive) as long as they are negative.
 
 ### squashList
 
@@ -77,8 +77,8 @@ Write a function that takes a List as input where each element is either a `numb
 
 ### composeList
 
-Write a function that takes a list of functions as input, potentially empty. Each function has the signature `T => T`. Return a function with the signature `T => T` that when called on a `T` will give the same result as applying all the functions stored in the list successively starting with the function stored in the first node and then applying them in order.
+Write a function that takes a list of functions as input, potentially empty. Each function has the signature `T => T`. Return a function with the signature `T => T` that when called on a `T` will give the same result as successively applying all the functions in the list starting with the function stored in the first node. Do not use loops.
 
 ### composeFunctions
 
-Write a function that takes an array of `(arg1: T, arg2: U) => T` functions `funcArr`, which is potentially empty, as input. It returns a closure that takes an input `in: U` and returns a function `T => T`. This returned function is equivalent to applying all functions in `funcArr` successively to the input `T` as `arg1` and `in` as `arg2` starting with the function at position 0 in the array. Do not use loops.
+Write a function that takes an array of `(arg1: T, arg2: U) => T` functions `funcArr`, potentially empty, as input. It returns a closure that takes an input `in: U` and returns a function `T => T`. This returned function is equivalent to applying all functions in `funcArr` successively to the input `T` as `arg1` and `in` as `arg2` starting with the function at position 0 in the array. Do not use loops.
