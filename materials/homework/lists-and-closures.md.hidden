@@ -41,7 +41,7 @@ It may not be obvious how to implement some of the functions. Try writing some t
 - Note:
   - In all problems involving lists you are not allowed to use arrays in your solution.
   - You must reduce code duplication whenever applicable
-  - For reference: Our sample solutions are ~75 lines of code
+  - For reference: Our sample solutions are ~55 lines of code
  
 - **Important**
   - You may **not** use `listToArray` or `arrayToList` in **any** of your implementation. If you use either, your score will be 0 for any function using these.
@@ -77,8 +77,8 @@ Write a function that takes a List as input where each element is either a `numb
 
 ### composeList
 
-Write a function that takes a list of functions as input. Each function has the signature `T => T`. Return a function with the signature `T => T` that when called on a `T` will give the same result as applying all the functions stored in the list successively starting with the function stored in the first node and then applying them in order.
+Write a function that takes a list of functions as input, potentially empty. Each function has the signature `T => T`. Return a function with the signature `T => T` that when called on a `T` will give the same result as applying all the functions stored in the list successively starting with the function stored in the first node and then applying them in order.
 
 ### composeFunctions
 
-Write a function that takes an array of `(arg1: T, arg2: U) => T` functions `funcArr` as input. It returns a closure that takes an input `in: U` and returns a function `T => T`. This returned function is equivalent to applying all functions in `funcArr` successively to the input `T` as `arg1` and `in` as `arg2` starting with the function at position 0 in the array. Do not use loops.
+Write a function that takes an array of `(arg1: T, arg2: U) => T` functions `funcArr`, which is potentially empty, as input. It returns a closure that takes an input `in: U` and returns a function `T => T`. This returned function is equivalent to applying all functions in `funcArr` successively to the input `T` as `arg1` and `in` as `arg2` starting with the function at position 0 in the array. Do not use loops.
