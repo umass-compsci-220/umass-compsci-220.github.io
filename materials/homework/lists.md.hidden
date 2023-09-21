@@ -53,27 +53,35 @@ Write a function that takes a list of some type `T` and a number `n` (assumed to
 
 ### everyNRev
 
-Write a function that takes a list of some type `T` and a number `n` (assumed to be a positive natural). It should return a list containing every nth element from the input list, in reverse order (the nth element last, the 2nth before it, ...). Use list reduce.
+Write a function that takes a list of some type `T` and a number `n` (assumed to be a positive natural). It should return a list containing every nth element from the input list, in reverse order (the nth element last, the 2nth before it, ...). Use list reduce. Do not use `everyNList`, though you may use this function to implement `everyNList`.
 
 ### everyNCond
 
-Write a function that takes a list of some type `T`, a number `n` (assumed to be a positive natural) and a function `cond: (e: T) => boolean`. It should return a list containing every `n`th element of those that satisfy `cond`, in the original order.
-
-### Products
-
-- Note: you should write a helper function to reduce the code duplication between the following two problems.
+Write a function that takes a list of some type `T`, a number `n` (assumed to be a positive integer), and a function `cond: (e: T) => boolean`. It should return a list containing every `n`th element of those that satisfy `cond`, in the original order.
 
 ### nonNegativeProducts
 
 Write a function that takes as input a List of `number`s and returns a List of `number`s. For each nonnegative number `n` in the input list, the result list contains the product of the input list elements going back from n (inclusive) as long as they are nonnegative.
 
+- Example:
+  - input: 2 -> 3 -> -1 -> 0.5 -> 2 -> empty
+  - output: 2 -> 6 -> 0.5 -> 1 -> empty
+
 ### negativeProducts
 
 Write a function that takes as input a List of `number`s and returns a List of `number`s. For each negative number `n` in the input list, the result list contains the product of the input list elements going back from n (inclusive) as long as they are negative.
 
+- Example:
+  - input: -3 -> -6 -> 2-> -2-> -1 -> -2 -> empty
+  - output: -3 -> 18 -> -2 -> 2 -> -4 -> empty
+
+#### You should write a helper function to reduce the code duplication between the above two problems `nonNegativeProducts` and `negativeProducts`.
+
 ### squashList
 
 Write a function that takes a List as input where each element is either a `number` or a `List<number>`. Return a list of numbers where each element that is a List is replaced by the sum of its elements.
+
+- Hint: The [typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) operator may be useful.
 
 ### composeList
 
