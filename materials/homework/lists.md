@@ -47,19 +47,19 @@ It may not be obvious how to implement some of the functions. Try writing some t
   - You may **not** use `listToArray` or `arrayToList` in **any** of your implementation. If you use either, your score will be 0 for any function using these.
   - You are allowed to use them in your tests.
 
-### everyNList
+### `everyNList`
 
 Write a function that takes a list of some type `T` and a number `n` (assumed to be a positive natural). It should return a list containing every nth element from the input list (the nth, 2nth, 3nth, ...), in the original order.
 
-### everyNRev
+### `everyNRev`
 
 Write a function that takes a list of some type `T` and a number `n` (assumed to be a positive natural). It should return a list containing every nth element from the input list, in reverse order (the nth element last, the 2nth before it, ...). Use list reduce. Do not use `everyNList`, though you may use this function to implement `everyNList`.
 
-### everyNCond
+### `everyNCond`
 
 Write a function that takes a list of some type `T`, a number `n` (assumed to be a positive integer), and a function `cond: (e: T) => boolean`. It should return a list containing every `n`th element of those that satisfy `cond`, in the original order.
 
-### nonNegativeProducts
+### `nonNegativeProducts`
 
 Write a function that takes as input a List of `number`s and returns a List of `number`s. For each nonnegative number `n` in the input list, the result list contains the product of the input list elements going back from n (inclusive) as long as they are nonnegative.
 
@@ -67,7 +67,7 @@ Write a function that takes as input a List of `number`s and returns a List of `
   - input: 2 -> 3 -> -1 -> 0.5 -> 2 -> empty
   - output: 2 -> 6 -> 0.5 -> 1 -> empty
 
-### negativeProducts
+### `negativeProducts`
 
 Write a function that takes as input a List of `number`s and returns a List of `number`s. For each negative number `n` in the input list, the result list contains the product of the input list elements going back from n (inclusive) as long as they are negative.
 
@@ -77,16 +77,26 @@ Write a function that takes as input a List of `number`s and returns a List of `
 
 #### You should write a helper function to reduce the code duplication between the above two problems `nonNegativeProducts` and `negativeProducts`.
 
-### squashList
+### `squashList`
 
 Write a function that takes a List as input where each element is either a `number` or a `List<number>`. Return a list of numbers where each element that is a List is replaced by the sum of its elements.
 
 - Hint: The [typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) operator may be useful.
 
-### composeList
+### `composeList`
 
 Write a function that takes a list of functions as input, potentially empty. Each function has the signature `T => T`. Return a function with the signature `T => T` that when called on a `T` will give the same result as successively applying all the functions in the list starting with the function stored in the first node. Do not use loops.
 
-### composeFunctions
+### `composeFunctions`
 
 Write a function that takes an array of `(arg1: T, arg2: U) => T` functions `funcArr`, potentially empty, as input. It returns a closure that takes an input `in: U` and returns a function `T => T`. This returned function is equivalent to applying all functions in `funcArr` successively to the input `T` as `arg1` and `in` as `arg2` starting with the function at position 0 in the array. Do not use loops.
+
+## Submitting
+
+Use the following command to build a `.zip` file:
+
+```sh
+npm run build:submission
+```
+
+This command will automatically format your submissions source code so it is easier to read then bundle your `./src/*` files into a `.zip`. Please upload this file to the respective assignment on Gradescope.
