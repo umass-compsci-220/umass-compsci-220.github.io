@@ -10,11 +10,11 @@ Welcome to the fourth discussion! This week you'll learn more about mental model
 
 Download the lab slides [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%204%20-%20No%20Solutions.pdf).
 
-The slides with solutions will be posted [here](#) after the last discussion of the day.
+The slides with solutions will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%204%20-%20Solutions.pdf) after the last discussion of the day.
 
 Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/04-mental-models-and-closures.zip). Make sure to submit this to gradescope, ask your lab leaders to help you if you are unsure of how. We'll also show the process in the first lab.
 
-The solution file will be posted [here](#) after lab.
+The solution file will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/04-mental-models-and-closures-solution.ts) after lab.
 
 ## Opening and working with the starter code
 
