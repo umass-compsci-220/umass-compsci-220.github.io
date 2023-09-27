@@ -8,7 +8,7 @@ Welcome to the fourth discussion! This week you'll learn more about mental model
 
 ## Materials
 
-Download the lab slides [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%203%20-%20No%20Solutions.pdf).
+Download the lab slides [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%204%20-%20No%20Solutions.pdf).
 
 The slides with solutions will be posted [here](#) after the last discussion of the day.
 
