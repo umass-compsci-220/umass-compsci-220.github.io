@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4=5
+sidebar_position: 5
 ---
 
 # Discussion 5: Midterm 1 Review
