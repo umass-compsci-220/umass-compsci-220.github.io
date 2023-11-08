@@ -2,7 +2,7 @@
 sidebar_position: 10
 ---
 
-# Discussion 12: Asynchronous Programming
+# Discussion 10: Asynchronous Programming
 
 Welcome to the tenth discussion! This week you'll learn more about programming asynchronously.
 
