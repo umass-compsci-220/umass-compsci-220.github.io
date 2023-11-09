@@ -37,7 +37,7 @@ Students will be graded on their ability to:
 
 Source: [MDN - What is a URL?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL)
 
-A Uniform Resource Locater (URL) is an address for a unique resource on the web. It is what your browser uses to retrieve documents, webpages, JavaScript code, images, and other media and supporting files. Each valid URL first tells your browser where the machine processing the request (the web server) lives. The rest of the URL is used by that web server to service the request and give back the corresponding resource.
+A Uniform Resource Locator (URL) is an address for a unique resource on the web. It is what your browser uses to retrieve documents, webpages, JavaScript code, images, and other media and supporting files. Each valid URL first tells your browser where the machine processing the request (the web server) lives. The rest of the URL is used by that web server to service the request and give back the corresponding resource.
 
 Here are some examples of URLs:
 
@@ -154,7 +154,7 @@ When using publicly available APIs (the ones we are using in this homework), mak
 
 For this HW we have set up a caching server at [https://220.maxkuechen.com/](https://220.maxkuechen.com/). This server will relay requests to the proper APIs and will [cache](<https://en.wikipedia.org/wiki/Cache_(computing)>) the response for one hour. As a result we are requesting information from the actual API much less frequently. While once API call is very cheap, think about how often your tests and autograder tests get run over the course of the HW for 200+ students.
 
-In this HW you will be working with the [geocode](https://geocode.maps.co/) api, the [universites](https://github.com/Hipo/university-domains-list) api, and the [weather](https://open-meteo.com) api, as well as other APIs you choose yourself. Feel free to read their respective docs. You will be interacting with these APIs through our caching server. Each programming task outlines what endpoint to fetch the data from.
+In this HW you will be working with the [geocode](https://geocode.maps.co/) API, the [universites](https://github.com/Hipo/university-domains-list) API, and the [weather](https://open-meteo.com) API, as well as other APIs you choose yourself. Feel free to read their respective docs. You will be interacting with these APIs through our caching server. Each programming task outlines what endpoint to fetch the data from.
 
 ### Code Duplication with Multi-File Programs
 
@@ -162,7 +162,7 @@ This is the first assignment where there is more than one source file. You shoul
 
 ### Error Handling
 
-For all the [programming tasks](#programming-tasks) below, if the response is not ok, then the promise should reject with an informational error message This rejection reason should propagate. Meaning the returned promises from these functions should reject with the same reason. You should not try to recover in any way.
+For all the [programming tasks](#programming-tasks) below, if the response is not ok, then the promise should reject with an informational error message This rejection reason should propagate, meaning the returned promises from these functions should reject with the same reason. You should not try to recover in any way.
 
 ## Resources
 
@@ -198,8 +198,7 @@ See the [getting started section on queries](#urls-and-parameters) if you are co
 ### `fetchCurrentTemperature`
 
 - Use the provided `fetch` function
-- This function should be done individually by a single group member
-  - A different group member than `fetchGeoCoord`'s author
+- This function should be done individually by a single group member, different from the author of `fetchGeoCoord`
 
 Write a function, inside of `./src/fetchCurrentTemperature.ts`, with the following type signature:
 
@@ -221,8 +220,8 @@ Use the <https://220.maxkuechen.com/currentTemperature/forecast?latitude=40&long
 ### `fetchUniversities`
 
 - Use the provided `fetch` function
-- This function should be done individually by a single group member
-  - The final group member that did not complete `fetchLongitudeAndLatitude` or `fetchCurrentWeather`
+- This function should be done individually by a single group member:
+  - the final group member that did not complete `fetchLongitudeAndLatitude` or `fetchCurrentWeather`
 
 Write a function, inside of `./src/fetchUniversities.ts`, with the following type signature:
 
