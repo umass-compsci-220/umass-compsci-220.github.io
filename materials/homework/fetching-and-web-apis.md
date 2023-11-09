@@ -311,16 +311,6 @@ This function should find the average temperature of all universities in the "Un
 
 Using any free ones you can find (here is a [a long list](https://github.com/public-api-lists/public-api-lists)), write a short program inside of `main.ts` that calculates some interesting statistic.
 
-If you would like to cache the results of an API call to an api of your choice, you can use the 220 caching server that we descibed in the [Rate Limiting Section](#rate-limiting). Here is an example of the url for caching the [https://www.boredapi.com](https://www.boredapi.com).
-
-`https://220.maxkuechen.com/fetch/?url=https://www.boredapi.com/api/activity?type=recreational`.
-
-You'll notice that some APIs, like the one above, give different responses every time. However, since we cached the response, the result will always be the same. For convinience, we are prociding the following route that does not cache. You should not use this route in tests.
-
-`htps://220.maxkuechen.com/fetch/noCache/?url=https://www.boredapi.com/api/activity?type=recreational`.
-
-You may use these for any API call in the working example, but it is not a requirement.
-
 **Requirements:**
 
 - Must use `fetch`, either directly or indirectly
@@ -345,6 +335,18 @@ You may use these for any API call in the working example, but it is not a requi
 Pick something interesting and try to have fun with it. As long as you meet the requirements stated above, you should receive full credit.
 
 You are not required to write tests for this code, however your code should execute without errors and work as intended.
+
+### If you are worried about being rate limited with the api you have choosen
+
+If you would like to cache the results of an API call to an api of your choice, you can use the 220 caching server that we descibed in the [Rate Limiting Section](#rate-limiting). Here is an example of the url for caching the [https://www.boredapi.com](https://www.boredapi.com).
+
+`https://220.maxkuechen.com/fetch/?url=https://www.boredapi.com/api/activity?type=recreational`.
+
+You'll notice that some APIs, like the one above, give different responses every time. However, since we cached the response, the result will always be the same. For convinience, we are prociding the following route that does not cache. You should not use this route in tests.
+
+`htps://220.maxkuechen.com/fetch/noCache/?url=https://www.boredapi.com/api/activity?type=recreational`.
+
+You may use the caching server for any API call in the working example, but it is not a requirement.
 
 ## Testing
 
