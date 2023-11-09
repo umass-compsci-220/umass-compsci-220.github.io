@@ -311,7 +311,7 @@ This function should find the average temperature of all universities in the "Un
 
 Using any free ones you can find (here is a [a long list](https://github.com/public-api-lists/public-api-lists)), write a short program inside of `main.ts` that calculates some interesting statistic.
 
-If you would like to cache the results of an API call to an api of your choice, you can use the 220 caching server that we descibed in the [Rate Limiting Section](#rate-limiting). Here is an example of the url for caching the [www.boredapi.com](www.boredapi.com).
+If you would like to cache the results of an API call to an api of your choice, you can use the 220 caching server that we descibed in the [Rate Limiting Section](#rate-limiting). Here is an example of the url for caching the [https://www.boredapi.com](https://www.boredapi.com).
 
 `https://220.maxkuechen.com/fetch/?url=https://www.boredapi.com/api/activity?type=recreational`.
 
