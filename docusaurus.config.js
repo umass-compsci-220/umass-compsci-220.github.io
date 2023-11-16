@@ -62,10 +62,14 @@ const config = {
         title: "COMPSCI 220",
         items: [
           {
-            type: "docSidebar",
-            sidebarId: "tutorialSidebar",
+            to: "materials/category/homework",
+            label: "Homework",
             position: "left",
-            label: "Materials",
+          },
+          {
+            to: "materials/category/discussion",
+            label: "Discussion",
+            position: "left",
           },
           {
             to: "materials/resources/office-hours",
@@ -76,7 +80,81 @@ const config = {
       },
       footer: {
         style: "dark",
-        links: [],
+        links: [
+            {
+            title: "Material",
+            items: [
+              {
+                label: "Homework",
+                to: "materials/category/homework"
+              },
+              {
+                label: "Discussion",
+                to: "materials/category/discussion"
+              },
+              {
+                label: "Extra Credit",
+                to: "materials/category/practice-and-extra-credit"
+              },
+              {
+                label: "Exams",
+                to: "materials/category/exams"
+              }
+            ]
+          },
+          {
+            title: "Guidelines",
+            items: [
+              {
+                label: "Bad Practices",
+                to: "materials/guidelines/bad-practices"
+              },
+              {
+                label: "Syntax and Code",
+                to: "materials/guidelines/syntax-and-code"
+              },
+              {
+                label: "Testing",
+                to: "materials/guidelines/testing"
+              },
+              {
+                label: "Regrade Requests",
+                to: "materials/guidelines/regrade-requests"
+              }            
+            ]
+          },
+          {
+            title: "Resources",
+            items: [
+              {
+                label: "Office Hours",
+                to: "materials/resources/office-hours"
+              },
+              {
+                label: "In-Person",
+                to: "materials/resources/other-in-person-resources"
+              },
+              {
+                label: "External Content",
+                to: "materials/resources/external-content"
+              }
+            ]
+          },
+          {
+            title: "Tutorials",
+            items: [
+              {
+                label: "Assignments",
+                to: "materials/category/assignments"
+              },
+              {
+                label: "Workflow One-pager",
+                to: "materials/tutorials/workflow-one-pager"
+              }
+            ]
+          }
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} UMass CompSci 220`,
       },
       prism: {
         theme: lightCodeTheme,

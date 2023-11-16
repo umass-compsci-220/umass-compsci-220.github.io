@@ -114,6 +114,7 @@ For the indicated lines in the given code, explain what closures and objects are
 
 13. `filter` is called on s with a new created closure, `x => x % 2 > 0`. This creates a stream with a single evaluated
 node, the first odd element (3) found in `s`. The value 3 is printed. The new stream and the closure can be garbage collected.
+
 </details>
 
 ### Q3 Aynchronous Programming (18 pts)
