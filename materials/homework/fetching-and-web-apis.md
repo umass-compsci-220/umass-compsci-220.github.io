@@ -256,7 +256,7 @@ export function fetchUniversityWeather(
 }
 ```
 
-This function should take in a query string and return a `Promise` that fulfils with an object that contains the total average and individual average temperatures of all universities in the given `universityQuery` string. **The optionally provided `transformName` function should be applied to each university name before it is transformed into a `GeoCoord`.** The total average should be in a field called `totalAverage` and the individual averages should use the name of the university as a key. The keys should be the original, untransformed, names.
+This function should take in a query string and return a `Promise` that fulfils with an object that contains the total average and individual average temperatures of all universities matching the given `universityQuery` string. **The optionally provided `transformName` function should be applied to each university name before it is transformed into a `GeoCoord`.** The total average should be in a field called `totalAverage` and the individual averages should use the name of the university as a key. The keys should be the original, untransformed, names.
 
 If there are no matching universities you should reject with an error:
 
