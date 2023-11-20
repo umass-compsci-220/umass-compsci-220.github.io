@@ -24,7 +24,7 @@ Please do come to office hours for:
 
 -   2:30-3:30 PM: Saadhvi Raghav (LGRT 222)
 
--   4:30 PM - 5:30 PM: Saurabh Bajaj (https://umass-amherst.zoom.us/j/96699600307)
+-   4:30- 5:30 PM: Saurabh Bajaj (https://umass-amherst.zoom.us/j/96699600307)
 
 -   4:30-5:30 PM: Md Ashraful Islam (LGRT 222)
 
