@@ -108,7 +108,7 @@ function parseProgram(statements: string): Statement[];
 
 On success, these functions will return an object that contains the the corresponding abstract syntax tree (AST) for the given string. On failure, these functions throw an error with a reason: the string cannot be parsed.
 
-Parsing and interpreting are separate stages of a programs execution. The interpreter depends on the parser to construct a valid AST. If the parser fails, then it is considered an unrecoverable failure and proceeding stages, such as interpreting (or linting/formatting if we were writing those tools), cannot not run. **You are not expected to cover input that the parser rejects.**
+Parsing and interpreting are separate stages of a programs execution. The interpreter depends on the parser to construct a valid AST. If the parser fails, then it is considered an unrecoverable failure and proceeding stages, such as interpreting (or linting/formatting if we were writing those tools), cannot run. **You are not expected to cover input that the parser rejects.**
 
 ### State
 
