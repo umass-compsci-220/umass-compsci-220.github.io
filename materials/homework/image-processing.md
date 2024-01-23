@@ -251,11 +251,11 @@ export function imageMap(img: Image, func: (c: Color) => Color): Image {
 
 The result must be a new image with the same dimensions as `img`. The value of each pixel in the new image should be the result of applying `func` to the corresponding pixel of `img`. <u>**Use `mapLine`**</u>.
 
-### `mapToGB` and `mapFlipColors`
+### `mapToGreen` and `mapFlipColors`
 
-Write two functions called `mapToGB` and `mapFlipColors`
+Write two functions called `mapToGreen` and `mapFlipColors`
 
-These are equivalent to (i.e., have the same type signature and behave exactly like) `removeRed` and `flipColors` <u>**but use must use `imageMap`**</u>.
+These are equivalent to (i.e., have the same type signature and behave exactly like) `saturateGreen` and `flipColors` <u>**but use must use `imageMap`**</u>.
 
 ## Submitting
 
