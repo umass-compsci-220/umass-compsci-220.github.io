@@ -195,7 +195,7 @@ import {
 } from "./imageProcessing.js";
 ```
 
-### `removeRed`
+### `saturateGreen`
 
 Write a function called `saturateGreen`
 
