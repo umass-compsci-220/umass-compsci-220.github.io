@@ -205,7 +205,7 @@ export function saturateGreen(img: Image): Image {
 }
 ```
 
-`saturateGreen` takes an image as an argument and returns a new image, where each pixel has the green color channel set to its maximum value. If the `Color` of a pixel is $(r, g, b)$ in the input image, its `Color` in the output must be $(0, 255, b)$.
+`saturateGreen` takes an image as an argument and returns a new image, where each pixel has the green color channel set to its maximum value. If the `Color` of a pixel is $(r, g, b)$ in the input image, its `Color` in the output must be $(r, 255, b)$.
 
 ### `flipColors`
 
