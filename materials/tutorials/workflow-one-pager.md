@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Workflow One-pager
 
 This document summarizes the [Assignments](./assignments/environment.md) section. We highly recommend you read the detailed guide and use this page as a quick reference.

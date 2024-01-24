@@ -144,6 +144,10 @@ const config = {
             title: "Tutorials",
             items: [
               {
+                label: "Videos",
+                to: "materials/tutorials/tutorial-videos"
+              },
+              {
                 label: "Assignments",
                 to: "materials/category/assignments"
               },
