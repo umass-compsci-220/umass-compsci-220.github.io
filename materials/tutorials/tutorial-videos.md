@@ -23,3 +23,5 @@ You can find the text articles that go more in depth on the left under [assignme
 You can download the starter code and follow along [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/00-environment-setup.zip).
 
 Once you are done, you can submit to the `Setting up Your Development Environment` submission accessible through canvas and gradescope.
+
+:)
