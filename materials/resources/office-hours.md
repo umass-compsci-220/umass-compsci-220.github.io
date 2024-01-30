@@ -16,7 +16,15 @@ Please do come to office hours for:
 
 ## Weekly Schedule
 
-Spring 24 Office Hours will be added here ahead of class start.
+### Week 1
+
+**On Thursday, Feb 1 and Friday, Feb 2, only TAs will hold their office hours.**
+
+**Thursday TAs:** Angela Upreti, Jeng-Yu Chou,
+
+**Friday TAs:** Kyler Schulz, Yiquan Xiao
+
+### Schedule
 
 **Monday:**
 
