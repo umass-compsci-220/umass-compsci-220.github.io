@@ -16,17 +16,7 @@ Please do come to office hours for:
 
 ## Weekly Schedule
 
-### Week 1
-
-**On Thursday, Feb 1 and Friday, Feb 2, only TAs will hold their office hours.**
-
-**Thursday TAs:** Angela Upreti, Jeng-Yu Chou,
-
-**Friday TAs:** Kyler Schulz, Yiquan Xiao
-
-### Schedule
-
-**Monday:**
+### Monday:
 
 | Time                | Course Staff       | Location/Zoom Link                                                                       |
 | ------------------- | ------------------ | ---------------------------------------------------------------------------------------- |
@@ -36,7 +26,7 @@ Please do come to office hours for:
 | 2:30 PM - 3:30 PM   | Aarav Nair         | LGRT T222                                                                                |
 | 4:00 PM - 6:00 PM   | Md Ashraful Islam  | LGRT T222                                                                                |
 | 8:00 PM - 9:00 PM   | Victor Chen        | [Zoom](https://umass-amherst.zoom.us/j/97949983018?pwd=djhudWpDTnl4cElYSjFIY2xxWXRFZz09) |
-**Tuesday:**
+### Tuesday:
 
 | Time                | Course Staff       | Location/Zoom Link                                                                       |
 | ------------------- | ------------------ | ---------------------------------------------------------------------------------------- |
@@ -45,7 +35,7 @@ Please do come to office hours for:
 | 2:30 PM - 3:30 PM   | Jaime Dávila       | LGRC A137 and [Zoom](https://umass-amherst.zoom.us/j/2581898802)                         |
 | 6:00 PM - 7:00 PM   | Liam Mutter        | LGRT T222                                                                                |
 | 7:00 PM - 8:00 PM   | Atharva Shahane    | LGRT T222                                                                                |
-**Wednesday:**
+### Wednesday:
 
 | Time                | Course Staff       | Location/Zoom Link                                                                       |
 | ------------------- | ------------------ | ---------------------------------------------------------------------------------------- |
@@ -55,7 +45,7 @@ Please do come to office hours for:
 | 4:00 PM - 6:00 PM   | Md Ashraful Islam  | LGRT T222                                                                                |
 | 5:00 PM - 7:00 PM   | Atharva Kale       | LGRT T222                                                                                |
 | 6:00 PM - 8:00 PM   | Maximilian Kuechen | LGRT T222                                                                                |
-**Thursday:**
+### Thursday:
 
 | Time                | Course Staff       | Location/Zoom Link                                                                       |
 | ------------------- | ------------------ | ---------------------------------------------------------------------------------------- |
@@ -63,7 +53,7 @@ Please do come to office hours for:
 | 12:00 PM - 2:00 PM  | Jeng-Yu Chou       | LGRT T222                                                                                |
 | 2:30 PM - 3:30 PM   | Jaime Dávila       | LGRC A137 and [Zoom](https://umass-amherst.zoom.us/j/2581898802)                         |
 | 5:30 PM - 6:30 PM   | Vinayak Rao        | LGRT T222                                                                                |
-**Friday:**
+### Friday:
 
 | Time                | Course Staff       | Location/Zoom Link                                                                       |
 | ------------------- | ------------------ | ---------------------------------------------------------------------------------------- |
