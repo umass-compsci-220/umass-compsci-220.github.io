@@ -100,7 +100,7 @@ const random = Image.loadImageFromGallery();
 // Load a .png image from a file on your computer
 const mySpecialImage = Image.loadImageFromFile("/path/to/my/image.png");
 // Create an image by defining a width height and fill color
-// A 50 pixel by 25 pixel white image
+// A 50 pixel by 25 pixel red image
 const redImage = Image.create(50, 25, [255, 0, 0]);
 ```
 
