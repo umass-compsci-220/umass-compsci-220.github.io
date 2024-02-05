@@ -39,7 +39,7 @@ Please do come to office hours for:
 
 | Time                | Course Staff       | Location/Zoom Link                                                                       |
 | ------------------- | ------------------ | ---------------------------------------------------------------------------------------- |
-| 9:00 AM - 11:00 AM  | Angela Upreti      | [Zoom](https://umass-amherst.zoom.us/j/97949983018?pwd=djhudWpDTnl4cElYSjFIY2xxWXRFZz09) |
+| 8:30 AM - 10:30 AM  | Angela Upreti      | [Zoom](https://umass-amherst.zoom.us/j/97949983018?pwd=djhudWpDTnl4cElYSjFIY2xxWXRFZz09) |
 | 11:00 AM - 12:00 PM | Jaime Dávila       | LGRC A137 and [Zoom](https://umass-amherst.zoom.us/j/2581898802)                         |
 | 2:00 PM - 3:00 PM   | Manu Hegde         | LGRT T222                                                                                |
 | 4:00 PM - 6:00 PM   | Md Ashraful Islam  | LGRT T222                                                                                |
