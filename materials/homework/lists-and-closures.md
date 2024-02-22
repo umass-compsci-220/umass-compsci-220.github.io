@@ -4,12 +4,12 @@ sidebar_position: 3
 
 # Lists and Closures
 
-- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/03-lists.zip).
+- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/03-lists-and-closures.zip).
 - You may edit any file inside of `./src/`, **DO NOT make any edits to any file inside of `./include/`**
 
 ## Overview
 
-In this assignment, you will work with lists.
+In this assignment, you will work with lists and closures.
 
 ### Learning Objectives
 
@@ -26,6 +26,7 @@ Students will be graded on their ability to:
 - Follow the [coding](/materials/homework/image-processing), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
 - Design full-coverage [unit-tests](#testing) for the functions they implemented
   - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage for more details
+  - Make sure you are calling all functions, including functions returned by functions you write.
 
 ## Testing
 
@@ -39,13 +40,35 @@ It may not be obvious how to implement some of the functions. Try writing some t
 ## Programming Tasks
 
 - Note:
-  - In all problems involving lists you are not allowed to use arrays in your solution.
-  - You must reduce code duplication whenever applicable
-  - For reference: Our sample solutions are ~55 lines of code
+  - In all problems involving lists you are **not** allowed to use arrays in your solution.
+  - You must reduce code duplication whenever applicable.
+  - For reference: Our sample solutions are ~85 lines of code. Our test file is over 600 lines.
  
 - **Important**
   - You may **not** use `listToArray` or `arrayToList` in **any** of your implementation. If you use either, your score will be 0 for any function using these.
   - You are allowed to use them in your tests.
+
+### keepTrendMiddles
+
+Take in a list of numbers and return a list of numbers keeping only those numbers from the original list for which the number and both of its adjacent values return true if applied to `allSatisfy: (prev: number, curr: numer, next: number) => boolean`.
+
+### keepLocalMaxima
+
+Take a list of numbers and return a list of numbers where only the local maxima from the original list are included. A local maxima is a number that is preceded and succedeed with a smaller number in the list.
+
+### keepLocalMinima
+
+Take a list of numbers and return a list of numbers where only the local minima from the original list are included. A local minima is a number that is preceded and succedeed with a larger number in the list.
+
+### keepLocalMinimaAndMaxima
+
+Take a list of numbers and return a list of numbers where only the local minima and maxima from the original list are included.
+
+#### Note: For the above three functions you must use `keepTrendMiddles`. Reduce code duplication among them.
+
+### `removeExtrema`
+
+Take in a list of numbers and return a list of numbers with the local extrema from the original list removed. A node is considered a local extrema if it is either smaller or larger than both adjacent nodes.
 
 ### `everyNList`
 
