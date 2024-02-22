@@ -50,19 +50,19 @@ It may not be obvious how to implement some of the functions. Try writing some t
 
 ### `keepTrendMiddles`
 
-Take in a list of numbers and return a list of numbers keeping only those numbers from the original list for which the number and both of its adjacent values return true if applied to `allSatisfy: (prev: number, curr: numer, next: number) => boolean`.
+Take in a list of numbers and return a list of numbers keeping only those numbers from the original list for which the number and both of its adjacent values return true if applied to `allSatisfy: (prev: number, curr: numer, next: number) => boolean` in the same order.
 
 ### `keepLocalMaxima`
 
-Take a list of numbers and return a list of numbers where only the local maxima from the original list are included. A local maxima is a number that is preceded and succedeed with a smaller number in the list.
+Take a list of numbers and return a list of numbers where only the local maxima from the original list are included in the same order. A local maxima is a number that is preceded and succedeed with a smaller number in the list.
 
 ### `keepLocalMinima`
 
-Take a list of numbers and return a list of numbers where only the local minima from the original list are included. A local minima is a number that is preceded and succedeed with a larger number in the list.
+Take a list of numbers and return a list of numbers where only the local minima from the original list are included in the same order. A local minima is a number that is preceded and succedeed with a larger number in the list.
 
 ### `keepLocalMinimaAndMaxima`
 
-Take a list of numbers and return a list of numbers where only the local minima and maxima from the original list are included.
+Take a list of numbers and return a list of numbers where only the local minima and maxima from the original list are included in the same order.
 
 #### Note: For the above three functions you must use `keepTrendMiddles`. Reduce code duplication among them.
 
