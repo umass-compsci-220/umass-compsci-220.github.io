@@ -66,10 +66,6 @@ Take a list of numbers and return a list of numbers where only the local minima 
 
 #### Note: For the above three functions you must use `keepTrendMiddles`. Reduce code duplication among them.
 
-### `removeExtrema`
-
-Take in a list of numbers and return a list of numbers with the local extrema from the original list removed. A node is considered a local extrema if it is either smaller or larger than both adjacent nodes.
-
 ### `everyNList`
 
 Write a function that takes a list of some type `T` and a number `n` (assumed to be a positive natural). It should return a list containing every nth element from the input list (the nth, 2nth, 3nth, ...), in the original order.
