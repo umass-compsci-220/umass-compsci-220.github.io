@@ -48,19 +48,19 @@ It may not be obvious how to implement some of the functions. Try writing some t
   - You may **not** use `listToArray` or `arrayToList` in **any** of your implementation. If you use either, your score will be 0 for any function using these.
   - You are allowed to use them in your tests.
 
-### keepTrendMiddles
+### `keepTrendMiddles`
 
 Take in a list of numbers and return a list of numbers keeping only those numbers from the original list for which the number and both of its adjacent values return true if applied to `allSatisfy: (prev: number, curr: numer, next: number) => boolean`.
 
-### keepLocalMaxima
+### `keepLocalMaxima`
 
 Take a list of numbers and return a list of numbers where only the local maxima from the original list are included. A local maxima is a number that is preceded and succedeed with a smaller number in the list.
 
-### keepLocalMinima
+### `keepLocalMinima`
 
 Take a list of numbers and return a list of numbers where only the local minima from the original list are included. A local minima is a number that is preceded and succedeed with a larger number in the list.
 
-### keepLocalMinimaAndMaxima
+### `keepLocalMinimaAndMaxima`
 
 Take a list of numbers and return a list of numbers where only the local minima and maxima from the original list are included.
 
