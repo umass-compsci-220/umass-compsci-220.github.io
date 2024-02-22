@@ -50,7 +50,7 @@ It may not be obvious how to implement some of the functions. Try writing some t
 
 ### `keepTrendMiddles`
 
-Take in a list of numbers and return a list of numbers keeping only those numbers from the original list for which the number and both of its adjacent values return true if applied to `allSatisfy: (prev: number, curr: numer, next: number) => boolean` in the same order.
+Take in a list of numbers and return a list of numbers keeping only those numbers from the original list for which the number and both of its adjacent values return true if applied to `allSatisfy: (prev: number, curr: number, next: number) => boolean` in the same order.
 
 ### `keepLocalMaxima`
 
