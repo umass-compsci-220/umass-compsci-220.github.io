@@ -23,7 +23,7 @@ Students will be graded on their ability to:
 
 - Correctly implement the functions [specified below](#programming-tasks)
 - Resolve all linter warnings
-- Follow the [coding](/materials/homework/image-processing), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
+- Follow the [coding](/materials/guidelines/syntax-and-code), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
 - Design full-coverage [unit-tests](#testing) for the functions they implemented
   - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage for more details
   - Make sure you are calling all functions, including functions returned by functions you write.
