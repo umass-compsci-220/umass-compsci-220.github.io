@@ -15,7 +15,7 @@ In this assignment, you will develop an _oracle_ to test (possibly broken) solut
 - Your purpose is not to solve the problem, but to test whether a solution given to you is correct. That is, all code you write will be tests and supporting code for tests.
 - There might be multiple correct outputs for a single input. Thus, you will need to test _properties_ of the output, and make sure you are considering enough properties so anything that satisfies all of them (i.e. passes all your assertions) is correct.
 
-This homework is divided into two assignments (with separate due dates). You will have one week to complete each part. Part one will focus on writing a function that, if given valid inputs, produces correct outputs. Part two will be similar, but will focus on verifying that the steps of a function are correct.
+This homework is divided into two assignments (with separate due dates). You will have one week to complete each part. Part A will focus on writing a function that, if given valid inputs, produces correct outputs. Part B will be similar, but will focus on verifying that the steps of a function are correct.
 
 ### Learning Objectives
 
