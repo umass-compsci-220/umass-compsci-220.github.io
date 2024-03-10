@@ -100,7 +100,7 @@ A `Hire` is an object with two fields that represents a matching between a compa
 
 Along with these type definitions, there are two relevant exported members (functions), both of type `StableMatcher`. They are: `STABLE_MATCHING_SOLUTION_1` and `FLAWED_STABLE_MATCHING_SOLUTION_1`. They are used inside the provided tests (`oracle.test.ts`) to check against your solution.
 
-Their implementations are [obfuscated](https://en.wikipedia.org/wiki/Obfuscation) inside of `stableMatching.js`. Looking at their source code would be counter-productive to the assignment and not particularly useful. As the auto-grader will tests your oracle against numerous correct and incorrect solutions to the problem.
+Their implementations are [obfuscated](https://en.wikipedia.org/wiki/Obfuscation) inside of `stableMatching.js`. Looking at their source code would be counter-productive to the assignment and not particularly useful as the auto-grader will tests your oracle against numerous correct and incorrect solutions to the problem.
 
 ## Programming Tasks
 
@@ -125,7 +125,7 @@ for i from n−1 down to 1 do
      exchange a[j] and a[i]
 ```
 
-An function that returns a random number between some range can be done using `Math.random` and `Math.floor`:
+A function that returns a random number between some range can be implemented using `Math.random` and `Math.floor`:
 
 ```ts
 // Returns a random integer i where min <= i < max
