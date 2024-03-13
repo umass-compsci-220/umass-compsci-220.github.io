@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Discussion 6: Property Based Testing and OOP
 
-Welcome to the fourth discussion! This week you'll learn more about writing property based tests and OOP.
+Welcome to the sixth discussion! This week you'll learn more about writing property based tests and OOP.
 
 ## Materials
 
