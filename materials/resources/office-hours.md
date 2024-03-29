@@ -58,6 +58,7 @@ Please do come to office hours for:
 | Time                | Course Staff       | Location/Zoom Link                                                                       |
 | ------------------- | ------------------ | ---------------------------------------------------------------------------------------- |
 | 11:00 AM - 12:00 PM | Jaime Dávila       | LGRC A137 and [Zoom](https://umass-amherst.zoom.us/j/2581898802)                         |
+| 12:15 PM - 1:15 PM  | Vishwesh Palani    | LGRT T222                                                                                |
 | 2:00 PM - 4:00 PM   | Kyler Schulz       | LGRT T222                                                                                |
 | 3:30 PM - 5:30 PM   | Yiquan Xiao        | LGRT T222                                                                                |
-| 5:30 PM - 6:30 PM   | Vishwesh Palani    | LGRT T222                                                                                |
+
