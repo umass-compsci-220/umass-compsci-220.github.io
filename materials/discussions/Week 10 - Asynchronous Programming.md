@@ -14,7 +14,7 @@ The slides with solutions will be posted [here](https://github.com/umass-compsci
 
 Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/10-asynchronous-programming.zip). Make sure to submit this to gradescope, ask your lab leaders to help you if you are unsure of how. We'll also show the process in the first lab.
 
-The solution file will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/10-asynchronous-programming-solution.ts) after lab.
+The solution file will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/10-asynchronous-programming-solution.js) after lab.
 
 ## Opening and working with the starter code
 
