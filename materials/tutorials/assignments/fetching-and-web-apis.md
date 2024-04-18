@@ -31,6 +31,11 @@ Students will be graded on their ability to:
 - Follow the [coding](/materials/guidelines/syntax-and-code), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
 - Design full-coverage [unit-tests](#testing) for the functions they implemented
   - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage for more details
+- Follow the [branch](#branch-requirements) and [pull request](#pull-request-requirements) requirements.
+- Follow the [mock testing](#mock-testing) guidelines.
+- Implementation of the [working example](#working-example).
+
+There will be substantial manual grading for this homework.
 
 ## Getting Started
 
