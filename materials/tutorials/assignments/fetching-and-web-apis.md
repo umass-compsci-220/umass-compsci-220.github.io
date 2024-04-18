@@ -227,7 +227,7 @@ jest.setTimeout(30 * SECOND);
 
 ### Mock Testing
 
-In addition to the testing above, some functions will require you to test them by mocking `fetch`. In other words, you'll be intercepting the `fetch` call hand have it resolve to some predictable value. There are a number of reasons for why we might want to do this.
+In addition to the testing above, some functions will require you to test them by mocking `fetch`. In other words, you'll be intercepting the `fetch` call and have it resolve to some predictable value. There are a number of reasons for why we might want to do this.
 
 1. The API might respond differently to the same query. For example, when fetching the current weather the temperature will obviously be different during the day. If we have some function that does different actions based on how warm it is, we run into a problem. With mock testing, we can guarantee that fetch will return a response consistent with what we're trying to test.
 
@@ -278,13 +278,13 @@ If you don't have git on your machine, follow the instructions [here](https://gi
 
 ### Branch Requirements
 
-Of the files in this homework, 3 of them should be completed by a different group member: `fetchGeoCoord.js`, `fetchCurrentTemperature.js`, and `fetchUniversities.js`. The respective assigned group member is responsible for completing both functions of the respective file, and its test file with tests for all the functions in it, and they must do so on a [branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches). The branch should be created from the **main** branch, and its name should be as follows: `[my first name]-[file name]`. For example, if my name is John and my group and I have decided I will be doing the `fetchGeoCoord.js` file, I will create a branch from main called `john-fetchGeoCoord`. This will be demonstrated in the [Git Tutorial](#git-tutorial) section. So all in all, the branch should only modify 2 files: the file the group member is responsible for, and its corresponding test file. **We will check to see that each member creates their branches in this way and that they're the only member to work on that branch. This will be part of the manual grading for this assignment.**
+Of the files in this homework, there are 3 of them that each should be completed by a different group member: `fetchGeoCoord.js`, `fetchCurrentTemperature.js`, and `fetchUniversities.js`. The respective assigned group member is responsible for completing both functions of the respective file, and its test file with tests for all the functions in it, and they must do so on a [branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches). The branch should be created from the **main** branch, and its name should be as follows: `[my first name]-[file name]`. For example, if my name is John and my group and I have decided I will be doing the `fetchGeoCoord.js` file, I will create a branch from main called `john-fetchGeoCoord`. This will be demonstrated in the [Git Tutorial](#git-tutorial) section. So all in all, the branch should only modify 2 files: the file the group member is responsible for, and its corresponding test file. **We will check to see that each member creates their branches in this way and that they're the only member to work on that branch. This will be part of the manual grading for this assignment.**
 
-You are not required to create any other branches for the homework. However, creating branches for new features of a project is good practice. For example, it would be best practice to create branches for `universityWeather.js` and your group's working example, and then merge them into main upon their completion.
+You are not required to create any other branches for the homework. However, creating branches for new features of a project is good practice. For example, it would be best practice to create branches for `universityWeather.js` (see below for description) and your group's working example, and then merge them into main upon their completion.
 
 ### Pull Request Requirements
 
-When a member of your group believes they've finished working on the branch they're responsible for (one of `fetchGeoCoord`, `fetchCurrentTemperature`, or `fetchUniversities`), they will create a pull request. The other 2 members of the group must approve the pull request if it's ready to be merged into main. The only pull requests your group are required to create and merge into main are pull requests for the branches outlined in [Branch Requirements](#branch-requirements). **This will be part of the manual grading for this assignment.**
+When a member of your group believes they've finished working on the branch they're responsible for (one of `fetchGeoCoord`, `fetchCurrentTemperature`, or `fetchUniversities`), they will create a pull request. The other 2 members of the group **must review the pull request** and approve it if it's ready to be merged into main. The only pull requests your group are required to create and merge into main are pull requests for the branches outlined in [Branch Requirements](#branch-requirements). **This will be part of the manual grading for this assignment.**
 
 This whole process is covered in the [Git Tutorial](#git-tutorial) section.
 
@@ -370,7 +370,7 @@ Whenever a branch has been pushed to, on the remote repository on GitHub you wil
   <img src="/img/git/13.png" />
 </p>
 
-If you believe your work on that branch is done and you're ready to merge that branch into main, you can click the 'Compare & pull request' button above. Now create your pull request:
+If you believe your work on that branch is done and you're ready to merge that branch into main, you can click the 'Compare & pull request' button above. Now create your pull request detailing the changes you've made:
 
 <p align="center">
   <img src="/img/git/14.png" />
