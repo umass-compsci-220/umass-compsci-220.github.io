@@ -34,25 +34,6 @@ Students will be graded on their ability to:
 
 ## Getting Started
 
-### Git
-
-For this homework you and your group will be required to use git and GitHub for managing your project. Git is a great tool for collaboration, version control, and much more. It is good to get in the habit of using it now, as it is a tool you will be using for the rest of your career.
-
-If you don't have git on your machine, follow the instructions [here](https://github.com/git-guides/install-git) to install it.
-
-### Branch Requirements
-
-There are 3 files in this homework which each should be completed by a different group member: `fetchGeoCoord.js`, `fetchCurrentTemperature.js`, and `fetchUniversities.js`. The respective assigned group member is responsible for completing both functions of the respective file, and they must do so on a [branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches). The branch should be created from the **main** branch, and its name should be as follows: `[my first name]-[file name]`. For example, if my name is John and my group and I have decided I will be doing the `fetchGeoCoord.js` file, I will create a branch from main called `john-fetchGeoCoord`. This homework specification will walk you through that process now.
-
-### Branch Walkthrough
-
-
-
-### Git Notes
-
-- If you encounter any merge conflicts when resolving your pull requests, refer to the [documentation here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) on how to handle them.
-- While git is very powerful, it's also complex, and everyone has trouble using it time-to-time - so don't be discouraged!
-
 ### JavaScript vs TypeScript
 
 When looking though the starter code you may have noticed that there are no types to be found! What gives? For this homework, we're using JavaScript. There are a few reasons for this. First, we want you all to get some experience using it. Second, we felt that some of the types surrounding promises and asynchronous code were hindering learning for this HW rather than supporting it. You might wonder: If we don't have type signatures do we have to check all inputs to see if they are the valid type? The answer is no. If we say that a function you need to implement takes in a string and a number you can assume that the correct argument type will be passed to the function in our test. Remember, we're not trying to trick you!
@@ -283,6 +264,125 @@ This is the first assignment where there is more than one source file. You shoul
 ### Error Handling
 
 For all the [programming tasks](#programming-tasks) below, if the response is not ok, then the promise should reject with an **Error** object that contains an informational error message. This rejection reason should propagate, meaning the returned promises from these functions should reject with the same reason. You should not try to recover in any way. Some functions in the spec may require a particular error message on rejection, so read carefully.
+
+## Git Requirements
+
+For this homework you and your group will be required to use git and GitHub for managing your project. Git is a great tool for collaboration, version control, and much more. It is good to get in the habit of using it now, as it is a tool you will be using for the rest of your career.
+
+If you don't have git on your machine, follow the instructions [here](https://github.com/git-guides/install-git) to install it.
+
+### Branch Requirements
+
+There are 3 files in this homework which each should be completed by a different group member: `fetchGeoCoord.js`, `fetchCurrentTemperature.js`, and `fetchUniversities.js`. The respective assigned group member is responsible for completing both functions of the respective file, and they must do so on a [branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches). The branch should be created from the **main** branch, and its name should be as follows: `[my first name]-[file name]`. For example, if my name is John and my group and I have decided I will be doing the `fetchGeoCoord.js` file, I will create a branch from main called `john-fetchGeoCoord`. This homework specification will walk you through that process later.
+
+### Pull Request Requirements
+
+
+
+## Git Tutorial
+
+### Setting Up the Repo
+
+Open the GitHub repo you were invited to by email and click the green code button and copy the https link to the repo into your clipboard:
+
+<p align="center">
+  <img src="/img/git/1.png" />
+</p>
+
+On your machine, open your terminal of choice in the directory in which you want the repo, and run the command `git clone <link you just copied in the previous step>` (without the angle brackets of course):
+
+<p align="center">
+  <img src="/img/git/2.png" />
+</p>
+
+Now the repo is on your local machine!
+
+### Creating a Branch
+
+When you're ready to create a branch, open the directory containing your local repo in VSCode and click the Source Control tab on the left, click the 3 dots and click the 'Create Branch' option:
+
+<p align="center">
+  <img src="/img/git/3.png" width="75%" height="75%" />
+</p>
+
+In the opened console at the top of the screen, type the name of the branch you wish to create using the previously mentioned naming convention:
+
+<p align="center">
+  <img src="/img/git/4.png" />
+</p>
+
+Now click the 'Publish Branch' button in the Source Control tab:
+
+<p align="center">
+  <img src="/img/git/5.png" />
+</p>
+
+Now, in the bottom left corner, you should see that you are now on the branch you just created:
+
+<p align="center">
+  <img src="/img/git/6.png" />
+</p>
+
+If you want to switch the branch you're working on, click the button with the branch name in the bottom left corner and select the branch you want to switch to:
+
+<p align="center">
+  <img src="/img/git/7.png" />
+</p>
+
+### Committing and Pushing Changes
+
+Once you write some code and make modifications to your homework, you are ready to commit your changes and push them to the remote repository on GitHub (in the below pictures, the modifications were the addition of a `console.log` statement to the `utility.js` file).
+
+In the Source Control tab on the left, enter a meaningful commit message and click the 'Commit' button:
+
+<p align="center">
+  <img src="/img/git/9.png" width="95%" />
+</p>
+
+<p align="center">
+  <img src="/img/git/10.png" />
+</p>
+
+Finally, click the 'Sync Changes' button:
+
+<p align="center">
+  <img src="/img/git/11.png" />
+</p>
+
+Your changes are now on the remote repository!
+
+### Pull Requests
+
+Whenever a branch has been pushed to, on the remote repository on GitHub you will see this button appear:
+
+<p align="center">
+  <img src="/img/git/13.png" />
+</p>
+
+If you believe your work on that branch is done and you're ready to merge that branch into main, you can click the 'Compare & pull request' button above. Now create your pull request:
+
+<p align="center">
+  <img src="/img/git/14.png" />
+</p>
+
+Once your two other group members have approved the pull request, click the 'Merge pull request' button to merge that branch into main:
+
+<p align="center">
+  <img src="/img/git/15.png" />
+</p>
+
+And you've successfully completed a pull request!
+
+You will see this option to delete the branch after merging. **Do not** delete the branch as we will be looking at them to grade your homework. However, note that branches can always be restored.
+
+<p align="center">
+  <img src="/img/git/16.png" />
+</p>
+
+### Git Notes
+
+- If you encounter any merge conflicts when resolving your pull requests, refer to the [documentation here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) on how to handle them.
+- While git is very powerful, it's also complex, and everyone has trouble using it time-to-time - so don't be discouraged!
 
 ## Resources
 
