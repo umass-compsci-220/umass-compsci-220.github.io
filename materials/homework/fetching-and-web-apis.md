@@ -273,7 +273,7 @@ If you don't have git on your machine, follow the instructions [here](https://gi
 
 ### Branch Requirements
 
-There are 3 files in this homework which each should be completed by a different group member: `fetchGeoCoord.js`, `fetchCurrentTemperature.js`, and `fetchUniversities.js`. The respective assigned group member is responsible for completing both functions of the respective file, and its test file with tests for all the functions in it, and they must do so on a [branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches). The branch should be created from the **main** branch, and its name should be as follows: `[my first name]-[file name]`. For example, if my name is John and my group and I have decided I will be doing the `fetchGeoCoord.js` file, I will create a branch from main called `john-fetchGeoCoord`. This will be demonstrated in the [Git Tutorial](#git-tutorial) section. So all in all, the branch should only modify 2 files: the file the group member is responsible for, and its corresponding test file. **We will check to see that each member creates their branches in this way and that they're the only member to work on that branch. This will be part of the manual grading for this assignment.**
+Of the files in this homework, 3 of them should be completed by a different group member: `fetchGeoCoord.js`, `fetchCurrentTemperature.js`, and `fetchUniversities.js`. The respective assigned group member is responsible for completing both functions of the respective file, and its test file with tests for all the functions in it, and they must do so on a [branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches). The branch should be created from the **main** branch, and its name should be as follows: `[my first name]-[file name]`. For example, if my name is John and my group and I have decided I will be doing the `fetchGeoCoord.js` file, I will create a branch from main called `john-fetchGeoCoord`. This will be demonstrated in the [Git Tutorial](#git-tutorial) section. So all in all, the branch should only modify 2 files: the file the group member is responsible for, and its corresponding test file. **We will check to see that each member creates their branches in this way and that they're the only member to work on that branch. This will be part of the manual grading for this assignment.**
 
 You are not required to create any other branches for the homework. However, creating branches for new features of a project is good practice. For example, it would be best practice to create branches for `universityWeather.js` and your group's working example, and then merge them into main upon their completion.
 
@@ -387,6 +387,9 @@ You will see this option to delete the branch after merging. **Do not** delete t
 
 ### Git Notes
 
+- It is good practice to commit often.
+- If you mess something up on a branch (this could be main), remember that you can always revert to a prior commit.
+- GitHub allows you to view a branch's commit history.
 - If you encounter any merge conflicts when resolving your pull requests, refer to the [documentation here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) on how to handle them.
 - While git is very powerful, it's also complex, and everyone has trouble using it time-to-time - so don't be discouraged!
 
@@ -439,7 +442,7 @@ export function locationImportantEnough(place: string, importanceThreshold: numb
 
 This function takes a string for a place and a number for the importanceThreshold. It should call `fetchGeoCoord` and return true if the maximum importance value in the importances field is greater than the importanceThreshold that was passed in. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message.
 
-You will need to write mock tests for this function since places have different impedances values during the day. You should also test what happens if the `ok` property of the API's returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false. You need to write at least three mock tests.
+You will need to write mock tests for this function since places have different importance values during the day. You should also test what happens if the `ok` property of the API's returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false. You need to write at least three mock tests.
 
 ### `fetchCurrentTemperature.js`
 
