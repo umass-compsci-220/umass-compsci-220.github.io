@@ -20,6 +20,7 @@ Between three people, and the time you are given, everyone should be able to do 
 - Combine different third-party web services into a single asynchronous application
 - Chain and create `Promise` objects
 - Declare and interact with `URL` and `URLSearchParam` instances
+- Design and implement complete unit tests that use advanced techniques such as mock testing.
 
 ### Student Expectations
 
@@ -32,6 +33,29 @@ Students will be graded on their ability to:
   - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage for more details
 
 ## Getting Started
+
+### Git
+
+For this homework you and your group will be required to use git and GitHub for managing your project. Git is a great tool for collaboration, version control, and much more. It is good to get in the habit of using it now, as it is a tool you will be using for the rest of your career.
+
+If you don't have git on your machine, follow the instructions [here](https://github.com/git-guides/install-git) to install it.
+
+### Branch Requirements
+
+There are 3 files in this homework which each should be completed by a different group member: `fetchGeoCoord.js`, `fetchCurrentTemperature.js`, and `fetchUniversities.js`. The respective assigned group member is responsible for completing both functions of the respective file, and they must do so on a [branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches). The branch should be created from the **main** branch, and its name should be as follows: `[my first name]-[file name]`. For example, if my name is John and my group and I have decided I will be doing the `fetchGeoCoord.js` file, I will create a branch from main called `john-fetchGeoCoord`. This homework specification will walk you through that process now.
+
+### Branch Walkthrough
+
+
+
+### Git Notes
+
+- If you encounter any merge conflicts when resolving your pull requests, refer to the [documentation here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) on how to handle them.
+- While git is very powerful, it's also complex, and everyone has trouble using it time-to-time - so don't be discouraged!
+
+### JavaScript vs TypeScript
+
+When looking though the starter code you may have noticed that there are no types to be found! What gives? For this homework, we're using JavaScript. There are a few reasons for this. First, we want you all to get some experience using it. Second, we felt that some of the types surrounding promises and asynchronous code were hindering learning for this HW rather than supporting it. You might wonder: If we don't have type signatures do we have to check all inputs to see if they are the valid type? The answer is no. If we say that a function you need to implement takes in a string and a number you can assume that the correct argument type will be passed to the function in our test. Remember, we're not trying to trick you!
 
 ### URLs and Parameters
 
@@ -129,8 +153,6 @@ Here is an example of `fetch`:
 
 ```js
 import path from "path"; // Node.js standard library for resolving arbitrary paths (like those in a url)
-// Only needed in this case to join a url given by the API to another resource
-import fetch from "../include/fetch.js";
 
 fetch("https://spire-api.melanson.dev/instructors/?search=marius+minea") // fetch the /instructions resource with a "search" parameter
   .then(res => res.ok ? res.json() : Promise.reject(new Error(`Error in response: ${res.statusText}`))) // We need to check if there was an error in the response.
@@ -152,201 +174,9 @@ An important aspect of fetching is [rate-limiting](https://www.cloudflare.com/le
 
 When using publicly available APIs (the ones we are using in this homework), make sure you play by their rules and do not send more requests than needed. Otherwise you run the risk of being rate-limited (unable to send requests for a duration of time) or lose access to the service (banned).
 
-For this HW we have set up a caching server at [https://220.maxkuechen.com/](https://220.maxkuechen.com/). This server will relay requests to the proper APIs and will [cache](<https://en.wikipedia.org/wiki/Cache_(computing)>) the response for one hour. As a result we are requesting information from the actual API much less frequently. While once API call is very cheap, think about how often your tests and autograder tests get run over the course of the HW for 200+ students.
+For this HW we have set up a caching server at [https://220.maxkuechen.com/](https://220.maxkuechen.com/). This server will relay requests to the proper APIs and will [cache](<https://en.wikipedia.org/wiki/Cache_(computing)>) the response for some period. As a result we are requesting information from the actual API much less frequently. While once API call is very cheap, think about how often your tests and autograder tests get run over the course of the HW for 200+ students.
 
 In this HW you will be working with the [geocode](https://geocode.maps.co/) API, the [universites](https://github.com/Hipo/university-domains-list) API, and the [weather](https://open-meteo.com) API, as well as other APIs you choose yourself. Feel free to read their respective docs. You will be interacting with these APIs through our caching server. Each programming task outlines what endpoint to fetch the data from.
-
-### Code Duplication with Multi-File Programs
-
-This is the first assignment where there is more than one source file. You should not have duplication between two source files _or_ within one source file. There is the `./src/utility.ts` file used to declare and export members accordingly.
-
-### Error Handling
-
-For all the [programming tasks](#programming-tasks) below, if the response is not ok, then the promise should reject with an informational error message This rejection reason should propagate, meaning the returned promises from these functions should reject with the same reason. You should not try to recover in any way.
-
-## Resources
-
-- [MDN Web Docs: Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-- [MDN Web Docs: Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
-- [MDN Web Docs: How to use promises](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises)
-
-## Programming Tasks
-
-### `fetchGeoCoord`
-
-- Use the provided `fetch` function
-- This function should be done individually by a single group member
-
-Write a function, inside of `fetchGeoCoord.ts`, with the following type signature:
-
-```ts
-export function fetchGeoCoord(query: string): Promise<GeoCoord> {
-  // TODO
-}
-```
-
-This function should take in a query string and return a `Promise` that fulfils with the first geo-coordinate result. **If there are no results for a location (the result array is empty), then the promise should reject with an error identical to the one below**:
-
-```js
-new Error("No results found for query.");
-```
-
-Use the following API, <https://220.maxkuechen.com/geoCoord/search?q=query+goes+here>, to retrieve your results. The base URL should be `"https://220.maxkuechen.com"` and there should be one URL search parameter `"q"` for the query. This API returns an array of objects containing a `lon` and `lat` field.
-
-See the [getting started section on queries](#urls-and-parameters) if you are confused. Use the [`Number.parseFloat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseFloat) function to convert to a number if needed.
-
-### `fetchCurrentTemperature`
-
-- Use the provided `fetch` function
-- This function should be done individually by a single group member, different from the author of `fetchGeoCoord`
-
-Write a function, inside of `./src/fetchCurrentTemperature.ts`, with the following type signature:
-
-```ts
-interface TemperatureReading {
-  time: string[];
-  temperature_2m: number[];
-}
-
-export function fetchCurrentTemperature(coords: GeoCoord): Promise<TemperatureReading> {
-  // TODO
-}
-```
-
-This function should take in a longitude and latitude and return a `Promise` that fulfils with an object. The object should have two fields called `time` and `temperature_2m`. The `time` field should be an array of times and the `"temperature_2m"` should be an array of corresponding temperature measurements.
-
-Use the <https://220.maxkuechen.com/currentTemperature/forecast?latitude=40&longitude=40&hourly=temperature_2m&temperature_unit=fahrenheit> API to retrieve your result. It has `"latitude"` and `"longitude"` parameters. You should set the `"hourly"` parameter to `"temperature_2m"`, and the `"temperature_unit"` parameter to `"fahrenheit"`.
-
-### `fetchUniversities`
-
-- Use the provided `fetch` function
-- This function should be done individually by a single group member:
-  - the final group member that did not complete `fetchLongitudeAndLatitude` or `fetchCurrentWeather`
-
-Write a function, inside of `./src/fetchUniversities.ts`, with the following type signature:
-
-```ts
-export function fetchUniversities(query: string): Promise<string[]> {
-  // TODO
-}
-```
-
-This function should take in a query string and return a `Promise` that fulfils with an array of university names.
-
-Use the following API, <http://220.maxkuechen.com/universities/search?name=name+query+goes+here>, retrieve your result. It has a `"name"` parameter to search for universities with a similar name. **If there are no results (the returned JSON is an empty array), resolve to an empty array.**
-
-### `fetchUniversityWeather`
-
-- Use the provided `fetch` function
-- This function should be done as a group, after each member has completed their individual tasks
-
-Write a function with, inside of `./src/universityWeather.ts`, the following type signature:
-
-```ts
-export interface AverageTemperatureResults {
-  totalAverage: number;
-  [key: string]: number;
-}
-
-export function fetchUniversityWeather(
-  universityQuery: string,
-  transformName?: (s: string) => string
-): Promise<AverageTemperatureResults> {
-  // TODO
-}
-```
-
-This function should take in a query string and return a `Promise` that fulfils with an object that contains the total average and individual average temperatures of all universities matching the given `universityQuery` string. **The optionally provided `transformName` function should be applied to each university name before it is transformed into a `GeoCoord`.** The total average should be in a field called `totalAverage` and the individual averages should use the name of the university as a key. The keys should be the original, untransformed, names.
-
-If there are no matching universities you should reject with an error:
-
-```js
-new Error("No results found for query.");
-```
-
-As an example, if there were three universities found by the query (University One, University Two, University Three), then the object might look something like this:
-
-```js
-{
-  totalAverage: 50,
-  "University One": 60,
-  "University Two": 40,
-  "University Three": 50
-}
-```
-
-### `fetchUMassWeather`
-
-- This function should be done as a group, after completing all previous tasks
-
-Write a function, inside of `universityWeather.ts`, with the following type signature:
-
-```ts
-export function fetchUMassWeather(): Promise<AverageTemperatureResults> {
-  // TODO
-}
-```
-
-This function should find the average temperature of all universities in the "University of Massachusetts" system. Use an appropriate function from a previous task to compute your result. Return the result unchanged.
-
-You may notice that the following query, <https://220.maxkuechen.com/geoCoord/search?q=University+of+Massachusetts+at+Amherst>, returns no results, but <https://220.maxkuechen.com/geoCoord/search?q=University+of+Massachusetts+Amherst> does. You will need to use the `transformName` parameter to cover this case. Look at the documentation for the [`String` object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) and figure out how to handle it.
-
-### `fetchUCalWeather`
-
-- This function should be done as a group, after completing all previous tasks
-
-Write a function, inside of `universityWeather.ts`, with the following type signature:
-
-```ts
-export function fetchUCalWeather(): Promise<AverageTemperatureResults> {
-  // TODO
-}
-```
-
-This function should find the average temperature of all universities in the "University of California" system. Use an appropriate function from a previous task to compute your result. Return the result unchanged. This function should only be a single statement.
-
-### Working Example
-
-- This task should be completed as a group
-
-Using any free ones you can find (here is a [a long list](https://github.com/public-api-lists/public-api-lists)), write a short program inside of `main.ts` that calculates some interesting statistics.
-
-**Requirements:**
-
-- Must use `fetch`, either directly or indirectly
-- At least one new type of API call
-  - The program cannot consist of functions defined in [Programming Tasks](#programming-tasks)
-  - You must use a new API
-- Must use at least two different types of data
-  - These data items can be from the same API (different endpoint) or different APIs
-    - Stores, and their names, would count as one
-    - Brightness readings would count as one
-- The program must take input from the user
-  - Read the [Node.js documentation](https://nodejs.org/api/readline.html#readline)
-- The result of the program must be output somehow (either in the console or into a file)
-  - You could use the [`fs` library](https://nodejs.org/api/fs.html) to read/write to a JSON file
-    - See HW6 `./include/data.ts` for examples
-- The program must be documented with what it calculates exactly
-  - Write a multi-line comment at the top of the file
-  - A few sentences is fine
-- The program must produce a correct result according to its documentation
-- At least 25 lines of code (after running `npm run format` - ignoring the description comment)
-
-Pick something interesting and try to have fun with it. As long as you meet the requirements stated above, you should receive full credit.
-
-You are not required to write tests for this code, however your code should execute without errors and work as intended.
-
-### If you are worried about being rate limited with the api you have choosen
-
-If you would like to cache the results of an API call to an API of your choice, you can use the 220 caching server that we described in the [Rate Limiting Section](#rate-limiting). Here is an example of the URL for caching the [https://www.boredapi.com](https://www.boredapi.com).
-
-`https://220.maxkuechen.com/fetch/?url=https://www.boredapi.com/api/activity?type=recreational`.
-
-You'll notice that some APIs, like the one above, give different responses every time. However, since we cached the response, the result will always be the same. For convenience, we are providing the following route that does not cache. You should not use this route in tests.
-
-`htps://220.maxkuechen.com/fetch/noCache/?url=https://www.boredapi.com/api/activity?type=recreational`.
-
-You may use the caching server for any API call in the working example, but it is not a requirement.
 
 ## Testing
 
@@ -409,6 +239,275 @@ const SECOND = 1000;
 jest.setTimeout(30 * SECOND);
 ```
 
+### Mock Testing
+
+In addition to the testing above, some functions will require you to test them by mocking `fetch`. In other words, you'll be intercepting the `fetch` call hand have it resolve to some predictable value. There are a number of reasons for why we might want to do this.
+
+1. The API might respond differently to the same query. For example, when fetching the current weather the temperature will obviously be different during the day. If we have some function that does different actions based on how warm it is, we run into a problem. With mock testing, we can guarantee that fetch will return a response consistent with what we're trying to test.
+
+2. We want to know how our code responds to different API scenarios that we cannot test for. For example, does our code correctly handle an Internal Server Error?
+
+3. Finally the API might be rate limited or unavailable. This makes testing hard and expensive. With mock testing we can reserve API calls to the API for only some tests saving time and money. See the documentation for more information on this: https://www.npmjs.com/package/jest-fetch-mock.
+
+The lecture slides [Testing Asynchronous Code in Week 10](https://umamherst.instructure.com/courses/8875/files/4853295?module_item_id=887630) give a step by step description of how to properly mock `fetch`.
+
+Some functions will require you to write mock tests explicitly. You are welcome to write mock tests for other functions as well.
+
+If you'd like to mock every test in a `describe` block, you can follow this format:
+```ts
+// Other imports
+import fetchMock from "jest-fetch-mock";
+
+describe("exampe tests", () => {
+  beforeEach(() => {
+    fetchMock.enableMocks();
+  });
+
+  // Both tests will have mocking enabled for fetch
+  it("test 1", () => { /* Test logic here */ });
+  it("test 2", () => { /* Test logic here */ });
+
+  // Last line of describe block:
+  afterEach(() => {
+    fetchMock.resetMocks();
+    fetchMock.disableMocks();
+  });
+});
+```
+This is one way to guarantee all the tests in your `describe` block will mock `fetch`. You can also follow the above mentioned lecture slides, or any other method that works for you. When in doubt, check the jest-fetch-mock documentation in [Resources](#resources) and use a debugger to ensure that you are indeed mocking or not mocking.
+
+### Code Duplication with Multi-File Programs
+
+This is the first assignment where there is more than one source file. You should not have duplication between two source files _or_ within one source file. There is the `./src/utility.js` file used to declare and export members accordingly.
+
+### Error Handling
+
+For all the [programming tasks](#programming-tasks) below, if the response is not ok, then the promise should reject with an **Error** object that contains an informational error message. This rejection reason should propagate, meaning the returned promises from these functions should reject with the same reason. You should not try to recover in any way. Some functions in the spec may require a particular error message on rejection, so read carefully.
+
+## Resources
+
+- [MDN Web Docs: Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [MDN Web Docs: Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
+- [MDN Web Docs: How to use promises](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises)
+- [jest-fetch-mock](https://www.npmjs.com/package/jest-fetch-mock)
+
+## Programming Tasks
+
+### `fetchGeoCoord.js`
+
+Write the following functions inside of `fetchGeoCoord.js`. These functions should be implemented by the first group member on a separate git branch. See the git section for instructions.
+
+#### `fetchGeoCoord`
+
+```ts
+interface GeoCoord {
+    lon: number,
+    lat: number,
+    importances: number[]
+}
+```
+
+```ts
+export function fetchGeoCoord(query: string): Promise<GeoCoord> {
+  // TODO
+}
+```
+
+This function should take in a query string and return a `Promise` that fulfils with the first geo-coordinate result. **If there are no results for a location (the result array is empty), then the promise should reject with an error identical to the one below**:
+
+```js
+new Error("No results found for query.");
+```
+
+Use the following API, <https://220.maxkuechen.com/geoCoord/search?q=query+goes+here>, to retrieve your results. The base URL should be `"https://220.maxkuechen.com"` and there should be one URL search parameter `"q"` for the query. This API returns an array of objects containing a `lon`, `lat`, and `importances` field.
+
+See the [getting started section on queries](#urls-and-parameters) if you are confused. Use the [`Number.parseFloat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseFloat) function to convert to a number if needed.
+
+#### `locationImportantEnough`
+
+```ts
+export function locationImportantEnough(place: string, importanceThreshold: number) {
+    // TODO
+}
+```
+
+This function takes a string for a place and a number for the importanceThreshold. It should call `fetchGeoCoord` and return true if the maximum importance value in the importances field is greater than the importanceThreshold that was passed in. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message.
+
+You will need to write mock tests for this function since places have different impedances values during the day. You should also test what happens if the `ok` property of the API's returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false. You need to write at least three mock tests.
+
+### `fetchCurrentTemperature.js`
+
+Write the following functions inside of `./src/fetchCurrentTemperature.js`. These functions should be implemented by the second group member on a separate git branch. See the git section for instructions.
+
+#### `fetchCurrentTemperature`
+
+```ts
+interface TemperatureReading {
+  time: string[];
+  temperature_2m: number[];
+}
+
+export function fetchCurrentTemperature(coords: GeoCoord): Promise<TemperatureReading> {
+  // TODO
+}
+```
+
+This function should take in a longitude and latitude and return a `Promise` that fulfils with an object. The object should have two fields called `time` and `temperature_2m`. The `time` field should be an array of times and the `"temperature_2m"` should be an array of corresponding temperature measurements.
+
+Use the <https://220.maxkuechen.com/currentTemperature/forecast?latitude=40&longitude=40&hourly=temperature_2m&temperature_unit=fahrenheit> API to retrieve your result. It has `"latitude"` and `"longitude"` parameters. You should set the `"hourly"` parameter to `"temperature_2m"`, and the `"temperature_unit"` parameter to `"fahrenheit"`.
+
+#### `tempAvgAboveAtCoords`
+
+```ts
+export function tempAvgAboveAtCoords(coords: {lat: number, lon: number}, temp: number) {
+    // TODO
+}
+```
+
+This function should call `fetchCurrentTemperature` with the supplied coordinates and then return true if the average of the temperatures in `temperature_2m` is greater than temp, false otherwise. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message.
+
+You will need to write mock tests for this function since temperatures change during the day. You should also test what happens if the `ok` property of the API's returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false. You need to write at least three mock tests.
+
+### `fetchUniversities.js`
+
+Write the following functions inside of `./src/fetchUniversities.js`. These functions should be implemented by the third group member on a separate git branch. See the git section for instructions.
+
+#### `fetchUniversities`
+
+```ts
+export function fetchUniversities(query: string): Promise<string[]> {
+  // TODO
+}
+```
+
+This function should take in a query string and return a `Promise` that fulfils with an array of university names.
+
+Use the following API, <http://220.maxkuechen.com/universities/search?name=name+query+goes+here>, retrieve your result. It has a `"name"` parameter to search for universities with a similar name. **If there are no results (the returned JSON is an empty array), resolve to an empty array.**
+
+#### `universityNameLengthOrderAscending`
+
+```ts
+export function universityNameLengthOrderAscending(queryName: string) {
+    // TODO
+}
+```
+
+The function should call `fetchUniversities` with the given query and then return true if the order of strings in the resulting array are ordered in ascending order by length, false otherwise. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message.
+
+You will need to write mock tests for this function since the order of university names from the API is not guaranteed. You should also test what happens if the `ok` property of the API's returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false. You need to write at least three mock tests.
+
+### `fetchUniversityWeather`
+
+- This function should be done as a group, after each member has completed their individual tasks
+
+Write a function with, inside of `./src/universityWeather.js`, the following type signature:
+
+```ts
+export interface AverageTemperatureResults {
+  totalAverage: number;
+  [key: string]: number;
+}
+
+export function fetchUniversityWeather(
+  universityQuery: string,
+  transformName?: (s: string) => string
+): Promise<AverageTemperatureResults> {
+  // TODO
+}
+```
+
+This function should take in a query string and return a `Promise` that fulfils with an object that contains the total average and individual average temperatures of all universities matching the given `universityQuery` string. **The optionally provided `transformName` function should be applied to each university name before it is transformed into a `GeoCoord`.** The total average should be in a field called `totalAverage` and the individual averages should use the name of the university as a key. The keys should be the original, untransformed, names.
+
+If there are no matching universities you should reject with an error:
+
+```js
+new Error("No results found for query.");
+```
+
+As an example, if there were three universities found by the query (University One, University Two, University Three), then the object might look something like this:
+
+```js
+{
+  totalAverage: 50,
+  "University One": 60,
+  "University Two": 40,
+  "University Three": 50
+}
+```
+
+### `fetchUMassWeather`
+
+- This function should be done as a group, after completing all previous tasks
+
+Write a function, inside of `universityWeather.js`, with the following type signature:
+
+```ts
+export function fetchUMassWeather(): Promise<AverageTemperatureResults> {
+  // TODO
+}
+```
+
+This function should find the average temperature of all universities in the "University of Massachusetts" system. Use an appropriate function from a previous task to compute your result. Return the result unchanged.
+
+You may notice that the following query, <https://220.maxkuechen.com/geoCoord/search?q=University+of+Massachusetts+at+Amherst>, returns no results, but <https://220.maxkuechen.com/geoCoord/search?q=University+of+Massachusetts+Amherst> does. You will need to use the `transformName` parameter to cover this case. Look at the documentation for the [`String` object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) and figure out how to handle it.
+
+### `fetchUMichWeather`
+
+- This function should be done as a group, after completing all previous tasks
+
+Write a function, inside of `universityWeather.js`, with the following type signature:
+
+```ts
+export function fetchUMichWeather(): Promise<AverageTemperatureResults> {
+  // TODO
+}
+```
+
+This function should find the average temperature of all universities in the "University of Michigan" system. Use an appropriate function from a previous task to compute your result. Return the result unchanged. This function should only be a single statement.
+
+### Working Example
+
+- This task should be completed as a group
+
+Using any free ones you can find (here is a [a long list](https://github.com/public-api-lists/public-api-lists)), write a short program inside of `main.js` that calculates some interesting statistics.
+
+**Requirements:**
+
+- Must use `fetch`, either directly or indirectly
+- At least one new type of API call
+  - The program cannot consist of functions defined in [Programming Tasks](#programming-tasks)
+  - You must use a new API
+- Must use at least two different types of data
+  - These data items can be from the same API (different endpoint) or different APIs
+    - Stores, and their names, would count as one
+    - Brightness readings would count as one
+- The program must take input from the user
+  - Read the [Node.js documentation](https://nodejs.org/api/readline.html#readline)
+- The result of the program must be output somehow (either in the console or into a file)
+  - You could use the [`fs` library](https://nodejs.org/api/fs.html) to read/write to a JSON file
+    - See HW6 `./include/data.ts` for examples
+- The program must be documented with what it calculates exactly
+  - Write a multi-line comment at the top of the file
+  - A few sentences is fine
+- The program must produce a correct result according to its documentation
+- At least 25 lines of code (after running `npm run format` - ignoring the description comment)
+
+Pick something interesting and try to have fun with it. As long as you meet the requirements stated above, you should receive full credit.
+
+You are not required to write tests for this code, however your code should execute without errors and work as intended.
+
+### If you are worried about being rate limited with the api you have choosen
+
+If you would like to cache the results of an API call to an API of your choice, you can use the 220 caching server that we described in the [Rate Limiting Section](#rate-limiting). Here is an example of the URL for caching the [https://www.boredapi.com](https://www.boredapi.com).
+
+`https://220.maxkuechen.com/fetch/?url=https://www.boredapi.com/api/activity?type=recreational`.
+
+You'll notice that some APIs, like the one above, give different responses every time. However, since we cached the response, the result will always be the same. For convenience, we are providing the following route that does not cache. You should not use this route in tests.
+
+`htps://220.maxkuechen.com/fetch/noCache/?url=https://www.boredapi.com/api/activity?type=recreational`.
+
+You may use the caching server for any API call in the working example, but it is not a requirement.
+
 ## Collaborating
 
 We recognize that this may be the first time that you have had to work in a team in your CS classes, so we want to give you the proper tools to succeed:
@@ -435,14 +534,6 @@ We recognize that this may be the first time that you have had to work in a team
 
 - Even though this is a group assignment, we expect that every student understands all the concepts covered by this homework and understands the entire code that is submitted by the group.
 - All team members should contribute equally. It is natural that some team members will be more experienced with some topics of the class. It is your responsibility to ensure that everyone understands the material.
-- You should not assign different parts of the assignment to separate people. All team members should work on all parts of the assignment. A good way to do this is to program together as a group where all members discuss the solution while one person writes the actual code.
-
-> _What tools can we use to facilitate collaboration?_
-
-- You could use git with online services like Github, GitLab, or BitBucket if your group is interested (make repositories private)
-- **There is also the VSCode LiveShare extension which might be a bit easier. Here are a few links on how to that get started**:
-  - <https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare>
-  - <https://www.youtube.com/watch?v=A2ceblXTBBc>
 
 > _What if there are problems in our group?_
 
