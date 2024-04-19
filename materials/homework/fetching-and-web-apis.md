@@ -426,11 +426,7 @@ export function fetchGeoCoord(query: string): Promise<GeoCoord> {
 }
 ```
 
-This function should take in a query string and return a `Promise` that fulfils with the first geo-coordinate result. The above interface tells you what the object looks like (note that interfaces are a feature of TypeScript and are not in JavaScript). **If there are no results for a location (the result array is empty), then the promise should reject with an error identical to the one below**:
-
-```js
-new Error("No results found for query.");
-```
+This function should take in a query string and return a `Promise` that fulfils with the first geo-coordinate result. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message. The above interface tells you what the object looks like (note that interfaces are a feature of TypeScript and are not in JavaScript).
 
 Use the following API, <https://220.maxkuechen.com/geoCoord/search?q=query+goes+here>, to retrieve your results. The base URL should be `"https://220.maxkuechen.com"` and there should be one URL search parameter `"q"` for the query. This API returns an array of objects containing a `lon`, `lat`, and `importances` field.
 
@@ -444,7 +440,7 @@ export function locationImportantEnough(place: string, importanceThreshold: numb
 }
 ```
 
-This function takes a string for a place and a number for the importanceThreshold. It should call `fetchGeoCoord` and return true if the maximum importance value in the importances field is greater than the importanceThreshold that was passed in. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message.
+This function takes a string for a place and a number for the importanceThreshold. It should call `fetchGeoCoord` and return true if the maximum importance value in the importances field is greater than the importanceThreshold that was passed in. This function should propagate errors from `fetchGeoCoord`.
 
 You will need to write mock tests for this function since places have different importance values during the day. You should also test what happens if the `ok` property of the API's returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false. You need to write at least three mock tests.
 
@@ -465,7 +461,7 @@ export function fetchCurrentTemperature(coords: GeoCoord): Promise<TemperatureRe
 }
 ```
 
-This function should take in a longitude and latitude and return a `Promise` that fulfils with an object. The object should have two fields called `time` and `temperature_2m`. The `time` field should be an array of times and the `"temperature_2m"` should be an array of corresponding temperature measurements. The above interface tells you what the object looks like (note that interfaces are a feature of TypeScript and are not in JavaScript).
+This function should take in a longitude and latitude and return a `Promise` that fulfils with an object. The object should have two fields called `time` and `temperature_2m`. The `time` field should be an array of times and the `"temperature_2m"` should be an array of corresponding temperature measurements. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message. The above interface tells you what the object looks like (note that interfaces are a feature of TypeScript and are not in JavaScript).
 
 Use the <https://220.maxkuechen.com/currentTemperature/forecast?latitude=40&longitude=40&hourly=temperature_2m&temperature_unit=fahrenheit> API to retrieve your result. It has `"latitude"` and `"longitude"` parameters. You should set the `"hourly"` parameter to `"temperature_2m"`, and the `"temperature_unit"` parameter to `"fahrenheit"`.
 
@@ -477,7 +473,7 @@ export function tempAvgAboveAtCoords(coords: {lat: number, lon: number}, temp: n
 }
 ```
 
-This function should call `fetchCurrentTemperature` with the supplied coordinates and then return true if the average of the temperatures in `temperature_2m` is greater than temp, false otherwise. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message.
+This function should call `fetchCurrentTemperature` with the supplied coordinates and then return true if the average of the temperatures in `temperature_2m` is greater than temp, false otherwise. This function should propagate errors from `fetchCurrentTemperature`.
 
 You will need to write mock tests for this function since temperatures change during the day. You should also test what happens if the `ok` property of the API's returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false. You need to write at least three mock tests.
 
@@ -493,7 +489,7 @@ export function fetchUniversities(query: string): Promise<string[]> {
 }
 ```
 
-This function should take in a query string and return a `Promise` that fulfils with an array of university names.
+This function should take in a query string and return a `Promise` that fulfils with an array of university names. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message.
 
 Use the following API, <https://220.maxkuechen.com/universities/search?name=name+query+goes+here>, retrieve your result. It has a `"name"` parameter to search for universities with a similar name. **If there are no results (the returned JSON is an empty array), resolve to an empty array.**
 
@@ -505,7 +501,7 @@ export function universityNameLengthOrderAscending(queryName: string) {
 }
 ```
 
-The function should call `fetchUniversities` with the given query and then return true if the order of strings in the resulting array are ordered in ascending order by length, false otherwise. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message.
+The function should call `fetchUniversities` with the given query and then return true if the order of strings in the resulting array are ordered in ascending order by length, false otherwise. This function should propagate errors from `fetchUniversities`.
 
 You will need to write mock tests for this function since the order of university names from the API is not guaranteed. You should also test what happens if the `ok` property of the API's returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false. You need to write at least three mock tests.
 
