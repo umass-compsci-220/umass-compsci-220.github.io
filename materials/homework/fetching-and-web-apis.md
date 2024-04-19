@@ -269,7 +269,7 @@ This is one way to guarantee all the tests in your `describe` block will mock `f
 
 ### Error Handling Requirements
 
-For all the [programming tasks](#programming-tasks) below, if the response is not ok, then the promise should reject with an **Error** object that contains an informational error message, or the message the programming task tells you to reject with. This rejection reason should propagate, meaning the returned promises from these functions should reject with the same reason. You should not try to recover in any way.
+For all the [programming tasks](#programming-tasks) below, if the response from the API is not okay, then the promise should reject with an **Error** object that contains an informational error message, or the message the programming task tells you to reject with in the outlined scenario. This rejection reason should propagate, meaning the returned promises from these functions should reject with the same reason. You should not try to recover in any way.
 
 ### Code Duplication Requirements
 
@@ -501,7 +501,7 @@ export function universityNameLengthOrderAscending(queryName: string) {
 }
 ```
 
-The function should call `fetchUniversities` with the given query and then return true if the order of strings in the resulting array are ordered in ascending order by length, false otherwise. This function should propagate errors from `fetchUniversities`.
+The function should call `fetchUniversities` with the given query and then return true if the length of the strings in the resulting array are strictly ascending, false otherwise. This function should propagate errors from `fetchUniversities`.
 
 You will need to write mock tests for this function since the order of university names from the API is not guaranteed. You should also test what happens if the `ok` property of the API's returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false. You need to write at least three mock tests.
 
