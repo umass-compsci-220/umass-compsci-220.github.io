@@ -43,11 +43,59 @@ There will be substantial manual grading for this homework.
 
 When looking though the starter code you may have noticed that there are no types to be found! What gives? For this homework, we're using JavaScript. There are a few reasons for this. First, we want you all to get some experience using it. Second, we felt that some of the types surrounding promises and asynchronous code were hindering learning for this HW rather than supporting it. You might wonder: If we don't have type signatures do we have to check all inputs to see if they are the valid type? The answer is no. If we say that a function you need to implement takes in a string and a number you can assume that the correct argument type will be passed to the function in our test. Remember, we're not trying to trick you!
 
-### Git Installation
+### Git Installation & Authorization
 
 For this homework you and your group will be required to use git and GitHub for managing your project. Git is a great tool for collaboration, version control, and much more. It is good to get in the habit of using it now, as it is a tool you will be using for the rest of your career.
 
 If you don't have git on your machine, follow the instructions [here](https://github.com/git-guides/install-git) to install it.
+
+Once you have git, you need to setup authorization for GitHub on your local machine. If you have not already set up authorization, follow along here.
+
+The setup is different depending on whether you're using Windows, macOS, or Linux. The initial setup steps are as follows:
+
+Linux setup:
+1. Run: `sudo apt update`
+2. Run: `sudo apt install gh`
+
+macOS setup:
+1. Install brew (https://brew.sh/) by running this script in your terminal
+    - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+2. **IMPORTANT:** Follow the "Next steps" section in the output after the above script:
+<p align="center">
+  <img src="/img/git/macos_install.png" />
+</p>
+3. Run `brew install gh`
+
+Windows setup:
+1. Open Powershell
+2. Run: `winget install --id GitHub.cli`
+3. Click ok/continue in installer & wait for install
+4. Restart Powershell
+
+After setup, run `gh` in your terminal to see if the install worked properly (if it says something to the effect of 'command not found', then it did not install properly). If you're using Powershell, make sure to restart it before trying to run `gh`.
+
+1. Run in your terminal: `gh auth login`
+2. Choose the options 'GitHub.com', 'HTTPS', 'Yes', then 'Login with a web browser'. The output should look something like this:
+```
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations on this host? HTTPS
+? Authenticate Git with your GitHub credentials? Yes
+? How would you like to authenticate GitHub CLI? Login with a web browser
+```
+
+3. Copy the one-time code listed on your terminal
+4. Press enter to open GitHub.com on your browser
+5. Provide one-time code on GitHub in the opened browser
+6. You should see a webpage on GitHub asking you to authorize GitHub CLI. Scroll down and click the green 'Authorize github' button.
+7. You should see this output in your terminal:
+```
+✓ Authentication complete.
+- gh config set -h github.com git_protocol https
+✓ Configured git protocol
+✓ Logged in as <your_github_username_here>
+```
+
+Now you should be able to `git clone`, `git push`, etc. without worrying about authorization. Note that you will have to do this for every machine you use your GitHub account on.
 
 ### URLs and Parameters
 
@@ -290,6 +338,8 @@ This whole process is covered in the [Git Tutorial](#git-tutorial) section.
 ## Git Tutorial
 
 Here, we will give a short overview of how to do all the git operations your group will need to complete this assignment.
+
+Before trying anything here, make sure to follow the steps in [Git Installation & Authorization](#git-installation--authorization).
 
 ### Setting Up the Repo
 
