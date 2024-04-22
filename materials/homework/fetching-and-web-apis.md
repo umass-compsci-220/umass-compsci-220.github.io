@@ -331,7 +331,7 @@ You are not required to create any other branches for the homework. However, cre
 
 ### GitHub Pull Request Requirements
 
-When a member of your group believes they've finished working on the branch they're responsible for (one of `fetchGeoCoord`, `fetchCurrentTemperature`, or `fetchUniversities`), they will create a pull request. The other 2 members of the group **must review the pull request** and approve it if it's ready to be merged into main. The only pull requests your group are required to create and merge into main are pull requests for the branches outlined in [Branch Requirements](#branch-requirements). **This will be part of the manual grading for this assignment.**
+When a member of your group believes they've finished working on the branch they're responsible for (one of `fetchGeoCoord`, `fetchCurrentTemperature`, or `fetchUniversities`), they will create a pull request. The other 2 members of the group **must review the pull request** and approve it (by leaving a comment or clicking the approve button) if it's ready to be merged into main. The only pull requests your group are required to create and merge into main are pull requests for the branches outlined in [Branch Requirements](#branch-requirements). **This will be part of the manual grading for this assignment.**
 
 This whole process is covered in the [Git Tutorial](#git-tutorial) section.
 
