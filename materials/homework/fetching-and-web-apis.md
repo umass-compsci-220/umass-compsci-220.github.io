@@ -31,7 +31,7 @@ Students will be graded on their ability to:
 - Follow the [coding](/materials/guidelines/syntax-and-code), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
 - Design full-coverage [unit-tests](#testing) for the functions they implemented
   - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage for more details
-- Follow the [branch](#branch-requirements) and [pull request](#pull-request-requirements) requirements.
+- Follow the [error handling](#error-handling-requirements), [code duplication](#code-duplication-requirements), [branch](#branch-requirements), and [pull request](#pull-request-requirements) requirements.
 - Follow the [mock testing](#mock-testing) guidelines.
 - Implementation of the [working example](#working-example).
 
@@ -42,6 +42,60 @@ There will be substantial manual grading for this homework.
 ### JavaScript vs TypeScript
 
 When looking though the starter code you may have noticed that there are no types to be found! What gives? For this homework, we're using JavaScript. There are a few reasons for this. First, we want you all to get some experience using it. Second, we felt that some of the types surrounding promises and asynchronous code were hindering learning for this HW rather than supporting it. You might wonder: If we don't have type signatures do we have to check all inputs to see if they are the valid type? The answer is no. If we say that a function you need to implement takes in a string and a number you can assume that the correct argument type will be passed to the function in our test. Remember, we're not trying to trick you!
+
+### Git Installation & Authorization
+
+For this homework you and your group will be required to use git and GitHub for managing your project. Git is a great tool for collaboration, version control, and much more. It is good to get in the habit of using it now, as it is a tool you will be using for the rest of your career.
+
+If you don't have git on your machine, follow the instructions [here](https://github.com/git-guides/install-git) to install it.
+
+Once you have git, you need to setup authorization for GitHub on your local machine. If you have not already set up authorization, follow along here.
+
+The setup is different depending on whether you're using Windows, macOS, or Linux. The initial setup steps are as follows:
+
+Linux setup:
+1. Run: `sudo apt update`
+2. Run: `sudo apt install gh`
+
+macOS setup:
+1. Install brew (https://brew.sh/) by running this script in your terminal
+    - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+2. **IMPORTANT:** Follow the "Next steps" section in the output after the above script:
+<p align="center">
+  <img src="/img/git/macos_install.png" />
+</p>
+3. Run `brew install gh`
+
+Windows setup:
+1. Open Powershell
+2. Run: `winget install --id GitHub.cli`
+3. Click ok/continue in installer & wait for install
+4. Restart Powershell
+
+After setup, run `gh` in your terminal to see if the install worked properly (if it says something to the effect of 'command not found', then it did not install properly). If you're using Powershell, make sure to restart it before trying to run `gh`.
+
+1. Run in your terminal: `gh auth login`
+2. Choose the options 'GitHub.com', 'HTTPS', 'Yes', then 'Login with a web browser'. The output should look something like this:
+```
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations on this host? HTTPS
+? Authenticate Git with your GitHub credentials? Yes
+? How would you like to authenticate GitHub CLI? Login with a web browser
+```
+
+3. Copy the one-time code listed on your terminal
+4. Press enter to open GitHub.com on your browser
+5. Provide one-time code on GitHub in the opened browser
+6. You should see a webpage on GitHub asking you to authorize GitHub CLI. Scroll down and click the green 'Authorize github' button.
+7. You should see this output in your terminal:
+```
+✓ Authentication complete.
+- gh config set -h github.com git_protocol https
+✓ Configured git protocol
+✓ Logged in as <your_github_username_here>
+```
+
+Now you should be able to `git clone`, `git push`, etc. without worrying about authorization. Note that you will have to do this for every machine you use your GitHub account on.
 
 ### URLs and Parameters
 
@@ -181,7 +235,8 @@ describe("fetchGeoCoord", () => {
       assert(typeof result === "object"); //  Assert the result is an object
       assert(typeof result.lon === "number"); // Assert that the lon value is a number
       assert(typeof result.lat === "number"); // Assert that the lat value is a number
-      assert(Object.keys(result).length === 2); // Assert there are only two keys in the object
+      assert(typeof result.importances === "object"); // Assert that the importances value is an object
+      assert(Object.keys(result).length === 3); // Assert there are only two keys in the object
     });
   });
 });
@@ -192,16 +247,12 @@ Your tests should follow this similar pattern (`return foo().then(result => {/* 
 ```js
 describe("fetchGeoCoord", () => {
   it("follows type specification", async () => {
-    const promise = fetchGeoCoord("University of Massachusetts Amherst");
-
-    const result = await promise;
-    assert(typeof result === "object"); // Assert the result is an object
-    assert("lon" in result); // Assert the "lon" field is present
-    assert("lat" in result); // Assert the "lat" field is present
-    assert(Object.keys(result).length === 2); // Assert there are only two keys in the object
-
+    const result = await fetchGeoCoord("University of Massachusetts Amherst");
+    assert(typeof result === "object"); //  Assert the result is an object
     assert(typeof result.lon === "number"); // Assert that the lon value is a number
     assert(typeof result.lat === "number"); // Assert that the lat value is a number
+    assert(typeof result.importances === "object"); // Assert that the importances value is an object
+    assert(Object.keys(result).length === 3); // Assert there are only two keys in the object
   });
 });
 ```
@@ -227,7 +278,7 @@ jest.setTimeout(30 * SECOND);
 
 ### Mock Testing
 
-In addition to the testing above, some functions will require you to test them by mocking `fetch`. In other words, you'll be intercepting the `fetch` call hand have it resolve to some predictable value. There are a number of reasons for why we might want to do this.
+In addition to the testing above, some functions will require you to test them by mocking `fetch`. In other words, you'll be intercepting the `fetch` call and have it resolve to some predictable value. There are a number of reasons for why we might want to do this.
 
 1. The API might respond differently to the same query. For example, when fetching the current weather the temperature will obviously be different during the day. If we have some function that does different actions based on how warm it is, we run into a problem. With mock testing, we can guarantee that fetch will return a response consistent with what we're trying to test.
 
@@ -262,35 +313,33 @@ describe("exampe tests", () => {
 ```
 This is one way to guarantee all the tests in your `describe` block will mock `fetch`. You can also follow the above mentioned lecture slides, or any other method that works for you. When in doubt, check the jest-fetch-mock documentation in [Resources](#resources) and use a debugger to ensure that you are indeed mocking or not mocking.
 
-### Code Duplication with Multi-File Programs
+## Requirements
+
+### Error Handling Requirements
+
+For all the [programming tasks](#programming-tasks) below, if the response from the API is not okay, then the promise should reject with an **Error** object that contains an informational error message, or the message the programming task tells you to reject with in the outlined scenario. This rejection reason should propagate, meaning the returned promises from these functions should reject with the same reason. You should not try to recover in any way.
+
+### Code Duplication Requirements
 
 This is the first assignment where there is more than one source file. You should not have duplication between two source files _or_ within one source file. There is the `./src/utility.js` file used to declare and export members accordingly.
 
-### Error Handling
+### Git Branch Requirements
 
-For all the [programming tasks](#programming-tasks) below, if the response is not ok, then the promise should reject with an **Error** object that contains an informational error message. This rejection reason should propagate, meaning the returned promises from these functions should reject with the same reason. You should not try to recover in any way. Some functions in the spec may require a particular error message on rejection, so read carefully.
+Of the files in this homework, there are 3 of them that each should be completed by a different group member: `fetchGeoCoord.js`, `fetchCurrentTemperature.js`, and `fetchUniversities.js`. The respective assigned group member is responsible for completing both functions of the respective file, and its test file with tests for all the functions in it, and they must do so on a [branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches). The branch should be created from the **main** branch, and its name should be as follows: `[my first name]-[file name]`. For example, if my name is John and my group and I have decided I will be doing the `fetchGeoCoord.js` file, I will create a branch from main called `john-fetchGeoCoord`. This will be demonstrated in the [Git Tutorial](#git-tutorial) section. So all in all, the branch should only modify 2 files: the file the group member is responsible for, and its corresponding test file. **We will check to see that each member creates their branches in this way and that they're the only member to work on that branch. This will be part of the manual grading for this assignment.**
 
-## Git Requirements
+You are not required to create any other branches for the homework. However, creating branches for new features of a project is good practice. For example, it would be best practice to create branches for `universityWeather.js` (see below for description) and your group's working example, and then merge them into main upon their completion.
 
-For this homework you and your group will be required to use git and GitHub for managing your project. Git is a great tool for collaboration, version control, and much more. It is good to get in the habit of using it now, as it is a tool you will be using for the rest of your career.
+### GitHub Pull Request Requirements
 
-If you don't have git on your machine, follow the instructions [here](https://github.com/git-guides/install-git) to install it.
-
-### Branch Requirements
-
-Of the files in this homework, 3 of them should be completed by a different group member: `fetchGeoCoord.js`, `fetchCurrentTemperature.js`, and `fetchUniversities.js`. The respective assigned group member is responsible for completing both functions of the respective file, and its test file with tests for all the functions in it, and they must do so on a [branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches). The branch should be created from the **main** branch, and its name should be as follows: `[my first name]-[file name]`. For example, if my name is John and my group and I have decided I will be doing the `fetchGeoCoord.js` file, I will create a branch from main called `john-fetchGeoCoord`. This will be demonstrated in the [Git Tutorial](#git-tutorial) section. So all in all, the branch should only modify 2 files: the file the group member is responsible for, and its corresponding test file. **We will check to see that each member creates their branches in this way and that they're the only member to work on that branch. This will be part of the manual grading for this assignment.**
-
-You are not required to create any other branches for the homework. However, creating branches for new features of a project is good practice. For example, it would be best practice to create branches for `universityWeather.js` and your group's working example, and then merge them into main upon their completion.
-
-### Pull Request Requirements
-
-When a member of your group believes they've finished working on the branch they're responsible for (one of `fetchGeoCoord`, `fetchCurrentTemperature`, or `fetchUniversities`), they will create a pull request. The other 2 members of the group must approve the pull request if it's ready to be merged into main. The only pull requests your group are required to create and merge into main are pull requests for the branches outlined in [Branch Requirements](#branch-requirements). **This will be part of the manual grading for this assignment.**
+When a member of your group believes they've finished working on the branch they're responsible for (one of `fetchGeoCoord`, `fetchCurrentTemperature`, or `fetchUniversities`), they will create a pull request. The other 2 members of the group **must review the pull request** and approve it (by leaving a comment or clicking the approve button) if it's ready to be merged into main. The only pull requests your group are required to create and merge into main are pull requests for the branches outlined in [Branch Requirements](#branch-requirements). **This will be part of the manual grading for this assignment.**
 
 This whole process is covered in the [Git Tutorial](#git-tutorial) section.
 
 ## Git Tutorial
 
 Here, we will give a short overview of how to do all the git operations your group will need to complete this assignment.
+
+Before trying anything here, make sure to follow the steps in [Git Installation & Authorization](#git-installation--authorization).
 
 ### Setting Up the Repo
 
@@ -370,7 +419,7 @@ Whenever a branch has been pushed to, on the remote repository on GitHub you wil
   <img src="/img/git/13.png" />
 </p>
 
-If you believe your work on that branch is done and you're ready to merge that branch into main, you can click the 'Compare & pull request' button above. Now create your pull request:
+If you believe your work on that branch is done and you're ready to merge that branch into main, you can click the 'Compare & pull request' button above. Now create your pull request detailing the changes you've made:
 
 <p align="center">
   <img src="/img/git/14.png" />
@@ -409,7 +458,7 @@ You will see this option to delete the branch after merging. **Do not** delete t
 
 ### `fetchGeoCoord.js`
 
-Write the following functions inside of `fetchGeoCoord.js`. These functions should be implemented by the first group member on a separate git branch. See the git section for instructions.
+Write the following functions inside of `fetchGeoCoord.js`. These functions should be implemented by the first group member on a separate git branch. See the [Git Branch Requirements](#git-branch-requirements) section for instructions.
 
 #### `fetchGeoCoord`
 
@@ -427,11 +476,7 @@ export function fetchGeoCoord(query: string): Promise<GeoCoord> {
 }
 ```
 
-This function should take in a query string and return a `Promise` that fulfils with the first geo-coordinate result. **If there are no results for a location (the result array is empty), then the promise should reject with an error identical to the one below**:
-
-```js
-new Error("No results found for query.");
-```
+This function should take in a query string and return a `Promise` that fulfils with the first geo-coordinate result. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message. The above interface tells you what the object looks like (note that interfaces are a feature of TypeScript and are not in JavaScript).
 
 Use the following API, <https://220.maxkuechen.com/geoCoord/search?q=query+goes+here>, to retrieve your results. The base URL should be `"https://220.maxkuechen.com"` and there should be one URL search parameter `"q"` for the query. This API returns an array of objects containing a `lon`, `lat`, and `importances` field.
 
@@ -440,18 +485,18 @@ See the [getting started section on queries](#urls-and-parameters) if you are co
 #### `locationImportantEnough`
 
 ```ts
-export function locationImportantEnough(place: string, importanceThreshold: number) {
+export function locationImportantEnough(place: string, importanceThreshold: number): Promise<boolean> {
     // TODO
 }
 ```
 
-This function takes a string for a place and a number for the importanceThreshold. It should call `fetchGeoCoord` and return true if the maximum importance value in the importances field is greater than the importanceThreshold that was passed in. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message.
+This function takes a string for a place and a number for the importanceThreshold. It should call `fetchGeoCoord` and return a `Promise` that resolves to `true` if the maximum importance value in the importances field is greater than the importanceThreshold that was passed in, `false` otherwise. This function should propagate errors from `fetchGeoCoord`.
 
 You will need to write mock tests for this function since places have different importance values during the day. You should also test what happens if the `ok` property of the API's returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false. You need to write at least three mock tests.
 
 ### `fetchCurrentTemperature.js`
 
-Write the following functions inside of `./src/fetchCurrentTemperature.js`. These functions should be implemented by the second group member on a separate git branch. See the git section for instructions.
+Write the following functions inside of `./src/fetchCurrentTemperature.js`. These functions should be implemented by the second group member on a separate git branch. See the [Git Branch Requirements](#git-branch-requirements) section for instructions.
 
 #### `fetchCurrentTemperature`
 
@@ -466,25 +511,25 @@ export function fetchCurrentTemperature(coords: GeoCoord): Promise<TemperatureRe
 }
 ```
 
-This function should take in a longitude and latitude and return a `Promise` that fulfils with an object. The object should have two fields called `time` and `temperature_2m`. The `time` field should be an array of times and the `"temperature_2m"` should be an array of corresponding temperature measurements.
+This function should take in a longitude and latitude and return a `Promise` that fulfils with an object. The object should have two fields called `time` and `temperature_2m`. The `time` field should be an array of times and the `"temperature_2m"` should be an array of corresponding temperature measurements. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message. The above interface tells you what the object looks like (note that interfaces are a feature of TypeScript and are not in JavaScript).
 
 Use the <https://220.maxkuechen.com/currentTemperature/forecast?latitude=40&longitude=40&hourly=temperature_2m&temperature_unit=fahrenheit> API to retrieve your result. It has `"latitude"` and `"longitude"` parameters. You should set the `"hourly"` parameter to `"temperature_2m"`, and the `"temperature_unit"` parameter to `"fahrenheit"`.
 
 #### `tempAvgAboveAtCoords`
 
 ```ts
-export function tempAvgAboveAtCoords(coords: {lat: number, lon: number}, temp: number) {
+export function tempAvgAboveAtCoords(coords: {lat: number, lon: number}, temp: number): Promise<boolean> {
     // TODO
 }
 ```
 
-This function should call `fetchCurrentTemperature` with the supplied coordinates and then return true if the average of the temperatures in `temperature_2m` is greater than temp, false otherwise. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message.
+This function should call `fetchCurrentTemperature` with the supplied coordinates and then return a `Promise` that resolves to `true` if the average of the temperatures in `temperature_2m` is greater than temp, `false` otherwise. This function should propagate errors from `fetchCurrentTemperature`.
 
 You will need to write mock tests for this function since temperatures change during the day. You should also test what happens if the `ok` property of the API's returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false. You need to write at least three mock tests.
 
 ### `fetchUniversities.js`
 
-Write the following functions inside of `./src/fetchUniversities.js`. These functions should be implemented by the third group member on a separate git branch. See the git section for instructions.
+Write the following functions inside of `./src/fetchUniversities.js`. These functions should be implemented by the third group member on a separate git branch. See the [Git Branch Requirements](#git-branch-requirements) section for instructions.
 
 #### `fetchUniversities`
 
@@ -494,19 +539,19 @@ export function fetchUniversities(query: string): Promise<string[]> {
 }
 ```
 
-This function should take in a query string and return a `Promise` that fulfils with an array of university names.
+This function should take in a query string and return a `Promise` that fulfils with an array of university names. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message.
 
-Use the following API, <http://220.maxkuechen.com/universities/search?name=name+query+goes+here>, retrieve your result. It has a `"name"` parameter to search for universities with a similar name. **If there are no results (the returned JSON is an empty array), resolve to an empty array.**
+Use the following API, <https://220.maxkuechen.com/universities/search?name=name+query+goes+here>, retrieve your result. It has a `"name"` parameter to search for universities with a similar name. **If there are no results (the returned JSON is an empty array), resolve to an empty array.**
 
 #### `universityNameLengthOrderAscending`
 
 ```ts
-export function universityNameLengthOrderAscending(queryName: string) {
+export function universityNameLengthOrderAscending(queryName: string): Promise<boolean> {
     // TODO
 }
 ```
 
-The function should call `fetchUniversities` with the given query and then return true if the order of strings in the resulting array are ordered in ascending order by length, false otherwise. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message.
+The function should call `fetchUniversities` with the given query and then return a `Promise` that resolves to `true` if the length of the strings in the resulting array are strictly ascending, `false` otherwise. This function should propagate errors from `fetchUniversities`.
 
 You will need to write mock tests for this function since the order of university names from the API is not guaranteed. You should also test what happens if the `ok` property of the API's returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false. You need to write at least three mock tests.
 
@@ -517,7 +562,7 @@ You will need to write mock tests for this function since the order of universit
 Write a function with, inside of `./src/universityWeather.js`, the following type signature:
 
 ```ts
-export interface AverageTemperatureResults {
+interface AverageTemperatureResults {
   totalAverage: number;
   [key: string]: number;
 }
@@ -530,7 +575,7 @@ export function fetchUniversityWeather(
 }
 ```
 
-This function should take in a query string and return a `Promise` that fulfils with an object that contains the total average and individual average temperatures of all universities matching the given `universityQuery` string. **The optionally provided `transformName` function should be applied to each university name before it is transformed into a `GeoCoord`.** The total average should be in a field called `totalAverage` and the individual averages should use the name of the university as a key. The keys should be the original, untransformed, names.
+This function should take in a query string and return a `Promise` that fulfils with an object that contains the total average and individual average temperatures of all universities matching the given `universityQuery` string. **The optionally provided `transformName` function should be applied to each university name before it is transformed into a `GeoCoord`.** The total average should be in a field called `totalAverage` and the individual averages should use the name of the university as a key. The keys should be the original, untransformed, names. The above interface tells you what the object looks like (note that interfaces are a feature of TypeScript and are not in JavaScript).
 
 If there are no matching universities you should reject with an error:
 
