@@ -485,12 +485,12 @@ See the [getting started section on queries](#urls-and-parameters) if you are co
 #### `locationImportantEnough`
 
 ```ts
-export function locationImportantEnough(place: string, importanceThreshold: number) {
+export function locationImportantEnough(place: string, importanceThreshold: number): Promise<boolean> {
     // TODO
 }
 ```
 
-This function takes a string for a place and a number for the importanceThreshold. It should call `fetchGeoCoord` and return true if the maximum importance value in the importances field is greater than the importanceThreshold that was passed in. This function should propagate errors from `fetchGeoCoord`.
+This function takes a string for a place and a number for the importanceThreshold. It should call `fetchGeoCoord` and return a `Promise` that resolves to true if the maximum importance value in the importances field is greater than the importanceThreshold that was passed in, false otherwise. This function should propagate errors from `fetchGeoCoord`.
 
 You will need to write mock tests for this function since places have different importance values during the day. You should also test what happens if the `ok` property of the API's returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false. You need to write at least three mock tests.
 
@@ -518,12 +518,12 @@ Use the <https://220.maxkuechen.com/currentTemperature/forecast?latitude=40&long
 #### `tempAvgAboveAtCoords`
 
 ```ts
-export function tempAvgAboveAtCoords(coords: {lat: number, lon: number}, temp: number) {
+export function tempAvgAboveAtCoords(coords: {lat: number, lon: number}, temp: number): Promise<boolean> {
     // TODO
 }
 ```
 
-This function should call `fetchCurrentTemperature` with the supplied coordinates and then return true if the average of the temperatures in `temperature_2m` is greater than temp, false otherwise. This function should propagate errors from `fetchCurrentTemperature`.
+This function should call `fetchCurrentTemperature` with the supplied coordinates and then return a `Promise` that resolves to true if the average of the temperatures in `temperature_2m` is greater than temp, false otherwise. This function should propagate errors from `fetchCurrentTemperature`.
 
 You will need to write mock tests for this function since temperatures change during the day. You should also test what happens if the `ok` property of the API's returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false. You need to write at least three mock tests.
 
@@ -546,12 +546,12 @@ Use the following API, <https://220.maxkuechen.com/universities/search?name=name
 #### `universityNameLengthOrderAscending`
 
 ```ts
-export function universityNameLengthOrderAscending(queryName: string) {
+export function universityNameLengthOrderAscending(queryName: string): Promise<boolean> {
     // TODO
 }
 ```
 
-The function should call `fetchUniversities` with the given query and then return true if the length of the strings in the resulting array are strictly ascending, false otherwise. This function should propagate errors from `fetchUniversities`.
+The function should call `fetchUniversities` with the given query and then return a `Promise` that resolves to true if the length of the strings in the resulting array are strictly ascending, false otherwise. This function should propagate errors from `fetchUniversities`.
 
 You will need to write mock tests for this function since the order of university names from the API is not guaranteed. You should also test what happens if the `ok` property of the API's returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false. You need to write at least three mock tests.
 
