@@ -523,7 +523,7 @@ export function tempAvgAboveAtCoords(coords: {lat: number, lon: number}, temp: n
 }
 ```
 
-This function should call `fetchCurrentTemperature` with the supplied coordinates and then return true if the average of the temperatures in `temperature_2m` is greater than temp, false otherwise. This function should propagate errors from `fetchCurrentTemperature`.
+This function should call `fetchCurrentTemperature` with the supplied coordinates and then return a Promise<boolean> that resolves to `true` if the average of the temperatures in `temperature_2m` is greater than temp, `false` otherwise. This function should propagate errors from `fetchCurrentTemperature`.
 
 You will need to write mock tests for this function since temperatures change during the day. You should also test what happens if the `ok` property of the API's returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false. You need to write at least three mock tests.
 
