@@ -8,7 +8,7 @@ sidebar_position: 3
 
 - [Eloquent JavaScript](https://eloquentjavascript.net/), an online textbox for a deeper dive into JavaScript
 - [Mozilla Developer Reference](https://developer.mozilla.org/) for searching for anything related to JavaScript
-  - What methods to arrays have? -> array reference
+  - What methods do arrays have? -> array reference
   - How to check if a number is an integer? -> integer numbers
 - [MDN JavaScript guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) to learn about JS patterns
   - What does JavaScript code look like?
