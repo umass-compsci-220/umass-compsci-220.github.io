@@ -34,15 +34,17 @@ Please do come to office hours for:
 | 9:00am - 10:00am  | Angela Upreti   |   Zoom       |
 | 10:00am - 11:00am | Chaolong Tang   |   T222       |
 | 11:00am - noon    | Noah Ford       |   T222       |
-| 2:30pm - 3:30pm   | Chaolong Tang   |   T222       |
+| 2:30pm - 3:30pm   | Frank Chiu      |   T222       |
 | 5:30pm - 6:30pm   | Atharva Shahane |   T222       |
+| 6:30pm - 7:30pm   | Md Ashraful Islam | LGRT T222  |
 
 ## Wednesday
 
 | **Time**        | **Staff**          | **Location**  |
 |-----------------|--------------------|---------------|
 | 3:00pm - 4:00pm | Marius Minea       |   LGRC A261   |
-| 4:30pm - 5:30pm | Carey Pope         |   T222        |
+| 3:30pm - 4:30pm | Aarav Nair         |   T222        |  
+| 4:30pm - 5:30pm | Carey Pope         |   T222        |  
 | 5:30pm - 6:30pm | Atharva Kale       |   T222        |
 | 7:00pm - 8:00pm | Maximilian Kuechen |   T222        |
 
@@ -54,6 +56,7 @@ Please do come to office hours for:
 | 10:00am - 11:00am | Chaolong Tang |   T222       |
 | 11:30am - 12:30pm | Wenhao Yang   |   T222       |
 | 2:30pm - 3:30pm   | Adithya Anand |   T222       |
+| 5:30pm - 7:30pm   | Md Ashraful Islam | LGRT T222  |
 
 ## Friday
 
@@ -61,8 +64,7 @@ Please do come to office hours for:
 |-------------------|-----------------|---------------|
 | 10:00am - 11:00am | Angela Upreti   |   Zoom        |
 | 11:00am - noon    | Marius Minea    |   LGRC A261   |
+| 12:15pm - 1:15pm   | Vinayak Rao     |   T222        |
 | 1:30am - 2:30pm   | Victor Chen     |   T222        |
 | 2:30pm - 3:30pm   | Vishwesh Palani |   T222        |
 | 3:30pm - 4:30pm   | Manu Hegde      |   T222        |
-| 4:30pm - 5:30pm   | Vinayak Rao     |   T222        |
-| 5:30pm - 6:30pm   | Aarav Nair      |   T222        |
