@@ -64,7 +64,7 @@ Please do come to office hours for:
 |-------------------|-----------------|---------------|
 | 10:00am - 11:00am | Angela Upreti   |   Zoom        |
 | 11:00am - noon    | Marius Minea    |   LGRC A261   |
-| 12:15pm - 1:15pm   | Vinayak Rao     |   T222        |
+| 12:15pm - 1:15pm   | Vinayak Rao    |   T222        |
 | 1:30am - 2:30pm   | Victor Chen     |   T222        |
 | 2:30pm - 3:30pm   | Vishwesh Palani |   T222        |
 | 3:30pm - 4:30pm   | Manu Hegde      |   T222        |
