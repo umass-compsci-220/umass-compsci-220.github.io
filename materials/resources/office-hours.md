@@ -46,7 +46,7 @@ Please do come to office hours for:
 | 3:30pm - 4:30pm | Aarav Nair         |   T222        |  
 | 4:30pm - 5:30pm | Carey Pope         |   T222        |  
 | 5:30pm - 6:30pm | Atharva Kale       |   T222        |
-| 7:00pm - 8:00pm | Maximilian Kuechen |   T222        |
+| 6:30pm - 7:30pm | Maximilian Kuechen |   T222        |
 
 ## Thursday
 
