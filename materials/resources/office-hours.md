@@ -18,7 +18,6 @@ Please do come to office hours for:
 
 | **Time**        | **Staff**          | **Location**  |
 |-----------------|--------------------|---------------|
-| 9:00am - 11:00am| Brian Zhang        |   T222        |
 | 11:00am - noon  | Maximilian Kuechen |   T222        |
 | noon - 1:00pm   | Carey Pope         |   T222        |
 | 2:00pm - 3:00pm | Marius Minea       |   LGRC A261   |
