@@ -140,7 +140,7 @@ redImage.show();
 
 There is also the `Image.assertCoordinatesInBounds` method, which will throw an error the supplied coordinates do not fit within the image.
 
-In addition to `Image`, `image.ts` exports the `Color` type. Inspecting the source code reveals that this is an alias for `number[]` (an array of numbers). Our variables will still hold values that are array's of numbers - this type solely exits to make the `Image` interface more descriptive.
+In addition to `Image`, `image.ts` exports the `Color` type. Inspecting the source code reveals that this is an alias for `number[]` (an array of numbers). Our variables will still hold values that are arrays of numbers - this type solely exists to make the `Image` interface more descriptive.
 
 ```ts
 const arr = [0, 0, 0];
