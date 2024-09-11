@@ -60,7 +60,7 @@ Please do come to office hours for:
 
 | **Time**          | **Staff**       | **Location**  |
 |-------------------|-----------------|---------------|
-| 10:00am - 11:00am | Angela Upreti   |   Zoom        |
+| 10:00am - 11:00am | Angela Upreti   |   [Zoom](https://umass-amherst.zoom.us/j/91483433178)        |
 | 11:00am - noon    | Marius Minea    |   LGRC A261   |
 | 12:15pm - 1:15pm   | Vinayak Rao    |   T222        |
 | 1:30am - 2:30pm   | Victor Chen     |   T222        |
