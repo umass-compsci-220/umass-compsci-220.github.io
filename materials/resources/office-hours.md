@@ -29,7 +29,7 @@ Please do come to office hours for:
 
 | **Time**          | **Staff**       | **Location** |
 |-------------------|-----------------|--------------|
-| 9:00am - 10:00am  | Angela Upreti   |   Zoom       |
+| 9:00am - 10:00am  | Angela Upreti   |   [Zoom](https://umass-amherst.zoom.us/j/91483433178)       |
 | 10:00am - 11:00am | Chaolong Tang   |   T222       |
 | 11:00am - noon    | Noah Ford       |   T222       |
 | 2:30pm - 3:30pm   | Frank Chiu      |   T222       |
@@ -50,7 +50,7 @@ Please do come to office hours for:
 
 | **Time**          | **Staff**     | **Location** |
 |-------------------|---------------|--------------|
-| 9:00am - 10:00am  | Angela Upreti |   Zoom       |
+| 9:00am - 10:00am  | Angela Upreti |   [Zoom](https://umass-amherst.zoom.us/j/91483433178)       |
 | 10:00am - 11:00am | Chaolong Tang |   T222       |
 | 11:30am - 12:30pm | Wenhao Yang   |   T222       |
 | 2:30pm - 3:30pm   | Adithya Anand |   T222       |
