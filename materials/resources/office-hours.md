@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Office Hours
 
-We will be holding both in-person and virtual office hours this semester. All in-person TA and UCA office hours are held in **LGRT 222** (the tower). Prof. Minea's office hour are held in his office (LGRC A261) and on zoom (tba). Virtual office hours are on zoom, see the table below for the link.
+We will be holding both in-person and virtual office hours this semester. All in-person TA and UCA office hours are held in **LGRT 222** (the tower). Prof. Minea's office hour are held in his office (LGRC A261). Virtual office hours are on zoom, see the table below for the link.
 
 Please do come to office hours for:
 
