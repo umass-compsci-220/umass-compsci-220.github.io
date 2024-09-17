@@ -104,7 +104,7 @@ Write a function that takes as input a list of numbers and returns a list of num
 
 ### `squashList`
 
-Write a function that takes a list as input, where each element is either a `number` or a `List<number>`. Return a list of numbers where each element that is a list is replaced by the sum of its elements.
+Write a function that takes as input a list where each element is either a `number` or a `List<number>`. Return a list of numbers where each element that is a list is replaced by the sum of its elements.
 
 - Hint: The [typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) operator may be useful.
 
@@ -114,7 +114,7 @@ Write a function that takes as input a list of functions, potentially empty. Eac
 
 ### `composeFunctions`
 
-Write a function that takes an array of `(arg1: T, arg2: U) => T` functions `funcArr`, potentially empty, as input. It returns a closure that takes an input `in: U` and returns a function `T => T`. This returned function is equivalent to applying all functions in `funcArr` successively to the input `T` as `arg1` and `in` as `arg2` starting with the function at position 0 in the array. Do not use loops.
+Write a function that takes as input an array of `(arg1: T, arg2: U) => T` functions `funcArr`, potentially empty. It returns a closure that takes an input `in: U` and returns a function `T => T`. This returned function is equivalent to applying all functions in `funcArr` successively to the input `T` as `arg1` and `in` as `arg2` starting with the function at position 0 in the array. Do not use loops.
 
 ## Submitting
 
