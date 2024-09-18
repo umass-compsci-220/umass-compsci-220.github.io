@@ -108,9 +108,7 @@ Write a function that takes as input a list where each element is either a `numb
 
 Write a function that takes as input a list of functions, potentially empty. Each function has the signature `T => T`. Return a function with the signature `T => T` that when called on a value of type `T` will return the value obtained by successively applying all functions in the list, in order. Do not use loops.
 
-### Optional `extraClosuresPractice` (not for credit)
-
-This function is optional and only for your practice. The autogarder tests are all public for this function and are uncredited. If you choose not to implement this function, please delete the function skeleton, the test skeleton, and the import in the test file. Otherwise your testing coverage may be impacted.
+### `composeFunctions`
 
 Write a function that takes as input an array of functions of type `(x: T) => T`, potentially empty, and returns a closure that takes a value `v: T` and returns an array of the values obtained by starting with `v` and successively applying zero, one, two, ..., all functions of the array. That is, the array returned by the closure is `[v, f0(v), f1(f0(v)), ...]` if the array of functions is `[f0, f1, ...]`.
 
