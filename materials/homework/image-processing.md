@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-**AI Announcement: Please remember that tools such as ChatGPT, GitHub Copilot, etc. are not allowed in this class. Please remember that you are in this class to learn, and by cheating you're hurting yourself the most. It is better to take a 0 on a HW or part of it. We will deal with intellectual dishonesty according to university processes and guidelines.**
-
 # Image Processing
+
+**AI Announcement: Please remember that tools such as ChatGPT, GitHub Copilot, etc. are not allowed in this class. Please remember that you are in this class to learn, and by cheating you're hurting yourself the most. It is better to take a 0 on a HW or part of it. We will deal with intellectual dishonesty according to university processes and guidelines.**
 
 -   Please download the homework starter file [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/01-image-processing.zip).
 -   If you need help installing [VSCode](https://code.visualstudio.com/) and [Node.js](https://nodejs.org/) (required for this course), read [this page](/materials/tutorials/assignments/environment).
