@@ -84,8 +84,6 @@ Write a function that takes a list of some type `T`, a number `n` (assumed to be
 
 Write a function that takes as input a list of numbers and returns a list of numbers. For each nonnegative number `n` in the input list, the result list contains the product of the longest contiguous subsequence of nonnegative list elements ending at `n`.
 
-[//]: # (WAS: product of the input list elements going back from n (inclusive) as long as they are nonnegative.)
-
 - Example:
   - input: 2 -> 3 -> -1 -> 0.5 -> 2 -> empty
   - output: 2 -> 6 -> 0.5 -> 1 -> empty
@@ -93,8 +91,6 @@ Write a function that takes as input a list of numbers and returns a list of num
 ### `negativeProducts`
 
 Write a function that takes as input a list of numbers and returns a list of numbers. For each negative number `n` in the input list, the result list contains the product of the longest contiguous subsequence of negative list elements ending at `n`.
-
-[//]: # (WAS: input list elements going back from n (inclusive) as long as they are negative.)
 
 - Example:
   - input: -3 -> -6 -> 2-> -2-> -1 -> -2 -> empty
@@ -112,9 +108,11 @@ Write a function that takes as input a list where each element is either a `numb
 
 Write a function that takes as input a list of functions, potentially empty. Each function has the signature `T => T`. Return a function with the signature `T => T` that when called on a value of type `T` will return the value obtained by successively applying all functions in the list, in order. Do not use loops.
 
-### `composeFunctions`
+### Optional `extraClosuresPractice` (not for credit)
 
-Write a function that takes as input an array of `(arg1: T, arg2: U) => T` functions `funcArr`, potentially empty. It returns a closure that takes an input `in: U` and returns a function `T => T`. This returned function is equivalent to applying all functions in `funcArr` successively to the input `T` as `arg1` and `in` as `arg2` starting with the function at position 0 in the array. Do not use loops.
+This function is optional and only for your practice. The autogarder tests are all public for this function and are uncredited. If you choose not to implement this function, please delete the function skeleton, the test skeleton, and the import in the test file. Otherwise your testing coverage may be impacted.
+
+Write a function that takes as input an array of functions of type `(x: T) => T`, potentially empty, and returns a closure that takes a value `v: T` and returns an array of the values obtained by starting with `v` and successively applying zero, one, two, ..., all functions of the array. That is, the array returned by the closure is `[v, f0(v), f1(f0(v)), ...]` if the array of functions is `[f0, f1, ...]`.
 
 ## Submitting
 
