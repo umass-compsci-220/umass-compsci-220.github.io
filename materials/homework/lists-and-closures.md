@@ -74,7 +74,7 @@ Write a function that takes a list of some type `T` and a number `n` (assumed to
 
 ### `everyNRev`
 
-Write a function that takes a list of some type `T` and a number `n` (assumed to be a positive natural). It should return a list containing every nth element from the input list, in reverse order (the nth element appears last, the 2nth before it, ...). Use `listReduce`. Do not use `everyNList`, though you may use this function to implement `everyNList`.
+Write a function that takes a list of some type `T` and a number `n` (assumed to be a positive natural). It should return a list containing every nth element from the input list, in reverse order (the nth element appears last, the 2nth before it, ...). Use `List.reduce`. Do not use `everyNList`, though you may use this function to implement `everyNList`.
 
 ### `everyNCond`
 
