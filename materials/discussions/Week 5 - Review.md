@@ -12,5 +12,4 @@ Download the lab slides [here](https://github.com/umass-compsci-220/public-mater
 
 Today there is no starter code and the solutions are provided in the slides. Lab attendance is still required.
 
-
 Good luck everyone!!!
