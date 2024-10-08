@@ -41,8 +41,8 @@ Please do come to office hours for:
 
 | **Time**        | **Staff**          | **Location**  |
 |-----------------|--------------------|---------------|
-| 3:00pm - 4:00pm | Marius Minea       |   LGRC A261   |
-| 3:30pm - 4:30pm | Aarav Nair         |   T222        |  
+| 3:30pm - 4:30pm | Aarav Nair         |   T222        | 
+| 4:00pm - 5:00pm | Marius Minea       |   LGRC A261   |
 | 4:30pm - 5:30pm | Carey Pope         |   T222        |  
 | 5:30pm - 6:30pm | Atharva Kale       |   T222        |
 | 6:30pm - 7:30pm | Maximilian Kuechen |   T222        |
