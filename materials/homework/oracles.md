@@ -7,6 +7,7 @@ sidebar_position: 4
 - Please download the homework [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/04-oracles.zip)
 - This project is divided into two homeworks (HW4a, HW4b)
   - Both carry the weight of a full homework
+- **NOTE** You are limited to **12 submissions** per 24 hours time period. If you exceed this you will stop seeing feedback on gradescope.
 
 ## Overview
 
@@ -104,7 +105,7 @@ Their implementations are [obfuscated](https://en.wikipedia.org/wiki/Obfuscation
 
 ## Programming Tasks
 
-### Part A
+### Part A **Due 10/9**
 
 1. Write a function called `generateInput`:
 
@@ -182,7 +183,7 @@ A template for the `stableMatchingOracle` function is given inside of `oracles.t
 
 As mentioned in the [student expectations](#student-expectations), you should be employing proper coding abstractions (avoid code duplication). When implementing this function, look at all the related data a company or candidate has. What are the common operations and queries that you might do on this data? Is there any way to group this together or pre-compute anything? **Using objects may be helpful.** Think before you code.
 
-### Part B
+### Part B **Due 10/16, autograder releases Monday 10/7**
 
 Now write an oracle that determines if a function follows the specified algorithm:
 
