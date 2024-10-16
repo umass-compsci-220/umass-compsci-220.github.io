@@ -27,7 +27,7 @@ Students will be graded on their ability to:
 
 ### Resources
 
-- [Formal power series](https://en.wikipedia.org/wiki/Formal_power_series)> and a [discussion](https://math.stackexchange.com/questions/2185587/what-actually-is-a-polynomial/2185648#2185648) on manipulating polynomials as sequence of coefficients
+- [Formal power series](https://en.wikipedia.org/wiki/Formal_power_series) and a [discussion](https://math.stackexchange.com/questions/2185587/what-actually-is-a-polynomial/2185648#2185648) on manipulating polynomials as sequence of coefficients
 - [Polynomial long multiplication](https://demonstrations.wolfram.com/PolynomialLongMultiplication/)
 
 ## Testing
