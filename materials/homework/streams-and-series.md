@@ -8,7 +8,7 @@ sidebar_position: 5
 
 ## Overview
 
-In this assignment, you will work with streams to evaluate power series. Consider the series $$𝑠(𝑥) = 𝑎_0 + 𝑎_1𝑥 + 𝑎_2𝑥^2 + \ldots$$, we can represent this series by its finite or infinite sequence of coefficients $(a_0, a_1, a_2, ...)$. We will view this sequence as a stream.
+In this assignment, you will work with streams to evaluate formal power series. Consider the series $$𝑠(𝑥) = 𝑎_0 + 𝑎_1𝑥 + 𝑎_2𝑥^2 + \ldots$$, we can represent this series by its finite or infinite sequence of coefficients $(a_0, a_1, a_2, ...)$. We will view this sequence as a stream.
 
 ### Learning Objectives
 
@@ -27,8 +27,8 @@ Students will be graded on their ability to:
 
 ### Resources
 
-- <https://byjus.com/maths/power-series/>
-- <https://byjus.com/maths/multiplying-polynomials/>
+- [Formal power series](https://en.wikipedia.org/wiki/Formal_power_series)> and a [discussion](https://math.stackexchange.com/questions/2185587/what-actually-is-a-polynomial/2185648#2185648) on manipulating polynomials as sequence of coefficients
+- [Polynomial long multiplication](https://demonstrations.wolfram.com/PolynomialLongMultiplication/)
 
 ## Testing
 
@@ -51,7 +51,7 @@ Write a function `addSeries` that takes two streams of coefficients for the seri
 
 Write a function `prodSeries` that takes two streams of coefficients for the series $s(x)$ and $t(x)$ and returns the stream of coefficients for the product $s(x) ⋅ t(x)$. Review polynomial multiplication. For example, given $1+2x+3x^2+\ldots$ and $2+6x+9x^2+\ldots$, the result will be $2+10x+27x^2+\ldots$
 
-Hint: Write one of the series as $𝑠(𝑥) = 𝑎_0 + 𝑥 𝑠_1(𝑥)$, where $s_1(x)$ is another series. Then use distributivity to multiply $s(x) ⋅ t(x)$ and map all operations to streams (how can you represent multiplying with $x$?). Delay the recursive computation of the result’s tail until needed.
+Hint: Write one of the series as $𝑠(𝑥) = 𝑎_0 + 𝑥 𝑠_1(𝑥)$, where $s_1(x)$ is another series. Then use distributivity to multiply $s(x) ⋅ t(x)$ (do *not* rewrite $t(x)$) and map all operations to streams (how can you represent multiplying with $x$?). Delay the recursive computation of the result’s tail until needed.
 
 ### `derivSeries`
 
