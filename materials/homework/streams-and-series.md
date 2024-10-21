@@ -63,7 +63,7 @@ Write a function `coeff` that takes a stream of coefficients for the series $s(x
 
 ### `evalSeries`
 
-Write a function `evalSeries` that takes a stream of coefficients for the series $s(x)$, and a natural number $n$, and returns a closure. When called with a real number $x$, this closure will return the sum of all terms of $s(x)$ up to and including the term of degree $n$.
+Write a function `evalSeries` that takes a stream of coefficients for the series $s(x)$, and a natural number $n$, and returns a closure. When called with a real number $x$, this closure will return the sum of the values of all terms of $s(x)$ up to and including the term of degree $n$.
 
 ### `applySeries`
 
