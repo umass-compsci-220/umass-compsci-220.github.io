@@ -12,9 +12,9 @@ Download the lab slides [here](https://github.com/umass-compsci-220/public-mater
 
 The slides with solutions will be posted [here](https://raw.githubusercontent.com/umass-compsci-220/public-materials/main/discussion/Lab%208%20-%20Solutions.pdf) after the last discussion of the day.
 
-Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/08-observables-and-streams.zip). Make sure to submit this to gradescope, ask your lab leaders to help you if you are unsure of how. We'll also show the process in the first lab.
+Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/08-observables-and-OOP.zip). Make sure to submit this to gradescope, ask your lab leaders to help you if you are unsure of how. We'll also show the process in the first lab.
 
-The solution file will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/08-observables-and-streams-solution.ts) after lab.
+The solution file will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/08-observables-and-OOP-solution.ts) after lab.
 
 ## Opening and working with the starter code
 
