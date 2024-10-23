@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Discussion 8: Observables and Streams
 
-Welcome to the eighth discussion! This week you'll learn more about working with observables and streams.
+Welcome to the eighth discussion! This week you'll learn more about working with OOP and streams.
 
 ## Materials
 
