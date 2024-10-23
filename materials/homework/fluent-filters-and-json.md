@@ -253,7 +253,7 @@ if (b[key] === undefined) return;
 const s = b[key];
 ```
 
-Clearly, the value of `s` is not undefined. There are ways of cleanly resoling this using more advanced TypeScript features, but for our purposes, you can use a [non-null assertion](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#non-null-assertion-operator-postfix-).
+Clearly, the value of `s` is not undefined. There are ways of cleanly resolving this using more advanced TypeScript features, but for our purposes, you can use a [non-null assertion](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#non-null-assertion-operator-postfix-).
 
 > TypeScript also has a special syntax for removing `null` and `undefined` from a type without doing any explicit checking. Writing `!` after any expression is effectively a type assertion that the value isn’t `null` or `undefined`
 
@@ -262,11 +262,11 @@ Clearly, the value of `s` is not undefined. There are ways of cleanly resoling t
 const s = b[key]!;
 ```
 
-This will cause a liter warning - however linting is disabled for this project.
+This will cause a linter warning - however linting is disabled for this project.
 
 ### Avoiding Code Duplication
 
-You may notice that the first first five methods do a similar operation. They are filtering by if a value at a key is present and meets a specific condition. To avoid duplication, you may need to write a general function to filter out objects that are missing a field, other wise filtering by some condition. The type `keyof Business` is a union of all they keys of `Business`.
+You may notice that the first first five methods do a similar operation. They are filtering by if a value at a key is present and meets a specific condition. To avoid duplication, you may need to write a general function to filter out objects that are missing a field, otherwise filtering by some condition. The type `keyof Business` is a union of all the keys of `Business`.
 
 ```ts
 function hasProperty(business: Business, key: keyof Business) {
@@ -278,7 +278,7 @@ hasProperty(b, "stars"); // OK
 hasProperty(b, "owner"); // Complier error
 ```
 
-To handle the latter case (the specific filtering condition). **You may need to use the `any` type.** There are clean ways around this, but they are more complicated and distract from the goal of the project. This will cause a linter warning; however, linting is ignored for this project.
+To handle the latter case (the specific filtering condition), **you may need to use the `any` type.** There are clean ways around this, but they are more complicated and distract from the goal of the project. This will cause a linter warning; however, linting is ignored for this project.
 
 Other methods may require working with specific keys. We can create a type that unions those keys, and specify the parameters to only accept that type.
 
@@ -300,7 +300,7 @@ Create and implement the following methods in the `FluentBusinesses` class (in `
 **You may not:**
 
 - Use any `for`, `while`, `do-while`, or `.forEach(...)` loops
-- Use duplicate code across numerous methods (you will need to define a helper methods)
+- Use duplicate code across numerous methods (you will need to define helper methods)
 - Assume anything about the structure of an object in the data set (fields may, or may not, be present)
 
 ### `fromCityInState`
@@ -381,7 +381,7 @@ bestPlace(): Business | undefined {
 }
 ```
 
-It returns the “best” business. The “best” business has the highest star rating. If there is a tie, pick the one with the most reviews. If there’s a tie with the most reviews, pick the first business. **If there is no matching result, it should return an `undefined`.**
+It returns the “best” business. The “best” business has the highest star rating. If there is a tie, pick the one with the most reviews. If there’s a tie with the most reviews, pick the first business. **If there is no matching result, it should return `undefined`.**
 
 Use the `stars` and `review_count` fields.
 
