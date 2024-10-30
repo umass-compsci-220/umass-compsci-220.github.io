@@ -2,9 +2,9 @@
 sidebar_position: 9
 ---
 
-# Discussion 8: Observables and SOLID
+# Discussion 9: Observables and SOLID
 
-Welcome to the eighth discussion! This week you'll learn more about working with OOP and streams.
+Welcome to the eighth discussion! This week you'll learn more about working with the Observer pattern and SOLID principles.
 
 ## Materials
 
