@@ -111,13 +111,13 @@ https://www.google.com/maps
 https://www.google.com/search?q=how+to+exit+vim
 ```
 
-URLs have a specific structure, which tell both the browser, and the eventual web server, what the request means.
+URLs have a specific structure, which tell both the browser and the eventual web server what the request means.
 
 ![URL](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL/mdn-url-all.png)
 
 - **The scheme** documents the protocol the network request should use
   - The web uses `https` or `http`
-- **The authority** documents where server that will process our request lives
+- **The authority** documents where the server that will process our request lives
   - Consists of the domain name and the port
     - The domain maps to a number (called the IP address) that is used to find the web server on the internet
     - The port is a wellknown number that describes where to talk to the web server once you reach the machine
@@ -445,7 +445,7 @@ You will see this option to delete the branch after merging. **Do not** delete t
 - If you mess something up on a branch (this could be main), remember that you can always revert to a prior commit.
 - GitHub allows you to view a branch's commit history.
 - If you encounter any merge conflicts when resolving your pull requests, refer to the [documentation here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) on how to handle them.
-- While git is very powerful, it's also complex, and everyone has trouble using it time-to-time - so don't be discouraged!
+- While git is very powerful, it's also complex, and everyone has trouble using it time-to-time - so don't be discouraged! Reach out to your teammates first (this is group work!), and if things still don't work, ask, ideally directly in office hours.
 
 ## Resources
 
@@ -559,7 +559,7 @@ You will need to write mock tests for this function since the order of universit
 
 - This function should be done as a group, after each member has completed their individual tasks
 
-Write a function with, inside of `./src/universityWeather.js`, the following type signature:
+Write a function, inside of `./src/universityWeather.js`, with the following type signature:
 
 ```ts
 interface AverageTemperatureResults {
@@ -655,7 +655,7 @@ Pick something interesting and try to have fun with it. As long as you meet the 
 
 You are not required to write tests for this code, however your code should execute without errors and work as intended.
 
-### If you are worried about being rate limited with the api you have choosen
+### If you are worried about being rate limited with the API you have choosen
 
 If you would like to cache the results of an API call to an API of your choice, you can use the 220 caching server that we described in the [Rate Limiting Section](#rate-limiting). Here is an example of the URL for caching the [https://www.boredapi.com](https://www.boredapi.com).
 
