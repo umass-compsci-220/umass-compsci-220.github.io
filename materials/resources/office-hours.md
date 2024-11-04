@@ -18,8 +18,8 @@ Please do come to office hours for:
 
 | **Time**        | **Staff**          | **Location**  |
 |-----------------|--------------------|---------------|
-| 11:00am - noon  | Maximilian Kuechen |   T222        |
 | noon - 1:00pm   | Carey Pope         |   T222        |
+| 1:00pm - 2:00pm | Maximilian Kuechen |   T222        |
 | 2:00pm - 3:00pm | Marius Minea       |   LGRC A261   |
 | 3:30pm - 4:30pm | Frank Chiu         |   T222        |
 | 4:30pm - 5:30pm | Liam Mutter        |   T222        |
