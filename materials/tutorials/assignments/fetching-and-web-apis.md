@@ -6,6 +6,11 @@ sidebar_position: 7
 
 There is no zip file containing the starter code to download. The remote GitHub repository you were invited to contains the starter code for the assignment.
 
+:::warning
+
+You must first uninstall the VSCode Extension "Jest" by Orta if you have this installed on your IDE. Use the extension [Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner) instead.
+:::
+
 ## Overview
 
 During this project, you will work as a group to complete an application that collects weather data for universities. You will query various web interfaces to collect information that will be either passed along as arguments to other interfaces or analyzed on its own.
