@@ -53,11 +53,11 @@ Once you have git, you need to setup authorization for GitHub on your local mach
 
 The setup is different depending on whether you're using Windows, macOS, or Linux. The initial setup steps are as follows:
 
-Linux setup:
+#### Linux setup:
 1. Run: `sudo apt update`
 2. Run: `sudo apt install gh`
 
-macOS setup:
+#### macOS setup:
 1. Install brew (https://brew.sh/) by running this script in your terminal
     - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 2. **IMPORTANT:** Follow the "Next steps" section in the output after the above script:
@@ -66,11 +66,13 @@ macOS setup:
 </p>
 3. Run `brew install gh`
 
-Windows setup:
+#### Windows setup:
 1. Open Powershell
 2. Run: `winget install --id GitHub.cli`
 3. Click ok/continue in installer & wait for install
 4. Restart Powershell
+
+#### Login to Github w/ the Github CLI
 
 After setup, run `gh` in your terminal to see if the install worked properly (if it says something to the effect of 'command not found', then it did not install properly). If you're using Powershell, make sure to restart it before trying to run `gh`.
 
