@@ -8,7 +8,7 @@ There is no zip file containing the starter code to download. The remote GitHub 
 
 :::warning
 
-You must first uninstall the VSCode Extension "Jest" by Orta if you have this installed on your IDE. Use the extension [Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner) instead.
+You must first uninstall the VSCode Extension "Jest" by Orta if you have this installed on your IDE. Use the extension [Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner) instead. Failure to do so will result in your tests failing often. See [Rate Limiting](#rate-limiting) section for details.
 :::
 
 ## Overview
@@ -224,6 +224,10 @@ When using publicly available APIs (the ones we are using in this homework), mak
 For this HW we have set up a caching server at [https://220.maxkuechen.com/](https://220.maxkuechen.com/). This server will relay requests to the proper APIs and will [cache](<https://en.wikipedia.org/wiki/Cache_(computing)>) the response for some period. As a result we are requesting information from the actual API much less frequently. While once API call is very cheap, think about how often your tests and autograder tests get run over the course of the HW for 200+ students.
 
 In this HW you will be working with the [geocode](https://geocode.maps.co/) API, the [universites](https://github.com/Hipo/university-domains-list) API, and the [weather](https://open-meteo.com) API, as well as other APIs you choose yourself. Feel free to read their respective docs. You will be interacting with these APIs through our caching server. Each programming task outlines what endpoint to fetch the data from.
+
+##### Jest Extension by Orta
+
+The Jest Extension by Orta automatically runs all your test cases each time you make a code change. This results in API calls, which as explained above, is not ideal. Please disable this extension, and use [Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner) instead.
 
 ## Testing
 
@@ -485,7 +489,7 @@ export function fetchGeoCoord(query: string): Promise<GeoCoord> {
 
 This function should take in a query string and return a `Promise` that fulfils with the first geo-coordinate result. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message. The above interface tells you what the object looks like (note that interfaces are a feature of TypeScript and are not in JavaScript).
 
-Use the following API, <https://220.maxkuechen.com/geoCoord/search?q=query+goes+here>, to retrieve your results. The base URL should be `"https://220.maxkuechen.com"` and there should be one URL search parameter `"q"` for the query. This API returns an array of objects containing a `lon`, `lat`, and `importances` field.
+Use the following API, <https://220.maxkuechen.com/geoCoord/search?q=query+goes+here>, to retrieve your results. The base URL should be `"https://220.maxkuechen.com"` and there should be one URL search parameter `q` for the query. This API returns an array of objects containing a `lon`, `lat`, and `importances` field.
 
 See the [getting started section on queries](#urls-and-parameters) if you are confused. Use the [`Number.parseFloat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseFloat) function to convert to a number if needed.
 
@@ -518,9 +522,9 @@ export function fetchCurrentTemperature(coords: GeoCoord): Promise<TemperatureRe
 }
 ```
 
-This function should take in a longitude and latitude and return a `Promise` that fulfils with an object. The object should have two fields called `time` and `temperature_2m`. The `time` field should be an array of times and the `"temperature_2m"` should be an array of corresponding temperature measurements. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message. The above interface tells you what the object looks like (note that interfaces are a feature of TypeScript and are not in JavaScript).
+This function should take in a longitude and latitude and return a `Promise` that fulfils with an object. The object should have two fields called `time` and `temperature_2m`. The `time` field should be an array of times and the `temperature_2m` should be an array of corresponding temperature measurements. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message. The above interface tells you what the object looks like (note that interfaces are a feature of TypeScript and are not in JavaScript).
 
-Use the <https://220.maxkuechen.com/currentTemperature/forecast?latitude=40&longitude=40&hourly=temperature_2m&temperature_unit=fahrenheit> API to retrieve your result. It has `"latitude"` and `"longitude"` parameters. You should set the `"hourly"` parameter to `"temperature_2m"`, and the `"temperature_unit"` parameter to `"fahrenheit"`.
+Use the <https://220.maxkuechen.com/currentTemperature/forecast?latitude=40&longitude=40&hourly=temperature_2m&temperature_unit=fahrenheit> API to retrieve your result. It has `latitude` and `longitude` parameters. You should set the `hourly` parameter to `temperature_2m`, and the `temperature_unit` parameter to `fahrenheit`.
 
 #### `tempAvgAboveAtCoords`
 
@@ -548,7 +552,7 @@ export function fetchUniversities(query: string): Promise<string[]> {
 
 This function should take in a query string and return a `Promise` that fulfils with an array of university names. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message.
 
-Use the following API, <https://220.maxkuechen.com/universities/search?name=name+query+goes+here>, retrieve your result. It has a `"name"` parameter to search for universities with a similar name. **If there are no results (the returned JSON is an empty array), resolve to an empty array.**
+Use the following API, <https://220.maxkuechen.com/universities/search?name=name+query+goes+here>, retrieve your result. It has a `name` parameter to search for universities with a similar name. **If there are no results (the returned JSON is an empty array), resolve to an empty array.**
 
 #### `universityNameLengthOrderAscending`
 
