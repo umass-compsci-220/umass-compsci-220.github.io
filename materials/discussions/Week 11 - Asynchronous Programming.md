@@ -1,20 +1,20 @@
 ---
-sidebar_position: 10
+sidebar_position: 11
 ---
 
-# Discussion 10: Asynchronous Programming
+# Discussion 11: Asynchronous Programming
 
 Welcome to the tenth discussion! This week you'll learn more about programming asynchronously.
 
 ## Materials
 
-Download the lab slides [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%2010%20-%20No%20Solutions.pdf).
+Download the lab slides [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%2011%20-%20No%20Solutions.pdf).
 
-The slides with solutions will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%2010%20-%20Solutions.pdf) after the last discussion of the day.
+The slides with solutions will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%2011%20-%20Solutions.pdf) after the last discussion of the day.
 
-Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/10-asynchronous-programming.zip). Make sure to submit this to gradescope, ask your lab leaders to help you if you are unsure of how. We'll also show the process in the first lab.
+Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/11-asynchronous-programming.zip). Make sure to submit this to gradescope, ask your lab leaders to help you if you are unsure of how. We'll also show the process in the first lab.
 
-The solution file will be posted [here](https://raw.githubusercontent.com/umass-compsci-220/public-materials/main/discussion/10-asynchronous-programming.js) after lab.
+The solution file will be posted [here](https://raw.githubusercontent.com/umass-compsci-220/public-materials/main/discussion/11-asynchronous-programming-solution.js) after lab.
 
 ## Opening and working with the starter code
 
