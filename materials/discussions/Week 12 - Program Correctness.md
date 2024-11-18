@@ -2,7 +2,7 @@
 sidebar_position: 11
 ---
 
-# Discussion 11: Program Correctness
+# Discussion 12: Program Correctness
 
 Welcome to the twelfth discussion! This week we'll review program correctness.
 
