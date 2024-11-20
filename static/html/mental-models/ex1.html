@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Explanation Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .code-container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            text-align: left;
+        }
+        .code-topic, .code-subtopic {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .code-block {
+            white-space: pre;
+            font-family: monospace;
+            line-height: 1.5;
+        }
+        .explanation-box {
+            background-color: #333;
+            color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        .button-container {
+            margin-top: 15px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button-end {
+            background-color: #28a745;
+        }
+        .button-end:hover {
+            background-color: #218838;
+        }
+        .progress-container {
+            background-color: #ddd;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            height: 20px;
+        }
+        .progress-bar {
+            height: 100%;
+            background-color: #4caf50;
+            width: 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="header">COMPSCI220 Programming Methodology</div> -->
+    
+    <div class="code-container">
+        <div class="code-topic" id="code-topic">Code Visualizer</div>
+        <div class="code-subtopic" id="code-subtopic"></div>
+        <div class="code-block" id="code-block">
+            <!-- Code block lines will be added here dynamically -->
+        </div>
+        <div class="explanation-box" id="explanation-box">Hover over a line to see an explanation.</div>
+        <div class="button-container" id="button-container">
+            <!-- Buttons will be added dynamically here -->
+        </div>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <script>
+        const codeBlocks = [
+            {
+                subtopic: "Object References",
+                code: [
+                    "let obj1 = { value: 42 };",
+                    "let obj2 = obj1;",
+                    "obj2.value = 100;",
+                    "console.log(obj1.value);"
+                ],
+                explanations: {
+                    0: "Creates an object 'obj1' with a property 'value' set to 42.",
+                    1: "Assigns 'obj1' to 'obj2', so both variables reference the same object.",
+                    2: "Changes the 'value' property of 'obj2', which also affects 'obj1' since they reference the same object.",
+                    3: "Logs the updated 'value' property of 'obj1', showing the effect of shared reference."
+                }
+            },
+            {
+                subtopic: "Reference Reassignment",
+                code: [
+                    "let obj1 = { value: 42 };",
+                    "let obj2 = obj1;",
+                    "obj1 = { value: 200 };",
+                    "console.log(obj2.value);"
+                ],
+                explanations: {
+                    0: "Creates an object 'obj1' with a property 'value' set to 42.",
+                    1: "Assigns 'obj1' to 'obj2', so they initially reference the same object.",
+                    2: "Reassigns 'obj1' to a new object, leaving 'obj2' pointing to the original object.",
+                    3: "Logs the value of 'obj2', which remains unchanged at 42."
+                }
+            },
+            {
+                subtopic: "Object Comparison",
+                code: [
+                    "let obj1 = { value: 42 };",
+                    "let obj2 = { value: 42 };",
+                    "console.log(obj1 === obj2);"
+                ],
+                explanations: {
+                    0: "Creates an object 'obj1' with a property 'value' set to 42.",
+                    1: "Creates a new object 'obj2' with the same property 'value' set to 42.",
+                    2: "Compares 'obj1' and 'obj2', which returns false because they are distinct objects in memory."
+                }
+            },
+            {
+                subtopic: "Nested References",
+                code: [
+                    "let obj1 = { nested: { value: 42 } };",
+                    "let obj2 = obj1.nested;",
+                    "obj2.value = 100;",
+                    "console.log(obj1.nested.value);"
+                ],
+                explanations: {
+                    0: "Creates an object 'obj1' with a nested object 'nested' containing a property 'value' set to 42.",
+                    1: "Assigns 'obj1.nested' to 'obj2', so both reference the same nested object.",
+                    2: "Changes the 'value' property of 'obj2', affecting 'obj1.nested' as well.",
+                    3: "Logs the updated 'value' property of 'obj1.nested', reflecting the change."
+                }
+            }
+        ];
+
+        let currentBlockIndex = 0;
+
+        function renderCodeBlock() {
+            const codeContainer = document.getElementById("code-block");
+            const explanationBox = document.getElementById("explanation-box");
+            const subtopicContainer = document.getElementById("code-subtopic");
+            const buttonContainer = document.getElementById("button-container");
+            
+            codeContainer.innerHTML = '';
+            explanationBox.innerText = "Hover over a line to see an explanation.";
+            subtopicContainer.innerText = codeBlocks[currentBlockIndex].subtopic;
+
+            // Display each line of code with hover events
+            codeBlocks[currentBlockIndex].code.forEach((line, index) => {
+                const lineElement = document.createElement("div");
+                lineElement.innerText = line;
+                lineElement.className = 'code-line';
+                lineElement.onmouseover = () => showExplanation(index);
+                lineElement.onmouseout = () => clearExplanation();
+                codeContainer.appendChild(lineElement);
+            });
+
+            // Update buttons and progress bar
+            updateButtons();
+            updateProgressBar();
+        }
+
+        function updateButtons() {
+            const buttonContainer = document.getElementById("button-container");
+            buttonContainer.innerHTML = '';
+
+            if (currentBlockIndex > 0) {
+                const prevButton = document.createElement("button");
+                prevButton.className = 'button';
+                prevButton.innerText = 'Previous';
+                prevButton.onclick = showPreviousBlock;
+                buttonContainer.appendChild(prevButton);
+            }
+
+            const nextButton = document.createElement("button");
+            nextButton.className = currentBlockIndex === codeBlocks.length - 1 ? 'button button-end' : 'button';
+            nextButton.innerText = currentBlockIndex === codeBlocks.length - 1 ? 'End' : 'Next';
+            nextButton.onclick = currentBlockIndex === codeBlocks.length - 1 ? showCompletion : showNextBlock;
+            buttonContainer.appendChild(nextButton);
+        }
+
+        function updateProgressBar() {
+            const progressBar = document.getElementById("progress-bar");
+            const progress = ((currentBlockIndex + 1) / codeBlocks.length) * 100;
+            progressBar.style.width = progress + "%";
+        }
+
+        function showExplanation(lineIndex) {
+            const explanation = codeBlocks[currentBlockIndex].explanations[lineIndex] || "No explanation available.";
+            document.getElementById("explanation-box").innerText = explanation;
+        }
+
+        function clearExplanation() {
+            document.getElementById("explanation-box").innerText = "Hover over a line to see an explanation.";
+        }
+
+        function showNextBlock() {
+            currentBlockIndex = (currentBlockIndex + 1) % codeBlocks.length;
+            renderCodeBlock();
+        }
+
+        function showPreviousBlock() {
+            if (currentBlockIndex > 0) {
+                currentBlockIndex -= 1;
+                renderCodeBlock();
+            }
+        }
+
+        function showCompletion() {
+            const codeContainer = document.getElementById("code-block");
+            const explanationBox = document.getElementById("explanation-box");
+            const subtopicContainer = document.getElementById("code-subtopic");
+            const buttonContainer = document.getElementById("button-container");
+
+            subtopicContainer.innerText = '';
+            codeContainer.innerHTML = 'You have successfully completed all subtopics.';
+            explanationBox.innerText = '';
+
+            // Reset progress bar and show Retry button
+            updateProgressBar();
+            buttonContainer.innerHTML = '';
+            const retryButton = document.createElement("button");
+            retryButton.className = 'button';
+            retryButton.innerText = 'Retry';
+            retryButton.onclick = () => {
+                currentBlockIndex = 0;
+                renderCodeBlock();
+            };
+            buttonContainer.appendChild(retryButton);
+        }
+
+        document.addEventListener("DOMContentLoaded", renderCodeBlock);
+    </script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Explanation Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .code-container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            text-align: left;
+        }
+        .code-topic, .code-subtopic {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .code-block {
+            white-space: pre;
+            font-family: monospace;
+            line-height: 1.5;
+        }
+        .explanation-box {
+            background-color: #333;
+            color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        .button-container {
+            margin-top: 15px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button-end {
+            background-color: #28a745;
+        }
+        .button-end:hover {
+            background-color: #218838;
+        }
+        .progress-container {
+            background-color: #ddd;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            height: 20px;
+        }
+        .progress-bar {
+            height: 100%;
+            background-color: #4caf50;
+            width: 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="header">COMPSCI220 Programming Methodology</div> -->
+    
+    <div class="code-container">
+        <div class="code-topic" id="code-topic">Code Visualizer</div>
+        <div class="code-subtopic" id="code-subtopic"></div>
+        <div class="code-block" id="code-block">
+            <!-- Code block lines will be added here dynamically -->
+        </div>
+        <div class="explanation-box" id="explanation-box">Hover over a line to see an explanation.</div>
+        <div class="button-container" id="button-container">
+            <!-- Buttons will be added dynamically here -->
+        </div>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <script>
+        const codeBlocks = [
+            {
+                subtopic: "Basic Lexical Scope",
+                code: [
+                    "function outer() {",
+                    "    const outerVar = 'I am outer';",
+                    "    function inner() {",
+                    "        console.log(outerVar);",
+                    "    }",
+                    "    inner();",
+                    "}",
+                    "outer();"
+                ],
+                explanations: {
+                    0: "Defines a function 'outer' with a variable 'outerVar'.",
+                    1: "Defines an inner function 'inner' that logs 'outerVar'.",
+                    2: "Calls the 'inner' function inside 'outer'.",
+                    3: "Calls the 'outer' function, triggering the inner function.",
+                    4: "Logs the value of 'outerVar', demonstrating lexical scoping."
+                }
+            },
+            {
+                subtopic: "Nested Scopes",
+                code: [
+                    "function outer() {",
+                    "    const outerVar = 'outer';",
+                    "    function middle() {",
+                    "        const middleVar = 'middle';",
+                    "        function inner() {",
+                    "            console.log(outerVar, middleVar);",
+                    "        }",
+                    "        inner();",
+                    "    }",
+                    "    middle();",
+                    "}",
+                    "outer();"
+                ],
+                explanations: {
+                    0: "Defines a function 'outer' with a variable 'outerVar'.",
+                    1: "Defines a nested function 'middle' with a variable 'middleVar'.",
+                    2: "Defines an inner function 'inner' that accesses both 'outerVar' and 'middleVar'.",
+                    3: "Calls 'inner' inside 'middle'.",
+                    4: "Calls 'middle' inside 'outer'.",
+                    5: "Calls 'outer', triggering the nested functions and demonstrating lexical scoping."
+                }
+            },
+            {
+                subtopic: "Variables Shadowing Outer Scope",
+                code: [
+                    "function outer() {",
+                    "    const name = 'Outer';",
+                    "    function inner() {",
+                    "        const name = 'Inner';",
+                    "        console.log(name);",
+                    "    }",
+                    "    inner();",
+                    "    console.log(name);",
+                    "}",
+                    "outer();"
+                ],
+                explanations: {
+                    0: "Defines a function 'outer' with a variable 'name'.",
+                    1: "Defines a nested function 'inner' with a shadowed variable 'name'.",
+                    2: "Logs the 'name' variable from the inner scope.",
+                    3: "Calls 'inner' inside 'outer', logging 'Inner'.",
+                    4: "Logs the 'name' variable from the outer scope, logging 'Outer'.",
+                    5: "Calls 'outer', demonstrating variable shadowing."
+                }
+            },
+            {
+                subtopic: "Accessing Global Scope",
+                code: [
+                    "const globalVar = 'Global';",
+                    "function outer() {",
+                    "    const localVar = 'Local';",
+                    "    function inner() {",
+                    "        console.log(globalVar, localVar);",
+                    "    }",
+                    "    inner();",
+                    "}",
+                    "outer();"
+                ],
+                explanations: {
+                    0: "Defines a global variable 'globalVar'.",
+                    1: "Defines a function 'outer' with a local variable 'localVar'.",
+                    2: "Defines an inner function 'inner' that logs both 'globalVar' and 'localVar'.",
+                    3: "Calls 'inner' inside 'outer', demonstrating access to both global and local variables.",
+                    4: "Calls 'outer', triggering the nested function and logging both variables."
+                }
+            }
+        ];
+
+        let currentBlockIndex = 0;
+
+        function renderCodeBlock() {
+            const codeContainer = document.getElementById("code-block");
+            const explanationBox = document.getElementById("explanation-box");
+            const subtopicContainer = document.getElementById("code-subtopic");
+            const buttonContainer = document.getElementById("button-container");
+            
+            codeContainer.innerHTML = '';
+            explanationBox.innerText = "Hover over a line to see an explanation.";
+            subtopicContainer.innerText = codeBlocks[currentBlockIndex].subtopic;
+
+            // Display each line of code with hover events
+            codeBlocks[currentBlockIndex].code.forEach((line, index) => {
+                const lineElement = document.createElement("div");
+                lineElement.innerText = line;
+                lineElement.className = 'code-line';
+                lineElement.onmouseover = () => showExplanation(index);
+                lineElement.onmouseout = () => clearExplanation();
+                codeContainer.appendChild(lineElement);
+            });
+
+            // Update buttons and progress bar
+            updateButtons();
+            updateProgressBar();
+        }
+
+        function updateButtons() {
+            const buttonContainer = document.getElementById("button-container");
+            buttonContainer.innerHTML = '';
+
+            if (currentBlockIndex > 0) {
+                const prevButton = document.createElement("button");
+                prevButton.className = 'button';
+                prevButton.innerText = 'Previous';
+                prevButton.onclick = showPreviousBlock;
+                buttonContainer.appendChild(prevButton);
+            }
+
+            const nextButton = document.createElement("button");
+            nextButton.className = currentBlockIndex === codeBlocks.length - 1 ? 'button button-end' : 'button';
+            nextButton.innerText = currentBlockIndex === codeBlocks.length - 1 ? 'End' : 'Next';
+            nextButton.onclick = currentBlockIndex === codeBlocks.length - 1 ? showCompletion : showNextBlock;
+            buttonContainer.appendChild(nextButton);
+        }
+
+        function updateProgressBar() {
+            const progressBar = document.getElementById("progress-bar");
+            const progress = ((currentBlockIndex + 1) / codeBlocks.length) * 100;
+            progressBar.style.width = progress + "%";
+        }
+
+        function showExplanation(lineIndex) {
+            const explanation = codeBlocks[currentBlockIndex].explanations[lineIndex] || "No explanation available.";
+            document.getElementById("explanation-box").innerText = explanation;
+        }
+
+        function clearExplanation() {
+            document.getElementById("explanation-box").innerText = "Hover over a line to see an explanation.";
+        }
+
+        function showNextBlock() {
+            currentBlockIndex = (currentBlockIndex + 1) % codeBlocks.length;
+            renderCodeBlock();
+        }
+
+        function showPreviousBlock() {
+            if (currentBlockIndex > 0) {
+                currentBlockIndex -= 1;
+                renderCodeBlock();
+            }
+        }
+
+        function showCompletion() {
+            const codeContainer = document.getElementById("code-block");
+            const explanationBox = document.getElementById("explanation-box");
+            const subtopicContainer = document.getElementById("code-subtopic");
+            const buttonContainer = document.getElementById("button-container");
+
+            subtopicContainer.innerText = '';
+            codeContainer.innerHTML = 'You have successfully completed all subtopics.';
+            explanationBox.innerText = '';
+
+            // Reset progress bar and show Retry button
+            updateProgressBar();
+            buttonContainer.innerHTML = '';
+            const retryButton = document.createElement("button");
+            retryButton.className = 'button';
+            retryButton.innerText = 'Retry';
+            retryButton.onclick = () => {
+                currentBlockIndex = 0;
+                renderCodeBlock();
+            };
+            buttonContainer.appendChild(retryButton);
+        }
+
+        document.addEventListener("DOMContentLoaded", renderCodeBlock);
+    </script>
+</body>
+</html>

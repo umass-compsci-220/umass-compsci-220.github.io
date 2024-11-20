@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Explanation Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .code-container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            text-align: left;
+        }
+        .code-topic, .code-subtopic {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .code-block {
+            white-space: pre;
+            font-family: monospace;
+            line-height: 1.5;
+        }
+        .explanation-box {
+            background-color: #333;
+            color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        .button-container {
+            margin-top: 15px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button-end {
+            background-color: #28a745;
+        }
+        .button-end:hover {
+            background-color: #218838;
+        }
+        .progress-container {
+            background-color: #ddd;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            height: 20px;
+        }
+        .progress-bar {
+            height: 100%;
+            background-color: #4caf50;
+            width: 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="header">COMPSCI220 Programming Methodology</div> -->
+    
+    <div class="code-container">
+        <div class="code-topic" id="code-topic">Code Visualizer</div>
+        <div class="code-subtopic" id="code-subtopic"></div>
+        <div class="code-block" id="code-block">
+            <!-- Code block lines will be added here dynamically -->
+        </div>
+        <div class="explanation-box" id="explanation-box">Hover over a line to see an explanation.</div>
+        <div class="button-container" id="button-container">
+            <!-- Buttons will be added dynamically here -->
+        </div>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <script>
+        const codeBlocks = [
+            {
+                subtopic: "Memoized Factorial",
+                code: [
+                    "function memoizedFactorial() {",
+                    "    const cache = {};",
+                    "    return function factorial(n) {",
+                    "        if (n in cache) return cache[n];",
+                    "        if (n === 0) return 1;",
+                    "        cache[n] = n * factorial(n - 1);",
+                    "        return cache[n];",
+                    "    };",
+                    "}",
+                    "const factorial = memoizedFactorial();",
+                    "console.log(factorial(5));",
+                    "console.log(factorial(5));"
+                ],
+                explanations: {
+                    0: "Defines a function 'memoizedFactorial' with a local cache object.",
+                    1: "Returns a function 'factorial' that computes the factorial recursively.",
+                    2: "Checks if the result is in the cache and returns it if available.",
+                    3: "Handles the base case where n equals 0.",
+                    4: "Stores the computed factorial in the cache for future use.",
+                    5: "Calls the 'memoizedFactorial' function and assigns it to 'factorial'.",
+                    6: "Logs the result of calculating the factorial of 5.",
+                    7: "Logs another calculation of 5! to demonstrate the use of the cache."
+                }
+            },
+            {
+                subtopic: "Fibonacci with Closure",
+                code: [
+                    "function fibonacci() {",
+                    "    const cache = { 0: 0, 1: 1 };",
+                    "    return function fib(n) {",
+                    "        if (n in cache) return cache[n];",
+                    "        cache[n] = fib(n - 1) + fib(n - 2);",
+                    "        return cache[n];",
+                    "    };",
+                    "}",
+                    "const fib = fibonacci();",
+                    "console.log(fib(6));"
+                ],
+                explanations: {
+                    0: "Defines a function 'fibonacci' with a local cache object.",
+                    1: "Returns a function 'fib' that computes Fibonacci numbers recursively.",
+                    2: "Checks the cache for precomputed values and returns them if available.",
+                    3: "Calculates the Fibonacci number recursively and stores it in the cache.",
+                    4: "Calls the 'fibonacci' function and assigns it to 'fib'.",
+                    5: "Logs the result of calculating the 6th Fibonacci number."
+                }
+            },
+            {
+                subtopic: "Avoiding Redundant Calculations",
+                code: [
+                    "function cachedSum() {",
+                    "    let cache = {};",
+                    "    return function(a, b) {",
+                    "        const key = `${a},${b}`;",
+                    "        if (key in cache) return cache[key];",
+                    "        cache[key] = a + b;",
+                    "        return cache[key];",
+                    "    };",
+                    "}",
+                    "const sum = cachedSum();",
+                    "console.log(sum(2, 3));",
+                    "console.log(sum(2, 3));"
+                ],
+                explanations: {
+                    0: "Defines a function 'cachedSum' with a local cache object.",
+                    1: "Returns a function that calculates the sum of two numbers.",
+                    2: "Checks the cache for a precomputed result using a key.",
+                    3: "Computes and stores the sum in the cache if not already present.",
+                    4: "Calls the 'cachedSum' function and assigns it to 'sum'.",
+                    5: "Logs the sum of 2 and 3.",
+                    6: "Logs the sum again, demonstrating the use of the cache."
+                }
+            },
+            {
+                subtopic: "Prime Number Checker",
+                code: [
+                    "function isPrime() {",
+                    "    const cache = {};",
+                    "    return function(n) {",
+                    "        if (n in cache) return cache[n];",
+                    "        if (n < 2) return (cache[n] = false);",
+                    "        for (let i = 2; i <= Math.sqrt(n); i++) {",
+                    "            if (n % i === 0) return (cache[n] = false);",
+                    "        }",
+                    "        return (cache[n] = true);",
+                    "    };",
+                    "}",
+                    "const primeChecker = isPrime();",
+                    "console.log(primeChecker(7));",
+                    "console.log(primeChecker(7));"
+                ],
+                explanations: {
+                    0: "Defines a function 'isPrime' with a local cache object.",
+                    1: "Returns a function that checks if a number is prime.",
+                    2: "Checks the cache for a precomputed result and returns it if available.",
+                    3: "Handles numbers less than 2 as not prime.",
+                    4: "Iterates up to the square root of the number to check divisibility.",
+                    5: "Stores and returns the primality result in the cache.",
+                    6: "Calls 'isPrime' and assigns the result to 'primeChecker'.",
+                    7: "Logs the result of checking if 7 is a prime number.",
+                    8: "Logs the result again, demonstrating the use of the cache."
+                }
+            }
+        ];
+
+        let currentBlockIndex = 0;
+
+        function renderCodeBlock() {
+            const codeContainer = document.getElementById("code-block");
+            const explanationBox = document.getElementById("explanation-box");
+            const subtopicContainer = document.getElementById("code-subtopic");
+            const buttonContainer = document.getElementById("button-container");
+            
+            codeContainer.innerHTML = '';
+            explanationBox.innerText = "Hover over a line to see an explanation.";
+            subtopicContainer.innerText = codeBlocks[currentBlockIndex].subtopic;
+
+            // Display each line of code with hover events
+            codeBlocks[currentBlockIndex].code.forEach((line, index) => {
+                const lineElement = document.createElement("div");
+                lineElement.innerText = line;
+                lineElement.className = 'code-line';
+                lineElement.onmouseover = () => showExplanation(index);
+                lineElement.onmouseout = () => clearExplanation();
+                codeContainer.appendChild(lineElement);
+            });
+
+            // Update buttons and progress bar
+            updateButtons();
+            updateProgressBar();
+        }
+
+        function updateButtons() {
+            const buttonContainer = document.getElementById("button-container");
+            buttonContainer.innerHTML = '';
+
+            if (currentBlockIndex > 0) {
+                const prevButton = document.createElement("button");
+                prevButton.className = 'button';
+                prevButton.innerText = 'Previous';
+                prevButton.onclick = showPreviousBlock;
+                buttonContainer.appendChild(prevButton);
+            }
+
+            const nextButton = document.createElement("button");
+            nextButton.className = currentBlockIndex === codeBlocks.length - 1 ? 'button button-end' : 'button';
+            nextButton.innerText = currentBlockIndex === codeBlocks.length - 1 ? 'End' : 'Next';
+            nextButton.onclick = currentBlockIndex === codeBlocks.length - 1 ? showCompletion : showNextBlock;
+            buttonContainer.appendChild(nextButton);
+        }
+
+        function updateProgressBar() {
+            const progressBar = document.getElementById("progress-bar");
+            const progress = ((currentBlockIndex + 1) / codeBlocks.length) * 100;
+            progressBar.style.width = progress + "%";
+        }
+
+        function showExplanation(lineIndex) {
+            const explanation = codeBlocks[currentBlockIndex].explanations[lineIndex] || "No explanation available.";
+            document.getElementById("explanation-box").innerText = explanation;
+        }
+
+        function clearExplanation() {
+            document.getElementById("explanation-box").innerText = "Hover over a line to see an explanation.";
+        }
+
+        function showNextBlock() {
+            currentBlockIndex = (currentBlockIndex + 1) % codeBlocks.length;
+            renderCodeBlock();
+        }
+
+        function showPreviousBlock() {
+            if (currentBlockIndex > 0) {
+                currentBlockIndex -= 1;
+                renderCodeBlock();
+            }
+        }
+
+        function showCompletion() {
+            const codeContainer = document.getElementById("code-block");
+            const explanationBox = document.getElementById("explanation-box");
+            const subtopicContainer = document.getElementById("code-subtopic");
+            const buttonContainer = document.getElementById("button-container");
+
+            subtopicContainer.innerText = '';
+            codeContainer.innerHTML = 'You have successfully completed all subtopics.';
+            explanationBox.innerText = '';
+
+            // Reset progress bar and show Retry button
+            updateProgressBar();
+            buttonContainer.innerHTML = '';
+            const retryButton = document.createElement("button");
+            retryButton.className = 'button';
+            retryButton.innerText = 'Retry';
+            retryButton.onclick = () => {
+                currentBlockIndex = 0;
+                renderCodeBlock();
+            };
+            buttonContainer.appendChild(retryButton);
+        }
+
+        document.addEventListener("DOMContentLoaded", renderCodeBlock);
+    </script>
+</body>
+</html>

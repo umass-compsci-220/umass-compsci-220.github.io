@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Explanation Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .code-container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            text-align: left;
+        }
+        .code-topic, .code-subtopic {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .code-block {
+            white-space: pre;
+            font-family: monospace;
+            line-height: 1.5;
+        }
+        .explanation-box {
+            background-color: #333;
+            color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        .button-container {
+            margin-top: 15px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button-end {
+            background-color: #28a745;
+        }
+        .button-end:hover {
+            background-color: #218838;
+        }
+        .progress-container {
+            background-color: #ddd;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            height: 20px;
+        }
+        .progress-bar {
+            height: 100%;
+            background-color: #4caf50;
+            width: 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="header">COMPSCI220 Programming Methodology</div> -->
+    
+    <div class="code-container">
+        <div class="code-topic" id="code-topic">Code Visualizer</div>
+        <div class="code-subtopic" id="code-subtopic"></div>
+        <div class="code-block" id="code-block">
+            <!-- Code block lines will be added here dynamically -->
+        </div>
+        <div class="explanation-box" id="explanation-box">Hover over a line to see an explanation.</div>
+        <div class="button-container" id="button-container">
+            <!-- Buttons will be added dynamically here -->
+        </div>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <script>
+        const codeBlocks = [
+            {
+                subtopic: "Basic Closure Example",
+                code: [
+                    "function outer() {",
+                    "    let count = 0;",
+                    "    return function() {",
+                    "        count++;",
+                    "        return count;",
+                    "    };",
+                    "}",
+                    "const counter = outer();",
+                    "console.log(counter());",
+                    "console.log(counter());"
+                ],
+                explanations: {
+                    0: "Defines an outer function 'outer' with a local variable 'count'.",
+                    1: "Initializes 'count' to 0 within the outer function.",
+                    2: "Returns a function named 'count'",
+                    3: "Increments 'count'",
+                    4: "Returns 'count'.",
+                    5: "",
+                    6: "",
+                    7: "Calls outer and saves the returned closure in the `counter` variable.",
+                    8: "Prints 1, increments count to 1"
+                }
+            },
+            {
+                subtopic: "Closure with Private Variables",
+                code: [
+                    "function secretMessage() {",
+                    "    let secret = 'This is private!';",
+                    "    return function() {",
+                    "        return secret;",
+                    "    };",
+                    "}",
+                    "const getSecret = secretMessage();",
+                    "console.log(getSecret());"
+                ],
+                explanations: {
+                    0: "Defines a function 'secretMessage' with a private variable 'secret'.",
+                    1: "Initializes 'secret' with a string value.",
+                    2: "Returns an inner function that can access 'secret'.",
+                    3: "Calls 'secretMessage' and assigns the returned function to 'getSecret'.",
+                    4: "Logs the result of calling 'getSecret', revealing the private 'secret'."
+                }
+            },
+            {
+                subtopic: "Closure with Arguments",
+                code: [
+                    "function multiplier(factor) {",
+                    "    return function(number) {",
+                    "        return number * factor;",
+                    "    };",
+                    "}",
+                    "const triple = multiplier(3);",
+                    "console.log(triple(5));"
+                ],
+                explanations: {
+                    0: "Defines a function 'multiplier' that accepts an argument 'factor'.",
+                    1: "Returns a function that multiplies its argument 'number' by 'factor'.",
+                    2: "Calls 'multiplier' with 3 to create a new function 'triple'.",
+                    3: "Calls 'triple' with 5 and logs the result, which is 15."
+                }
+            },
+            {
+                subtopic: "Closure with Multiple Functions",
+                code: [
+                    "function createCounter() {",
+                    "    let count = 0;",
+                    "    return {",
+                    "        increment: function() { count++; return count; },",
+                    "        decrement: function() { count--; return count; }",
+                    "    };",
+                    "}",
+                    "const counter = createCounter();",
+                    "console.log(counter.increment());",
+                    "console.log(counter.decrement());"
+                ],
+                explanations: {
+                    0: "Defines a function 'createCounter' with a local variable 'count'.",
+                    1: "Returns an object containing two functions: 'increment' and 'decrement'.",
+                    2: "Each function modifies and returns the current value of 'count'.",
+                    3: "Calls 'createCounter' and assigns the result to 'counter'.",
+                    4: "Logs the result of calling 'counter.increment', which increments 'count'.",
+                    5: "Logs the result of calling 'counter.decrement', which decrements 'count'."
+                }
+            }
+        ];
+
+        let currentBlockIndex = 0;
+
+        function renderCodeBlock() {
+            const codeContainer = document.getElementById("code-block");
+            const explanationBox = document.getElementById("explanation-box");
+            const subtopicContainer = document.getElementById("code-subtopic");
+            const buttonContainer = document.getElementById("button-container");
+            
+            codeContainer.innerHTML = '';
+            explanationBox.innerText = "Hover over a line to see an explanation.";
+            subtopicContainer.innerText = codeBlocks[currentBlockIndex].subtopic;
+
+            // Display each line of code with hover events
+            codeBlocks[currentBlockIndex].code.forEach((line, index) => {
+                const lineElement = document.createElement("div");
+                lineElement.innerText = line;
+                lineElement.className = 'code-line';
+                lineElement.onmouseover = () => showExplanation(index);
+                lineElement.onmouseout = () => clearExplanation();
+                codeContainer.appendChild(lineElement);
+            });
+
+            // Update buttons and progress bar
+            updateButtons();
+            updateProgressBar();
+        }
+
+        function updateButtons() {
+            const buttonContainer = document.getElementById("button-container");
+            buttonContainer.innerHTML = '';
+
+            if (currentBlockIndex > 0) {
+                const prevButton = document.createElement("button");
+                prevButton.className = 'button';
+                prevButton.innerText = 'Previous';
+                prevButton.onclick = showPreviousBlock;
+                buttonContainer.appendChild(prevButton);
+            }
+
+            const nextButton = document.createElement("button");
+            nextButton.className = currentBlockIndex === codeBlocks.length - 1 ? 'button button-end' : 'button';
+            nextButton.innerText = currentBlockIndex === codeBlocks.length - 1 ? 'End' : 'Next';
+            nextButton.onclick = currentBlockIndex === codeBlocks.length - 1 ? showCompletion : showNextBlock;
+            buttonContainer.appendChild(nextButton);
+        }
+
+        function updateProgressBar() {
+            const progressBar = document.getElementById("progress-bar");
+            const progress = ((currentBlockIndex + 1) / codeBlocks.length) * 100;
+            progressBar.style.width = progress + "%";
+        }
+
+        function showExplanation(lineIndex) {
+            const explanation = codeBlocks[currentBlockIndex].explanations[lineIndex] || "No explanation available.";
+            document.getElementById("explanation-box").innerText = explanation;
+        }
+
+        function clearExplanation() {
+            document.getElementById("explanation-box").innerText = "Hover over a line to see an explanation.";
+        }
+
+        function showNextBlock() {
+            currentBlockIndex = (currentBlockIndex + 1) % codeBlocks.length;
+            renderCodeBlock();
+        }
+
+        function showPreviousBlock() {
+            if (currentBlockIndex > 0) {
+                currentBlockIndex -= 1;
+                renderCodeBlock();
+            }
+        }
+
+        function showCompletion() {
+            const codeContainer = document.getElementById("code-block");
+            const explanationBox = document.getElementById("explanation-box");
+            const subtopicContainer = document.getElementById("code-subtopic");
+            const buttonContainer = document.getElementById("button-container");
+
+            subtopicContainer.innerText = '';
+            codeContainer.innerHTML = 'You have successfully completed all subtopics.';
+            explanationBox.innerText = '';
+
+            // Reset progress bar and show Retry button
+            updateProgressBar();
+            buttonContainer.innerHTML = '';
+            const retryButton = document.createElement("button");
+            retryButton.className = 'button';
+            retryButton.innerText = 'Retry';
+            retryButton.onclick = () => {
+                currentBlockIndex = 0;
+                renderCodeBlock();
+            };
+            buttonContainer.appendChild(retryButton);
+        }
+
+        document.addEventListener("DOMContentLoaded", renderCodeBlock);
+    </script>
+</body>
+</html>
