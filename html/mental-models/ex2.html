@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Explanation Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .code-container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            text-align: left;
+        }
+        .code-topic, .code-subtopic {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .code-block {
+            white-space: pre;
+            font-family: monospace;
+            line-height: 1.5;
+        }
+        .explanation-box {
+            background-color: #333;
+            color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        .button-container {
+            margin-top: 15px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button-end {
+            background-color: #28a745;
+        }
+        .button-end:hover {
+            background-color: #218838;
+        }
+        .progress-container {
+            background-color: #ddd;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            height: 20px;
+        }
+        .progress-bar {
+            height: 100%;
+            background-color: #4caf50;
+            width: 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="header">COMPSCI220 Programming Methodology</div> -->
+    
+    <div class="code-container">
+        <div class="code-topic" id="code-topic">Code Visualizer</div>
+        <div class="code-subtopic" id="code-subtopic"></div>
+        <div class="code-block" id="code-block">
+            <!-- Code block lines will be added here dynamically -->
+        </div>
+        <div class="explanation-box" id="explanation-box">Hover over a line to see an explanation.</div>
+        <div class="button-container" id="button-container">
+            <!-- Buttons will be added dynamically here -->
+        </div>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <script>
+        const codeBlocks = [
+            {
+                subtopic: "Primitive Value Assignment",
+                code: [
+                    "let a = 5;",
+                    "let b = a;",
+                    "b = 10;",
+                    "console.log(a);"
+                ],
+                explanations: {
+                    0: "Assigns the value 5 to variable 'a'.",
+                    1: "Copies the value of 'a' into variable 'b'.",
+                    2: "Changes the value of 'b' to 10, leaving 'a' unaffected.",
+                    3: "Logs the value of 'a', which remains 5."
+                }
+            },
+            {
+                subtopic: "Function and Primitive Value",
+                code: [
+                    "let num = 7;",
+                    "function changeValue(val) {",
+                    "    val = 20;",
+                    "}",
+                    "changeValue(num);",
+                    "console.log(num);"
+                ],
+                explanations: {
+                    0: "Declares a variable 'num' with an initial value of 7.",
+                    1: "Defines a function 'changeValue' that attempts to modify its parameter.",
+                    2: "The function assigns a new value to 'val', but this does not affect 'num'.",
+                    3: "",
+                    4: "Calls 'changeValue' with 'num' as an argument.",
+                    5: "Logs 'num', which remains 7 because primitives are passed by value."
+                }
+            },
+            {
+                subtopic: "String Immutability",
+                code: [
+                    "let str = 'hello';",
+                    "let upperStr = str.toUpperCase();",
+                    "console.log(str);",
+                    "console.log(upperStr);"
+                ],
+                explanations: {
+                    0: "Assigns the string 'hello' to variable 'str'.",
+                    1: "Creates a new string 'upperStr' with the uppercase version of 'str'.",
+                    2: "Logs 'str', showing that it remains unchanged due to string immutability.",
+                    3: "Logs 'upperStr', displaying the uppercase string."
+                }
+            },
+            {
+                subtopic: "Array as a Value",
+                code: [
+                    "let arr = [1, 2, 3];",
+                    "let copy = [...arr];",
+                    "copy.push(4);",
+                    "console.log(arr);"
+                ],
+                explanations: {
+                    0: "Creates an array 'arr' with three elements.",
+                    1: "Copies 'arr' into 'copy' using the spread operator, creating a new array.",
+                    2: "Adds a new element to 'copy', leaving 'arr' unaffected.",
+                    3: "Logs 'arr', which still contains the original three elements."
+                }
+            }
+        ];
+
+        let currentBlockIndex = 0;
+
+        function renderCodeBlock() {
+            const codeContainer = document.getElementById("code-block");
+            const explanationBox = document.getElementById("explanation-box");
+            const subtopicContainer = document.getElementById("code-subtopic");
+            const buttonContainer = document.getElementById("button-container");
+            
+            codeContainer.innerHTML = '';
+            explanationBox.innerText = "Hover over a line to see an explanation.";
+            subtopicContainer.innerText = codeBlocks[currentBlockIndex].subtopic;
+
+            // Display each line of code with hover events
+            codeBlocks[currentBlockIndex].code.forEach((line, index) => {
+                const lineElement = document.createElement("div");
+                lineElement.innerText = line;
+                lineElement.className = 'code-line';
+                lineElement.onmouseover = () => showExplanation(index);
+                lineElement.onmouseout = () => clearExplanation();
+                codeContainer.appendChild(lineElement);
+            });
+
+            // Update buttons and progress bar
+            updateButtons();
+            updateProgressBar();
+        }
+
+        function updateButtons() {
+            const buttonContainer = document.getElementById("button-container");
+            buttonContainer.innerHTML = '';
+
+            if (currentBlockIndex > 0) {
+                const prevButton = document.createElement("button");
+                prevButton.className = 'button';
+                prevButton.innerText = 'Previous';
+                prevButton.onclick = showPreviousBlock;
+                buttonContainer.appendChild(prevButton);
+            }
+
+            const nextButton = document.createElement("button");
+            nextButton.className = currentBlockIndex === codeBlocks.length - 1 ? 'button button-end' : 'button';
+            nextButton.innerText = currentBlockIndex === codeBlocks.length - 1 ? 'End' : 'Next';
+            nextButton.onclick = currentBlockIndex === codeBlocks.length - 1 ? showCompletion : showNextBlock;
+            buttonContainer.appendChild(nextButton);
+        }
+
+        function updateProgressBar() {
+            const progressBar = document.getElementById("progress-bar");
+            const progress = ((currentBlockIndex + 1) / codeBlocks.length) * 100;
+            progressBar.style.width = progress + "%";
+        }
+
+        function showExplanation(lineIndex) {
+            const explanation = codeBlocks[currentBlockIndex].explanations[lineIndex] || "No explanation available.";
+            document.getElementById("explanation-box").innerText = explanation;
+        }
+
+        function clearExplanation() {
+            document.getElementById("explanation-box").innerText = "Hover over a line to see an explanation.";
+        }
+
+        function showNextBlock() {
+            currentBlockIndex = (currentBlockIndex + 1) % codeBlocks.length;
+            renderCodeBlock();
+        }
+
+        function showPreviousBlock() {
+            if (currentBlockIndex > 0) {
+                currentBlockIndex -= 1;
+                renderCodeBlock();
+            }
+        }
+
+        function showCompletion() {
+            const codeContainer = document.getElementById("code-block");
+            const explanationBox = document.getElementById("explanation-box");
+            const subtopicContainer = document.getElementById("code-subtopic");
+            const buttonContainer = document.getElementById("button-container");
+
+            subtopicContainer.innerText = '';
+            codeContainer.innerHTML = 'You have successfully completed all subtopics.';
+            explanationBox.innerText = '';
+
+            // Reset progress bar and show Retry button
+            updateProgressBar();
+            buttonContainer.innerHTML = '';
+            const retryButton = document.createElement("button");
+            retryButton.className = 'button';
+            retryButton.innerText = 'Retry';
+            retryButton.onclick = () => {
+                currentBlockIndex = 0;
+                renderCodeBlock();
+            };
+            buttonContainer.appendChild(retryButton);
+        }
+
+        document.addEventListener("DOMContentLoaded", renderCodeBlock);
+    </script>
+</body>
+</html>
