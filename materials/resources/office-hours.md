@@ -22,6 +22,7 @@ Please do come to office hours for:
 | 1:00pm - 2:00pm | Maximilian Kuechen |   T222        |
 | 2:00pm - 3:00pm | Marius Minea       |   LGRC A261   |
 | 3:30pm - 4:30pm | Frank Chiu         |   T222        |
+| 4:00pm - 5:00pm   | Adithya Anand |   T222       |
 | 4:30pm - 5:30pm | Liam Mutter        |   T222        |
 | 6:00pm - 7:00pm | Atharva Kale       |   T222        |
 
@@ -32,7 +33,6 @@ Please do come to office hours for:
 | 9:00am - 10:00am  | Angela Upreti   |   [Zoom](https://umass-amherst.zoom.us/j/91483433178)       |
 | 10:00am - 11:00am | Chaolong Tang   |   T222       |
 | 11:00am - noon    | Noah Ford       |   T222       |
-| 12:30pm - 1:30pm   | Adithya Anand |   T222       |
 | 2:30pm - 3:30pm   | Frank Chiu      |   T222       |
 | 5:30pm - 6:30pm   | Atharva Shahane |   T222       |
 | 6:30pm - 7:30pm   | Md Ashraful Islam | LGRT T222  |
