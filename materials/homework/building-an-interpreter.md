@@ -116,30 +116,23 @@ The State type is defined as follows:
 
 ```ts
 type RuntimeValue = number | boolean;
-type State = { [key: string]: State | RuntimeValue };
+const PARENT_STATE_KEY = Symbol("[[PARENT]]");
+export type State = { [PARENT_STATE_KEY]?: State, [key: string]: RuntimeValue }
 ```
 
-This notation indicates that a `State` object has a variable number of properties with values of type `number`, `boolean` (representing values of variables that are in scope), or of type `State` (link to the parent scope).
+This notation indicates that a `State` object has a variable number of properties with  values of type `number` or `boolean` (representing values of variables that are in scope), and an optional property with a specific symbol key and a value of type `State` (link to the parent scope). We have used a [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) (a primitive type different from `string`) to avoid collision with variable names and enable easy type inference (see below).
 
 A block starts a new inner scope. A variable declared in a block will shadow an outer declaration (any variable use will refer to the inner declaration). On exiting a scope, variables declared there are no longer accessible (since we don't have closures). Thus, they should not be in the global state at the end. The nesting of block scopes corresponds to a stack, which you can implement as a linked list, by adding to your `State` object a link to an outer scope. Since the link is just another property, this allows all functions to keep their signatures. To ensure the link name does not clash with a program variable, use a property name that is not an identifier (see given: `PARENT_STATE_KEY`). The global state cannot have extra properties, and does not need a link, as the last state on the list.
 
 #### Accessing Values from State
 
-The `State` type maps arbitrary strings to a `RuntimeValue` or another `State` type. Meaning field access on the state object will result in values of that type.
+The `State` type maps arbitrary strings to a `RuntimeValue` or the symbol `PARENT_STATE_KEY` to another `State` type.
 
 ```ts
 const variableName = "foo";
-const value = state[variableName]; // Compiler infers that `value` is RuntimeValue | State
+const value = state[variableName]; // Compiler infers that `value` is a RuntimeValue (or `undefined`)
+const parent = state[PARENT_STATE_KEY]; // Compiler infers that `parent` is a State (or `undefined`)
 ```
-
-However, you control the structure of your `state` object, and know that only the `PARENT_STATE_KEY` field holds a `State` type. To aid the compiler, you can override its inference using a [type assertion](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions).
-
-```ts
-const variableName = "foo";
-const value = state[variableName] as RuntimeValue; // Compiler accepts that `value` is a `RuntimeValue`
-```
-
-You may come across the complimentary situation where you know the value is defiantly a `State` type. A similar solution follows.
 
 ### Behavior
 
@@ -148,9 +141,7 @@ The behavior of our interpreter should be similar to the `node` interpreter in "
 Exceptions:
 
 - _Arithmetic and greater/less-than comparison may only happen between numbers_
-- _Logical operations may only happen between booleans_
-  - Logical operations should [short-circuit](https://en.wikipedia.org/wiki/Short-circuit_evaluation)
-  - Evaluated operands must be boolean values
+- _Logical operations should [short-circuit](https://en.wikipedia.org/wiki/Short-circuit_evaluation). Evaluated operands must be boolean values_
 - _Division by zero is forbidden_
 - _Additional checks to emulate `ReferenceError` behavior are unneeded_
   - This would require an additional pass prior to interpreting to ensure variables are not used before declaration
