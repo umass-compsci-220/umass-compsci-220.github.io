@@ -62,7 +62,7 @@ Blocks        b ::= { s_1 ... s_n }
 Programs      p ::= s_1 ... s_n
 ```
 
-Some structures (like `Numbers` and `Variables`) have been omitted for simplicity. The actual grammar is defined inside of `./include/grammar.pegjs`. You may take a look at it if you are curious, but you should not need to.
+Some nonterminals (like Numbers and Variables) have been described in words for simplicity. The actual grammar is defined inside of `./include/grammar.pegjs`. You may take a look at it if you are curious, but you should not need to.
 
 Each line of the grammar defines a rule. As an example, the rule
 
