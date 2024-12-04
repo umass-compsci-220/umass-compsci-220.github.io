@@ -4,7 +4,7 @@ sidebar_position: 12
 
 # Discussion 13: Interpreters
 
-Welcome to the twelfth discussion! This week you'll learn more about interpreters!
+Welcome to the thirteenth discussion! This week you'll learn more about interpreters!
 
 ## Materials
 
@@ -12,7 +12,7 @@ Download the lab slides [here](https://github.com/umass-compsci-220/public-mater
 
 The slides with solutions will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%2013%20-%20Solutions.pdf) after the last discussion of the day.
 
-Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/12-interpreters.zip). Make sure to submit this to gradescope, ask your lab leaders to help you if you are unsure of how. We'll also show the process in the first lab.
+Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/13-interpreters.zip). Make sure to submit this to gradescope, ask your lab leaders to help you if you are unsure of how. We'll also show the process in the first lab.
 
 The solution file will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/13-interpreters-solution.ts) after lab.
 
