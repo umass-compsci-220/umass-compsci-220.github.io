@@ -19,7 +19,7 @@ This primer explains key mental models when working with JavaScript, focusing on
   
     - Here, `p` initially references `o`, but when `o` is reassigned, `p` retains the original object reference.
 
-<iframe src='/html/mental-models/ex1.html' width='100%' height='370px'></iframe> 
+<iframe src='/html/mental-models/ex1.html' width='100%' height='385px'></iframe> 
 
 ## 2. Assignment by Value
 
@@ -37,7 +37,7 @@ This primer explains key mental models when working with JavaScript, focusing on
 
     - The function `reassignNumber` doesn’t affect the original `x` since only the value is passed into the function.
 
-<iframe src='/html/mental-models/ex1.html' width='100%' height='370px'></iframe> 
+<iframe src='/html/mental-models/ex1.html' width='100%' height='385px'></iframe> 
 
 ## 3. Function Behavior with Objects
 
@@ -71,7 +71,7 @@ This primer explains key mental models when working with JavaScript, focusing on
 
 These mental models clarify how JavaScript handles objects and functions, reinforcing that objects are not "special" when it comes to passing by value.
 
-<iframe src='/html/mental-models/ex3.html' width='100%' height='420px'></iframe> 
+<iframe src='/html/mental-models/ex3.html' width='100%' height='430px'></iframe> 
 
 ## 4. Functions as First-Class Citizens
 
@@ -86,7 +86,7 @@ These mental models clarify how JavaScript handles objects and functions, reinfo
 
     - Here, `greet` is a function expression assigned to a variable, demonstrating that functions can be stored like any other value.
   
-<iframe src='/html/mental-models/ex4.html' width='100%' height='370px'></iframe> 
+<iframe src='/html/mental-models/ex4.html' width='100%' height='430px'></iframe> 
 
 ## 5. Higher-Order Functions
 
@@ -181,4 +181,4 @@ These mental models clarify how JavaScript handles objects and functions, reinfo
 
     - `inner` can access `outerVar` because it is lexically within the `outer` function scope, reinforcing predictable scoping rules.
 
-<iframe src='/html/mental-models/ex9.html' width='100%' height='450px'></iframe> 
+<iframe src='/html/mental-models/ex9.html' width='100%' height='530px'></iframe> 
