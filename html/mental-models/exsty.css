@@ -27,6 +27,7 @@ body {
     white-space: pre;
     font-family: monospace;
     line-height: 1.5;
+    cursor: default
 }
 .code-line:hover {
     background-color: yellow;

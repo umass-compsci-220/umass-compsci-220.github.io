@@ -69,26 +69,32 @@
                     0: "Defines a function 'secretMessage' with a private variable 'secret'.",
                     1: "Initializes 'secret' with a string value.",
                     2: "Returns an inner function that can access 'secret'.",
-                    3: "Calls 'secretMessage' and assigns the returned function to 'getSecret'.",
-                    4: "Logs the result of calling 'getSecret', revealing the private 'secret'."
+                    3: "When invoked that function returns secret.",
+                    4: "",
+                    5: "",
+                    6: "Calls 'secretMessage' and assigns the returned function to 'getSecret'.",
+                    7: "Logs the result of calling 'getSecret', revealing the private 'secret'."
                 }
             },
-            {
-                subtopic: "Closure with Arguments",
+{
+                subtopic: "Closure with arguments",
                 code: [
                     "function multiplier(factor) {",
                     "    return function(number) {",
                     "        return number * factor;",
                     "    };",
                     "}",
-                    "const triple = multiplier(3);",
-                    "console.log(triple(5));"
+                    "const double = multiplier(2);",
+                    "console.log(double(4));"
                 ],
                 explanations: {
-                    0: "Defines a function 'multiplier' that accepts an argument 'factor'.",
-                    1: "Returns a function that multiplies its argument 'number' by 'factor'.",
-                    2: "Calls 'multiplier' with 3 to create a new function 'triple'.",
-                    3: "Calls 'triple' with 5 and logs the result, which is 15."
+                    0: "Defines a function 'multiplier'",
+                    1: "Returns a function that takes a single input 'number'.",
+                    2: "When invoked with a number, the returned function multiplies it by the factor from the closure.",
+                    3: "",
+                    4: "",
+                    5: "Creates a new function 'double' by calling 'multiplier' with 2.",
+                    6: "Calls 'double' with 4 and logs the result, which is 8."
                 }
             },
             {
@@ -106,12 +112,16 @@
                     "console.log(counter.decrement());"
                 ],
                 explanations: {
-                    0: "Defines a function 'createCounter' with a local variable 'count'.",
-                    1: "Returns an object containing two functions: 'increment' and 'decrement'.",
-                    2: "Each function modifies and returns the current value of 'count'.",
-                    3: "Calls 'createCounter' and assigns the result to 'counter'.",
-                    4: "Logs the result of calling 'counter.increment', which increments 'count'.",
-                    5: "Logs the result of calling 'counter.decrement', which decrements 'count'."
+                    0: "Defines a function 'createCounter'.",
+                    1: "Declares and initializes variable 'count' to 0. It is accessible in the functions scope.",
+                    2: "Returns an object containing two functions: 'increment' and 'decrement'.",
+                    3: "Each function modifies and returns the current value of 'count'.",
+                    4: "Each function modifies and returns the current value of 'count'.",
+                    5: "",
+                    6: "",
+                    7: "Calls 'createCounter' and assigns the result to 'counter'.",
+                    8: "Logs the result of calling 'counter.increment', which increments 'count'.",
+                    9: "Logs the result of calling 'counter.decrement', which decrements 'count'."
                 }
             }
         ];
