@@ -37,7 +37,7 @@ This primer explains key mental models when working with JavaScript, focusing on
 
     - The function `reassignNumber` doesn’t affect the original `x` since only the value is passed into the function.
 
-<iframe src='/html/mental-models/ex1.html' width='100%' height='385px'></iframe> 
+<iframe src='/html/mental-models/ex2.html' width='100%' height='410px'></iframe> 
 
 ## 3. Function Behavior with Objects
 
