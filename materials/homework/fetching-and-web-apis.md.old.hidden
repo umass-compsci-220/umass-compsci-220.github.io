@@ -6,11 +6,6 @@ sidebar_position: 7
 
 There is no zip file containing the starter code to download. The remote GitHub repository you were invited to contains the starter code for the assignment.
 
-:::warning
-
-You must first uninstall the VSCode Extension "Jest" by Orta if you have this installed on your IDE. Use the extension [Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner) instead. Failure to do so will result in your tests failing often. See [Rate Limiting](#rate-limiting) section for details.
-:::
-
 ## Overview
 
 During this project, you will work as a group to complete an application that collects weather data for universities. You will query various web interfaces to collect information that will be either passed along as arguments to other interfaces or analyzed on its own.
@@ -58,11 +53,11 @@ Once you have git, you need to setup authorization for GitHub on your local mach
 
 The setup is different depending on whether you're using Windows, macOS, or Linux. The initial setup steps are as follows:
 
-#### Linux setup:
+Linux setup:
 1. Run: `sudo apt update`
 2. Run: `sudo apt install gh`
 
-#### macOS setup:
+macOS setup:
 1. Install brew (https://brew.sh/) by running this script in your terminal
     - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 2. **IMPORTANT:** Follow the "Next steps" section in the output after the above script:
@@ -71,13 +66,11 @@ The setup is different depending on whether you're using Windows, macOS, or Linu
 </p>
 3. Run `brew install gh`
 
-#### Windows setup:
+Windows setup:
 1. Open Powershell
 2. Run: `winget install --id GitHub.cli`
 3. Click ok/continue in installer & wait for install
 4. Restart Powershell
-
-#### Login to Github w/ the Github CLI
 
 After setup, run `gh` in your terminal to see if the install worked properly (if it says something to the effect of 'command not found', then it did not install properly). If you're using Powershell, make sure to restart it before trying to run `gh`.
 
@@ -118,13 +111,13 @@ https://www.google.com/maps
 https://www.google.com/search?q=how+to+exit+vim
 ```
 
-URLs have a specific structure, which tell both the browser and the eventual web server what the request means.
+URLs have a specific structure, which tell both the browser, and the eventual web server, what the request means.
 
 ![URL](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL/mdn-url-all.png)
 
 - **The scheme** documents the protocol the network request should use
   - The web uses `https` or `http`
-- **The authority** documents where the server that will process our request lives
+- **The authority** documents where server that will process our request lives
   - Consists of the domain name and the port
     - The domain maps to a number (called the IP address) that is used to find the web server on the internet
     - The port is a wellknown number that describes where to talk to the web server once you reach the machine
@@ -224,10 +217,6 @@ When using publicly available APIs (the ones we are using in this homework), mak
 For this HW we have set up a caching server at [https://220.maxkuechen.com/](https://220.maxkuechen.com/). This server will relay requests to the proper APIs and will [cache](<https://en.wikipedia.org/wiki/Cache_(computing)>) the response for some period. As a result we are requesting information from the actual API much less frequently. While once API call is very cheap, think about how often your tests and autograder tests get run over the course of the HW for 200+ students.
 
 In this HW you will be working with the [geocode](https://geocode.maps.co/) API, the [universites](https://github.com/Hipo/university-domains-list) API, and the [weather](https://open-meteo.com) API, as well as other APIs you choose yourself. Feel free to read their respective docs. You will be interacting with these APIs through our caching server. Each programming task outlines what endpoint to fetch the data from.
-
-##### Jest Extension by Orta
-
-The Jest Extension by Orta automatically runs all your test cases each time you make a code change. This results in API calls, which as explained above, is not ideal. Please disable this extension, and use [Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner) instead.
 
 ## Testing
 
@@ -456,7 +445,7 @@ You will see this option to delete the branch after merging. **Do not** delete t
 - If you mess something up on a branch (this could be main), remember that you can always revert to a prior commit.
 - GitHub allows you to view a branch's commit history.
 - If you encounter any merge conflicts when resolving your pull requests, refer to the [documentation here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) on how to handle them.
-- While git is very powerful, it's also complex, and everyone has trouble using it time-to-time - so don't be discouraged! Reach out to your teammates first (this is group work!), and if things still don't work, ask, ideally directly in office hours.
+- While git is very powerful, it's also complex, and everyone has trouble using it time-to-time - so don't be discouraged!
 
 ## Resources
 
@@ -489,7 +478,7 @@ export function fetchGeoCoord(query: string): Promise<GeoCoord> {
 
 This function should take in a query string and return a `Promise` that fulfils with the first geo-coordinate result. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message. The above interface tells you what the object looks like (note that interfaces are a feature of TypeScript and are not in JavaScript).
 
-Use the following API, <https://220.maxkuechen.com/geoCoord/search?q=query+goes+here>, to retrieve your results. The base URL should be `"https://220.maxkuechen.com"` and there should be one URL search parameter `q` for the query. This API returns an array of objects containing a `lon`, `lat`, and `importances` field.
+Use the following API, <https://220.maxkuechen.com/geoCoord/search?q=query+goes+here>, to retrieve your results. The base URL should be `"https://220.maxkuechen.com"` and there should be one URL search parameter `"q"` for the query. This API returns an array of objects containing a `lon`, `lat`, and `importances` field.
 
 See the [getting started section on queries](#urls-and-parameters) if you are confused. Use the [`Number.parseFloat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseFloat) function to convert to a number if needed.
 
@@ -522,9 +511,9 @@ export function fetchCurrentTemperature(coords: GeoCoord): Promise<TemperatureRe
 }
 ```
 
-This function should take in a longitude and latitude and return a `Promise` that fulfils with an object. The object should have two fields called `time` and `temperature_2m`. The `time` field should be an array of times and the `temperature_2m` should be an array of corresponding temperature measurements. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message. The above interface tells you what the object looks like (note that interfaces are a feature of TypeScript and are not in JavaScript).
+This function should take in a longitude and latitude and return a `Promise` that fulfils with an object. The object should have two fields called `time` and `temperature_2m`. The `time` field should be an array of times and the `"temperature_2m"` should be an array of corresponding temperature measurements. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message. The above interface tells you what the object looks like (note that interfaces are a feature of TypeScript and are not in JavaScript).
 
-Use the <https://220.maxkuechen.com/currentTemperature/forecast?latitude=40&longitude=40&hourly=temperature_2m&temperature_unit=fahrenheit> API to retrieve your result. It has `latitude` and `longitude` parameters. You should set the `hourly` parameter to `temperature_2m`, and the `temperature_unit` parameter to `fahrenheit`.
+Use the <https://220.maxkuechen.com/currentTemperature/forecast?latitude=40&longitude=40&hourly=temperature_2m&temperature_unit=fahrenheit> API to retrieve your result. It has `"latitude"` and `"longitude"` parameters. You should set the `"hourly"` parameter to `"temperature_2m"`, and the `"temperature_unit"` parameter to `"fahrenheit"`.
 
 #### `tempAvgAboveAtCoords`
 
@@ -552,7 +541,7 @@ export function fetchUniversities(query: string): Promise<string[]> {
 
 This function should take in a query string and return a `Promise` that fulfils with an array of university names. If the `ok` property of the returned [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object is false, it should reject with an `Error` with the `statusText` property of [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as its error message.
 
-Use the following API, <https://220.maxkuechen.com/universities/search?name=name+query+goes+here>, retrieve your result. It has a `name` parameter to search for universities with a similar name. **If there are no results (the returned JSON is an empty array), resolve to an empty array.**
+Use the following API, <https://220.maxkuechen.com/universities/search?name=name+query+goes+here>, retrieve your result. It has a `"name"` parameter to search for universities with a similar name. **If there are no results (the returned JSON is an empty array), resolve to an empty array.**
 
 #### `universityNameLengthOrderAscending`
 
@@ -570,7 +559,7 @@ You will need to write mock tests for this function since the order of universit
 
 - This function should be done as a group, after each member has completed their individual tasks
 
-Write a function, inside of `./src/universityWeather.js`, with the following type signature:
+Write a function with, inside of `./src/universityWeather.js`, the following type signature:
 
 ```ts
 interface AverageTemperatureResults {
@@ -666,7 +655,7 @@ Pick something interesting and try to have fun with it. As long as you meet the 
 
 You are not required to write tests for this code, however your code should execute without errors and work as intended.
 
-### If you are worried about being rate limited with the API you have choosen
+### If you are worried about being rate limited with the api you have choosen
 
 If you would like to cache the results of an API call to an API of your choice, you can use the 220 caching server that we described in the [Rate Limiting Section](#rate-limiting). Here is an example of the URL for caching the [https://www.boredapi.com](https://www.boredapi.com).
 
