@@ -18,7 +18,7 @@ Please do come to office hours for:
 
 | **Time**         | **Staff**           | **Location**  |
 |------------------|---------------------|---------------|
-| 10:00am - noon   | Angela Upreti       |   [Zoom](tbd) |
+| 10:00am - noon   | Angela Upreti       |   [Zoom](#)   |
 | 12:00pm - 1:00pm | Carey Pope          |   T222        |
 | 2:00pm - 3:00pm  | Marius Minea        |   LGRC A261   |
 | 4:00pm - 5:00pm  | Hannah Carey        |   T222        |
@@ -61,5 +61,5 @@ Please do come to office hours for:
 | 10:00am - 11:00am | Shruti Chanumol  |   T222        |
 | 11:00am - 1:00pm  | Peter Tran       |   LGRC A261   |
 | 4:00pm - 5:00pm   | Kevin Chen       |   T222        |
-| 5:30am - 6:30pm   | Angela Upreti    |   [Zoom](tbd) |
-| 6:30pm - 7:30pm   | Carey Pope       |   [Zoom](tbd) |
+| 5:30am - 6:30pm   | Angela Upreti    |   [Zoom](#)   |
+| 6:30pm - 7:30pm   | Carey Pope       |   [Zoom](#)   |
