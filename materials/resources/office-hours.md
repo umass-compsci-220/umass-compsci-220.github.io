@@ -58,7 +58,7 @@ Please do come to office hours for:
 
 | **Time**          | **Staff**        | **Location**  |
 |-------------------|------------------|---------------|
-| 10:00am - 11:00am | Shruti Chanumol  |   T222        |
+| 10:00am - 11:00am | Shruti Chanumolu  |   T222        |
 | 11:00am - 1:00pm  | Peter Tran       |   LGRC A261   |
 | 4:00pm - 5:00pm   | Kevin Chen       |   T222        |
 | 5:30am - 6:30pm   | Angela Upreti    |   [Zoom](https://umass-amherst.zoom.us/j/99190937285)   |
