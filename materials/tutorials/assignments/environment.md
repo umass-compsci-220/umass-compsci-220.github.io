@@ -18,7 +18,7 @@ Before taking this course, you will need to download various pieces of software.
 
 - Read [Installing Node.js and NPM](#installing-nodejs-and-npm) for instructions
 - Optionally read [About Node.js and NPM](#about-nodejs-and-npm) for details
-- **Note: Please make sure you have at least `node` version greater than or equal to v16 and less than 20**
+- **Note: Please make sure you have at least `node` version greater than or equal to v16**
 
 **2. Install Git**
 
@@ -59,8 +59,8 @@ External Tutorials:
 Text Tutorial (Windows and macOS):
 
 - Go to the [Node.js download page](https://nodejs.org/en/download/) to download the installer for your system
-  - **Make sure to choose the LTS option (v18 as of writing)**
-  - **Homeworks need at least v16, and less than v20**
+  - **Make sure to choose the LTS option (v22 as of writing)**
+  - **Homeworks need at least v16**
   - Windows: Choose the Windows Installer (.msi)
     - If you don't know if you are 64-bit or 32-bit, [use this Microsoft Support Page](https://support.microsoft.com/en-us/topic/determine-whether-your-computer-is-running-a-32-bit-version-or-64-bit-version-of-the-windows-operating-system-1b03ca69-ac5e-4b04-827b-c0c47145944b)
   - macOS: Choose the macOS Installer (.pkg)

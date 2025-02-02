@@ -8,7 +8,7 @@ sidebar_position: 1
 
 -   Please download the homework starter file [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/01-image-processing.zip).
 -   If you need help installing [VSCode](https://code.visualstudio.com/) and [Node.js](https://nodejs.org/) (required for this course), read [this page](/materials/tutorials/assignments/environment).
-    -   **You will need a Node.js version starting from v16 and less than v21**
+    -   **You will need a Node.js version greater than at least v16**
 -   If you need help opening the project, read [this page](/materials/tutorials/assignments/opening-an-assignment).
 -   **After opening, run `npm install` in a VSCode terminal**
 -   You may edit any file inside of `./src/`, **DO NOT make any edits to any file inside of `./include/`**
