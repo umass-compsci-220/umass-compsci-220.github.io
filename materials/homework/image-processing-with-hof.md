@@ -31,7 +31,8 @@ Students will be graded on their ability to:
   - See the section on [linting and formatting assignments](/materials/tutorials/assignments/linting-and-formatting) for more details
 - Follow the [coding](/materials/guidelines/syntax-and-code), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
 - Design full-coverage [unit-tests](#testing) for the functions they implemented
-  - **There will be credited grading for this (12.5%)**
+  - **There will be credited grading for coverage (7.5%)**
+  - **There will be credited grading for design (15%)**
   - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage
 - Avoid unnecessary code duplication wherever possible
   - **This will be manually graded**
@@ -50,7 +51,7 @@ All interfaces are the same as the previous assignment. Please review the ["Gett
 
 ## Testing
 
-As with Homework 1, you are expected to write your own tests. To help you get started, we have provided a few test cases inside of `imageProcessingHOF.test.ts`. It is up to you to define additional tests to check your solution for correctness. As always, try writing some tests before you start coding.
+As with Homework 1, you are expected to write your own tests. To help you get started, we have provided a few test cases inside of `imageProcessingHOF.test.ts`. It is up to you to define additional tests to check your solution for correctness. As always, try writing some tests before you start coding. **You must write you tests in the provided describe statements**.
 
 ### Changing How We Compare Colors
 
