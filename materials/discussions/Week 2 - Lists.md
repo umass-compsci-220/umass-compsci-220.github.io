@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
-# Discussion 3: Lists
+# Discussion 2: Lists
 
 Welcome to the second discussion! This week you'll learn more about Lists and we'll review reduce.
 
