@@ -104,11 +104,11 @@ Write a function that takes a List of numbers, assumed to be increasingly ordere
 
 ### `deleteFirst`
 
-Write a function that takes a list of some type `T` and a value `val` of type `T`. The function should return a list where the first occurrence of `val` (if any) has been deleted. The result should share as many nodes as possible with the argument list.
+Write a function that takes a list of some type `T` and a value `val` of type `T`. The function should return a list with all elements of the given list, in the same order, except the first occurrence of `val` (if it exists). The result should share as many nodes as possible with the given list.
 
 ### `deleteLast`
 
-Write a function that takes a list of some type `T` and a value `val` of type `T`. The function should return a list where the last occurrence of `val` (if any) has been deleted. The result should share as many nodes as possible with the argument list.
+Write a function that takes a list of some type `T` and a value `val` of type `T`. The function should return a list with all elements of the given list, in the same order, except the last occurrence of `val` (if it exists). The result should share as many nodes as possible with the given list.
 
 ### `squashList`
 
