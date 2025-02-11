@@ -19,20 +19,20 @@ Please do come to office hours for:
 | **Time**         | **Staff**           | **Location**                                        |
 | ---------------- | ------------------- | --------------------------------------------------- |
 | 10:00am - noon   | Angela Upreti       | [Zoom](https://umass-amherst.zoom.us/j/99190937285) |
-| 12:00pm - 1:00pm | Carey Pope          | T222                                                |
+| noon - 1:00pm    | Carey Pope          | T222                                                |
 | 2:00pm - 3:00pm  | Marius Minea        | LGRC A261                                           |
 | 4:00pm - 5:00pm  | Hannah Carey        | T222                                                |
 | 5:00pm - 6:00pm  | Phoenix Ganz-Ratzat | T222                                                |
 
 ## Tuesday
 
-| **Time**          | **Staff**        | **Location** |
-| ----------------- | ---------------- | ------------ |
-| 9:00am - 11:00am  | Shruti Chanumolu | T222         |
-| 11:30am - 12:30pm | Advaya Venbakkam | T222         |
-| 1:00pm - 2:00pm   | Peter Tran       | T222         |
-| 2:00pm - 3:00pm   | Manu Hegde       | T222         |
-| 6:30pm - 7:30pm   | Vinayak Rao      | T222         |
+| **Time**          | **Staff**        | **Location**                                                 |
+| ----------------- | ---------------- | ------------------------------------------------------------ |
+| 9:00am - 11:00am  | Shruti Chanumolu | [Zoom](https://umass-amherst.zoom.us/j/94437054745)          |
+| 11:30am - 12:30pm | Advaya Venbakkam | T222                                                         |
+| 1:00pm - 2:00pm   | Peter Tran       | T222                                                         |
+| 2:00pm - 3:00pm   | Manu Hegde       | T222                                                         |
+| 6:30pm - 7:30pm   | Vinayak Rao      | T222                                                         |
 
 ## Wednesday
 
@@ -60,6 +60,6 @@ Please do come to office hours for:
 | ----------------- | ---------------- | --------------------------------------------------- |
 | 10:00am - 11:00am | Shruti Chanumolu | T222                                                |
 | 11:00am - 1:00pm  | Peter Tran       | T222                                                |
+| 1:00pm - 2:00pm   | Carey Pope       | T222                                                |
 | 4:00pm - 5:00pm   | Kevin Chen       | T222                                                |
-| 5:30am - 6:30pm   | Angela Upreti    | [Zoom](https://umass-amherst.zoom.us/j/99190937285) |
-| 6:30pm - 7:30pm   | Carey Pope       | [Zoom](https://umass-amherst.zoom.us/j/2234458453)  |
+| 5:30pm - 6:30pm   | Angela Upreti    | [Zoom](https://umass-amherst.zoom.us/j/99190937285) |
