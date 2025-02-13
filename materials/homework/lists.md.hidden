@@ -4,17 +4,16 @@ sidebar_position: 3
 
 # Lists and Closures
 
-- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/03-lists-and-closures.zip).
+- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/03-lists.zip).
 - You may edit any file inside of `./src/`, **DO NOT make any edits to any file inside of `./include/`**
 
 ## Overview
 
-In this assignment, you will work with lists and closures.
+In this assignment, you will work with lists.
 
 ### Learning Objectives
 
 - Practice writing and reasoning about lists
-- Practice writing and reasoning about closures
 - Practice writing and reasoning with recursion
 
 ### Student Expectations
@@ -50,6 +49,18 @@ It may not be obvious how to implement some of the functions. Try writing some t
 
 - Some of the functions you are asked to write are related. Avoid code duplication by identifying the common elements.
 
+### `insertOrdered`
+
+Takes a list of numbers, assumed to be increasingly ordered, and a number `x`. Returns a new list where `x` has been inserted in the appropriate position. Allow insertion of existing numbers.
+
+### `everyNRev`
+
+Write a function that takes a list of some type `T` and a number `n` (assumed to be a positive integer). It should return a list containing every nth element from the input list, in reverse order (the nth element appears last, the 2nth before it, ...). Use `List.reduce`.
+
+### `everyNCond`
+
+Write a function that takes a list of some type `T`, a number `n` (assumed to be a positive integer), and a function `cond: (e: T) => boolean`. It should return a list containing every `n`th element of those that satisfy `cond`, in the original order.
+
 ### `keepTrendMiddles`
 
 Takes in a list of numbers and a function `allSatisfy: (prev: number, curr: number, next: number) => boolean`. Returns a list of numbers, keeping only those numbers `curr` from the original list that have adjacent values `prev` and `next` so that `allSatisfy` returns true when applied to the numbers in the given order.
@@ -67,18 +78,6 @@ Take a list of numbers and returns a list of numbers where only the local minima
 Take a list of numbers and returns a list of numbers that includes only the local minima and maxima from the original list, in the same order.
 
 #### Note: For the above three functions you must use `keepTrendMiddles`. Reduce code duplication among them.
-
-### `everyNList`
-
-Write a function that takes a list of some type `T` and a number `n` (assumed to be a positive natural). It should return a list containing every nth element from the input list (the nth, 2nth, 3nth, ...), in the original order.
-
-### `everyNRev`
-
-Write a function that takes a list of some type `T` and a number `n` (assumed to be a positive natural). It should return a list containing every nth element from the input list, in reverse order (the nth element appears last, the 2nth before it, ...). Use `List.reduce`. Do not use `everyNList`, though you may use this function to implement `everyNList`.
-
-### `everyNCond`
-
-Write a function that takes a list of some type `T`, a number `n` (assumed to be a positive integer), and a function `cond: (e: T) => boolean`. It should return a list containing every `n`th element of those that satisfy `cond`, in the original order.
 
 ### `nonNegativeProducts`
 
@@ -98,10 +97,6 @@ Write a function that takes a list of numbers and returns a list of numbers. For
 
 #### You should write a helper function to reduce the code duplication between the functions `nonNegativeProducts` and `negativeProducts`.
 
-### `insertOrdered`
-
-Write a function that takes a List of numbers, assumed to be increasingly ordered, and a number `x`. Return a new list where `x` has been inserted in the appropriate position. Allow insertion of existing numbers.
-
 ### `deleteFirst`
 
 Write a function that takes a list of some type `T` and a value `val` of type `T`. The function should return a list with all elements of the given list, in the same order, except the first occurrence of `val` (if it exists). The result should share as many nodes as possible with the given list.
@@ -115,14 +110,6 @@ Write a function that takes a list of some type `T` and a value `val` of type `T
 Write a function that takes as input a list where each element is either a `number` or a `List<number>`. Return a list of numbers where each element that is a list is replaced by the sum of its elements.
 
 - Hint: The [typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) operator may be useful.
-
-### `composeList`
-
-Write a function that takes as input a list of functions, potentially empty. Each function has the signature `T => T`. Return a function with the signature `T => T` that when called on a value of type `T` will return the value obtained by successively applying all functions in the list, in order. Do not use loops.
-
-### `composeFunctions`
-
-Write a function that takes as input an array of functions of type `(x: T) => T`, potentially empty, and returns a closure that takes a value `v: T` and returns an array of the values obtained by starting with `v` and successively applying zero, one, two, ..., all functions of the array. That is, the array returned by the closure is `[v, f0(v), f1(f0(v)), ...]` if the array of functions is `[f0, f1, ...]`.
 
 ## Submitting
 
