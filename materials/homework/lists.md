@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Lists and Closures
+# Lists
 
 - Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/03-list-ADT.zip).
 - You may edit any file inside of `./src/`, **DO NOT make any edits to any file inside of `./include/`**
