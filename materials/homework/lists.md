@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Lists
 
-- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/03-list-ADT.zip).
+- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/03-list-adt.zip).
 - You may edit any file inside of `./src/`, **DO NOT make any edits to any file inside of `./include/`**
 
 ## Overview
