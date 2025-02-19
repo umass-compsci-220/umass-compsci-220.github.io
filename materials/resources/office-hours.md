@@ -42,7 +42,7 @@ Please do come to office hours for:
 | 1:00pm - 2:00pm | Marius Minea       | LGRC A261    |
 | 2:00pm - 4:00pm | Kevin Chen         | T222         |
 | 4:30pm - 6:30pm | Atharva Shahane    | T222         |
-| 6:00pm - 7:00pm | Adithya Anand      | T222         |
+| 6:30pm - 7:30pm | Adithya Anand      | T222         |
 | 6:30pm - 8:30pm | Maximilian Kuechen | T222         |
 
 ## Thursday
