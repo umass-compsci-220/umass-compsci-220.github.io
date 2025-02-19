@@ -1,0 +1,81 @@
+---
+sidebar_position: 4
+---
+
+# Lists and Closures
+
+## Programming Tasks
+
+### `composeList`
+
+Write a function that takes a list of functions of type `T => T` and returns a new function of type `T => T` that
+applies all functions in the list. _Do not use loops._
+
+#### Example
+
+- **Input**: `Math.abs -> Math.sqrt -> (x => -x)`
+- **Output**: `x => -Math.sqrt(Math.abs(x))`
+
+### `composeFunctions`
+
+Write a function that takes an array of functions of type `(T, U) => T` and returns a closure of type `U => (T => T)`.
+The returned function of the closure applies all functions in the array with the input to the closure as the second
+argument. _Do not use loops._
+
+#### Example
+
+- **Input**: `[Math.pow, Math.min, (x, y) => x + y]`
+- **Output**: `y => (x => Math.min(Math.pow(x, y), y) + y`
+
+### `enumRatios`
+
+Write a function that returns a closure with no arguments. On each call, the closure should return a new rational number
+from the sequence:
+
+- 1 / 1,
+- 2 / 1, 1 / 2,
+- 3 / 1, 2 / 2, 1 / 3,
+- 4 / 1, 3 / 2, 2 / 3, 1 / 4, ...
+
+where the numbers are ordered in increasing sum of numerator and denominator, with decreasing numerator in each group.
+
+Do not repeat numbers, e.g., omit 2 / 2 since it is equal to 1 / 1.
+
+### `cycleArr`
+
+Write a function that takes an array of arrays and returns an iterator that yields all array elements as follows:
+
+- first element of each array,
+- second element of each array, etc., until all elements are exhausted.
+
+Skip arrays that have been exhausted.
+
+#### Example
+
+- **Input**: `[[1, 2, 3], [4, 5], [6, 7, 8, 9]]`
+- **Output**: `1, 4, 6, 2, 5, 7, 3, 8, 9`
+
+### `dovetail`
+
+Write a function that takes an array of lists and returns an iterator that yields all list elements as follows:
+
+- one element from the first list,
+- two more elements, one from each of the first two lists,
+- three more elements, one from each of the first three lists, etc., util all elements are exhausted.
+
+Skip lists that don't exist (numbered higher than the array length) and lists that have been exhausted.
+
+#### Example
+
+- **Input**: `[1 -> 2 -> 3, 4 -> 5, 6 -> 7 -> 8 -> 9]`
+- **Output**: `1, 2, 4, 3, 5, 6, 7, 8, 9`
+
+## Submission
+
+Use the following command to build a zip file:
+
+```shell
+npm run build:submission
+```
+
+Please upload the zip file created by the command to Gradescope.
