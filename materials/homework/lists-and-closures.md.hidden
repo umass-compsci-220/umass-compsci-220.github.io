@@ -4,19 +4,55 @@ sidebar_position: 4
 
 # Lists and Closures
 
+- Please download the project [here].
+- You may edit any file inside `./src`. **DO NOT make any edits to any file inside `./include`.**
+
+## Overview
+
+### Learning Objectives
+
+- Practice working with and reasoning about lists.
+- Practice working with and reasoning about closures.
+- Practice working with and reasoning about higher-order functions.
+
+### Student Expectations
+
+Students will be graded on their ability to:
+
+- Correctly implement the [programming tasks](#programming-tasks).
+- Resolve all linter warnings.
+- Follow
+  the [syntax and code](/materials/guidelines/syntax-and-code), [bad practices](/materials/guidelines/bad-practices)
+  and [testing](/materials/guidelines/testing) guidelines.
+- Design full-coverage unit tests for the functions they implemented.
+    - See the [testing guidelines on coverage](/materials/guidelines/testing#coverage) for more details.
+    - Make sure you are calling all functions, including functions returned by functions you write.
+
+## Testing
+
+You must write tests for all your functions, following the principles used so far.
+
+- [Testing tutorial](/materials/tutorials/assignments/testing)
+- [Testing guidelines](/materials/guidelines/testing)
+
+It may not be obvious how to implement some of the functions. Try writing some tests first.
+
 ## Programming Tasks
 
 ### `composeList`
 
-Write a function that takes a list of functions of type `T => T` and returns a new function of type `T => T` that
-applies all functions in the list. _Do not use loops._
-
-#### Example
-
-- **Input**: `Math.abs -> Math.sqrt -> (x => -x)`
-- **Output**: `x => -Math.sqrt(Math.abs(x))`
+Write a function that takes as input a list of functions, potentially empty. Each function has the signature `T => T`.
+Return a function with the signature `T => T` that when called on a value of type `T` will return the value obtained by
+successively applying all functions in the list, in order. _Do not use loops._
 
 ### `composeFunctions`
+
+Write a function that takes as input an array of functions of type `(x: T) => T`, potentially empty, and returns a
+closure that takes a value `v: T` and returns an array of the values obtained by starting with `v` and successively
+applying zero, one, two, ..., all functions of the array. That is, the array returned by the closure is
+`[v, f0(v), f1(f0(v)), ...]` if the array of functions is `[f0, f1, ...]`.
+
+### `composeReduce`
 
 Write a function that takes an array of functions of type `(T, U) => T` and returns a closure of type `U => (T => T)`.
 The returned function of the closure applies all functions in the array with the input to the closure as the second
