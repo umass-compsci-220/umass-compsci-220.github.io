@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 2  # Previously discussion 3, changed for Spring 2025 semester due to schedule
 ---
 
 # Discussion 2: Lists
@@ -8,13 +8,13 @@ Welcome to the second discussion! This week you'll learn more about Lists and we
 
 ## Materials
 
-Download the lab slides [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%203%20-%20No%20Solutions.pdf).
+Download the lab slides [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%202%20-%20No%20Solutions.pdf).
 
-The slides with solutions will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%203%20-%20Solutions.pdf) after the last discussion of the day.
+The slides with solutions will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%202%20-%20Solutions.pdf) after the last discussion of the day.
 
-Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/03-lists.zip). Make sure to submit this to gradescope, ask your lab leaders to help you if you are unsure of how. We'll also show the process in the first lab.
+Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/02-lists.zip). Make sure to submit this to gradescope, ask your lab leaders to help you if you are unsure of how. We'll also show the process in the first lab.
 
-The solution file will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/03-lists-solution.ts) after lab.
+The solution file will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/02-lists-solution.ts) after lab.
 
 ## Opening and working with the starter code
 
