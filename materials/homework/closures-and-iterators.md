@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Closures and Iterators
 
-- Please download the project [here].
+- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/04-closures-iterators.zip).
 - You may edit any file inside `./src`. **DO NOT make any edits to any file inside `./include`.**
 
 ## Overview
