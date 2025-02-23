@@ -91,7 +91,7 @@ Write a function that takes an array of lists and returns an iterator that yield
 - two more elements, one from each of the first two lists,
 - three more elements, one from each of the first three lists, etc., util all elements are exhausted.
 
-Skip lists that don't exist (numbered higher than the array length) and lists that have been exhausted.
+Simply omit any elements that don't exist (from lists that have been exhausted, or are numbered higher than the array length).
 
 #### Example
 
