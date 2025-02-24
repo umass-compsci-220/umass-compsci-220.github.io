@@ -55,7 +55,7 @@ applying zero, one, two, ..., all functions of the array. That is, the array ret
 
 Write a function that takes an array of functions `(arg1: T, arg2: U) => T`, potentially empty, as input.
 It returns a closure that takes an input `in: U` and returns a function `T => T`. 
-The returned closure is equivalent to fixing `arg2` as `in` for all functions, and applying them successively
+The returned closure is equivalent to using `arg2` as `in` for all functions, and applying them successively
 to an input `T` as `arg1`, using the result of the previous function as input. _Do not use loops._
 
 ### `enumRatios`
