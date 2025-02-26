@@ -89,7 +89,10 @@ Write a function that takes an array of lists and returns an iterator that yield
 
 - one element from the first list,
 - two more elements, one from each of the first two lists,
-- three more elements, one from each of the first three lists, etc., util all elements are exhausted.
+- ...
+- k more elements, one from each of the first k lists
+- ...
+until all elements are exhausted.
 
 Simply omit any elements that don't exist (from lists that have been exhausted, or are numbered higher than the array length).
 
