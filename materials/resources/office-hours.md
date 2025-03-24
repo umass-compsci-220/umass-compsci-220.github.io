@@ -32,6 +32,7 @@ Please do come to office hours for:
 | 11:30am - 12:30pm | Advaya Venbakkam | T222                                                         |
 | 1:00pm - 2:00pm   | Peter Tran       | T222                                                         |
 | 2:00pm - 3:00pm   | Manu Hegde       | T222                                                         |
+| 3:00pm - 4:00pm   | Adithya Anand    | T222                                                         |
 | 6:30pm - 7:30pm   | Vinayak Rao      | T222                                                         |
 
 ## Wednesday
@@ -43,7 +44,6 @@ Please do come to office hours for:
 | 1:00pm - 2:00pm    | Marius Minea                    | LGRC A261    |
 | 2:00pm - 4:00pm    | Kevin Chen                      | T222         |
 | 4:30pm - 6:30pm    | Atharva Shahane                 | T222         |
-| 6:30pm - 7:30pm    | Adithya Anand                   | T222         |
 | 6:30pm - 8:30pm    | Maximilian Kuechen              | T222         |
 
 ## Thursday
