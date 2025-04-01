@@ -41,7 +41,7 @@ Please do come to office hours for:
 | ------------------ | ------------------------------- | ------------ |
 | 10:00am - 11:00am  | Venkatraman Varatharajan        | T222         |
 | 11:00am - noon     | Wenhao Yang                     | T222         |
-| 1:00pm - 2:00pm    | Marius Minea                    | LGRC A261    |
+| 2:30pm - 3:30pm    | Marius Minea                    | LGRC A261    |
 | 2:00pm - 4:00pm    | Kevin Chen                      | T222         |
 | 4:30pm - 6:30pm    | Atharva Shahane                 | T222         |
 | 6:30pm - 8:30pm    | Maximilian Kuechen              | T222         |
