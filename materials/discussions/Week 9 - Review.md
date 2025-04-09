@@ -2,7 +2,7 @@
 sidebar_position: 10
 ---
 
-# Discussion 10: Midterm 2 Review
+# Discussion 9: Midterm 2 Review
 
 Welcome to the tenth discussion! This week we'll review for the midterm.
 
