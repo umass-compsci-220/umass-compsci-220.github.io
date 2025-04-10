@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Fluent Filter and JSON
 
-- Please download the homework [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/06-fluent-filter-and-json.zip)
+- Please download the homework [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/07-fluent-filter-and-json.zip)
 
 ## Overview
 
