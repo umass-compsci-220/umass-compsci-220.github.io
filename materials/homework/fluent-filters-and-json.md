@@ -299,7 +299,7 @@ Create and implement the following methods in the `FluentBusinesses` class (in `
 
 **You may not:**
 
-- Use any `for`, `while`, `do-while`, or `.forEach(...)` loops
+- Use any `for`, `while`, `do-while` loops, or the `.forEach(...)` method
 - Use duplicate code across numerous methods (you will need to define helper methods)
 - Assume anything about the structure of an object in the data set (fields may, or may not, be present)
 
