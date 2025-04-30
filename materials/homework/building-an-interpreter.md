@@ -1,10 +1,10 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 # Building an Interpreter
 
-- Please download the homework from [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/08-building-an-interpreter.zip)
+- Please download the homework from [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/09-building-an-interpreter.zip)
 
 ## Overview
 
