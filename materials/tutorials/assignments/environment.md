@@ -4,7 +4,7 @@ sidebar_position: 0
 
 # Development Environment
 
-Before taking this course, you will need to download various pieces of software. This page will guide you through that process in a beginner-friendly manner. If you have any issues configuring your system, please seek help as soon as possible. You have the internet, office hours, and Campuswire at your disposal.
+Before taking this course, you will need to download various pieces of software. This page will guide you through that process in a beginner-friendly manner. If you have any issues configuring your system, please seek help as soon as possible. You have the internet, office hours, and EDSTEM at your disposal.
 
 ## Getting Started
 
