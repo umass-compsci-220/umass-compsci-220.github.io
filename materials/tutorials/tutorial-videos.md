@@ -20,8 +20,9 @@ You can download the starter code and follow along [here](https://github.com/uma
 
 ### Debugging, Testing, and Submitting an Assignment
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZCWQPXpKpY8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/fflyNm6hv1Q?si=5JLC000wsgAzUdwp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZCWQPXpKpY8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>
 
 Once you are done, you can submit to the `Setting up Your Development Environment` submission accessible through canvas and gradescope.
 
