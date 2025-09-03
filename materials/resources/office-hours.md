@@ -18,6 +18,7 @@ Please do come to office hours for:
 
 | **Time**            | **Staff**                | **Location**                                        |
 | ------------------- | ------------------------ | --------------------------------------------------- |
+| 9:00 am - 10:00 am  | Victoria (Tory) Leone    | LGRT T222                                           |
 | 10:00 am - 11:30 am | Jaime Davila             | LGRC A137                                           |
 | 1:00 pm - 2:00 pm   | Anna "Lucy" Gavrich      | LGRT T222                                           |
 | 3:00 pm - 5:00 pm   | Andrew Yuan              | LGRT T222                                           |
@@ -35,6 +36,7 @@ Please do come to office hours for:
 
 | **Time**            | **Staff**                | **Location**                                        |
 | ------------------- | ------------------------ | --------------------------------------------------- |
+| 9:00 am - 10:00 am  | Angela Upreti            | Zoom (add link)                                     |
 | 1:00 pm - 2:00 pm   | Bochen Xu                | LGRT T222                                           |
 | 4:00 pm - 5:00 pm   | Advaya Venbakkam         | LGRT T222                                           |
 | 5:30 pm - 6:30 pm   | Anay Liu                 | LGRT T222                                           |
@@ -46,7 +48,7 @@ Please do come to office hours for:
 | 10:00 am - 11:00 am | Chunru Lin               | LGRT T222                                           |
 | 11:15 am - 12:30 pm | James Perretta           | LGRC A217B                                          |
 | 1:00 pm - 2:00 pm   | Omar Osman               | LGRT T222                                           |
-| 2:00 pm - 3:00 pm   | Jaime Davila             | LGRC A137                                           |
+| 2:00 pm - 3:30 pm   | Jaime Davila             | LGRC A137                                           |
 | 6:00 pm - 8:00 pm   | Atharva Shahane          | LGRT T222                                           |
 
 ## Friday
@@ -54,6 +56,7 @@ Please do come to office hours for:
 | **Time**            | **Staff**                | **Location**                                        |
 | ------------------- | ------------------------ | --------------------------------------------------- |
 | 9:00 am - 10:30 am  | Jaime Davila             | LGRC A137                                           |
+| 10:30 am - 12:30 pm | Angela Upreti            | Zoom (add link)                                     |
 | 1:00 pm - 3:00 pm   | Bochen Xu                | LGRT T222                                           |
 | 3:30 pm - 5:30 pm   | Victor Chen              | LGRT T222                                           | 
 | 5:30 pm - 6:30 pm   | Hannah Carey             | LGRT T222                                           |
