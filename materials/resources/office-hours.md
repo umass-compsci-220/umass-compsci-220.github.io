@@ -27,9 +27,9 @@ Tuesday	11:00 AM - 1:00 PM	Piyush Maheshwari
 Tuesday	1:00 PM - 2:00 PM	Andrew Yuan  
 Tuesday	2:00 PM - 2:45 PM	James Perretta, LGRC A217B  
   
-Wednesday	1:00 PM - 2:00 PM	Anay Liu  
-Wednesday	2:30 PM - 3:30 PM	Bochen Xu  
+Wednesday	1:00 PM - 2:00 PM	Bochen Xu  
 Wednesday	4:00 PM - 5:00 PM	Advaya Venbakkam  
+Wednesday	5:30 PM - 6:30 PM	Anay Liu
   
 Thursday	10:00 AM - 11:00 AM	Chunru Lin  
 Thursday	11:15 AM - 12:30 PM	James Perretta, LGRC A217B  
