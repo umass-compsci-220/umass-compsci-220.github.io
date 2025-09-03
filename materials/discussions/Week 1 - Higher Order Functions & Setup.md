@@ -12,7 +12,7 @@ Download the lab slides [here](https://github.com/umass-compsci-220/public-mater
 
 The slides with solutions will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%201%20-%20Solutions.pdf) after the last discussion of the day.
 
-Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/01-hof.zip). Make sure to submit this to gradescope, ask your lab leaders to help you if you are unsure of how. We'll also show the process in the first lab.
+Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/01-HOF.zip). Make sure to submit this to gradescope, ask your lab leaders to help you if you are unsure of how. We'll also show the process in the first lab.
 
 The solution file will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/01-hof-solution.ts) after lab.
 
