@@ -37,7 +37,7 @@ Please do come to office hours for:
 | **Time**            | **Staff**                | **Location**                                        |
 | ------------------- | ------------------------ | --------------------------------------------------- |
 | 9:00 am - 10:00 am  | Angela Upreti            | Zoom (add link)                                     |
-| 1:00 pm - 2:00 pm   | Bochen Xu                | LGRT T222                                           |
+| 11:00 am - 12:00 pm | Bochen Xu                | LGRT T222                                           |
 | 4:00 pm - 5:00 pm   | Advaya Venbakkam         | LGRT T222                                           |
 | 5:30 pm - 6:30 pm   | Anay Liu                 | LGRT T222                                           |
 
