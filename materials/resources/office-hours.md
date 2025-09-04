@@ -14,30 +14,49 @@ Please do come to office hours for:
 - Reviewing past exams, quizzes, or homework
 - Anything else you might need assistance with!
 
-The Fall 2025 office hour schedule will be posted here closer to the beginning of the semester.
+## Monday
 
+| **Time**            | **Staff**                | **Location**                                        |
+| ------------------- | ------------------------ | --------------------------------------------------- |
+| 9:00 am - 10:00 am  | Victoria (Tory) Leone    | LGRT T222                                           |
+| 10:00 am - 11:30 am | Jaime Davila             | LGRC A137                                           |
+| 1:00 pm - 2:00 pm   | Anna "Lucy" Gavrich      | LGRT T222                                           |
+| 3:00 pm - 5:00 pm   | Andrew Yuan              | LGRT T222                                           |
 
-Day	Time  
-Monday	10:00 AM - 11:30 AM Jaime Davila, LGRC A137  
-Monday	1:00 PM - 2:00 PM	Anna "Lucy" Gavrich  
-Monday	3:00 PM - 5:00 PM	Andrew Yuan  
-  
-Tuesday	9:00 AM - 11:00 AM	Chunru Lin  
-Tuesday	11:00 AM - 1:00 PM	Piyush Maheshwari  
-Tuesday	1:00 PM - 2:00 PM	Andrew Yuan  
-Tuesday	2:00 PM - 2:45 PM	James Perretta, LGRC A217B  
-  
-Wednesday	1:00 PM - 2:00 PM	Anay Liu  
-Wednesday	2:30 PM - 3:30 PM	Bochen Xu  
-Wednesday	4:00 PM - 5:00 PM	Advaya Venbakkam  
-  
-Thursday	10:00 AM - 11:00 AM	Chunru Lin  
-Thursday	11:15 AM - 12:30 PM	James Perretta, LGRC A217B  
-Thursday	1:00 PM - 2:00 PM	Omar Osman  
-Thursday	2:00 PM - 3:30 PM	Jaime Davila, LGRC A137  
-Thursday	6:00 PM - 8:00 PM	Atharva Shahane  
-  
-Friday	9:00 AM - 10:30 AM	Jaime Davila, LGRC A137  
-Friday	1:00 PM - 3:00 PM	Bochen Xu  
-Friday	3:30 PM - 5:30 PM	Victor Chen  
-Friday	5:30 PM - 6:30 PM	Hannah Carey  
+## Tuesday
+
+| **Time**            | **Staff**                | **Location**                                        |
+| ------------------- | ------------------------ | --------------------------------------------------- |
+| 9:00 am - 11:00 am  | Chunru Lin               | LGRT T222                                           |
+| 11:00 am - 1:00 pm  | Piyush Maheshwari        | LGRT T222                                           |
+| 1:00 pm - 2:00 pm   | Andrew Yuan              | LGRT T222                                           |
+| 2:00 pm - 2:45 pm   | James Perretta           | LGRC A217B                                          |
+
+## Wednesday
+
+| **Time**            | **Staff**                | **Location**                                        |
+| ------------------- | ------------------------ | --------------------------------------------------- |
+| 9:00 am - 10:00 am  | Angela Upreti            | Zoom (add link)                                     |
+| 1:00 pm - 2:00 pm   | Bochen Xu                | LGRT T222                                           |
+| 4:00 pm - 5:00 pm   | Advaya Venbakkam         | LGRT T222                                           |
+| 5:30 pm - 6:30 pm   | Anay Liu                 | LGRT T222                                           |
+
+## Thursday
+
+| **Time**            | **Staff**                | **Location**                                        |
+| ------------------- | ------------------------ | --------------------------------------------------- |
+| 10:00 am - 11:00 am | Chunru Lin               | LGRT T222                                           |
+| 11:15 am - 12:30 pm | James Perretta           | LGRC A217B                                          |
+| 1:00 pm - 2:00 pm   | Omar Osman               | LGRT T222                                           |
+| 2:00 pm - 3:30 pm   | Jaime Davila             | LGRC A137                                           |
+| 6:00 pm - 8:00 pm   | Atharva Shahane          | LGRT T222                                           |
+
+## Friday
+
+| **Time**            | **Staff**                | **Location**                                        |
+| ------------------- | ------------------------ | --------------------------------------------------- |
+| 9:00 am - 10:30 am  | Jaime Davila             | LGRC A137                                           |
+| 10:30 am - 12:30 pm | Angela Upreti            | Zoom (add link)                                     |
+| 1:00 pm - 3:00 pm   | Bochen Xu                | LGRT T222                                           |
+| 3:30 pm - 5:30 pm   | Victor Chen              | LGRT T222                                           | 
+| 5:30 pm - 6:30 pm   | Hannah Carey             | LGRT T222                                           |
