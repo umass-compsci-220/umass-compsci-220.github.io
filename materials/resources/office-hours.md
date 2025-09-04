@@ -36,7 +36,7 @@ Please do come to office hours for:
 
 | **Time**            | **Staff**                | **Location**                                        |
 | ------------------- | ------------------------ | --------------------------------------------------- |
-| 9:00 am - 10:00 am  | Angela Upreti            | Zoom (add link)                                     |
+| 9:00 am - 10:00 am  | Angela Upreti            | [Zoom](https://umass-amherst.zoom.us/j/99190937285) |
 | 11:00 am - 12:00 pm | Bochen Xu                | LGRT T222                                           |
 | 4:00 pm - 5:00 pm   | Advaya Venbakkam         | LGRT T222                                           |
 | 5:30 pm - 6:30 pm   | Anay Liu                 | LGRT T222                                           |
@@ -56,7 +56,7 @@ Please do come to office hours for:
 | **Time**            | **Staff**                | **Location**                                        |
 | ------------------- | ------------------------ | --------------------------------------------------- |
 | 9:00 am - 10:30 am  | Jaime Davila             | LGRC A137                                           |
-| 10:30 am - 12:30 pm | Angela Upreti            | Zoom (add link)                                     |
+| 10:30 am - 12:30 pm | Angela Upreti            | [Zoom](https://umass-amherst.zoom.us/j/99190937285) |
 | 1:00 pm - 3:00 pm   | Bochen Xu                | LGRT T222                                           |
 | 3:30 pm - 5:30 pm   | Victor Chen              | LGRT T222                                           | 
 | 5:30 pm - 6:30 pm   | Hannah Carey             | LGRT T222                                           |
