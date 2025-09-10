@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Discussion 2: Types and HOFs
 
-Welcome to the fourth discussion! This week you'll learn more about Type Signatures and Higher Order Functions.
+Welcome to the second discussion! This week you'll learn more about Type Signatures and Higher Order Functions.
 
 ## Materials
 
@@ -12,9 +12,9 @@ Download the lab slides [here](https://github.com/umass-compsci-220/public-mater
 
 The slides with solutions will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%202%20-%20Solutions.pdf) after the last discussion of the day.
 
-Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/02-types-and-hof.zip). Make sure to submit this to gradescope, ask your lab leaders to help you if you are unsure of how. We'll also show the process in the first lab.
+Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/02-Types-and-HOF.zip). Make sure to submit this to gradescope, ask your lab leaders to help you if you are unsure of how. We'll also show the process in the first lab.
 
-The solution file will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/02-types-and-hof-solution.ts) after lab.
+The solution file will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/02-Types-and-HOF-solution.ts) after lab.
 
 ## Opening and working with the starter code
 
