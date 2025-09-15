@@ -20,6 +20,7 @@ Please do come to office hours for:
 | ------------------- | ------------------------ | --------------------------------------------------- |
 | 9:00 am - 10:00 am  | Victoria (Tory) Leone    | LGRT T222                                           |
 | 10:00 am - 11:30 am | Jaime Davila             | LGRC A137                                           |
+| 12:00 pm - 1:00 pm  | Piyush Maheshwari        | LGRT T222                                           |
 | 1:00 pm - 2:00 pm   | Anna "Lucy" Gavrich      | LGRT T222                                           |
 | 3:00 pm - 5:00 pm   | Andrew Yuan              | LGRT T222                                           |
 
