@@ -105,7 +105,7 @@ Their implementations are [obfuscated](https://en.wikipedia.org/wiki/Obfuscation
 
 ## Programming Tasks
 
-### Part A **Due 9/28**
+### Part A **Due 10/5**
 
 1. Write a function called `generateInput`:
 
