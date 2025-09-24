@@ -2,9 +2,9 @@
 sidebar_position: 4
 ---
 
-# Discussion 4: Mental Models and Iterators
+# Discussion 4: Mental Models and Closures
 
-Welcome to the fourth discussion! This week you'll learn more about mental models and working with iterators.
+Welcome to the fourth discussion! This week you'll learn more about closures and mental models.
 
 ## Materials
 
