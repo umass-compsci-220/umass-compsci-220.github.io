@@ -105,7 +105,7 @@ Their implementations are [obfuscated](https://en.wikipedia.org/wiki/Obfuscation
 
 ## Programming Tasks
 
-### Part A **Due 10/5**
+### Part A **Due 10/12**
 
 1. Write a function called `generateInput`:
 
@@ -183,7 +183,7 @@ A template for the `stableMatchingOracle` function is given inside of `oracles.t
 
 As mentioned in the [student expectations](#student-expectations), you should be employing proper coding abstractions (avoid code duplication). When implementing this function, look at all the related data a company or candidate has. What are the common operations and queries that you might do on this data? Is there any way to group this together or pre-compute anything? **Using objects may be helpful.** Think before you code.
 
-### Part B **Due TBD**
+### Part B **Due 10/19**
 
 Now write an oracle that determines if a function follows the specified algorithm:
 
