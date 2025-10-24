@@ -190,7 +190,7 @@ Write a function `pairwise` that takes in an iterable of generic type `T`. This 
 
 ### `cycle`
 
-Implement the function `cycle` that takes in an array of iterables. This function returns an iterable iterator that yields one item at a time from each iterable in the order they are given. If any of the iterables reach their end before the others, that iterable is skipped. The returned iterable iterator is finished when all values from the iterables have been exhausted. For example, given iterables [(1, 2), (3)], the returned iterable iterator would yield (1, 3, 2). This function must use O(1) storage to receive credit. Your implementation must use generators to receive credit.
+Implement the function `cycle` that takes in an array of iterables. This function returns an iterable iterator that yields one item at a time from each iterable in the order they are given. If any of the iterables reach their end before the others, that iterable is skipped. The returned iterable iterator is finished when all values from the iterables have been exhausted. For example, given iterables [(1, 2), (3)], the returned iterable iterator would yield (1, 3, 2). You may use O(m) space to store iterators, where m is the number of iterables, but your implementation must otherwise use O(1) space. Your implementation must use generators to receive credit.
 
 ### `BusinessQuery` class
 
