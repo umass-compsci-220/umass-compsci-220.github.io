@@ -201,7 +201,7 @@ The `BusinessQuery` class must contain the following public methods. Each method
 - A constructor that takes in one parameter of type `Iterable<Business>`
 - A method `filter` that takes in a function `func: FilterFunc` and returns a `BusinessQuery` object that, when iterated over, yields only those businesses for which func(business) returns true. FilterFunc is the type of a function that takes in a `Business` and returns a boolean.
 - A method `exclude` that takes in a function `func: FilterFunc` and returns a `BusinessQuery` object that, when iterated over, yields only those businesses for which func(business) returns false.
-- A method `slice` that takes in two integers `start` and `end` and returns a `BusinessQuery` object that, when iterated over, yields only `BusinessQuery` objects in the 0-indexed range [start, end). That is, if the current `BusinessQuery` would yield 5 `Business` objects, the business query returned by calling `.slice(1, 3)` would yield only 2 `Business` objects (the ones at index 1 and index 2). `slice`’s parameters have the following requirements:
+- A method `slice` that takes in two integers `start` and `end` and returns a `BusinessQuery` object that, when iterated over, yields only `BusinessQuery` objects in the 0-indexed range [start, end). That is, if the current `BusinessQuery` would yield 5 `Business` objects, the business query returned by calling `.slice(1, 3)` would yield only 2 `Business` objects (the ones at index 1 and index 2). `slice`’s parameters have the following requirements (these requirements are listed in order of precedence):
   - The start parameter is required
   - The end parameter is optional
     - Hint: The syntax for declaring a parameter as optional is a question mark (?)  after the name. For example, in the function signature `function spam(egg?: string)`, the parameter egg can be a string if an argument was provided by the caller (e.g., `spam(`spam`)`)or `undefined` if an argument was not provided (e.g., `spam()`).
@@ -209,8 +209,8 @@ The `BusinessQuery` class must contain the following public methods. Each method
     - The `SliceError` class is provided for you in the starter code
   - If start or end are negative, `slice` throws an exception of type `SliceError` with the message `slice: start and end must be non-negative`.
   - If start is greater than end, `slice` throws an exception of type `SliceError` with the message `slice: start must not be greater than end`
-  - If end is greater than the number of elements yielded by the current (pre-slice) business query, the behavior is identical to the behavior when end is equal to the number of elements yielded by the current query.
   - If start is greater than or equal to the number of elements yielded by the current query, the query produced by `slice` will yield no elements when iterated over.
+  - If end is greater than the number of elements yielded by the current (pre-slice) business query, the behavior is identical to the behavior when end is equal to the number of elements yielded by the current query.
 - Any additional methods required to make a `BusinessQuery` object iterable. That is, any methods required by the Iterable interface
   - Hint: `BusinessQuery` is iterable, but it is not itself an iterator. Do not add any unnecessary public methods.
 - You may add any private attributes or methods needed for your implementation. Make sure they are declared as private.
