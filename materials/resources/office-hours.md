@@ -49,7 +49,7 @@ Please do come to office hours for:
 | 11:15 am - 12:30 pm | James Perretta           | LGRC A217B                                          |
 | 1:00 pm - 2:00 pm   | Omar Osman               | LGRT T222                                           |
 | 2:00 pm - 3:30 pm   | Jaime Davila             | LGRC A137                                           |
-| 6:00 pm - 8:00 pm   | Atharva Shahane          | LGRT T222                                           |
+| 6:00 pm - 8:00 pm (moved to 10:00 am - 12:00 pm on Nov 14 only)   | Atharva Shahane          | LGRT T222 ([One-time Zoom link for Nov 14](https://umass-amherst.zoom.us/j/93850387169))                                          |
 
 ## Friday
 
