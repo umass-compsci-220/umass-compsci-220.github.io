@@ -120,7 +120,7 @@ https://www.google.com/search?q=how+to+exit+vim
 
 URLs have a specific structure, which tell both the browser and the eventual web server what the request means.
 
-![URL](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL/mdn-url-all.png)
+![URL](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL/mdn-url-all.png)
 
 - **The scheme** documents the protocol the network request should use
   - The web uses `https` or `http`
