@@ -297,7 +297,7 @@ In addition to the testing above, some functions will require you to test them b
 
 3. Finally the API might be rate limited or unavailable. This makes testing hard and expensive. With mock testing we can reserve API calls to the API for only some tests saving time and money. See the documentation for more information on this: https://www.npmjs.com/package/jest-fetch-mock.
 
-The lecture slides [Testing Asynchronous Code in Week 10](https://umamherst.instructure.com/courses/8875/files/4853295?module_item_id=887630) give a step by step description of how to properly mock `fetch`.
+The lecture slides [Testing Asynchronous Code in Week 10](https://umamherst.instructure.com/courses/28300/files/14891610?module_item_id=2823814) give a step by step description of how to properly mock `fetch`.
 
 Some functions will require you to write mock tests explicitly. You are welcome to write mock tests for other functions as well.
 
