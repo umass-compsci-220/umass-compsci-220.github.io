@@ -90,17 +90,31 @@ We have provided two parsing functions, defined in `./include/parser.ts`, the fu
 type BinaryOperator = "+" | "-" | "*" | "/" | "&&" | "||" | ">" | "<" | "===";
 
 type Expression =
-  | { kind: "boolean"; value: boolean }
-  | { kind: "number"; value: number }
-  | { kind: "variable"; name: string }
-  | { kind: "operator"; operator: BinaryOperator; left: Expression; right: Expression };
+  | BooleanExpression
+  | NumberExpression
+  | VariableExpression
+  | BinaryOperatorExpression
+  
+type BooleanExpression = { kind: "boolean"; value: boolean };
+type NumberExpression = { kind: "number"; value: number };
+type BinaryOperatorExpression = { kind: "operator"; operator: BinaryOperator; left: Expression; right: Expression };
+type VariableExpression = { kind: "variable"; name: string };
 
 type Statement =
-  | { kind: "let"; name: string; expression: Expression }
-  | { kind: "assignment"; name: string; expression: Expression }
-  | { kind: "if"; test: Expression; truePart: Statement[]; falsePart: Statement[] }
-  | { kind: "while"; test: Expression; body: Statement[] }
-  | { kind: "print"; expression: Expression };
+  | LetStatement
+  | AssignmentStatement
+  | IfStatement
+  | WhileStatement
+  | PrintStatement
+
+type LetStatement = { kind: "let"; name: string; expression: Expression };
+type AssignmentStatement = { kind: "assignment"; name: string; expression: Expression };
+type IfStatement = { kind: "if"; test: Expression; truePart: Statement[]; falsePart: Statement[] };
+type WhileStatement = { kind: "while"; test: Expression; body: Statement[] };
+type PrintStatement = { kind: "print"; expression: Expression };
+type ExpressionStatement = { kind: "expression"; expression: Expression };
+type ReturnStatement = { kind: "return"; expression: Expression };
+
 
 function parseExpression(expression: string): Expression;
 function parseProgram(statements: string): Statement[];
@@ -112,27 +126,47 @@ Parsing and interpreting are separate stages of a programs execution. The interp
 
 ### State
 
-The State type is defined as follows:
+Implement the State class with the following interface:
 
 ```ts
-type RuntimeValue = number | boolean;
-const PARENT_STATE_KEY = Symbol("[[PARENT]]");
-export type State = { [PARENT_STATE_KEY]?: State, [key: string]: RuntimeValue }
-```
+class State {
+  // Add private member variables here
 
-This notation indicates that a `State` object has a variable number of properties with  values of type `number` or `boolean` (representing values of variables that are in scope), and an optional property with a specific symbol key and a value of type `State` (link to the parent scope). We have used a [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) (a primitive type different from `string`) to avoid collision with variable names and enable easy type inference (see below).
+  constructor(parent: State | undefined = undefined) {
+  }
+
+  // Declares a variable with the given name and binds
+  // the given value to it in the local scope.
+  // Throws an error if the name already exists in the innermost scope.
+  declare(name: string, value: RuntimeValue) {
+  }
+
+  // Returns the value bound to the given name in the current environment.
+  // The "environment" is the current collection of nested scopes.
+  // First searches the innermost scope, then checks each parent scope
+  // sequentially until the name is found.
+  // Throws an error if the name cannot be found.
+  get(name: string): RuntimeValue {
+  }
+
+  // Updates the value bound to the given name in the current environment.
+  // First searches the innermost scope, then checks each parent scope
+  // sequentially until the name is found.
+  // Throws an error if the name cannot be found.
+  set(name: string, value: RuntimeValue) {
+  }
+
+  // DO NOT MODIFY.
+  // This is present to help us test your code. 
+  // If you remove it, this may cause tests to fail on the autograder.
+  // Returns an object containing the variable bindings of the innermost scope of this State.
+  asObject() {
+    return Object.fromEntries(this.vars.entries());
+  }
+}
+```
 
 A block starts a new inner scope. A variable declared in a block will shadow an outer declaration (any variable use will refer to the inner declaration). On exiting a scope, variables declared there are no longer accessible (since we don't have closures). Thus, they should not be in the global state at the end. The nesting of block scopes corresponds to a stack, which you can implement as a linked list, by adding to your `State` object a link to an outer scope. Since the link is just another property, this allows all functions to keep their signatures. To ensure the link name does not clash with a program variable, use a property name that is not an identifier (see given: `PARENT_STATE_KEY`). The global state cannot have extra properties, and does not need a link, as the last state on the list.
-
-#### Accessing Values from State
-
-The `State` type maps arbitrary strings to a `RuntimeValue` or the symbol `PARENT_STATE_KEY` to another `State` type.
-
-```ts
-const variableName = "foo";
-const value = state[variableName]; // Compiler infers that `value` is a RuntimeValue (or `undefined`)
-const parent = state[PARENT_STATE_KEY]; // Compiler infers that `parent` is a State (or `undefined`)
-```
 
 ### Behavior
 
@@ -188,11 +222,12 @@ Your task is to implement the following functions inside of `./src/interpreter.t
 
 **You may not use `eval` or anything similar (`new Function(...)`).**
 
-The most common approach to these functions is using a `switch` statement to match `Statement` or `Expression` variants with their desired behavior. This is an acceptable approach, but looks awkward syntactically. If you'd like, you can use the [ts-pattern](https://github.com/gvergnaud/ts-pattern) library to do structural pattern matching rather than a `switch` statement. You will need to add a new import statement at the top of `./src/interpreter.ts`:
+In general, your implementation should use helper functions corresponding to the different kinds of `Expression`s and `Statement`s defined in `include/parser.ts`.
+Within those functions, you may use a combination of `switch` statements, `Map`s of operators to functions, and regular conditional statements.
 
-```ts
-import { match, P } from "ts-pattern";
-```
+When using `switch` statements, each case of the switch should be either a single call to a helper function or a single **simple** statement.
+That is, **do NOT cram compound statements such as `if`s or `while`s onto a single line**.
+That makes the code more dense and harder to understand.
 
 ### `interpExpression`
 
