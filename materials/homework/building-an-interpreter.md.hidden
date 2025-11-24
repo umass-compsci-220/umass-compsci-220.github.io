@@ -289,6 +289,22 @@ describe("interpProgram", () => {
 
 Finally, test your interpreter with some simple programs. For example, you should be able to interpret an iterative factorial or Fibonacci sequence computation.
 
+### How do I test what is printed to the console?
+This can be done with mock testing.
+Here is an example of how to mock test console.log with the built-in Jest functionality.
+
+describe("Tests for myFunc", () => {
+  it("Checking what is printed", () => {
+    const logSpy = jest.spyOn(global.console, "log"); // Setup console to be mocked
+
+    const input = `someInput`;
+
+    myFunc(input); // In this example we expect console.log to print twice
+    expect(logSpy.mock.calls).toEqual([["First printed value"],["Second printed value"]]);
+
+    logSpy.mockRestore(); // Restore console.log to normal functionality
+  });
+
 ### Capturing Errors
 
 You may find yourself in a scenario where you need to write a test that verifies a program throws an error. Here is an example of how you would write a test like that:
