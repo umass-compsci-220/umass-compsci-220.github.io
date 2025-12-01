@@ -218,7 +218,7 @@ Rules:
 
 ## Programming Tasks
 
-Your task is to implement the following functions inside of `./src/interpreter.ts`. You may do them in any order. Reviewing lecture slides might be helpful.
+In addition to implementing the State class (see above), you will implement the following functions inside of `./src/interpreter.ts`. You may do them in any order. Reviewing lecture slides might be helpful.
 
 **You may not use `eval` or anything similar (`new Function(...)`).**
 
