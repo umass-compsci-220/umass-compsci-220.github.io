@@ -263,12 +263,15 @@ export function interpProgram(p: Statement[]): State {
 
 ### Approach
 
-Implement `interpExpression`, following the template shown in class. You can use an empty object (`{ }`) for the state if you do not have any variables, or you can set the values of variables by hand. For example:
+Implement `interpExpression`, following the template shown in class. You should create a new instance of the State class to test interpExpression, using the corresponding methods to declare and set the value of variables. For example:
 
 ```ts
 describe("interpExpression", () => {
   it("evaluates multiplication with a variable", () => {
-    const r = interpExpression({ x: 10 }, parseExpression("x * 2"));
+    // create State with no parent State (global State)
+    const state = new State();
+    state.declare("x", 10);
+    const r = interpExpression(state, parseExpression("x * 2"));
 
     expect(r).toBe(20);
   });
