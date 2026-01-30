@@ -16,13 +16,14 @@ Please do come to office hours for:
 
 ## Monday
 
-| **Time**              | **Staff**                 | **Location**                                      |
-| --------------------- | ------------------------- | ------------------------------------------------- |
-| 9:00 am - 10:00 am    | Ali Nejmeldeen            | LGRT T222                                         |
-| 11:00 am - 12:00 pm   | Mihir Nagarkatti          | LGRT T222                                         |
-| 12:00 pm - 1:00 pm    | Victoria (Tory) Leone     | LGRT T222                                         |
-| 1:00 pm - 3:00 pm     | Victor Chen               | LGRT T222                                         |
-| 6:00 pm - 7:00 pm     | Angela Upreti             | Zoom (link TBD)                                   |
+| **Time**              | **Staff**                 | **Location**                                          |
+| --------------------- | ------------------------- | ----------------------------------------------------- |
+| 9:00 am - 10:00 am    | Ali Nejmeldeen            | LGRT T222                                             |
+| 10:00 am - 11:00 am   | Marius Minea              | [Zoom](https://umass-amherst.zoom.us/j/92493044446)   |
+| 11:00 am - 12:00 pm   | Mihir Nagarkatti          | LGRT T222                                             |
+| 12:00 pm - 1:00 pm    | Victoria (Tory) Leone     | LGRT T222                                             |
+| 1:00 pm - 3:00 pm     | Victor Chen               | LGRT T222                                             |
+| 6:00 pm - 7:00 pm     | Angela Upreti             | Zoom (link TBD)                                       |
 
 ## Tuesday
 
@@ -31,6 +32,7 @@ Please do come to office hours for:
 | 8:00 am - 10:00 am    | Han Yang                  | LGRT T222                                         |
 | 10:00 am - 11:00 am   | Fardeen Riaz Ahamed       | LGRT T222                                         |
 | 11:30 am - 12:30 pm   | Harish Shankar            | LGRT T222                                         |
+| 1:00 pm - 2:00 pm     | Marius Minea              | LGRC A341                                         |
 | 6:00 pm - 8:00 pm     | Atharva Shahane           | LGRT T222                                         |
 
 ## Wednesday
@@ -50,6 +52,7 @@ Please do come to office hours for:
 | --------------------- | ------------------------- | ------------------------------------------------- |
 | 10:00 am - 11:00 am   | Ayesha Binte Mostofa      | Zoom (link TBD)                                   |
 | 12:00 pm - 2:00 pm    | Piyush Maheshwari         | LGRT T222                                         |
+| 6:00 pm - 8:00 pm     | James Perretta            | LGRC A211E                                        |
 
 ## Friday
 
