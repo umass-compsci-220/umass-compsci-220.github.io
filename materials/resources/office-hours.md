@@ -51,7 +51,7 @@ Please do come to office hours for:
 
 | **Time**              | **Staff**                 | **Location**                                          |
 | --------------------- | ------------------------- | ----------------------------------------------------- |
-| 10:00 am - 11:00 am   | Ayesha Binte Mostofa      | [Zoon](https://umass-amherst.zoom.us/j/96292075769)   |
+| 10:00 am - 11:00 am   | Ayesha Binte Mostofa      | [Zoom](https://umass-amherst.zoom.us/j/96292075769)   |
 | 11:00 am - 1:00 pm    | Eduardo Calle Ortiz       | LGRT T222                                             |
 | 12:00 pm - 2:00 pm    | Piyush Maheshwari         | LGRT T222                                             |
 | 6:00 pm - 8:00 pm     | James Perretta            | LGRC A211E                                            |
@@ -61,5 +61,5 @@ Please do come to office hours for:
 | **Time**              | **Staff**                 | **Location**                                          |
 | --------------------- | ------------------------- | ----------------------------------------------------- |
 | 9:00 am - 11:00 am    | Angela Upreti             | Zoom (link TBD)                                       |
-| 11:30 am - 1:30 pm    | Ayesha Binte Mostofa      | [Zoon](https://umass-amherst.zoom.us/j/96292075769)   |
+| 11:30 am - 1:30 pm    | Ayesha Binte Mostofa      | [Zoom](https://umass-amherst.zoom.us/j/93937167696)   |
 | 4:30 pm - 5:30 pm     | Sean Lin                  | LGRT T222                                             |
