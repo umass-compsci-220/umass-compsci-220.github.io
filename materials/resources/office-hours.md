@@ -23,7 +23,7 @@ Please do come to office hours for:
 | 11:00 am - 12:00 pm   | Mihir Nagarkatti          | LGRT T222                                             |
 | 12:00 pm - 1:00 pm    | Victoria (Tory) Leone     | LGRT T222                                             |
 | 1:00 pm - 3:00 pm     | Victor Chen               | LGRT T222                                             |
-| 6:00 pm - 7:00 pm     | Angela Upreti             | Zoom (link TBD)                                       |
+| 6:00 pm - 7:00 pm     | Angela Upreti             | [Zoom](https://umass-amherst.zoom.us/j/95100979292)   |
 
 ## Tuesday
 
@@ -60,6 +60,6 @@ Please do come to office hours for:
 
 | **Time**              | **Staff**                 | **Location**                                          |
 | --------------------- | ------------------------- | ----------------------------------------------------- |
-| 9:00 am - 11:00 am    | Angela Upreti             | Zoom (link TBD)                                       |
+| 9:00 am - 11:00 am    | Angela Upreti             | [Zoom](https://umass-amherst.zoom.us/j/95100979292)   |
 | 11:30 am - 1:30 pm    | Ayesha Binte Mostofa      | [Zoom](https://umass-amherst.zoom.us/j/93937167696)   |
 | 4:30 pm - 5:30 pm     | Sean Lin                  | LGRT T222                                             |
