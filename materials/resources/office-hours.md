@@ -48,16 +48,16 @@ Please do come to office hours for:
 
 ## Thursday
 
-| **Time**              | **Staff**                 | **Location**                                      |
-| --------------------- | ------------------------- | ------------------------------------------------- |
-| 10:00 am - 11:00 am   | Ayesha Binte Mostofa      | Zoom (link TBD)                                   |
-| 12:00 pm - 2:00 pm    | Piyush Maheshwari         | LGRT T222                                         |
-| 6:00 pm - 8:00 pm     | James Perretta            | LGRC A211E                                        |
+| **Time**              | **Staff**                 | **Location**                                          |
+| --------------------- | ------------------------- | ----------------------------------------------------- |
+| 10:00 am - 11:00 am   | Ayesha Binte Mostofa      | [Zoon](https://umass-amherst.zoom.us/j/96292075769)   |
+| 12:00 pm - 2:00 pm    | Piyush Maheshwari         | LGRT T222                                             |
+| 6:00 pm - 8:00 pm     | James Perretta            | LGRC A211E                                            |
 
 ## Friday
 
-| **Time**              | **Staff**                 | **Location**                                      |
-| --------------------- | ------------------------- | ------------------------------------------------- |
-| 9:00 am - 11:00 am    | Angela Upreti             | Zoom (link TBD)                                   |
-| 11:30 am - 1:30 pm    | Ayesha Binte Mostofa      | Zoom (link TBD)                                   |
-| 4:30 pm - 5:30 pm     | Sean Lin                  | LGRT T222                                         |
+| **Time**              | **Staff**                 | **Location**                                          |
+| --------------------- | ------------------------- | ----------------------------------------------------- |
+| 9:00 am - 11:00 am    | Angela Upreti             | Zoom (link TBD)                                       |
+| 11:30 am - 1:30 pm    | Ayesha Binte Mostofa      | [Zoon](https://umass-amherst.zoom.us/j/96292075769)   |
+| 4:30 pm - 5:30 pm     | Sean Lin                  | LGRT T222                                             |
