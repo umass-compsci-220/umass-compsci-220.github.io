@@ -182,7 +182,7 @@ Check out the [project testing page](/materials/tutorials/assignments/testing) f
 
 ## Programming Tasks
 
-If you are having trouble reading the specification, please go to office hours or ask a question on Ed (**search for a similar question first**).
+If you are having trouble reading the specification, please go to [office hours](/materials/resources/office-hours) or ask a question on Campuswire (**search for a similar question first**).
 
 All functions should be written in `imageProcessing.ts`. Other files (`main.ts` and `imageProcessing.test.ts`) should import them like so:
 
