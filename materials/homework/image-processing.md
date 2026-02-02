@@ -138,7 +138,7 @@ redImage.save("redOutput");
 redImage.show();
 ```
 
-There is also the `Image.assertCoordinatesInBounds` method, which will throw an error the supplied coordinates do not fit within the image.
+There is also the `Image.assertCoordinatesInBounds` method, which will throw an error if the supplied coordinates do not fit within the image.
 
 In addition to `Image`, `image.ts` exports the `Color` type. Inspecting the source code reveals that this is an alias for `number[]` (an array of numbers). Our variables will still hold values that are arrays of numbers - this type solely exists to make the `Image` interface more descriptive.
 
@@ -170,7 +170,7 @@ const blueImage = Image.create(25, 25, COLORS.BLUE);
 const blackImage = Image.create(25, 25, COLORS.BLACK);
 ```
 
-Inside of the project's `main.ts` is some example usages of the `Image` interface. You can read the full documentation and source for everything inside of `image.ts`.
+Inside the project's `main.ts` are some example usages of the `Image` interface. You can read the full documentation and source for everything inside of `image.ts`.
 
 ## Testing
 
@@ -178,7 +178,7 @@ Inside of the project's `main.ts` is some example usages of the `Image` interfac
 
 To help you get started, we have provided a few test cases inside of `imageProcessing.test.ts`. It is up to you to define additional tests to check your solution for correctness. Please follow the same general syntax of the tests defined for you.
 
-Checkout the [project testing page](/materials/tutorials/assignments/testing) for information about testing methodology and syntax. The [testing guidelines](/materials/guidelines/testing) pages requirements your tests should follow.
+Check out the [project testing page](/materials/tutorials/assignments/testing) for information about testing methodology and syntax. The [testing guidelines page](/materials/guidelines/testing) lists requirements your tests should follow.
 
 ## Programming Tasks
 
@@ -223,7 +223,7 @@ export function flipColors(img: Image): Image {
 
 ### Moving Forward
 
-If you have solved these two tasks, you might notice that the structure of the two functions is very similar, the difference is only in the actual processing applied. We can avoid duplication by defining functions, similar to [Array.prototype.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), that apply the same transformation to several or all pixels of an image.
+If you have solved these two tasks, you might notice that the structure of the two functions is very similar, and that the only difference is in the actual processing applied. We can avoid duplication by defining functions, similar to [Array.prototype.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), that apply the same transformation to several or all pixels of an image.
 
 ### `mapLine`
 
@@ -257,7 +257,7 @@ The result must be a new image with the same dimensions as `img`. The value of e
 
 Write two functions called `mapToGreen` and `mapFlipColors`
 
-These are equivalent to (i.e., have the same type signature and behave exactly like) `saturateGreen` and `flipColors` <u>**but use must use `imageMap`**</u>.
+These are equivalent to (i.e., have the same type signature and behave exactly like) `saturateGreen` and `flipColors` <u>**but you must use `imageMap`**</u>.
 
 ## Submitting
 
@@ -267,4 +267,4 @@ Use the following command to build a `.zip` file:
 npm run build:submission
 ```
 
-This command will automatically format your submissions source code so it is easier to read then bundle your `./src/*` files into a `.zip`. Please upload this file to the respective assignment on Gradescope.
+This command will automatically format your submission's source code to make it easier to read, then bundle your `./src/*` files into a `.zip`. Please upload this file to the respective assignment on Gradescope.
