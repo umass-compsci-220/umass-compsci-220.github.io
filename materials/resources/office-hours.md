@@ -39,7 +39,7 @@ Please do come to office hours for:
 
 | **Time**              | **Staff**                 | **Location**                                      |
 | --------------------- | ------------------------  | ------------------------------------------------- |
-| 8:00 am - 9:00 am     | Venkatraman Varatharajan  | LGRT T222                                         |
+| 8:45 am - 9:45 am     | Venkatraman Varatharajan  | LGRT T222                                         |
 | 11:00 pm - 12:00 pm   | Eduardo Calle Ortiz       | LGRT T222                                         |
 | 2:00 pm - 3:00 pm     | Jayakrishna Kambhampati   | LGRT T222                                         |
 | 3:00 pm - 4:00 pm     | Advaya Venbakkam          | LGRT T222                                         |
@@ -58,8 +58,8 @@ Please do come to office hours for:
 
 ## Friday
 
-| **Time**              | **Staff**                 | **Location**                                          |
-| --------------------- | ------------------------- | ----------------------------------------------------- |
-| 9:00 am - 11:00 am    | Angela Upreti             | [Zoom](https://umass-amherst.zoom.us/j/95100979292)   |
-| 11:30 am - 1:30 pm    | Ayesha Binte Mostofa      | [Zoom](https://umass-amherst.zoom.us/j/93937167696)   |
-| 4:30 pm - 5:30 pm     | Sean Lin                  | LGRT T222                                             |
+| **Time**              | **Staff**                 | **Location**                                                      |
+| --------------------- | ------------------------- | ----------------------------------------------------------------- |
+| 9:00 am - 11:00 am    | Angela Upreti             | [Zoom](https://umass-amherst.zoom.us/j/95100979292)               |
+| 11:30 am - 1:30 pm    | Ayesha Binte Mostofa      | [Zoom](https://umass-amherst.zoom.us/j/93937167696)               |
+| 4:30 pm - 5:30 pm     | Sean Lin                  | LGRT T222 and [Zoom](https://umass-amherst.zoom.us/j/93364205565) |
