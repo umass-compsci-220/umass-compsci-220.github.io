@@ -32,7 +32,7 @@ Students will be graded on their ability to:
 - Follow the [coding](/materials/guidelines/syntax-and-code), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
 - Design full-coverage [unit-tests](#testing) for the functions they implemented
   - **There will be credited grading for coverage (7.5%)**
-  - **There will be credited grading for design (15%)**
+  - **There will be credited grading for design (10%)**
   - See the [testing guidelines](/materials/guidelines/testing#coverage) on coverage
 - Avoid unnecessary code duplication wherever possible
   - **This will be manually graded**
