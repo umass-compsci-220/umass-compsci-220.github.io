@@ -51,7 +51,21 @@ TODO
 
 ### `rateLimiter`
 
-TODO
+TODO: proof-read
+
+Write a function called `rateLimiter` which takes a function `func` and a non-negative integer `limit`. It returns a new function (closure) that:
+   - Calls `func` with the provided arguments and returns its result
+   - Only allows `func` to be called `limit` times in total
+   - Returns `undefined` after `func` has been called `limit` times
+
+#### Example
+```ts
+const func = x => x             // some function
+const limitedFunc = rateLimiter(func, 2);
+console.log(limitedFunc(10));    // 10
+console.log(limitedFunc(10));    // 10
+console.log(limitedFunc(10));    // undefined
+```
 
 ### `byParity`
 
