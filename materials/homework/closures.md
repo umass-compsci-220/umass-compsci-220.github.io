@@ -53,18 +53,19 @@ TODO
 
 TODO: proof-read
 
-Write a function called `rateLimiter` which takes a function `func` and a non-negative integer `limit`. It returns a new function (closure) that:
+Write a function called `rateLimiter` which takes a function `func: (x: T, y: T) => R` and a non-negative integer `limit`. It returns a new function (closure) that:
+   - Has the type signature `(x: T, y: T) => R | undefined`  
    - Calls `func` with the provided arguments and returns its result
    - Only allows `func` to be called `limit` times in total
    - Returns `undefined` after `func` has been called `limit` times
 
 #### Example
 ```ts
-const func = x => x             // some function
+const func = (x: number, y: number) => x === y        // some function
 const limitedFunc = rateLimiter(func, 2);
-console.log(limitedFunc(10));    // 10
-console.log(limitedFunc(10));    // 10
-console.log(limitedFunc(10));    // undefined
+console.log(limitedFunc(1, 1));    // true
+console.log(limitedFunc(1, 2));    // false
+console.log(limitedFunc(1, 1));    // undefined
 ```
 
 ### `byParity`
