@@ -79,7 +79,18 @@ console.log(limitedFunc(1, 1));    // undefined
 
 ### `byParity`
 
-TODO
+Write a function called `byParity`
+
+```ts
+export function byParity(
+  evenFunc: (n: number) => number,
+  oddFunc: (n: number) => number
+): (n: number) => number {
+  // TODO
+}
+```
+
+`byParity` takes two functions as arguments, evenFunc and oddFunc. It returns a closure that takes in a number and returns the result of passing that number to evenFunc if the number is even or oddFunc if the number is odd. You may assume that all numerical input will be integers.
 
 ### `vendingMachine`
 
