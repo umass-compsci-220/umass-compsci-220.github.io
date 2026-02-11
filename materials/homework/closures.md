@@ -94,7 +94,27 @@ export function byParity(
 
 ### `vendingMachine`
 
-TODO
+Write a function called `vendingMachine`
+
+```ts
+export function vendingMachine(
+price: number,
+stock: number
+): (amount: number) => number | undefined {
+  // TODO
+}
+```
+
+`vendingMachine` takes in two numbers:
+* `price`: the cost of one item
+* `stock`: the number of items available (you may assume stock is an integer)
+
+It returns a closure simulating vending machine purchases.
+
+The returned closure should take an amount of money as input and simulate the purchase of one item:
+* Return the change if the amount >= price and the item is in stock
+* Return undefined if the amount is insufficient or the item is out of stock
+* Each successful call (purchase) should reduce the stock by 1
 
 ### `wageIncrease`
 
