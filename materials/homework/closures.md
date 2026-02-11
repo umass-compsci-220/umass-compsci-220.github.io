@@ -118,7 +118,18 @@ The returned closure should take an amount of money as input and simulate the pu
 
 ### `wageIncrease`
 
-TODO
+Write a function
+```ts
+export function wageChange(calc_new: (yr: number, prev_wage: number) => number):
+(start_wage: number, start_yr: number, end_yr: number) => number {
+  // TODO
+}
+```
+used to compute wage changes over the years.
+
+`wageChange` takes as argument a function that, given a year and the previous year’s wage, returns the new wage.
+`wageChange` returns a closure which takes three arguments: a starting wage, the year for which this wage applies, and the end year for which to compute the new wage, which is returned.
+The end year passed to this closure should be no lower than the start year. Valid years are 1970 to 2026, and valid wage values are numbers greater than 0. The closure returned by `wageChange` should return NaN when any arguments or computed values at any point are invalid.
 
 ### `sinusSeries`
 
