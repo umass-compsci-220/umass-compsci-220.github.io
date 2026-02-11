@@ -4,8 +4,7 @@ sidebar_position: 3
 
 # Closures
 
-TODO: Fix link
-- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/04-closures-iterators.zip).
+- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/03-closures.zip).
 - You may edit any file inside `./src`. **DO NOT make any edits to any file inside `./include`.**
 
 ## Overview
@@ -40,6 +39,12 @@ It may helpful to write some tests first to make sure your implementation addres
 
 ### `composeFunctions`
 
+```ts
+export function composeFunctions<T>(funs: GenericFunction<T>[]): (x: T) => T[] {
+  // TODO
+}
+```
+
 Write a function that takes in an array of functions, each of type `GenericFunction<T>`, i.e., `(x: T) => T`. It returns a closure that takes in one argument `v` of type `T`. When called, the closure returns an array of the values obtained by starting with `v` and successively applying each  function of the array passed into `composeFunctions`. That is, the array returned by the closure is
 `[v, f0(v), f1(f0(v)), ...]` if the array of functions is `[f0, f1, ...]`.
 
@@ -60,9 +65,15 @@ throw new Error("lorem ipsum")
 
 ### `rateLimiter`
 
-TODO: proof-read
+Write a function called `rateLimiter`.
 
-Write a function called `rateLimiter` which takes a function `func: (x: T, y: T) => R` and a non-negative integer `limit`. It returns a new function (closure) that:
+```ts
+export function rateLimiter<T, R>(func: (x: T, y: T) => R, limit: number): (x: T, y: T) => R | undefined {
+  // TODO
+}
+```
+
+`rateLimiter` takes a function `func: (x: T, y: T) => R` and a non-negative integer `limit`. It returns a new function (closure) that:
    - Has the type signature `(x: T, y: T) => R | undefined`  
    - Calls `func` with the provided arguments and returns its result
    - Only allows `func` to be called `limit` times in total
@@ -120,8 +131,8 @@ The returned closure should take an amount of money as input and simulate the pu
 
 Write a function
 ```ts
-export function wageChange(calc_new: (yr: number, prev_wage: number) => number):
-(start_wage: number, start_yr: number, end_yr: number) => number {
+export function wageChange(calcNew: (yr: number, prevWage: number) => number):
+  (startWage: number, startYr: number, endYr: number) => number {
   // TODO
 }
 ```
