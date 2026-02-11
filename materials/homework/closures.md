@@ -131,8 +131,8 @@ The returned closure should take an amount of money as input and simulate the pu
 
 Write a function
 ```ts
-export function wageChange(calcNew: (yr: number, prevWage: number) => number):
-  (startWage: number, startYr: number, endYr: number) => number {
+export function wageChange(calc_new: (yr: number, prev_wage: number) => number):
+  (start_wage: number, start_yr: number, end_yr: number) => number {
   // TODO
 }
 ```
