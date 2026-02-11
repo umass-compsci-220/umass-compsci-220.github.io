@@ -40,9 +40,7 @@ It may helpful to write some tests first to make sure your implementation addres
 
 ### `composeFunctions`
 
-Write a function that takes as input an array of functions of type `(x: T) => T`, potentially empty, and returns a
-closure that takes a value `v: T` and returns an array of the values obtained by starting with `v` and successively
-applying zero, one, two, ..., all functions of the array. That is, the array returned by the closure is
+Write a function that takes in an array of functions, each of type `GenericFunction<T>`, i.e., `(x: T) => T`. It returns a closure that takes in one argument `v` of type `T`. When called, the closure returns an array of the values obtained by starting with `v` and successively applying each  function of the array passed into `composeFunctions`. That is, the array returned by the closure is
 `[v, f0(v), f1(f0(v)), ...]` if the array of functions is `[f0, f1, ...]`.
 
 ### `cyclic`
