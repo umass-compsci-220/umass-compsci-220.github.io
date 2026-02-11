@@ -131,13 +131,27 @@ used to compute wage changes over the years.
 `wageChange` returns a closure which takes three arguments: a starting wage, the year for which this wage applies, and the end year for which to compute the new wage, which is returned.
 The end year passed to this closure should be no lower than the start year. Valid years are 1970 to 2026, and valid wage values are numbers greater than 0. The closure returned by `wageChange` should return NaN when any arguments or computed values at any point are invalid.
 
-### `sinusSeries`
+### `sineSeries`
 
-TODO
+The sine of a number `x` can be approximated via the Taylor series:
+$$
+\sin(x) = \frac{x}{1} - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dots
+$$
 
-### `memoize`
+The terms of the series can be generalized to:
+$$
+\left(-1\right)^k \frac{x^{2k+1}}{(2k+1)!}
+$$
 
-TODO
+Write a function called `sineSeries`
+```ts
+export function sineSeries(x: number) => (moreTerms: number = 1) => number {
+  // TODO
+}
+```
+It accepts a number `x`. When called with some value moreTerms (defaults to 1 if no value provided), the closure computes the specified number of additional terms, updates the sum computed with these new terms and returns it. You may assume `moreTerms` is a positive integer.
+
+**You must use state to avoid re-calculating factorials and powers from scratch on every call.**
 
 ## Submission
 
