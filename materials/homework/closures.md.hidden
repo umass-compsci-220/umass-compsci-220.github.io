@@ -45,7 +45,7 @@ export function composeFunctions<T>(funs: GenericFunction<T>[]): (x: T) => T[] {
 }
 ```
 
-Write a function that takes in an array of functions, each of type `GenericFunction<T>`, i.e., `(x: T) => T`. It returns a closure that takes in one argument `v` of type `T`. When called, the closure returns an array of the values obtained by starting with `v` and successively applying each  function of the array passed into `composeFunctions`. That is, the array returned by the closure is
+Write a function that takes in an array of functions, each of type `GenericFunction<T>`, i.e., `(x: T) => T`. It returns a closure that takes one argument `v` of type `T`. When called, the closure returns an array of the values obtained by starting with `v` and successively applying each function of the array passed into `composeFunctions`. That is, the array returned by the closure is
 `[v, f0(v), f1(f0(v)), ...]` if the array of functions is `[f0, f1, ...]`.
 
 ### `cyclic`
@@ -127,7 +127,7 @@ The returned closure should take an amount of money as input and simulate the pu
 * Return undefined if the amount is insufficient or the item is out of stock
 * Each successful call (purchase) should reduce the stock by 1
 
-### `wageIncrease`
+### `wageChange`
 
 Write a function
 ```ts
@@ -140,7 +140,7 @@ used to compute wage changes over the years.
 
 `wageChange` takes as argument a function that, given a year and the previous year’s wage, returns the new wage.
 `wageChange` returns a closure which takes three arguments: a starting wage, the year for which this wage applies, and the end year for which to compute the new wage, which is returned.
-The end year passed to this closure should be no lower than the start year. Valid years are 1970 to 2026, and valid wage values are numbers greater than 0. The closure returned by `wageChange` should return NaN when any arguments or computed values at any point are invalid.
+The end year passed to this closure should be no lower than the start year. Valid years are 1970 to 2026, and valid wage values are numbers greater than 0. The closure returned by `wageChange` should return `NaN` when any arguments or computed values at any point are invalid.
 
 ### `sineSeries`
 
