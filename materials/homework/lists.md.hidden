@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Lists
@@ -63,7 +63,7 @@ Write a function that takes a list of some type `T`, a number `n` (assumed to be
 
 ### `keepTrendMiddles`
 
-Takes in a list of numbers and a function `allSatisfy: (prev: number, curr: number, next: number) => boolean`. Returns a list of numbers, keeping only those numbers `curr` from the original list that have adjacent values `prev` and `next` so that `allSatisfy` returns true when applied to the numbers in the given order.
+Takes in a list of numbers and a function `allSatisfy: (prev: number, curr: number, next: number) => boolean`. Returns a list of numbers, keeping only those numbers `curr` from the original list that have both a previous and next element, and for which `allSatisfy` returns true when applied to the numbers in the given order.
 
 ### `keepLocalMaxima`
 
