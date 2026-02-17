@@ -166,7 +166,7 @@ $$
 
 Write a function called `sineSeries`
 ```ts
-export function sineSeries(x: number) => (moreTerms: number = 1) => number {
+export function sineSeries(x: number): (moreTerms?: number) => number {
   // TODO
 }
 ```
