@@ -57,7 +57,7 @@ export function cyclic<T>(values: T[]): () => T {
   // TODO
 }
 ```
-`cyclic` takes an array of values and returns a closure. Each time the closure is called, it returns the next value in the array, cycling back to the beginning after reaching the end. If it is initialized with an empty array, throw an Error. The syntax for throwing an error in TypeScript looks like the following
+`cyclic` takes an array of values. If called with an empty array, it throws an Error. Otherwise, it returns a closure. Each time the closure is called, it returns the next value in the array, cycling back to the beginning after reaching the end.  The syntax for throwing an error in TypeScript looks like the following
 
 ```ts
 throw new Error("lorem ipsum")
