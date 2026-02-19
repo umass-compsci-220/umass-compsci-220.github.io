@@ -40,11 +40,11 @@ Please do come to office hours for:
 | **Time**              | **Staff**                 | **Location**                                      |
 | --------------------- | ------------------------  | ------------------------------------------------- |
 | 8:45 am - 9:45 am     | Venkatraman Varatharajan  | LGRT T222                                         |
-| 12:30 pm - 1:30 pm   | Eduardo Calle Ortiz       | LGRT T222                                         |
+| 12:30 pm - 1:30 pm    | Eduardo Calle Ortiz       | LGRT T222                                         |
 | 2:00 pm - 3:00 pm     | Jayakrishna Kambhampati   | LGRT T222                                         |
 | 3:00 pm - 4:00 pm     | Advaya Venbakkam          | LGRT T222                                         |
-| 4:00 pm - 6:00 pm     | Lucy Gavrich              | LGRT T222                                         |
-| 6:00 pm - 7:00 pm     | Omar Osman                | LGRT T222                                         |
+| 4:00 pm - 5:00 pm     | Omar Osman                | LGRT T222                                         |
+| 6:00 pm - 7:00 pm     | Lucy Gavrich              | LGRT T222                                         |
 | 7:00 pm - 8:00 pm     | Han Yang                  | LGRT T222                                         |
 
 ## Thursday
