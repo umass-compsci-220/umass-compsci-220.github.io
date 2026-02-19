@@ -2,9 +2,9 @@
 sidebar_position: 3
 ---
 
-# Discussion 3: Lists
+# Discussion 3: Closures and Lists
 
-Welcome to the third discussion! This week you'll learn more about Lists and we'll review reduce.
+Welcome to the third discussion! This week you'll learn more about closures and lists.
 
 ## Materials
 
