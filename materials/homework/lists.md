@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Lists
@@ -34,6 +34,7 @@ You must write tests for all your functions, following the principles used so fa
 - [Project testing page](/materials/tutorials/assignments/testing)
 - [Testing guidelines](/materials/guidelines/testing)
 
+Testing systematically can lead to half a dozen tests per function or more.
 It may not be obvious how to implement some of the functions. Try writing some tests first.
 
 ## Programming Tasks
@@ -41,7 +42,6 @@ It may not be obvious how to implement some of the functions. Try writing some t
 - Note:
   - In all problems involving lists you are **not** allowed to use arrays in your solution.
   - You must reduce code duplication whenever applicable.
-  - For reference: Our sample solutions are less than 100 lines of code. Testing systematically can lead to half a dozen tests per function or more.
  
 - **Important**
   - You may **not** use `listToArray` or `arrayToList` in **any** of your functions. Your score will be 0 for any function using these.
@@ -63,7 +63,7 @@ Write a function that takes a list of some type `T`, a number `n` (assumed to be
 
 ### `keepTrendMiddles`
 
-Takes in a list of numbers and a function `allSatisfy: (prev: number, curr: number, next: number) => boolean`. Returns a list of numbers, keeping only those numbers `curr` from the original list that have adjacent values `prev` and `next` so that `allSatisfy` returns true when applied to the numbers in the given order.
+Takes in a list of numbers and a function `allSatisfy: (prev: number, curr: number, next: number) => boolean`. Returns a list of numbers, keeping only those numbers `curr` from the original list that have both a previous and next element, and for which `allSatisfy` returns true when applied to the numbers in the given order.
 
 ### `keepLocalMaxima`
 
