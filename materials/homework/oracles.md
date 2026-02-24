@@ -5,8 +5,6 @@ sidebar_position: 4
 # Oracles
 
 - Please download the homework [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/05-oracles.zip)
-- This project is divided into two homeworks (HW4a, HW4b)
-  - Both carry the weight of a full homework
 - **NOTE** You are limited to **12 submissions** per 24 hours time period. If you exceed this you will stop seeing feedback on gradescope.
 
 ## Overview
@@ -15,8 +13,6 @@ In this assignment, you will develop an _oracle_ to test (possibly broken) solut
 
 - Your purpose is not to solve the problem, but to test whether a solution given to you is correct. That is, all code you write will be tests and supporting code for tests.
 - There might be multiple correct outputs for a single input. Thus, you will need to test _properties_ of the output, and make sure you are considering enough properties so anything that satisfies all of them (i.e. passes all your assertions) is correct.
-
-This homework is divided into two assignments (with separate due dates). You will have one week to complete each part. Part A will focus on writing a function that, if given valid inputs, produces correct outputs. Part B will be similar, but will focus on verifying that the steps of a function are correct.
 
 ### Learning Objectives
 
@@ -94,20 +90,33 @@ interface Hire {
   candidate: number;
 }
 
-type StableMatcher = (companies: number[][], candidates: number[][]) => Hire[];
+interface Offer {
+  from: number;
+  to: number;
+  fromCo: boolean; // If the offer is from a company
+}
+
+interface Run {
+  trace: Offer[];
+  out: Hire[];
+}
+
+type StableMatcherWithTrace = (companies: number[][], candidates: number[][]) => Run;
 ```
 
-A `Hire` is an object with two fields that represents a matching between a company and candidate. A `StableMatcher` is a function that takes in two 2D arrays of numbers, specifically the preferences of the companies and candidates, and returns an array of `Hire` objects (`Hire[]`).
+A `Hire` is an object with two fields that represents a matching between a company and candidate. An `Offer` is an object with three fields that represents a proposal from one party member to a member of another party (company -> candidate or candidate -> company). A `Run` is an object that represents the series of steps an algorithm took (`trace`) to produce a solution (`out`). 
 
-Along with these type definitions, there are two relevant exported members (functions), both of type `StableMatcher`. They are: `STABLE_MATCHING_SOLUTION_1` and `FLAWED_STABLE_MATCHING_SOLUTION_1`. They are used inside the provided tests (`oracle.test.ts`) to check against your solution.
+A `StableMatcherWithTrace` is a function that takes in two 2D arrays of numbers, specifically the preferences of the companies and candidates, and returns a `Run`.
+
+Along with these type definitions, there are two relevant exported members (functions), both of type `StableMatcherWithTrace`. They are: `STABLE_MATCHING_SOLUTION_1_TRACE` and `FLAWED_STABLE_MATCHING_SOLUTION_1_TRACE`. They are used inside the provided tests (`oracle.test.ts`) to check against your solution.
 
 Their implementations are [obfuscated](https://en.wikipedia.org/wiki/Obfuscation) inside of `stableMatching.js`. Looking at their source code would be counter-productive to the assignment and not particularly useful as the auto-grader will tests your oracle against numerous correct and incorrect solutions to the problem.
 
 ## Programming Tasks
 
-### Part A **Due 10/12**
+### `generateInput`
 
-1. Write a function called `generateInput`:
+Write a function called `generateInput`:
 
 ```ts
 export function generateInput(n: number): number[][] {
@@ -165,56 +174,23 @@ Similar to situation described above, creating an array using the array construc
 my2DBoolArray[0] = new Array<boolean>(5).fill(false);
 ```
 
-**Although you are not required to write tests, you should confirm your `generateInput` works correctly before attempting `stableMatchingOracle`.**
+**Although you are not required to write tests, you should confirm your `generateInput` works correctly before attempting `stableMatchingRunOracle`.**
 
-2. Implement `stableMatchingOracle` inside of `oracles.ts`.
+### `stableMatchingRunOracle`
+
+Implement `stableMatchingRunOracle` inside of `oracles.ts`.
 
 ```ts
-export function stableMatchingOracle(f: (companies: number[][], candidates: number[][]) => Hire[]): void {
+export function stableMatchingRunOracle(makeStableMatchingTrace: StableMatcherWithTrace): void {
   // TODO
 }
 ```
 
-This function is an oracle for the Stable Matching Problem. If `f` is a valid solution of the stable matching problem, it should do nothing (the return type is `void`). If `f` is an invalid solution, it should throw an `AssertionError` (use `assert(...)`).
-
-As a reminder, the `assert` function will take in a logical expression and an optional message as arguments (`assert(x === 1, "X should be one.")`). If the logical expression is [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), then `assert` will throw an `AssertionError` containing the message. If the expression is truthy (not falsy) `assert` will do nothing.
-
-A template for the `stableMatchingOracle` function is given inside of `oracles.ts`. To do well, you should carefully consider all the different ways in which the output could be invalid for the original problem statement. You may assume the output is of the right type, `Hire[]`, but nothing else.
-
-As mentioned in the [student expectations](#student-expectations), you should be employing proper coding abstractions (avoid code duplication). When implementing this function, look at all the related data a company or candidate has. What are the common operations and queries that you might do on this data? Is there any way to group this together or pre-compute anything? **Using objects may be helpful.** Think before you code.
-
-### Part B **Due 10/19**
-
-Now write an oracle that determines if a function follows the specified algorithm:
+This function is an oracle that determines if a `StableMatcherWithTrace` follows the specified algorithm:
 
 **Algorithm**: We assume the following non-standard variant: At any step, any unmatched company or candidate may propose. Every party always proposes to the next potential partner on their preference list, starting with the top choice. Proposals are not repeated. Any unmatched party that receives a proposal accepts unconditionally. If the receiving party is already matched, but they receive a better offer (higher in their preference list), they accept, and their current partner becomes unmatched; otherwise, the offer is rejected. The algorithm ends when all parties are either matched or have made offers to the entire preference list. The algorithm is under-specified/nondeterministic: it doesn’t state whether a company or a candidate proposes at a given step, nor which one does, as long as the given rules are observed.
 
-You may have noticed the other members inside `stableMatching.d.ts`:
-
-```ts
-interface Offer {
-  from: number;
-  to: number;
-  fromCo: boolean; // If the offer is from a company
-}
-
-interface Run {
-  trace: Offer[];
-  out: Hire[];
-}
-
-type StableMatcherWithTrace = (companies: number[][], candidates: number[][]) => Run;
-```
-
-An `Offer` is an object with three fields that represents a proposal from one party member to a member of another party (company -> candidate or candidate -> company). A `Run` is an object that represents the series of steps an algorithm took (`trace`) to produce a solution (`out`). A `StableMatcherWithTrace` is just like a `StableMatcher`, but it returns a `Run`.
-
-1. Implement `stableMatchingRunOracle` inside of `oracles.ts`.
-
-```ts
-export function stableMatchingRunOracle(f: (companies: number[][], candidates: number[][]) => Run): void {
-  // TODO
-}
-```
+<!-- This function is an oracle for the Stable Matching Problem. If `f` is a valid solution of the stable matching problem, it should do nothing (the return type is `void`). If `f` is an invalid solution, it should throw an `AssertionError` (use `assert(...)`). -->
 
 This function should test the provided implementation of stable matching. It should check that:
 
@@ -222,29 +198,13 @@ This function should test the provided implementation of stable matching. It sho
   - The trace need not be a complete algorithm run, it may stop at any point
 - The produced matching (`out`) is indeed the result of the offers in the trace
 
-As with part A, do nothing if it is valid. Throw an `AssertionError` if it is invalid (use `assert(...)`). You may assume the output is of the right type, `Run`, but nothing else.
+`stableMatchingRunOracle` should do nothing if it is valid. Throw an `AssertionError` if it is invalid (use `assert(...)`). **You may assume the output is of the right type, `Run`, but nothing else.**
 
-Additionally, you should update `oracle.test.ts` to skip the tests from part A and not skip the part B tests.
+As a reminder, the `assert` function will take in a logical expression and an optional message as arguments (`assert(x === 1, "X should be one.")`). If the logical expression is [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), then `assert` will throw an `AssertionError` containing the message. If the expression is truthy (not falsy) `assert` will do nothing.
 
-```ts
-// Before
-describe("Part A: stableMatchingOracle", () => {
-  /* ... */
-});
+A template for the `stableMatchingRunOracle` function is given inside of `oracles.ts`. To do well, you should carefully consider all the different ways in which the output could be invalid for the original problem statement.
 
-describe.skip("Part B: stableMatchingRunOracle", () => {
-  /* ... */
-});
-
-// After
-describe.skip("Part A: stableMatchingOracle", () => {
-  /* ... */
-});
-
-describe("Part B: stableMatchingRunOracle", () => {
-  /* ... */
-});
-```
+As mentioned in the [student expectations](#student-expectations), you should be employing proper coding abstractions (avoid code duplication). When implementing this function, look at all the related data a company or candidate has. What are the common operations and queries that you might do on this data? Is there any way to group this together or pre-compute anything? **Using objects may be helpful.** Think before you code.
 
 ## Examples
 
