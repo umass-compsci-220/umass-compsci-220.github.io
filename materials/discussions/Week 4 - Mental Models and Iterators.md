@@ -2,9 +2,9 @@
 sidebar_position: 4
 ---
 
-# Discussion 4: Mental Models and Closures
+# Discussion 4: Mental Models and Testing
 
-Welcome to the fourth discussion! This week you'll learn more about closures and mental models.
+Welcome to the fourth discussion! This week you'll learn more about mental models and testing with Jest.
 
 ## Materials
 
