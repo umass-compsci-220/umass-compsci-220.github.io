@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Oracles
@@ -167,7 +167,7 @@ const my2DBoolArray: boolean[][] = [];
 
 #### Common Issue - 'Unsafe assignment of type `any[]` to variable of type `number[]`'
 
-Similar to situation described above, creating an array using the array constructor without a type parameter (`new Array(...)`) does not give the compiler enough context. A new array? Of what type? Try explicitly telling the compiler what type of array you are trying to construct.
+Similar to the situation described above, creating an array using the array constructor without a type parameter (`new Array(...)`) does not give the compiler enough context. A new array? Of what type? Try explicitly telling the compiler what type of array you are trying to construct.
 
 ```ts
 // Create a boolean array of length 5, fill it with false
