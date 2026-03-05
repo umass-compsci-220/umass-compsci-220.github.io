@@ -9,7 +9,7 @@ sidebar_position: 5
 
 ## Overview
 
-In this assignment, you will develop an _oracle_ to test (possibly broken) solutions to the _Stable Matching Problem_. This assignment is different in that:
+In this assignment, you will develop an _oracle_ to test (possibly broken) solutions to a matching problem inspired by _Stable Matching_. This assignment is different in that:
 
 - Your purpose is not to solve the problem, but to test whether a solution given to you is correct. That is, all code you write will be tests and supporting code for tests.
 - There might be multiple correct outputs for a single input. Thus, you will need to test _properties_ of the output, and make sure you are considering enough properties so anything that satisfies all of them (i.e. passes all your assertions) is correct.
@@ -18,6 +18,8 @@ In this assignment, you will develop an _oracle_ to test (possibly broken) solut
 
 - Practice writing property based tests
 - Practice reading, and reasoning about, a problem's specification
+- Avoid code duplication by using appropriate data structures and abstractions
+- Avoid repeated inefficiencies by using appropriate data structures for the most common operations 
 
 ### Student Expectations
 
@@ -32,7 +34,7 @@ Students will be graded on their ability to:
 - Follow the [coding](/materials/guidelines/syntax-and-code), [bad practice](/materials/guidelines/bad-practices) and [testing](/materials/guidelines/testing) guidelines
   - **There may be manual grading regarding these guidelines**
 
-**You are not required to write anything inside of the `.test.ts` file.**
+**You are not required to write anything in the `.test.ts` file.**
 
 ### Resources
 
@@ -40,7 +42,7 @@ There is an [examples](#examples) section that goes through input and output
 
 ## Getting Started
 
-In basic terms, **an oracle is a function that answers a yes or no question**. In your case, **you are writing an oracle to decide if the supplied function correctly solves the [_Stable Matching Problem_](#the-stable-matching-problem)**.
+In basic terms, **an oracle is a function that answers a yes or no question**. In your case, **you are writing an oracle to decide if the supplied function performs the right steps and reports the correct result, in solving a [_Preference Matching Problem_](#the-preference-matching-problem)**.
 
 **Your oracle’s job is to generate and feed test inputs to a given "solution" (possibly incorrect) then test the correctness of the output.** In the past, you did this by comparing the output to a precomputed "right answer". This assumes two things: there is only one right answer, and that it is easy for you to find it.
 
@@ -48,9 +50,9 @@ In the real world, either of these can be false. (How do you know what the right
 
 **You should write code that is well structured, readable, and employs the right abstractions (higher-order functions/objects).** This will make it easier to test and debug. **Avoid code duplication**, which makes it tedious to inspect and maintain your code when changes are needed.
 
-### The Stable Matching Problem
+### The Preference Matching Problem
 
-You can learn more about the Stable Matching Problem from [Wikipedia](https://en.wikipedia.org/wiki/Stable_marriage_problem), but a summary of the problem is as follows:
+Our problem is inspired by the [Stable Matching Problem](https://en.wikipedia.org/wiki/Stable_marriage_problem), with some differences. The starting point of the problem is as follows:
 
 Imagine there are two groups, $A$ and $B$, both with $n$ members. We need to split the two groups into pairs (called a **matching**) consisting of one member from each group.
 
@@ -58,12 +60,16 @@ More formally, we need a **perfect matching** where every member in group $A$ is
 
 However, **everyone has a preference** with who they are matched with. Every member from each group ranks all members from the other group by preference.
 
+<!--
+
 A solution to the stable matching problem will take as input the two groups and everyone's preference. As output, it will produce a **stable matching**. A matching is **stable** if there do not exist two matched pairs, $[a_1, b_1]$ and $[a_2, b_2]$, such that:
 
 - $a_1$ prefers $b_2$ over $b_1$, and
 - $b_2$ prefers $a_1$ over $a_2$
 
 Alternatively, a matching is not stable (**unstable**) if there exist members $a$ and $b$ who are not paired with each other, but prefer each other over their current pair.
+
+-->
 
 ### Companies and Candidates
 
@@ -82,7 +88,7 @@ Companies and candidates are each assigned a number between 0 and $n - 1$. Thus,
 
 Each element of this 2D array is a preference list. Each element of a preference list is a candidate's number. Company 0's first preference is Candidate 0, then Candidate 1, then lastly Candidate 2. Candidate preference lists are structured the same way. However, each number corresponds to a company rather than a candidate.
 
-Inside of `stableMatching.d.ts`, you will find the following type definitions:
+In file `stableMatching.d.ts`, you will find the following type definitions:
 
 ```ts
 interface Hire {
@@ -188,11 +194,11 @@ export function stableMatchingRunOracle(makeStableMatchingTrace: StableMatcherWi
 
 This function is an oracle that determines if a `StableMatcherWithTrace` follows the specified algorithm:
 
-**Algorithm**: We assume the following non-standard variant: At any step, any unmatched company or candidate may propose. Every party always proposes to the next potential partner on their preference list, starting with the top choice. Proposals are not repeated. Any unmatched party that receives a proposal accepts unconditionally. If the receiving party is already matched, but they receive a better offer (higher in their preference list), they accept, and their current partner becomes unmatched; otherwise, the offer is rejected. The algorithm ends when all parties are either matched or have made offers to the entire preference list. The algorithm is under-specified/nondeterministic: it doesn’t state whether a company or a candidate proposes at a given step, nor which one does, as long as the given rules are observed.
+**Algorithm**: We define the following non-standard variant: At any step, any unmatched company or candidate may propose. Every party always proposes to the next potential partner on their preference list, starting with the top choice. Proposals are not repeated. Any unmatched party that receives a proposal accepts unconditionally. If the receiving party is already matched, but they receive a better offer (higher in their preference list), they accept, and their current partner becomes unmatched; otherwise, the offer is rejected. The algorithm ends when all parties are either matched or have made offers to the entire preference list. The algorithm is under-specified/nondeterministic: it doesn’t state whether a company or a candidate proposes at a given step, nor which one does, as long as the given rules are observed.
 
 <!-- This function is an oracle for the Stable Matching Problem. If `f` is a valid solution of the stable matching problem, it should do nothing (the return type is `void`). If `f` is an invalid solution, it should throw an `AssertionError` (use `assert(...)`). -->
 
-This function should test the provided implementation of stable matching. It should check that:
+This function should test the provided implementation of matching. It should check that:
 
 - The offer sequence in the trace is valid, made according to the given algorithm, starting with all parties unmatched
   - The trace need not be a complete algorithm run, it may stop at any point
@@ -204,7 +210,7 @@ As a reminder, the `assert` function will take in a logical expression and an op
 
 A template for the `stableMatchingRunOracle` function is given inside of `oracles.ts`. To do well, you should carefully consider all the different ways in which the output could be invalid for the original problem statement.
 
-As mentioned in the [student expectations](#student-expectations), you should be employing proper coding abstractions (avoid code duplication). When implementing this function, look at all the related data a company or candidate has. What are the common operations and queries that you might do on this data? Is there any way to group this together or pre-compute anything? **Using objects may be helpful.** Think before you code.
+As mentioned in the [student expectations](#student-expectations), you should be employing proper coding abstractions (avoid code duplication). When implementing this function, look at all the related data a company or candidate has. How can you structure this data? Can you exploit the fact that companies and candidates act in the same way to avoid code duplication? What are the most common operations or queries that happen in a run and can you pre-compute anything to make them more efficient? **Using objects may be helpful.** Think before you code.
 
 ## Examples
 
