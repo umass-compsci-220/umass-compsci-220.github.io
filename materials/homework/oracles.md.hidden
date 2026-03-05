@@ -55,9 +55,9 @@ In the real world, either of these can be false. (How do you know what the right
 Our problem is inspired by the [Stable Matching Problem](https://en.wikipedia.org/wiki/Stable_marriage_problem), with some differences. The starting point of the problem is as follows:
 
 Imagine there are two groups, $A$ and $B$, both with $n$ members. We need to split the two groups into pairs (called a **matching**) consisting of one member from each group.
-
+<!--
 More formally, we need a **perfect matching** where every member in group $A$ is paired with _exactly one_ member from group $B$, and vice versa (everyone is in a pair).
-
+-->
 However, **everyone has a preference** with who they are matched with. Every member from each group ranks all members from the other group by preference.
 
 <!--
