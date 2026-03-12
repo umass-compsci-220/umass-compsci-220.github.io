@@ -1,15 +1,17 @@
 # Model-View-Controller (MVC)
 
-**Due Dates:**
+- In this assignment, you will implement a simple but extensible graphical simulation by following the Model-View-Controller pattern.
+This specification is longer and more detailed than for other homework assignments in this course. 
+Refer to [How to Complete this Project](#how-to-complete-this-project) for guidance on how to navigate it and plan 
+your development process.
+- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/06-observers-mvc-wip.zip).
+
+## Due Dates:
 - Checkpoint due **Wednesday, March 25.** To receive full credit for the checkpoint, your code must have a score of at least 40% on the autograder. 
   See [How to Complete this Project](#how-to-complete-this-project) for guidance on how to achieve this.
   - The checkpoint counts as a full homework assignment towards your course grade.
 - Full assignment due **Wednesday, April 15**. Note that we do not expect you to be working on this assignment the weeks of HW7 or Midterm 2. The scale of this assignment and our schedule of topics necessitate this split approach. Additionally, it is good practice to work on a codebase, step away from it, then pick it up again. 
   - The full assignment submission counts as one full homework assignment towards your course grade.
-
-In this assignment, you will implement a simple but extensible graphical simulation by following the Model-View-Controller pattern.
-This specification is longer and more detailed than for other homework assignments in this course. 
-Refer to [How to Complete this Project](#how-to-complete-this-project) for guidance on how to navigate it and plan your development process.
 
 ## Learning Objectives
 Model-View-Controller is the backbone of graphical user interface (GUI) systems.
