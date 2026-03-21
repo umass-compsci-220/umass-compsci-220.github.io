@@ -150,6 +150,7 @@ Add a comment just before your `SleepyLobster` class definition explaining the m
 ### `agentFactory` Function
 
 Implement the `agentFactory` function so that it creates a `SimpleLobster` when passed the string `"simple_lobster"` as its `type` parameter.
+It should also create a `SleepyLobster` when passed the string `"sleepy_lobster"` as its `type` parameter.
 If `type` is any other value, throw an `Error` with the message `"unsupported agent type: " + type`.
 The created lobster should start at the specified initial location.
 
