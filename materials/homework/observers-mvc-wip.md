@@ -1,3 +1,7 @@
+---
+sidebar_position: 6
+---
+
 # Model-View-Controller (MVC)
 
 - In this assignment, you will implement a simple but extensible graphical simulation by following the Model-View-Controller pattern.
