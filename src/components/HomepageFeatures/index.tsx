@@ -16,7 +16,7 @@ const FeatureList = [
         The goal of COMPSCI220 Programming Methodology is to turn you into an advanced programmer with a deep
         understanding of modern programming methodology. We will emphasize good software engineering skills, 
         including programming abstractions, testing, and debugging. Although the programming languages that we 
-        will use are JavaScript and TypeScript, we will emphasize general programming principles. Every- thing 
+        will use are JavaScript and TypeScript, we will emphasize general programming principles. Everything 
         that you will learn in the class will be applicable to other modern languages, including (for example)
         C++, C#, D, Go, Java, Python, Rust, and Swift.
         </div>
