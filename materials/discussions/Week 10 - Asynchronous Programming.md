@@ -13,7 +13,7 @@ Download the lab slides [here](https://github.com/umass-compsci-220/public-mater
 The slides with solutions will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%2010%20-%20Solutions.pdf) after the last discussion of the day.
 
 Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/10-asynchronous-programming-RLO.zip). Make sure to submit this to gradescope, ask your lab leaders to help you if you are unsure of how.
-The solution file will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/10-asynchronous-programming-RLO-solution.zip) after lab.
+The solution file will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/10-asynchronous-programming-RLO-solution.js) after lab. <!-- Change this back to .zip for full exercise? -->
 
 ## Opening and working with the starter code
 
