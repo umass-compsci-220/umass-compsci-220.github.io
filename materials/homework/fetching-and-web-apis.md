@@ -617,7 +617,7 @@ export function fetchUMassWeather(): Promise<AverageTemperatureResults> {
 
 This function should find the average temperature of all universities in the "University of Massachusetts" system. Use an appropriate function from a previous task to compute your result. Return the result unchanged.
 
-You may notice that the following query, <https://cs220.cs.umass.edu/geoCoord/search?q=University+of+Massachusetts+at+Amherst>, returns no results, but <https://cs220.cs.umass.edu/geoCoord/search?q=University+of+Massachusetts+Amherst> does. You will need to use the `transformName` parameter to cover this case. Look at the documentation for the [`String` object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) and figure out how to handle it.
+You may notice that the following query, <https://cs220.cs.umass.edu/geoCoord/search?q=University+of+Massachusetts+at+Amherst>, does not return the expected result, but <https://cs220.cs.umass.edu/geoCoord/search?q=University+of+Massachusetts+Amherst> does. You will need to use the `transformName` parameter to cover this case. Look at the documentation for the [`String` object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) and figure out how to handle it.
 
 ### `fetchUMichWeather`
 
