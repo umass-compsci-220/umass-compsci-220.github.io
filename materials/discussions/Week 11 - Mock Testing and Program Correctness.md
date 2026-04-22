@@ -2,7 +2,7 @@
 sidebar_position: 11
 ---
 
-# Discussion 12: Mock Testing and Program Correctness
+# Discussion 11: Mock Testing and Program Correctness
 
 Welcome to the eleventh discussion! This week you'll learn more about mock testing and program correctness!
 
