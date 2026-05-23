@@ -105,7 +105,7 @@ nextTick(): void;
 broadcastInitialState(): void;
 ```
 
-Any other methods or attributes you add to `SimulationObject` must be non-public.
+Any other methods, attributes, or other changes you make to `SimulationObject` must be non-public and must not constrain the extensibility of `SimulationObject`.
 
 ### `Agent` Class (`agent.ts`)
 
