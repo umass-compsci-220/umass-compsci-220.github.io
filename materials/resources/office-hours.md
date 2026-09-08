@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Office Hours
 
-We will be holding both in-person and virtual office hours this semester. Location(s) for in-person office hours is still to be determined. Faculty members will hold their office hours in their own offices.
+We will be holding both in-person and virtual office hours this semester. Faculty members will hold their office hours in their own offices.
 
 Please do come to office hours for:
 
