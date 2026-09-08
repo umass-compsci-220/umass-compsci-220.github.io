@@ -19,37 +19,37 @@ Please do come to office hours for:
 | **Time**              | **Staff**                 | **Location**                                          |
 | --------------------- | ------------------------- | ----------------------------------------------------- |
 | 10:00 am - 11:00 am   | Marius Minea              | [Zoom](https://umass-amherst.zoom.us/j/92493044446)   |
-| 11:00 am - 12:00 pm   | Albert (AJ) Young         | LGRT T220                                             |
+| 11:00 am - 12:00 pm   | Albert (AJ) Young         | LGRT T222                                             |
 | 12:00 pm - 1:00 pm    | Chang Zeng                | Zoom                                                  |
-| 1:00 pm - 2:00 pm     | Bella Eringros            |                                              |
-| 2:00 pm - 3:00 pm     | Lucy Gavrich              |                                               |
-| 3:00 pm - 4:00 pm     | Jonah Siegel              |                                              |
+| 1:00 pm - 2:00 pm     | Bella Eringros            | LGRT T222                                             |
+| 2:00 pm - 3:00 pm     | Lucy Gavrich              | LGRT T222                                             |
+| 3:00 pm - 4:00 pm     | Jonah Siegel              | LGRT T222                                             |
 | 4:00 pm - 6:00 pm     | Reagan Keeney             | CSL E213                                              |
 
 ## Tuesday
 
 | **Time**              | **Staff**                 | **Location**                                      |
 | --------------------- | ------------------------- | ------------------------------------------------- |
-| 10:00 am - 11:00 am   | Shambhavi Upadhyay        |                                          |
+| 10:00 am - 11:00 am   | Shambhavi Upadhyay        | LGRT T222                                         |
 | 11:00 am - 1:00 pm    | Chang Zeng                | Zoom                                              |
 | 1:00 pm - 2:00 pm     | Marius Minea              | LGRC A341                                         |
 | 2:00 pm - 3:00 pm     | James Perretta            | LGRC A211E                                        |
-| 5:30 pm - 6:30 pm     | Thomas Draghi             |                                         |
+| 5:30 pm - 6:30 pm     | Thomas Draghi             | LGRT T222                                         |
 
 ## Wednesday
 
 | **Time**              | **Staff**                 | **Location**                                      |
 | --------------------- | ------------------------  | ------------------------------------------------- |
-| 10:00 am - 12:00 pm   | Albert (AJ) Young         | LGRT T220                                         |
-| 12:30 pm - 1:30 pm    | Nolan Caputo              |                                       |
+| 10:00 am - 12:00 pm   | Albert (AJ) Young         | LGRT T222                                         |
+| 12:30 pm - 1:30 pm    | Nolan Caputo              | LGRT T222                                         |
 | 1:30 pm - 3:30 pm     | Jaechul (Harry) Roh       | Zoom                                              |
-| 5:30 pm - 6:30 pm     | Anay Liu                  |                                         |
+| 5:30 pm - 6:30 pm     | Anay Liu                  | LGRT T222                                         |
 
 ## Thursday
 
 | **Time**              | **Staff**                 | **Location**                                          |
 | --------------------- | ------------------------- | ----------------------------------------------------- |
-| 10:00 am - 11:00 am   | Victoria (Tory) Leone     |                                              |
+| 10:00 am - 11:00 am   | Victoria (Tory) Leone     | LGRT T222                                             |
 | 11:00 am - 12:00 pm   | Jaechul (Harry) Roh       | Zoom                                                  |
 | 12:00 pm - 1:00 pm    | Reagan Keeney             | CSL E213                                              |
 | 1:00 pm - 2:00 pm     | Marius Minea              | LGRC A341                                             |
@@ -59,5 +59,5 @@ Please do come to office hours for:
 
 | **Time**              | **Staff**                 | **Location**    |
 | --------------------- | ------------------------- | ----------------|
-| 9:30 am - 10:30 am    | Lucy Gavrich              |        |
-| 10:30 am - 12:30 pm   | Sean Lin                  |      |
+| 9:30 am - 10:30 am    | Lucy Gavrich              | LGRT T222       |
+| 10:30 am - 12:30 pm   | Sean Lin                  | LGRT T222       |
