@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Office Hours
 
-We will be holding both in-person and virtual office hours this semester. All in-person TA and UCA office hours are held in **LTBD**. Faculty members will hold their office hours in their own offices.
+We will be holding both in-person and virtual office hours this semester. Location(s) for in-person office hours is still to be determined. Faculty members will hold their office hours in their own offices.
 
 Please do come to office hours for:
 
@@ -14,4 +14,50 @@ Please do come to office hours for:
 - Reviewing past exams, quizzes, or homework
 - Anything else you might need assistance with!
 
-The Fall 2026 office hour schedule will be posted here around the beginning of the semester.
+## Monday
+
+| **Time**              | **Staff**                 | **Location**                                          |
+| --------------------- | ------------------------- | ----------------------------------------------------- |
+| 10:00 am - 11:00 am   | Marius Minea              | [Zoom](https://umass-amherst.zoom.us/j/92493044446)   |
+| 11:00 am - 12:00 pm   | Albert (AJ) Young         | TBD                                                   |
+| 12:00 pm - 1:00 pm    | Chang Zeng                | Zoom                                                  |
+| 1:00 pm - 2:00 pm     | Bella Eringros            |                                              |
+| 2:00 pm - 4:00 pm     | Reagan Keeney             | TBD                                                   |
+| 4:00 pm - 5:00 pm     | Jonah Siegel              |                                              |
+| 5:00 pm - 6:00 pm     | Lucy Gavrich              |                                              |
+
+## Tuesday
+
+| **Time**              | **Staff**                 | **Location**                                      |
+| --------------------- | ------------------------- | ------------------------------------------------- |
+| 10:00 am - 11:00 am   | Shambhavi Upadhyay        |                                          |
+| 11:00 am - 1:00 pm    | Chang Zeng                | Zoom                                              |
+| 1:00 pm - 2:00 pm     | Marius Minea              | LGRC A341                                         |
+| 2:00 pm - 3:00 pm     | James Perretta            | LGRC A211E                                        |
+| 5:30 pm - 6:30 pm     | Thomas Draghi             |                                         |
+
+## Wednesday
+
+| **Time**              | **Staff**                 | **Location**                                      |
+| --------------------- | ------------------------  | ------------------------------------------------- |
+| 10:00 am - 12:00 pm   | Albert (AJ) Young         | TBD                                               |
+| 12:30 pm - 1:30 pm    | Nolan Caputo              |                                       |
+| 1:30 pm - 3:30 pm     | Jaechul (Harry) Roh       | Zoom                                              |
+| 5:30 pm - 6:30 pm     | Anay Liu                  |                                         |
+
+## Thursday
+
+| **Time**              | **Staff**                 | **Location**                                          |
+| --------------------- | ------------------------- | ----------------------------------------------------- |
+| 10:00 am - 11:00 am   | Victoria (Tory) Leone     |                                              |
+| 11:00 am - 12:00 pm   | Jaechul (Harry) Roh       | Zoom                                                  |
+| 12:00 pm - 1:00 pm    | Reagan Keeney             | TBD                                                   |
+| 1:00 pm - 2:00 pm     | Marius Minea              | LGRC A341                                             |
+| 2:00 pm - 3:00 pm     | James Perretta            | LGRC A211E                                            |
+
+## Friday
+
+| **Time**              | **Staff**                 | **Location**    |
+| --------------------- | ------------------------- | ----------------|
+| 9:30 am - 10:30 am    | Lucy Gavrich              |        |
+| 10:30 am - 12:30 pm   | Sean Lin                  |      |
