@@ -20,7 +20,7 @@ Please do come to office hours for:
 | --------------------- | ------------------------- | ----------------------------------------------------- |
 | 10:00 am - 11:00 am   | Marius Minea              | [Zoom](https://umass-amherst.zoom.us/j/92493044446)   |
 | 11:00 am - 12:00 pm   | Albert (AJ) Young         | LGRT T222                                             |
-| 12:00 pm - 1:00 pm    | Chang Zeng                | Zoom                                                  |
+| 12:00 pm - 1:00 pm    | Chang Zeng                | [Zoom](https://reurl.cc/4YN26L)                       |
 | 1:00 pm - 2:00 pm     | Bella Eringros            | LGRT T222                                             |
 | 2:00 pm - 3:00 pm     | Lucy Gavrich              | LGRT T222                                             |
 | 3:00 pm - 4:00 pm     | Jonah Siegel              | LGRT T222                                             |
@@ -31,7 +31,7 @@ Please do come to office hours for:
 | **Time**              | **Staff**                 | **Location**                                      |
 | --------------------- | ------------------------- | ------------------------------------------------- |
 | 10:00 am - 11:00 am   | Shambhavi Upadhyay        | LGRT T222                                         |
-| 11:00 am - 1:00 pm    | Chang Zeng                | Zoom                                              |
+| 11:00 am - 1:00 pm    | Chang Zeng                | [Zoom](https://reurl.cc/4YN26L)                   |
 | 1:00 pm - 2:00 pm     | Marius Minea              | LGRC A341                                         |
 | 2:00 pm - 3:00 pm     | James Perretta            | LGRC A211E                                        |
 | 5:30 pm - 6:30 pm     | Thomas Draghi             | LGRT T222                                         |
