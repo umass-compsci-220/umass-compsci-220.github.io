@@ -22,7 +22,7 @@ Please do come to office hours for:
 | 11:00 am - 12:00 pm   | Albert (AJ) Young         | LGRT T220                                             |
 | 12:00 pm - 1:00 pm    | Chang Zeng                | Zoom                                                  |
 | 1:00 pm - 2:00 pm     | Bella Eringros            |                                              |
-| 2:00 pm - 4:00 pm     | Reagan Keeney             | TBD                                                   |
+| 2:00 pm - 4:00 pm     | Reagan Keeney             | CSL E215                                              |
 | 4:00 pm - 5:00 pm     | Jonah Siegel              |                                              |
 | 5:00 pm - 6:00 pm     | Lucy Gavrich              |                                              |
 
@@ -51,7 +51,7 @@ Please do come to office hours for:
 | --------------------- | ------------------------- | ----------------------------------------------------- |
 | 10:00 am - 11:00 am   | Victoria (Tory) Leone     |                                              |
 | 11:00 am - 12:00 pm   | Jaechul (Harry) Roh       | Zoom                                                  |
-| 12:00 pm - 1:00 pm    | Reagan Keeney             | TBD                                                   |
+| 12:00 pm - 1:00 pm    | Reagan Keeney             | CSL E215                                              |
 | 1:00 pm - 2:00 pm     | Marius Minea              | LGRC A341                                             |
 | 2:00 pm - 3:00 pm     | James Perretta            | LGRC A211E                                            |
 
