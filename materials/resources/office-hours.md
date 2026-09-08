@@ -19,7 +19,7 @@ Please do come to office hours for:
 | **Time**              | **Staff**                 | **Location**                                          |
 | --------------------- | ------------------------- | ----------------------------------------------------- |
 | 10:00 am - 11:00 am   | Marius Minea              | [Zoom](https://umass-amherst.zoom.us/j/92493044446)   |
-| 11:00 am - 12:00 pm   | Albert (AJ) Young         | TBD                                                   |
+| 11:00 am - 12:00 pm   | Albert (AJ) Young         | LGRT T220                                             |
 | 12:00 pm - 1:00 pm    | Chang Zeng                | Zoom                                                  |
 | 1:00 pm - 2:00 pm     | Bella Eringros            |                                              |
 | 2:00 pm - 4:00 pm     | Reagan Keeney             | TBD                                                   |
@@ -40,7 +40,7 @@ Please do come to office hours for:
 
 | **Time**              | **Staff**                 | **Location**                                      |
 | --------------------- | ------------------------  | ------------------------------------------------- |
-| 10:00 am - 12:00 pm   | Albert (AJ) Young         | TBD                                               |
+| 10:00 am - 12:00 pm   | Albert (AJ) Young         | LGRT T220                                         |
 | 12:30 pm - 1:30 pm    | Nolan Caputo              |                                       |
 | 1:30 pm - 3:30 pm     | Jaechul (Harry) Roh       | Zoom                                              |
 | 5:30 pm - 6:30 pm     | Anay Liu                  |                                         |
