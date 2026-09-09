@@ -38,19 +38,19 @@ Please do come to office hours for:
 
 ## Wednesday
 
-| **Time**              | **Staff**                 | **Location**                                          |
-| --------------------- | ------------------------  | ------------------------------------------------------|
-| 10:00 am - 12:00 pm   | Albert (AJ) Young         | LGRT T222                                             |
-| 12:30 pm - 1:30 pm    | Nolan Caputo              | LGRT T222                                             |
-| 1:30 pm - 3:30 pm     | Jaechul (Harry) Roh       | [Zoom](https://umass-amherst.zoom.us/j/92810053684)   |
-| 5:30 pm - 6:30 pm     | Anay Liu                  | LGRT T222                                             |
+| **Time**              | **Staff**                 | **Location**                                      |
+| --------------------- | ------------------------  | ------------------------------------------------- |
+| 10:00 am - 12:00 pm   | Albert (AJ) Young         | LGRT T222                                         |
+| 12:30 pm - 1:30 pm    | Nolan Caputo              | LGRT T222                                         |
+| 1:30 pm - 3:30 pm     | Jaechul (Harry) Roh       | Zoom                                              |
+| 5:30 pm - 6:30 pm     | Anay Liu                  | LGRT T222                                         |
 
 ## Thursday
 
 | **Time**              | **Staff**                 | **Location**                                          |
 | --------------------- | ------------------------- | ----------------------------------------------------- |
 | 10:00 am - 11:00 am   | Victoria (Tory) Leone     | LGRT T222                                             |
-| 11:00 am - 12:00 pm   | Jaechul (Harry) Roh       | [Zoom](https://umass-amherst.zoom.us/j/92122373139)   |
+| 11:00 am - 12:00 pm   | Jaechul (Harry) Roh       | Zoom                                                  |
 | 12:00 pm - 1:00 pm    | Reagan Keeney             | CSL E213                                              |
 | 1:00 pm - 2:00 pm     | Marius Minea              | LGRC A341                                             |
 | 2:00 pm - 3:00 pm     | James Perretta            | LGRC A211E                                            |
