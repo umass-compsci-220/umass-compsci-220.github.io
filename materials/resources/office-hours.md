@@ -52,7 +52,7 @@ Please do come to office hours for:
 | 10:00 am - 11:00 am   | Victoria (Tory) Leone     | LGRT T222                                             |
 | 11:00 am - 12:00 pm   | Jaechul (Harry) Roh       | [Zoom](https://umass-amherst.zoom.us/j/92122373139)   |
 | 12:00 pm - 1:00 pm    | Reagan Keeney             | CSL E213                                              |
-| 1:00 pm - 2:00 pm     | Marius Minea              | LGRC A341                                             |
+| 1:00 pm - 2:00 pm     | Marius Minea              | LGRC A341 (not held on 9/10)                          |
 | 2:00 pm - 3:00 pm     | James Perretta            | LGRC A211E                                            |
 
 ## Friday
