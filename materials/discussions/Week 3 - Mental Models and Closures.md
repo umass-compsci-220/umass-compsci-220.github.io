@@ -4,17 +4,17 @@ sidebar_position: 3
 
 # Discussion 3: Mental Models and Closures
 
-Welcome to the third discussion! This week you'll learn more about closures and working with iterators.
+Welcome to the third discussion! This week you'll practice working with mental models and closures.
 
 ## Materials
 
 Download the lab slides [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%203%20-%20No%20Solutions.pdf).
 
-The slides with solutions will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%203%20-%20Solutions.pdf) after the last discussion of the day.
+The slides with solutions will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%203%20-%20Solutions.pdf) after the submission deadline.
 
-Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/03-mental-models-and-closures.zip). Make sure to submit this to gradescope, ask your lab leaders to help you if you are unsure of how. We'll also show the process in the first lab.
+Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/03-mental-models-and-closures.zip) and the worksheet [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%203%20Worksheet.pdf). Make sure to **submit both to Gradescope**.
 
-The solution file will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/03-mental-models-and-closures-solution.ts) after lab.
+The solution file will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/03-mental-models-and-closures-solution.ts) after the submission deadline.
 
 ## Opening and working with the starter code
 
