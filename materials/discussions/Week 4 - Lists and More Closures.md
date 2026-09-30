@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Discussion 4: Lists and More Closures
 
-Welcome to the third discussion! This week you'll learn more about lists and closures.
+Welcome to the fourth discussion! This week you'll learn more about lists and closures.
 
 ## Materials
 
