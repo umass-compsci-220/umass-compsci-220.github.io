@@ -10,6 +10,6 @@ Welcome to the fifth discussion! This week we'll review for the midterm.
 
 Download the lab slides [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%205%20-%20Solutions.pdf).
 
-Today there is no starter code and the solutions are provided in the slides. Lab attendance is still required.
+Today there is no starter code and the solutions are provided in the slides for you to follow along. Lab attendance is still required.
 
 Good luck everyone!!!
