@@ -12,9 +12,9 @@ Download the lab slides [here](https://github.com/umass-compsci-220/public-mater
 
 The slides with solutions will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/Lab%206%20-%20Solutions.pdf) after the submission deadline.
 
-Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/06-property-testing-observers.zip). Make sure to **submit this to Gradescope**. Ask your lab leaders if you are unsure of how to do that.
+Download the starter code [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/06-property-testing-and-iterators.zip). Make sure to **submit this to Gradescope**. Ask your lab leaders if you are unsure of how to do that.
 
-The solution file will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/06-property-testing-observers-solution.ts) after the submission deadline.
+The solution file will be posted [here](https://github.com/umass-compsci-220/public-materials/raw/main/discussion/06-property-testing-and-iterators-solution.ts) after the submission deadline.
 
 ## Opening and working with the starter code
 
