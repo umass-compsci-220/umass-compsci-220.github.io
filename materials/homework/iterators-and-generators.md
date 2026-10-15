@@ -5,7 +5,7 @@ sidebar_position: 6
 # Iterators and Generators
 
 <!-- TODO: Fix starter code link -->
-- Please download the homework [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/07-iterators-generators.zip)
+- Please download the homework [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/06-iterators-generators.zip)
 
 ## Overview
 
