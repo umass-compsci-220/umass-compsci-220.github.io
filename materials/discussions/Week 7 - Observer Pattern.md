@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Discussion 7: Observer Pattern
 
-Welcome to the sixth discussion! This week you'll practice working with the observer pattern.
+Welcome to the seventh discussion! This week you'll practice working with the observer pattern.
 
 ## Materials
 
