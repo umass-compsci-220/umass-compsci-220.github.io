@@ -1,21 +1,24 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 # Model-View-Controller (MVC)
 
-- In this assignment, you will implement a simple but extensible graphical simulation by following the Model-View-Controller pattern.
+In this assignment, you will implement a simple but extensible graphical simulation by following the Model-View-Controller pattern.
 This specification is longer and more detailed than for other homework assignments in this course. 
+
 Refer to [How to Complete this Project](#how-to-complete-this-project) for guidance on how to navigate it and plan 
 your development process.
-- Please download the project [here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/06-observers-mvc-wip.zip).
 
-## Due Dates:
-- Checkpoint due **Wednesday, March 25.** To receive full credit for the checkpoint, your code must have a score of at least 40% on the autograder. 
+Please download the [starter files here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/06-mvc.zip).
+
+## Due Dates
+- Checkpoint due **Wednesday, October 29.** To receive full credit for the checkpoint, your code must have a score of at least 40% on the autograder. 
   See [How to Complete this Project](#how-to-complete-this-project) for guidance on how to achieve this.
   - The checkpoint counts as a full homework assignment towards your course grade.
-- Full assignment due **Wednesday, April 15**. Note that we do not expect you to be working on this assignment the weeks of HW7 or Midterm 2. The scale of this assignment and our schedule of topics necessitate this split approach. Additionally, it is good practice to work on a codebase, step away from it, then pick it up again. 
+- Full assignment due **Wednesday, November 11.**
   - The full assignment submission counts as one full homework assignment towards your course grade.
+- IMPORTANT: The checkpoint (7a) and full assignment (7b) have **separate submissions.**
 
 ## Learning Objectives
 Model-View-Controller is the backbone of graphical user interface (GUI) systems.
@@ -65,7 +68,7 @@ This section and its subsections contains general requirements your implementati
 
 - Methods and attributes you add should have the minimum necessary visibility (i.e., public, protected, private).
 - Methods and attributes you add should be no higher in the class hierarchy than necessary. For example, if a method is only needed by `Agents`, do not declare it in the `SimulationObject` class.
-- The model should be **decoupled** from the View. That is, it should only be aware of the methods/attributes declared in the `View` base class and not know about or depend on any implementation details of the derived view classes.
+- The model should be **decoupled** from the View. That is, it should only be aware of the methods/attributes declared in the `View` base class and not know about or depend on any implementation details of the derived view classes. Similarly, methods/attributes specific to `View` derived classes should not be unecessarily declared in the `View` base class.
 - The view classes should not store or be aware of any details about the `SimulationObject` or its derived classes beyond those it needs to render the scene.
 - Model operations must be as efficient as possible in terms of runtime complexity. For example, if your implementation of `Model.getAgent()` takes O(n) time but a different choice of data structure would result in a better complexity, use that approach instead. Consult the [MDN Built-In Objects documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects) to discover what data structures are available in JS/TS.
 - Think critically about what functionality is shared between the various classes that derive from `SimulationObject`. Reuse functionality, but don't over-complicate your design. Design for the current requirements in a way that isn't overly restrictive and that doesn't over-anticipate potential future extensions.
@@ -89,7 +92,10 @@ You do not need to submit this diagram, but making it will help you keep track o
 ### `SimulationObject` Base Class (`simulation_object.ts`)
 
 The simulation object class hierarchy starts with an abstract base class `SimulationObject`.
-It should have the following public methods.
+The starter code includes a constructor.
+DO NOT MODIFY the constructor.
+
+You will add the following public methods.
 You must decide which ones should be marked as `abstract`.
 Other than that decision, you must use these exact signatures.
 ```typescript
@@ -99,13 +105,10 @@ getLocation(): Coordinate;
 // This method should be called on every simulation object
 // each "tick" of the simulation.
 nextTick(): void;
-
-// When called, the simulation object should notify
-// the model of its initial state.
-broadcastInitialState(): void;
 ```
 
-Any other methods or attributes you add to `SimulationObject` must be non-public.
+Any other methods or attributes you add to `SimulationObject` must follow good design principles and the MVC principles and structure.
+Any such changes you make must not introduce new preconditions or requirements for code using the class.
 
 ### `Agent` Class (`agent.ts`)
 
@@ -140,11 +143,6 @@ Once a sleepy lobster reaches the destination it was directed to move towards, i
 When a sleepy lobster is asleep, it is rendered as a sprite with the image ID `lobsterSleeping` at scale `0.25`.
 Once a sleepy lobster has fallen asleep, it ignores instructions for it to move towards a new destination.
 
-To add this "sprite changing" behavior, you may modify the `View` base class.
-This and any other changes you make to support this behavior must follow the MVC structure and principles.
-Additionally, changes you make to the public members of the `View` base class **must not require any changes to public or protected members of classes that inherit from `View`**.
-In other words, if we test your code with our own hidden class that derives from `View`, our class should still work even after you make your changes.
-
 Implement the `SleepyLobster` class in `agent.ts`.
 Add/override whatever methods and attributes you think you need.
 The `SleepyLobster` type should not be visible outside of `agent.ts`.
@@ -153,8 +151,8 @@ Add a comment just before your `SleepyLobster` class definition explaining the m
 
 ### `agentFactory` Function
 
-Implement the `agentFactory` function so that it creates a `SimpleLobster` when passed the string `"simple_lobster"` as its `type` parameter.
-It should also create a `SleepyLobster` when passed the string `"sleepy_lobster"` as its `type` parameter.
+Implement the `agentFactory` function. 
+It should creates a `SimpleLobster` when passed the string `"simple_lobster"` as its `type` parameter, and it should also create a `SleepyLobster` when passed the string `"sleepy_lobster"` as its `type` parameter.
 If `type` is any other value, throw an `Error` with the message `"unsupported agent type: " + type`.
 The created lobster should start at the specified initial location.
 
@@ -199,10 +197,12 @@ Update the file as instructed by those comments.
 
 ### `View` Abstract Base Class (`view.ts`)
 
-**You may not modify this class other than in the ways specified in this section and elsewhere in this document.**
+**You may only modify this class in the ways specified in this section and elsewhere in this document and starter code.**
 
-This class contains abstract `updateX` methods by which the view(s) can receive updates from the model.
-Notice how **we haven't defined an interface called `Observer`**. 
+You will need to add `updateX` methods by which the view(s) can receive updates from the model.
+Your `updateX` methods should only receive the minimum information needed to render the view(s).
+
+**Do not define an interface called `Observer`**. 
 Instead, the `View` abstract base class fills that role.
 This is the difference between the definition of a pattern and its implementation.
 The pattern does not necessarily prescribe specific type definitions.
@@ -243,17 +243,17 @@ The static `getInstance()` approach we take to implementing our singleton is rel
 
 ## Starter Files
 The following starter files can be found in starter.zip:
-- `geometry.ts`: Provides a `Coordinate` class and some geometric functions for computing movement.
-- `movement.ts`: The `Movement` class is used to add basic movement to certain kinds of simulation objects using a "has-a" relationship (i.e., composition) 
-- `assert.ts`: A simple implementation of `assert`.
-- `sprite.ts`: A data-only class that describes how a simulation object should be displayed.
+- `geometry.ts`: Provides a `Coordinate` class and some geometric functions for computing movement. **Do not modify this file.**
+- `movement.ts`: The `Movement` class is used to add basic movement to certain kinds of simulation objects using a "has-a" relationship (i.e., composition). **Do not modify this file.**
+- `assert.ts`: A simple implementation of `assert`. You may find it helpful when interacting with certain data structures that could return an element or `undefined`. The `assert` library that you've seen in other assignments is part of Node. This assignment code will run in a web browser, and Node libraries are not typically available in a browser.
+- `sprite.ts`: A data-only class that describes how a simulation object should be displayed. **Do not modify this file.**
 - `view.ts`: Contains the `View` base class and starter code for the `MainSimulationView`.
 - `model.ts`: Contains some starter code for the `Model` singleton class.
 - `main.ts`: Entrypoint that creates a few simulation objects and starts the simulation. Some of this is provided for you.
 - `simulation_object/simulation_object.ts`: Contains some starter code for the simulation object class hierarchy.
 - `simulation_object/agent.ts`: Starter code for the `Agent` class hierarchy.
 - `simulation_object/structure.ts`: Starter code for the `Structure` class hierarchy.
-- `public`: This directory contains the `index.html` file that lets us run the simulation in a browser. Also contains image files we use to display simulation objects.
+- `public`: This directory contains the `index.html` file that lets us run the simulation in a browser. Also contains image files we use to display simulation objects. **Do not modify this file.**
 - `starter.test.ts`: Contains a very minimal test case for you to add to.
 
 ## Sprites
@@ -275,8 +275,7 @@ There is no manual grading for the checkpoint.
 
 Scores for the full submission will consist of the following parts:
 - 70%: Automated instructor test suite score
-- 10%: Manual correctness grading of the final top-level simulation
-- 20%: Manual grading of whether the design requirements were followed
+- 30%: Manual grading of whether the design requirements were followed
 
 # (Optional) Further Tasks
 
