@@ -13,7 +13,7 @@ your development process.
 Please download the [starter files here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/07-mvc.zip).
 
 ## Due Dates
-- Checkpoint due **Wednesday, October 29.** To receive full credit for the checkpoint, your code must have a score of at least 40% on the autograder. 
+- Checkpoint due **Wednesday, October 28.** To receive full credit for the checkpoint, your code must have a score of at least 40% on the autograder. 
   See [How to Complete this Project](#how-to-complete-this-project) for guidance on how to achieve this.
   - The checkpoint counts as a full homework assignment towards your course grade.
 - Full assignment due **Wednesday, November 11.**
