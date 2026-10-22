@@ -10,7 +10,7 @@ This specification is longer and more detailed than for other homework assignmen
 Refer to [How to Complete this Project](#how-to-complete-this-project) for guidance on how to navigate it and plan 
 your development process.
 
-Please download the [starter files here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/06-mvc.zip).
+Please download the [starter files here](https://github.com/umass-compsci-220/public-materials/raw/main/homework/07-mvc.zip).
 
 ## Due Dates
 - Checkpoint due **Wednesday, October 29.** To receive full credit for the checkpoint, your code must have a score of at least 40% on the autograder. 
