@@ -68,7 +68,7 @@ This section and its subsections contains general requirements your implementati
 
 - Methods and attributes you add should have the minimum necessary visibility (i.e., public, protected, private).
 - Methods and attributes you add should be no higher in the class hierarchy than necessary. For example, if a method is only needed by `Agents`, do not declare it in the `SimulationObject` class.
-- The model should be **decoupled** from the View. That is, it should only be aware of the methods/attributes declared in the `View` base class and not know about or depend on any implementation details of the derived view classes. Similarly, methods/attributes specific to `View` derived classes should not be unecessarily declared in the `View` base class.
+- The model should be **decoupled** from the View. That is, it should only be aware of the methods/attributes declared in the `View` base class and not know about or depend on any implementation details of the derived view classes. Similarly, methods/attributes specific to `View` derived classes should not be unnecessarily declared in the `View` base class.
 - The view classes should not store or be aware of any details about the `SimulationObject` or its derived classes beyond those it needs to render the scene.
 - Model operations must be as efficient as possible in terms of runtime complexity. For example, if your implementation of `Model.getAgent()` takes O(n) time but a different choice of data structure would result in a better complexity, use that approach instead. Consult the [MDN Built-In Objects documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects) to discover what data structures are available in JS/TS.
 - Think critically about what functionality is shared between the various classes that derive from `SimulationObject`. Reuse functionality, but don't over-complicate your design. Design for the current requirements in a way that isn't overly restrictive and that doesn't over-anticipate potential future extensions.
@@ -152,7 +152,7 @@ Add a comment just before your `SleepyLobster` class definition explaining the m
 ### `agentFactory` Function
 
 Implement the `agentFactory` function. 
-It should creates a `SimpleLobster` when passed the string `"simple_lobster"` as its `type` parameter, and it should also create a `SleepyLobster` when passed the string `"sleepy_lobster"` as its `type` parameter.
+It should create a `SimpleLobster` when passed the string `"simple_lobster"` as its `type` parameter, and it should also create a `SleepyLobster` when passed the string `"sleepy_lobster"` as its `type` parameter.
 If `type` is any other value, throw an `Error` with the message `"unsupported agent type: " + type`.
 The created lobster should start at the specified initial location.
 
