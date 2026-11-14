@@ -245,7 +245,7 @@ describe("fetchGeoCoord", () => {
       assert(typeof result.lon === "number"); // Assert that the lon value is a number
       assert(typeof result.lat === "number"); // Assert that the lat value is a number
       assert(typeof result.importances === "object"); // Assert that the importances value is an object
-      assert(Object.keys(result).length === 3); // Assert there are only two keys in the object
+      assert(Object.keys(result).length === 3); // Assert there are only three keys in the object
     });
   });
 });
